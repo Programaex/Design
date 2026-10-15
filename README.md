@@ -1,0 +1,28 @@
+# Design
+
+Repositório do design system **Nocturne — Apple edition (Noturno)**.
+
+## Estrutura
+
+```
+DESIGN_SYSTEM-NOTURNO/
+├── readme.md        # guia completo do design system
+├── styles.css       # stylesheet único com todos os tokens
+├── theme.json       # tokens de origem do tema
+├── theme.html       # visão geral do tema
+├── thumbnail.html
+├── foundations/     # cor, tipografia, ícones, imagem, layout
+├── components/      # botões, cards, formulários, navegação, tabela, diálogo
+├── templates/       # landing e deck (pontos de partida)
+└── assets/
+```
+
+## Como usar
+
+Linke o stylesheet em cada página e use as variáveis CSS (`var(--color-*)`, `var(--font-*)`, `var(--space-*)` …):
+
+```html
+<link rel="stylesheet" href="DESIGN_SYSTEM-NOTURNO/styles.css">
+```
+
+O tema escuro é o padrão; o claro é ativado com `data-theme="light"`. Veja o guia completo em [`DESIGN_SYSTEM-NOTURNO/readme.md`](DESIGN_SYSTEM-NOTURNO/readme.md).

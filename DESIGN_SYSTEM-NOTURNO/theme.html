@@ -1,0 +1,51 @@
+<!-- @dsCard group="Theme" name="Parameters" subtitle="The parameters this system was derived from" viewport="640x680" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nocturne — Parameters</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* Demo scaffolding only — everything visual comes from styles.css. */
+.demo { max-width: 620px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-8); }
+.demo-head {
+  font-family: var(--font-body); font-size: var(--text-micro); font-weight: 600;
+  letter-spacing: -0.01em; color: var(--color-text-muted);
+  margin: var(--space-6) 0 var(--space-3);
+}
+.demo-head:first-child { margin-top: 0; }
+.row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.stack { display: grid; gap: var(--space-3); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.note { font-size: var(--text-micro); line-height: 1.4; color: var(--color-text-muted); max-width: 60ch; margin: var(--space-4) 0 0; }
+code { font-family: var(--font-mono); font-size: 0.92em; letter-spacing: 0; }
+.params { border: 1px solid var(--color-divider); border-radius: var(--radius-lg); padding: var(--space-3) var(--space-4); }
+.def { display: flex; gap: var(--space-3); padding: var(--space-1) 0; }
+dl { margin: 0; } dt { flex: none; width: 120px; font-size: var(--text-micro); letter-spacing: -0.01em; color: var(--color-text-muted); } dd { margin: 0; font-size: var(--text-caption); line-height: 1.43; letter-spacing: -0.016em; }
+</style>
+</head>
+<body>
+<main class="demo">
+<div class="demo-head">Theme parameters</div>
+  <section class="params" data-theme-ground="dark" data-theme-scheme="mono" data-theme-hue="258">
+    <dl>
+    <div class="def"><dt>Source</dt><dd>apple.com/br — palette, type and shape sampled from the site</dd></div>
+    <div class="def"><dt>Ground</dt><dd>dark by default (#000000 / #1d1d1f / #f5f5f7); light theme via <code>data-theme="light"</code> (#ffffff / #f5f5f7 / #1d1d1f)</dd></div>
+    <div class="def"><dt>Accent</dt><dd>#0071e3 action blue; link blue #2997ff on dark, #0066cc on light (mono scheme)</dd></div>
+    <div class="def"><dt>Fonts</dt><dd>SF Pro Display / SF Pro Text via <code>-apple-system</code>; Inter as the web fallback</dd></div>
+    <div class="def"><dt>Heading weight</dt><dd>600</dd></div>
+    <div class="def"><dt>Density</dt><dd>1.00× (4px base)</dd></div>
+    <div class="def"><dt>Radius</dt><dd>12px base — 8 / 12 / 18 / 28 and the pill</dd></div>
+    <div class="def"><dt>Layout</dt><dd>centred heroes and tiles; black / light band rhythm</dd></div>
+    <div class="def"><dt>Dividers</dt><dd>1px hairline, solid</dd></div>
+    <div class="def"><dt>Buttons</dt><dd>pill — filled primary, outlined secondary, text-link ghost</dd></div>
+    <div class="def"><dt>Image treatment</dt><dd>blend — lighten on dark, multiply on light</dd></div>
+    <div class="def"><dt>Icons</dt><dd>Phosphor regular</dd></div>
+    </dl>
+  </section>
+  <p class="note">These values are the seed this system was derived from: styles.css, every page in this project and the guide in readme.md were built from them (the machine-readable copy is <code>theme.json</code>). If you retune the system by hand — palette, type, radii, spacing — do it in styles.css (the one place tokens live) and keep this page and <code>theme.json</code> in step so the record stays true. The <code>data-theme-*</code> attributes above mirror the ground / scheme / hue knobs for a future theme-controls surface; today they are documentation, nothing reads them.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,351 @@
+/* Nocturne — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md.
+   Direction: apple.com/br — SF Pro type, Apple's neutral greys, one action blue (#0071e3), pill buttons, large rounded tiles, black / light-grey scene rhythm.
+   Two themes ship in this one sheet: dark is the default (the system's Noturno identity); light is `data-theme="light"` on <html> or on any section. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Constants — the two ends of the scale. Never flip with the theme. */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Roles — DARK (default). Black scene, #1d1d1f tiles, #f5f5f7 ink. */
+  --color-bg: #000000;
+  --color-surface: #1d1d1f;
+  --color-surface-raised: #333336;
+  --color-text: #f5f5f7;
+  --color-text-muted: #a1a1a6;
+  --color-accent: #0071e3;        /* Apple action blue: fills and the focus ring */
+  --color-on-accent: #ffffff;
+  --color-link: #2997ff;          /* blue as TEXT on dark (6.96:1 on black) */
+  --color-accent-2: #0071e3;      /* mono scheme: one action voice; kept so both sets resolve */
+  --color-divider: color-mix(in srgb, var(--color-text) 24%, transparent);
+  --color-scrim: color-mix(in srgb, #000000 60%, transparent);
+
+  /* Semantic — status only, never decoration. */
+  --color-success: #30d158;
+  --color-warning: #ff9f0a;
+  --color-danger: #ff453a;
+
+  /* Inverse scene — the alternate band of the page rhythm. On the dark theme
+     it is the light-grey band (#f5f5f7) with dark ink. */
+  --color-section: #f5f5f7;
+  --color-section-glow: #ffffff;
+  --color-section-ghost: #d2d2d7;
+  --color-on-section: #1d1d1f;
+
+  /* Component roles */
+  --tag-accent-bg: var(--color-accent-800);
+  --tag-accent-fg: var(--color-accent-100);
+  --tag-neutral-bg: var(--color-neutral-800);
+  --tag-neutral-fg: var(--color-neutral-100);
+  --image-blend: lighten;         /* black photo grounds fall away on a dark page */
+
+  /* Neutral ramp — Apple's greys, 100 (light) to 900 (dark). */
+  --color-neutral-100: #f5f5f7;
+  --color-neutral-200: #e8e8ed;
+  --color-neutral-300: #d2d2d7;
+  --color-neutral-400: #a1a1a6;
+  --color-neutral-500: #86868b;
+  --color-neutral-600: #6e6e73;
+  --color-neutral-700: #424245;
+  --color-neutral-800: #333336;
+  --color-neutral-900: #1d1d1f;
+
+  /* Accent ramp — pinned to apple.com blues: 400 #2997ff (links on dark),
+     600 #0071e3 (the action fill), 700 #0066cc (links on light). */
+  --color-accent-100: #eff7ff;
+  --color-accent-200: #cfe6ff;
+  --color-accent-300: #94c8ff;
+  --color-accent-400: #2997ff;
+  --color-accent-500: #1784f1;
+  --color-accent-600: #0071e3;
+  --color-accent-700: #0066cc;
+  --color-accent-800: #003a77;
+  --color-accent-900: #001d3d;
+
+  /* accent-2 mirrors accent (mono scheme). */
+  --color-accent-2-100: #eff7ff;
+  --color-accent-2-200: #cfe6ff;
+  --color-accent-2-300: #94c8ff;
+  --color-accent-2-400: #2997ff;
+  --color-accent-2-500: #1784f1;
+  --color-accent-2-600: #0071e3;
+  --color-accent-2-700: #0066cc;
+  --color-accent-2-800: #003a77;
+  --color-accent-2-900: #001d3d;
+
+  /* Type — SF Pro where the platform has it (-apple-system resolves to SF Pro
+     Display / Text with automatic optical sizing); Inter is the web fallback. */
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-hero: 56px;
+  --text-title: 40px;
+  --text-subtitle: 28px;
+  --text-card: 21px;
+  --text-body: 17px;
+  --text-caption: 14px;
+  --text-micro: 12px;
+
+  /* Spacing — 4px base, density 1.0 (Apple is airy). */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-pill: 980px;
+
+  /* Elevation — Apple is nearly flat: a hairline edge, then ambient shadow. */
+  --shadow-sm: 0 0 0 1px #333336;
+  --shadow-md: 0 0 0 1px #424245, 0 6px 18px rgba(0,0,0,0.55);
+  --shadow-lg: 0 0 0 1px #6e6e73, 3px 5px 30px rgba(0,0,0,0.65);
+}
+
+/* LIGHT — white canvas, #f5f5f7 tiles, #1d1d1f ink. Apply to <html> for a whole
+   page, or to any <section> to flip just that band. */
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f7;
+  --color-surface-raised: #ffffff;
+  --color-text: #1d1d1f;
+  --color-text-muted: #6e6e73;
+  --color-link: #0066cc;          /* blue as TEXT on light (5.57:1 on white) */
+  --color-divider: color-mix(in srgb, var(--color-text) 16%, transparent);
+  --color-scrim: color-mix(in srgb, #000000 40%, transparent);
+
+  --color-success: #248a3d;
+  --color-warning: #b25000;
+  --color-danger: #d70015;
+
+  /* Inverse scene on light = the black band. */
+  --color-section: #000000;
+  --color-section-glow: #1d1d1f;
+  --color-section-ghost: #424245;
+  --color-on-section: #f5f5f7;
+
+  --tag-accent-bg: var(--color-accent-100);
+  --tag-accent-fg: var(--color-accent-700);
+  --tag-neutral-bg: var(--color-neutral-200);
+  --tag-neutral-fg: var(--color-neutral-900);
+  --image-blend: multiply;        /* white photo grounds fall away on a light page */
+
+  --shadow-sm: 0 0 0 1px rgba(0,0,0,0.08);
+  --shadow-md: 0 2px 14px rgba(0,0,0,0.10);
+  --shadow-lg: 3px 5px 30px rgba(0,0,0,0.22);
+}
+/* [data-theme="dark"] shares the :root block above, so a dark band can sit inside a light page */
+[data-theme] { background: var(--color-bg); color: var(--color-text); }
+
+@media (max-width: 734px) {
+  :root { --text-hero: 40px; --text-title: 32px; --text-subtitle: 24px; --text-card: 19px; }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+/* Photographs: .blend is the wrapper; .lighten is kept as an alias so older markup still works.
+   The blend mode follows the theme (lighten on dark, multiply on light). */
+.blend, .lighten { mix-blend-mode: var(--image-blend); background-color: transparent; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; font-size: var(--text-body); line-height: 1.47; font-weight: 400;
+  letter-spacing: -0.022em;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  margin: 0 0 var(--space-2);
+}
+h1 { font-size: var(--text-hero);     line-height: 1.07; letter-spacing: -0.005em; }
+h2 { font-size: var(--text-title);    line-height: 1.10; letter-spacing: -0.003em; }
+h3 { font-size: var(--text-subtitle); line-height: 1.14; letter-spacing: 0.007em; }
+h4 { font-size: var(--text-card);     line-height: 1.19; letter-spacing: 0.011em; }
+h5 { font-size: var(--text-body);     line-height: 1.24; letter-spacing: -0.022em; }
+h6 { font-size: var(--text-micro);    line-height: 1.33; letter-spacing: -0.01em; color: var(--color-text-muted); }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-link); text-underline-offset: 3px; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption { font-size: var(--text-micro); margin-top: var(--space-1); color: var(--color-text-muted); }
+.text-muted { color: var(--color-text-muted); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — a plain hairline. Apple separates with space first, rules second. */
+.hr { height: 1px; border: 0; margin: var(--space-4) 0; background: var(--color-divider); }
+
+/* — buttons — pill-shaped, 17px; blue fill is the single call to action. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-body); font-weight: 400;
+  font-size: var(--text-body); line-height: 1.18; letter-spacing: -0.022em;
+  color: var(--color-text);
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+}
+.btn:hover { text-decoration: none; }
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-on-accent); }
+.btn-primary:hover:not(:disabled) { background: var(--color-accent-700); }
+.btn-primary:active:not(:disabled) { background: var(--color-accent-800); }
+.btn-secondary { color: var(--color-link); border-color: var(--color-link); }
+.btn-secondary:hover:not(:disabled) { background: color-mix(in srgb, var(--color-link) 10%, transparent); }
+.btn-secondary:active:not(:disabled) { background: color-mix(in srgb, var(--color-link) 18%, transparent); }
+.btn-ghost { color: var(--color-link); padding-inline: var(--space-1); }
+.btn-ghost:hover:not(:disabled) { text-decoration: underline; text-underline-offset: 3px; }
+.btn-ghost:active:not(:disabled) { color: var(--color-accent-700); }
+.btn-sm { font-size: var(--text-micro); padding: var(--space-1) var(--space-3); }
+.btn-icon { width: 40px; height: 40px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: var(--text-micro); margin-bottom: 6px;
+  color: var(--color-text-muted); letter-spacing: -0.01em;
+}
+.input {
+  width: 100%; min-height: 44px; padding: var(--space-2) var(--space-3); font: inherit;
+  font-size: var(--text-body); letter-spacing: -0.022em;
+  color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input::placeholder { color: var(--color-text-muted); }
+.input:hover { border-color: var(--color-neutral-500); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 96px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: var(--space-2); cursor: pointer; font-size: var(--text-body); }
+.radio input, .seg-opt input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.radio .dot {
+  width: 18px; height: 18px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-neutral-500);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+/* segmented control: a recessed track with a raised selected thumb */
+.seg {
+  display: inline-flex; gap: 2px; padding: 2px;
+  background: var(--color-surface); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px var(--space-3); font-size: var(--text-caption); letter-spacing: -0.016em;
+  border-radius: calc(var(--radius-md) - 2px); cursor: pointer;
+  color: var(--color-text-muted);
+}
+.seg-opt:has(input:checked) { background: var(--color-surface-raised); color: var(--color-text); box-shadow: var(--shadow-sm); }
+.seg-opt:not(:has(input:checked)):hover { color: var(--color-text); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: 0; }
+
+/* — cards — flat tiles: a surface, a radius, no shadow unless asked. */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-6); border-radius: var(--radius-lg); background: var(--color-surface);
+}
+.card-kicker { font-size: var(--text-micro); font-weight: 600; letter-spacing: -0.01em; color: var(--color-text-muted); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--text-card); line-height: 1.19; letter-spacing: 0.011em;
+}
+.card-body { margin: 0; font-size: var(--text-caption); line-height: 1.43; letter-spacing: -0.016em; color: var(--color-text-muted); flex: 1; }
+.card-meta { display: flex; align-items: center; gap: 6px; font-size: var(--text-micro); color: var(--color-text-muted); }
+/* a promo tile: centred, 28px radius — the apple.com home-page tile */
+.card-tile { align-items: center; text-align: center; border-radius: var(--radius-xl); padding: var(--space-8) var(--space-6); }
+.card-tile .card-title { font-size: var(--text-subtitle); line-height: 1.14; letter-spacing: 0.007em; }
+.card-tile .card-body { font-size: var(--text-card); line-height: 1.19; flex: none; }
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: var(--text-micro); font-weight: 500;
+  letter-spacing: -0.01em; padding: 3px 10px; border-radius: var(--radius-pill);
+}
+.tag-accent { background: var(--tag-accent-bg); color: var(--tag-accent-fg); }
+.tag-accent-2 { background: var(--tag-accent-bg); color: var(--tag-accent-fg); }
+.tag-neutral { background: var(--tag-neutral-bg); color: var(--tag-neutral-fg); }
+.tag-outline { border: 1px solid var(--color-link); color: var(--color-link); }
+.tag-success { background: color-mix(in srgb, var(--color-success) 16%, transparent); color: var(--color-success); }
+.tag-warning { background: color-mix(in srgb, var(--color-warning) 16%, transparent); color: var(--color-warning); }
+.tag-danger  { background: color-mix(in srgb, var(--color-danger) 16%, transparent);  color: var(--color-danger); }
+
+/* — navigation — the 44px translucent global bar */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: var(--space-6);
+  min-height: 44px; padding: 0 var(--space-6);
+  background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--color-divider);
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--text-body); margin-right: auto;
+}
+.nav a { color: color-mix(in srgb, var(--color-text) 80%, transparent); text-decoration: none; font-size: var(--text-micro); letter-spacing: -0.01em; }
+.nav a:hover, .nav a[aria-current='page'], .nav a[aria-current='location'] { color: var(--color-text); }
+.nav .btn { font-size: var(--text-micro); padding: var(--space-1) var(--space-3); }
+
+/* — tables — hairline rows, a quiet header */
+.table { width: 100%; border-collapse: collapse; font-size: var(--text-caption); letter-spacing: -0.016em; }
+.table th {
+  text-align: left; font-size: var(--text-micro); font-weight: 600; letter-spacing: -0.01em;
+  color: var(--color-text-muted);
+  padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td { padding: var(--space-3) var(--space-2); border-bottom: 1px solid var(--color-divider); }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: var(--color-scrim);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-6); border-radius: var(--radius-xl);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--text-subtitle); line-height: 1.14; letter-spacing: 0.007em;
+}
+.dialog-body { font-size: var(--text-body); color: var(--color-text-muted); }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }

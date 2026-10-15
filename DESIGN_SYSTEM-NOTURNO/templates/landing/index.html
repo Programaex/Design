@@ -1,0 +1,211 @@
+<!-- @template name="Landing" description="A one-page product landing in the system's own voice — an invented product (Pounce: devtools for cats), a centred hero over a blended photograph, an inverse-ground stat band, a tile grid, a dark/light pair and a sign-up close" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Nocturne — landing</title>
+<script src="./ds-base.js"></script>
+<style>
+/* Template scaffolding — page layout and web-scale sizing only; every color,
+   font, radius and shadow comes from ../../styles.css.
+
+   THE RHYTHM (apple.com): scenes alternate between the page ground and an
+   inverse band (--color-section: light grey on the dark theme, black on the
+   light one). Air lives BETWEEN sections — 64–120px — and clusters stay tight:
+   a headline, one line of subhead and the buttons read as a single unit.
+   Everything is centred; the hero's photograph sits under it and blends into
+   the ground through the .blend wrapper.
+
+   THE LANDING LAWS (shared by every system's landing template):
+   #1 — a display header breaks per SENTENCE: each sentence starts its own
+   line (.line spans, display:block).
+   #2 — the landing advertises a concrete INVENTED PRODUCT in a real voice,
+   never abstract design-system copy — Pounce, devtools for cats, deadpan
+   professional, cat truths played straight.
+   #3 — spacing is cluster-scoped: tight inside a cluster, generous between.
+   #4 — no hero eyebrow: the nav brand already names the product. */
+:root {
+  --edge: clamp(20px, 5vw, 48px);        /* page gutter */
+  --column: 1068px;                       /* apple.com's content column */
+  --band: clamp(64px, 10vw, 112px);       /* air between sections */
+  --measure: 48ch;
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; text-wrap: pretty; }
+.wrap { max-width: var(--column); margin: 0 auto; padding: 0 var(--edge); }
+/* the nav's contents sit on the same column as the page */
+.nav { padding-inline: max(var(--edge), calc((100% - var(--column)) / 2 + var(--edge))); }
+.nav a { white-space: nowrap; }
+@media (max-width: 480px) { .nav a { display: none; } } /* phone width: brand + the one action */
+
+.eyebrow { display: block; margin: 0 0 var(--space-2); font-size: var(--text-body); font-weight: 600;
+  color: var(--color-text-muted); letter-spacing: -0.022em; }
+.section-title { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: var(--text-title); line-height: 1.10; letter-spacing: -0.003em; margin: 0; text-align: center; }
+.section-sub { font-size: var(--text-card); line-height: 1.19; letter-spacing: 0.011em;
+  color: var(--color-text-muted); max-width: var(--measure); margin: var(--space-3) auto 0; text-align: center; }
+
+/* — hero — */
+.hero { text-align: center; padding: var(--band) 0; }
+.display {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: clamp(44px, 7vw, 80px); line-height: 1.05; letter-spacing: -0.015em; margin: 0;
+}
+.display .line { display: block; }
+.hero .sub { font-size: clamp(19px, 2.2vw, 28px); line-height: 1.19; letter-spacing: 0.011em;
+  color: var(--color-text-muted); max-width: var(--measure); margin: var(--space-4) auto 0; }
+.hero .row { display: flex; gap: var(--space-4); justify-content: center; align-items: center; flex-wrap: wrap; margin-top: var(--space-6); }
+.hero-figure { margin: var(--space-12) auto 0; max-width: 860px; }
+.hero-figure image-slot { width: 100%; aspect-ratio: 1600 / 1261; } /* the bundled photograph's ratio pins
+   the box, so a swapped image cover-crops into the same frame; the .blend wrapper lets the photograph's
+   black ground fall away into the page — shoot swaps on black (dark theme) or white (light theme) */
+
+/* — stat band — the inverse scene: --color-section with its own ink */
+.stats { background: var(--color-section); color: var(--color-on-section); padding: var(--space-16) 0; }
+.stats .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8) var(--space-6); text-align: center; }
+.stat-num { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: clamp(36px, 5vw, 56px); line-height: 1.07; letter-spacing: -0.005em; margin: 0;
+  font-feature-settings: "tnum" 1; }
+.stat-label { font-size: var(--text-caption); line-height: 1.43; letter-spacing: -0.016em;
+  color: color-mix(in srgb, var(--color-on-section) 64%, transparent); margin: var(--space-1) 0 0; }
+
+/* — tiles — three promo tiles, centred, flat */
+.features { padding: var(--band) 0 0; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-12); }
+.tiles .card-tile { justify-content: flex-start; padding: var(--space-12) var(--space-6); }
+.tiles .card-kicker { font-size: var(--text-caption); }
+.tiles .card-body { font-size: var(--text-body); line-height: 1.47; letter-spacing: -0.022em; }
+
+/* — light & dark — the same system, flipped per panel with data-theme */
+.duo { padding: var(--band) 0 0; }
+.panels { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-12); }
+.panel { border-radius: var(--radius-xl); padding: var(--space-12) var(--space-8); text-align: center;
+  display: grid; justify-items: center; gap: var(--space-3); border: 1px solid var(--color-divider); }
+.panel h3 { margin: 0; }
+.panel p { margin: 0; color: var(--color-text-muted); max-width: 32ch; }
+.panel .row { display: flex; gap: var(--space-4); align-items: center; margin-top: var(--space-3); }
+
+/* — quote — */
+.quote { padding: var(--band) 0; text-align: center; }
+.quote blockquote { font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: clamp(24px, 3vw, 40px); line-height: 1.15; letter-spacing: -0.005em; max-width: 28ch; margin: 0 auto; }
+.quote figcaption { font-size: var(--text-body); margin-top: var(--space-6); }
+
+/* — close / signup — */
+.close { padding: 0 0 var(--band); text-align: center; }
+.close h3 { font-size: var(--text-title); line-height: 1.10; letter-spacing: -0.003em; margin: 0; }
+.close .sub { font-size: var(--text-card); line-height: 1.19; letter-spacing: 0.011em; color: var(--color-text-muted);
+  max-width: var(--measure); margin: var(--space-3) auto 0; }
+.signup { display: flex; gap: var(--space-3); align-items: stretch; max-width: 480px; margin: var(--space-6) auto 0; text-align: left; }
+.signup .input { flex: 1; }
+footer { padding: var(--space-6) 0 var(--space-8); font-size: var(--text-micro); line-height: 1.33; letter-spacing: -0.01em;
+  color: var(--color-text-muted); border-top: 1px solid var(--color-divider); }
+
+/* — responsive — */
+@media (max-width: 880px) {
+  .tiles, .panels { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .stats .grid { grid-template-columns: repeat(2, 1fr); }
+  .signup { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <span class="nav-brand">Pounce</span>
+  <a href="#product" aria-current="location">Product</a>
+  <a href="#themes">Light &amp; dark</a>
+  <a href="#start">Start</a>
+  <button type="button" class="btn btn-primary btn-sm">Get started</button>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <h1 class="display"><span class="line">Ship at 3 a.m.</span> <span class="line">Land on your feet.</span></h1>
+    <p class="sub">The debugger, profiler and crash reporter for engineers who are cats. Nine lives included on every plan.</p>
+    <div class="row">
+      <button type="button" class="btn btn-primary">Start free</button>
+      <button type="button" class="btn btn-ghost">See it hunt<svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66A8,8,0,0,1,101.66,42.34l80,80A8,8,0,0,1,181.66,133.66Z"/></svg></button>
+    </div>
+    <figure class="hero-figure blend">
+      <image-slot id="photo-hero" shape="rect" src="../../assets/photo.jpg" role="img" aria-label="Product photograph blending into the dark page ground"></image-slot>
+    </figure>
+  </section>
+</div>
+
+<section class="stats" aria-label="Pounce, by the numbers">
+  <div class="wrap">
+    <div class="grid">
+      <div><p class="stat-num">9</p><p class="stat-label">Lives per incident</p></div>
+      <div><p class="stat-num">3 a.m.</p><p class="stat-label">Peak deploy window</p></div>
+      <div><p class="stat-num">42ms</p><p class="stat-label">Nap-to-alert latency</p></div>
+      <div><p class="stat-num">100%</p><p class="stat-label">Falls landed on feet</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="features" id="product">
+    <span class="eyebrow" style="text-align:center">What Pounce does</span>
+    <h2 class="section-title">Three tools. Nine lives.</h2>
+    <div class="tiles">
+      <article class="card card-tile">
+        <div class="card-kicker">01</div>
+        <h3 class="card-title">Pawprint tracing</h3>
+        <p class="card-body">Distributed tracing at paw level: follow a single pounce from trigger to landing, across every service it knocks off the shelf.</p>
+      </article>
+      <article class="card card-tile">
+        <div class="card-kicker">02</div>
+        <h3 class="card-title">Zoomies profiler</h3>
+        <p class="card-body">Flame graphs for the 3 a.m. sprint. Pin the exact hallway lap that burned the CPU and see what the tail was doing at the time.</p>
+      </article>
+      <article class="card card-tile">
+        <div class="card-kicker">03</div>
+        <h3 class="card-title">Nine-lives recovery</h3>
+        <p class="card-body">Crash reporting that always lands on its feet. Every incident ships with a fresh life, a clean stack, and no memory of the vase.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="duo" id="themes">
+    <span class="eyebrow" style="text-align:center">Light &amp; dark</span>
+    <h2 class="section-title">Built for the night shift. Ready for daylight.</h2>
+    <p class="section-sub">Cats ship at night, so Pounce opens dark. When the sun comes up, one attribute flips the whole interface.</p>
+    <div class="panels">
+      <div class="panel" data-theme="dark">
+        <h3>Dark</h3>
+        <p>A black scene where every panel sinks into the ground and only the work glows.</p>
+        <div class="row"><button type="button" class="btn btn-primary">Open</button><a href="#themes">Learn more</a></div>
+      </div>
+      <div class="panel" data-theme="light">
+        <h3>Light</h3>
+        <p>A white canvas and soft grey tiles, for the rare engineer who works in daylight.</p>
+        <div class="row"><button type="button" class="btn btn-primary">Open</button><a href="#themes">Learn more</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <figure>
+      <blockquote>“We went from chasing our own tails to shipping nightly. The zoomies profiler alone paid for itself in vases.”</blockquote>
+      <figcaption class="text-muted">Mochi, staff engineer (tabby)</figcaption>
+    </figure>
+  </section>
+
+  <section class="close" id="start">
+    <h3>Take the night shift.</h3>
+    <p class="sub">Start free — the first life is on us. Or subscribe for release notes, shipped nightly at 3 a.m. sharp.</p>
+    <div class="signup">
+      <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" />
+      <button type="button" class="btn btn-primary">Subscribe</button>
+    </div>
+  </section>
+
+  <footer>Built from this project’s theme.json — see readme.md.</footer>
+</div>
+<script src="image-slot.js"></script>
+</body>
+</html>

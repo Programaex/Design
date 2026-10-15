@@ -1,0 +1,55 @@
+<!-- @dsCard group="Foundations" name="Color" subtitle="Apple greys, one action blue — in a dark and a light theme" viewport="640x780" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nocturne — Color</title>
+<link rel="stylesheet" href="../styles.css" />
+<style>
+/* Demo scaffolding only — everything visual comes from ../styles.css. */
+.demo { max-width: 620px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-8); }
+.demo-head {
+  font-family: var(--font-body); font-size: var(--text-micro); font-weight: 600;
+  letter-spacing: -0.01em; color: var(--color-text-muted);
+  margin: var(--space-6) 0 var(--space-3);
+}
+.demo-head:first-child { margin-top: 0; }
+.row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.stack { display: grid; gap: var(--space-3); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.note { font-size: var(--text-micro); line-height: 1.4; color: var(--color-text-muted); max-width: 60ch; margin: var(--space-4) 0 0; }
+code { font-family: var(--font-mono); font-size: 0.92em; letter-spacing: 0; }
+.swatches { display: flex; gap: var(--space-2); }
+.swc { flex: 1; }
+.sw { height: 32px; border-radius: var(--radius-sm); border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); }
+.swl { font-size: 10px; opacity: 0.5; margin-top: 4px; }
+.rrow { display: flex; align-items: center; gap: var(--space-3); margin: var(--space-2) 0; }
+.rlabel { flex: none; width: 64px; font-size: 10px; letter-spacing: 0.08em; opacity: 0.45; }
+.ramp { display: flex; gap: 6px; flex: 1; }
+.ramp .sw { flex: 1; height: 22px; }
+.themes { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.tpanel { padding: var(--space-4); border-radius: var(--radius-lg); border: 1px solid var(--color-divider); display: grid; gap: var(--space-2); justify-items: start; }
+.tpanel h4 { margin: 0; }
+.tpanel p { margin: 0; font-size: var(--text-caption); line-height: 1.43; letter-spacing: -0.016em; color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+<main class="demo">
+<div class="demo-head">Roles</div>
+  <div class="swatches"><div class="swc"><div class="sw" style="background: var(--color-bg)"></div><div class="swl">bg</div></div><div class="swc"><div class="sw" style="background: var(--color-surface)"></div><div class="swl">surface</div></div><div class="swc"><div class="sw" style="background: var(--color-text)"></div><div class="swl">text</div></div><div class="swc"><div class="sw" style="background: var(--color-text-muted)"></div><div class="swl">muted</div></div><div class="swc"><div class="sw" style="background: var(--color-accent)"></div><div class="swl">accent</div></div><div class="swc"><div class="sw" style="background: var(--color-link)"></div><div class="swl">link</div></div></div>
+  <div class="demo-head">Status</div>
+  <div class="swatches"><div class="swc"><div class="sw" style="background: var(--color-success)"></div><div class="swl">success</div></div><div class="swc"><div class="sw" style="background: var(--color-warning)"></div><div class="swl">warning</div></div><div class="swc"><div class="sw" style="background: var(--color-danger)"></div><div class="swl">danger</div></div></div>
+  <div class="demo-head">Tonal ramps — 100 (light) to 900 (dark)</div>
+  <div class="rrow"><span class="rlabel">Neutral</span><div class="ramp"><div class="sw" title="100" style="background: var(--color-neutral-100)"></div><div class="sw" title="200" style="background: var(--color-neutral-200)"></div><div class="sw" title="300" style="background: var(--color-neutral-300)"></div><div class="sw" title="400" style="background: var(--color-neutral-400)"></div><div class="sw" title="500" style="background: var(--color-neutral-500)"></div><div class="sw" title="600" style="background: var(--color-neutral-600)"></div><div class="sw" title="700" style="background: var(--color-neutral-700)"></div><div class="sw" title="800" style="background: var(--color-neutral-800)"></div><div class="sw" title="900" style="background: var(--color-neutral-900)"></div></div></div>
+  <div class="rrow"><span class="rlabel">Accent</span><div class="ramp"><div class="sw" title="100" style="background: var(--color-accent-100)"></div><div class="sw" title="200" style="background: var(--color-accent-200)"></div><div class="sw" title="300" style="background: var(--color-accent-300)"></div><div class="sw" title="400" style="background: var(--color-accent-400)"></div><div class="sw" title="500" style="background: var(--color-accent-500)"></div><div class="sw" title="600" style="background: var(--color-accent-600)"></div><div class="sw" title="700" style="background: var(--color-accent-700)"></div><div class="sw" title="800" style="background: var(--color-accent-800)"></div><div class="sw" title="900" style="background: var(--color-accent-900)"></div></div></div>
+  <div class="demo-head">Two themes, one sheet</div>
+  <div class="themes">
+    <div class="tpanel" data-theme="dark"><h4>Dark</h4><p>Black scene, #1d1d1f tiles, #f5f5f7 ink.</p><div class="row"><button type="button" class="btn btn-primary btn-sm">Buy</button><a href="#">Learn more</a></div></div>
+    <div class="tpanel" data-theme="light"><h4>Light</h4><p>White canvas, #f5f5f7 tiles, #1d1d1f ink.</p><div class="row"><button type="button" class="btn btn-primary btn-sm">Buy</button><a href="#">Learn more</a></div></div>
+  </div>
+  <p class="note">The ramps are the same in both themes; the roles (<code>--color-bg</code>, <code>--color-text</code>, <code>--color-link</code>…) are what flip. Dark is the default; add <code>data-theme="light"</code> to <code>&lt;html&gt;</code> — or to a single <code>&lt;section&gt;</code> to flip just that band. Blue as a fill is <code>--color-accent</code> (#0071e3); blue as text is <code>--color-link</code> (#2997ff on dark, #0066cc on light), tuned for contrast.</p>
+</main>
+</body>
+</html>

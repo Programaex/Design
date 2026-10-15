@@ -1,0 +1,47 @@
+<!-- @dsCard group="Foundations" name="Typography" subtitle="SF Pro on Apple devices, Inter elsewhere — one stack, a fixed scale" viewport="640x720" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nocturne — Typography</title>
+<link rel="stylesheet" href="../styles.css" />
+<style>
+/* Demo scaffolding only — everything visual comes from ../styles.css. */
+.demo { max-width: 620px; margin: 0 auto; padding: var(--space-6) var(--space-4) var(--space-8); }
+.demo-head {
+  font-family: var(--font-body); font-size: var(--text-micro); font-weight: 600;
+  letter-spacing: -0.01em; color: var(--color-text-muted);
+  margin: var(--space-6) 0 var(--space-3);
+}
+.demo-head:first-child { margin-top: 0; }
+.row { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap; }
+.stack { display: grid; gap: var(--space-3); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.note { font-size: var(--text-micro); line-height: 1.4; color: var(--color-text-muted); max-width: 60ch; margin: var(--space-4) 0 0; }
+code { font-family: var(--font-mono); font-size: 0.92em; letter-spacing: 0; }
+.trow { display: flex; align-items: baseline; gap: var(--space-3); margin: calc(var(--space-2) * 0.6) 0; }
+.trow > * { margin: 0; }
+.tlabel { flex: none; width: 72px; font-size: 11px; letter-spacing: 0; color: var(--color-text-muted); white-space: nowrap; }
+.p-1 { font-size: var(--text-body); } .p-2 { font-size: var(--text-caption); line-height: 1.43; letter-spacing: -0.016em; } .p-3 { font-size: var(--text-micro); line-height: 1.33; letter-spacing: -0.01em; }
+</style>
+</head>
+<body>
+<main class="demo">
+<div class="demo-head">Headings — SF Pro Display / Inter · semibold 600</div>
+  <div class="trow"><span class="tlabel">H1 · 56</span><h1>Muito mais Pro.</h1></div>
+  <div class="trow"><span class="tlabel">H2 · 40</span><h2>A system in one sheet</h2></div>
+  <div class="trow"><span class="tlabel">H3 · 28</span><h3>A system in one sheet</h3></div>
+  <div class="trow"><span class="tlabel">H4 · 21</span><h4>A system in one sheet</h4></div>
+  <div class="trow"><span class="tlabel">H5 · 17</span><h5>A system in one sheet</h5></div>
+  <div class="trow"><span class="tlabel">H6 · 12</span><h6>A system in one sheet</h6></div>
+  <div class="demo-head">Body — SF Pro Text / Inter · regular 400</div>
+  <div class="trow"><span class="tlabel">Body · 17</span><p class="p-1">Design tokens describe a look once and let every page inherit it.</p></div>
+  <div class="trow"><span class="tlabel">Caption · 14</span><p class="p-2">Captions and card copy sit one notch down, in the same face.</p></div>
+  <div class="trow"><span class="tlabel">Micro · 12</span><p class="p-3 text-muted">Footnotes, metadata and legal lines live down here, quieter still.</p></div>
+  <div class="demo-head">Usage</div>
+  <p class="note">Headings take <code>var(--font-heading)</code> at <code>var(--font-heading-weight)</code> automatically; body copy inherits <code>var(--font-body)</code>. Tracking is negative (−0.022em on body) — it is what makes the type read as one tight mass. The stack opens with <code>-apple-system</code>, which is SF Pro on every Apple device; elsewhere Inter loads from Google Fonts. SF Pro itself is licensed by Apple for Apple-platform work, so it is named in the stack but not bundled. Never name a font family directly.</p>
+</main>
+</body>
+</html>
