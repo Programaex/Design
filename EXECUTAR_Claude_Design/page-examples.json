@@ -1,0 +1,501 @@
+{
+  "schemaVersion": 1,
+  "status": "dados_demonstrativos",
+  "pages": [
+    {
+      "route": "/",
+      "demo": true,
+      "blocks": [
+        {
+          "id": "inicio",
+          "type": "HeroCampaign",
+          "version": 1,
+          "props": {
+            "title": "Compreenda. Organize. Execute.",
+            "description": "Conhecimento e recursos para transformar intenção em prática.",
+            "media": {
+              "src": "/placeholders/hero-wide.svg",
+              "width": 1920,
+              "height": 1080,
+              "alt": "Espaço reservado para a campanha EXECUTAR",
+              "objectFit": "cover"
+            },
+            "actions": [
+              {
+                "label": "Explorar o mapa",
+                "href": "/mapa-cognitivo"
+              },
+              {
+                "label": "Conhecer o projeto",
+                "href": "/sobre"
+              }
+            ],
+            "theme": "light",
+            "headingLevel": 1
+          }
+        },
+        {
+          "id": "mapa",
+          "type": "HeroCampaign",
+          "version": 1,
+          "props": {
+            "title": "Veja as conexões.",
+            "description": "Explore o mapa cognitivo.",
+            "media": {
+              "src": "/placeholders/hero-wide.svg",
+              "width": 1920,
+              "height": 1080,
+              "alt": "Espaço reservado para apresentação do mapa",
+              "objectFit": "cover"
+            },
+            "actions": [
+              {
+                "label": "Explorar",
+                "href": "/mapa-cognitivo"
+              }
+            ],
+            "theme": "dark",
+            "headingLevel": 2
+          }
+        },
+        {
+          "id": "app",
+          "type": "HeroCampaign",
+          "version": 1,
+          "props": {
+            "title": "Executar App.",
+            "media": {
+              "src": "/placeholders/hero-wide.svg",
+              "width": 1920,
+              "height": 1080,
+              "alt": "Espaço reservado para apresentação do aplicativo",
+              "objectFit": "cover"
+            },
+            "actions": [
+              {
+                "label": "Conhecer",
+                "href": "/apps/executar"
+              }
+            ],
+            "theme": "light",
+            "headingLevel": 2
+          }
+        },
+        {
+          "id": "explore",
+          "type": "PromoGrid",
+          "version": 1,
+          "props": {
+            "items": [
+              {
+                "title": "Blog",
+                "href": "/blog",
+                "media": {
+                  "src": "/placeholders/feature-landscape.svg",
+                  "width": 1200,
+                  "height": 900,
+                  "alt": "Placeholder de Blog",
+                  "objectFit": "cover"
+                }
+              },
+              {
+                "title": "Riscos cognitivos",
+                "href": "/riscos-cognitivos",
+                "media": {
+                  "src": "/placeholders/feature-landscape.svg",
+                  "width": 1200,
+                  "height": 900,
+                  "alt": "Placeholder de Riscos cognitivos",
+                  "objectFit": "cover"
+                }
+              },
+              {
+                "title": "Ferramentas",
+                "href": "/ferramentas",
+                "media": {
+                  "src": "/placeholders/feature-landscape.svg",
+                  "width": 1200,
+                  "height": 900,
+                  "alt": "Placeholder de Ferramentas",
+                  "objectFit": "cover"
+                }
+              },
+              {
+                "title": "Studio",
+                "href": "/studio",
+                "media": {
+                  "src": "/placeholders/feature-landscape.svg",
+                  "width": 1200,
+                  "height": 900,
+                  "alt": "Placeholder de Studio",
+                  "objectFit": "cover"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "leitura",
+          "type": "RelatedContent",
+          "version": 1,
+          "props": {
+            "items": [],
+            "title": "Explore os conteúdos"
+          }
+        },
+        {
+          "id": "newsletter",
+          "type": "Newsletter",
+          "version": 1,
+          "props": {
+            "title": "Receba novidades do EXECUTAR"
+          }
+        }
+      ]
+    },
+    {
+      "route": "/blog/exemplo-editorial",
+      "demo": true,
+      "blocks": [
+        {
+          "id": "titulo",
+          "type": "ArticleHeader",
+          "version": 1,
+          "props": {
+            "title": "Como organizar uma rotina com mais clareza"
+          }
+        },
+        {
+          "id": "capa",
+          "type": "MediaFigure",
+          "version": 1,
+          "props": {
+            "media": {
+              "src": "/placeholders/article-cover.svg",
+              "width": 1600,
+              "height": 900,
+              "alt": "Placeholder da capa editorial",
+              "objectFit": "cover"
+            }
+          }
+        },
+        {
+          "id": "introducao",
+          "type": "RichText",
+          "version": 1,
+          "props": {
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "Conteúdo demonstrativo para validar a experiência editorial. Substitua pelo artigo revisado antes da publicação."
+              }
+            ]
+          }
+        },
+        {
+          "id": "midia",
+          "type": "MediaFigure",
+          "version": 1,
+          "props": {
+            "media": {
+              "src": "/placeholders/article-cover.svg",
+              "width": 1600,
+              "height": 900,
+              "alt": "Placeholder de imagem no corpo do artigo",
+              "objectFit": "cover"
+            },
+            "caption": "Imagem demonstrativa."
+          }
+        },
+        {
+          "id": "corpo",
+          "type": "RichText",
+          "version": 1,
+          "props": {
+            "content": [
+              {
+                "type": "heading",
+                "level": 2,
+                "text": "Uma seção do artigo"
+              },
+              {
+                "type": "paragraph",
+                "text": "Este bloco demonstra largura de leitura e ritmo entre texto e imagem."
+              }
+            ]
+          }
+        },
+        {
+          "id": "referencias",
+          "type": "EvidenceList",
+          "version": 1,
+          "props": {
+            "items": [],
+            "title": "Referências a cadastrar"
+          }
+        },
+        {
+          "id": "relacionados",
+          "type": "RelatedContent",
+          "version": 1,
+          "props": {
+            "items": []
+          }
+        },
+        {
+          "id": "comentarios",
+          "type": "DiscussionFeed",
+          "version": 1,
+          "props": {
+            "items": [],
+            "allowPosting": false
+          }
+        }
+      ]
+    },
+    {
+      "route": "/ferramentas",
+      "demo": true,
+      "blocks": [
+        {
+          "id": "titulo",
+          "type": "PageIntro",
+          "version": 1,
+          "props": {
+            "title": "Ferramentas.",
+            "description": "Recursos para colocar suas ideias em prática."
+          }
+        },
+        {
+          "id": "categorias",
+          "type": "CategoryRail",
+          "version": 1,
+          "props": {
+            "items": [
+              {
+                "label": "Templates",
+                "href": "/ferramentas?tipo=templates",
+                "media": {
+                  "src": "/placeholders/category-icon.svg",
+                  "width": 240,
+                  "height": 240,
+                  "alt": "Templates",
+                  "objectFit": "contain"
+                }
+              },
+              {
+                "label": "Prompts",
+                "href": "/ferramentas?tipo=prompts",
+                "media": {
+                  "src": "/placeholders/category-icon.svg",
+                  "width": 240,
+                  "height": 240,
+                  "alt": "Prompts",
+                  "objectFit": "contain"
+                }
+              },
+              {
+                "label": "Skills",
+                "href": "/ferramentas?tipo=skills",
+                "media": {
+                  "src": "/placeholders/category-icon.svg",
+                  "width": 240,
+                  "height": 240,
+                  "alt": "Skills",
+                  "objectFit": "contain"
+                }
+              },
+              {
+                "label": "Workflows",
+                "href": "/ferramentas?tipo=workflows",
+                "media": {
+                  "src": "/placeholders/category-icon.svg",
+                  "width": 240,
+                  "height": 240,
+                  "alt": "Workflows",
+                  "objectFit": "contain"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "novidades",
+          "type": "FeaturedCarousel",
+          "version": 1,
+          "props": {
+            "items": [
+              {
+                "title": "Seu próximo passo, organizado.",
+                "media": {
+                  "src": "/placeholders/feature-landscape.svg",
+                  "width": 1200,
+                  "height": 900,
+                  "alt": "Placeholder de destaque",
+                  "objectFit": "cover"
+                },
+                "href": "/ferramentas?tipo=templates"
+              }
+            ]
+          }
+        },
+        {
+          "id": "colecoes",
+          "type": "CollectionTabs",
+          "version": 1,
+          "props": {
+            "stateKey": "objetivo",
+            "items": [
+              {
+                "label": "Estudar",
+                "value": "estudar"
+              },
+              {
+                "label": "Trabalhar",
+                "value": "trabalhar"
+              },
+              {
+                "label": "Rotina",
+                "value": "rotina"
+              }
+            ]
+          }
+        },
+        {
+          "id": "filtros",
+          "type": "FilterBar",
+          "version": 1,
+          "props": {
+            "facets": [
+              "perfil",
+              "objetivo",
+              "tipo",
+              "tecnologia",
+              "disponibilidade"
+            ],
+            "searchEnabled": true
+          }
+        },
+        {
+          "id": "recursos",
+          "type": "ResourceGrid",
+          "version": 1,
+          "props": {
+            "items": [
+              {
+                "title": "Template de rotina — exemplo",
+                "href": "/ferramentas/template-rotina-exemplo",
+                "media": {
+                  "src": "/placeholders/resource-square.svg",
+                  "width": 1000,
+                  "height": 1000,
+                  "alt": "Placeholder do template",
+                  "objectFit": "contain"
+                },
+                "demo": true
+              }
+            ],
+            "variant": "mosaic"
+          }
+        },
+        {
+          "id": "beneficios",
+          "type": "BenefitsRow",
+          "version": 1,
+          "props": {
+            "items": [
+              {
+                "title": "Encontre por objetivo",
+                "body": "Use os filtros para explorar o catálogo."
+              }
+            ]
+          }
+        },
+        {
+          "id": "diretorio",
+          "type": "DirectoryLinks",
+          "version": 1,
+          "props": {
+            "groups": [
+              {
+                "title": "Explore também",
+                "links": [
+                  {
+                    "label": "Apps",
+                    "href": "/apps"
+                  },
+                  {
+                    "label": "Loja",
+                    "href": "/loja"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "route": "/ferramentas/template-rotina-exemplo",
+      "demo": true,
+      "blocks": [
+        {
+          "id": "titulo",
+          "type": "DetailHeader",
+          "version": 1,
+          "props": {
+            "title": "Template de rotina — exemplo",
+            "media": {
+              "src": "/placeholders/resource-square.svg",
+              "width": 1000,
+              "height": 1000,
+              "alt": "Placeholder de recurso",
+              "objectFit": "contain"
+            },
+            "actions": [
+              {
+                "label": "Download disponível após integração",
+                "disabled": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "preview",
+          "type": "MediaFigure",
+          "version": 1,
+          "props": {
+            "media": {
+              "src": "/placeholders/feature-landscape.svg",
+              "width": 1200,
+              "height": 900,
+              "alt": "Placeholder do preview",
+              "objectFit": "cover"
+            }
+          }
+        },
+        {
+          "id": "instrucoes",
+          "type": "RichText",
+          "version": 1,
+          "props": {
+            "content": [
+              {
+                "type": "paragraph",
+                "text": "Exemplo de detalhe de recurso; arquivo final ainda não cadastrado."
+              }
+            ]
+          }
+        },
+        {
+          "id": "relacionados",
+          "type": "RelatedContent",
+          "version": 1,
+          "props": {
+            "items": []
+          }
+        }
+      ]
+    }
+  ]
+}

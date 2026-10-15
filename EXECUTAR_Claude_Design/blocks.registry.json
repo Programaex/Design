@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "blockShape": {
+    "id": "string única na página; também id de âncora quando aplicável",
+    "type": "chave deste registry",
+    "version": 1,
+    "props": "objeto validado pelo contrato do tipo"
+  },
+  "commonMediaShape": {
+    "src": "caminho local",
+    "width": "integer > 0",
+    "height": "integer > 0",
+    "alt": "string",
+    "objectFit": "contain|cover"
+  },
+  "commonActionShape": {
+    "label": "string",
+    "href": "URL de destino real; ausente se desabilitado",
+    "disabled": "boolean opcional"
+  },
+  "blocks": {
+    "GlobalHeader": {
+      "version": 1,
+      "requiredProps": [
+        "navigation"
+      ],
+      "optionalProps": [
+        "logoHref",
+        "utilities"
+      ],
+      "behavior": "Shell global; fonte única de navegação."
+    },
+    "EcosystemMenu": {
+      "version": 1,
+      "requiredProps": [
+        "groups"
+      ],
+      "optionalProps": [
+        "utilities"
+      ],
+      "behavior": "Painel acessível com grupos expansíveis."
+    },
+    "GlobalFooter": {
+      "version": 1,
+      "requiredProps": [
+        "groups"
+      ],
+      "optionalProps": [
+        "legalLinks"
+      ],
+      "behavior": "Diretório compartilhado; sem inventar páginas legais."
+    },
+    "HeroCampaign": {
+      "version": 1,
+      "requiredProps": [
+        "title",
+        "media",
+        "actions"
+      ],
+      "optionalProps": [
+        "description",
+        "theme",
+        "headingLevel"
+      ],
+      "behavior": "Título curto; máximo duas ações; imagem dominante."
+    },
+    "FeatureSplit": {
+      "version": 1,
+      "requiredProps": [
+        "title",
+        "body",
+        "media"
+      ],
+      "optionalProps": [
+        "alignment",
+        "actions"
+      ],
+      "behavior": "Texto e mídia em duas colunas; uma no mobile."
+    },
+    "PromoGrid": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "columns"
+      ],
+      "behavior": "Mosaico institucional; 2 colunas desktop e 1 mobile."
+    },
+    "PageIntro": {
+      "version": 1,
+      "requiredProps": [
+        "title"
+      ],
+      "optionalProps": [
+        "description",
+        "actions"
+      ],
+      "behavior": "H1 de seção; descrição opcional."
+    },
+    "CategoryRail": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "activeValue"
+      ],
+      "behavior": "Categorias ilustradas com destino ou filtro."
+    },
+    "FeaturedCarousel": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "label"
+      ],
+      "behavior": "Destaques controláveis por teclado; sem autoplay."
+    },
+    "CollectionTabs": {
+      "version": 1,
+      "requiredProps": [
+        "items",
+        "stateKey"
+      ],
+      "optionalProps": [
+        "defaultValue"
+      ],
+      "behavior": "Seleção de coleção; atualiza URL quando stateKey for uma faceta."
+    },
+    "ResourceGrid": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "variant",
+        "pagination"
+      ],
+      "behavior": "Cards editoriais, de apps, recursos ou produtos; aceitar estado vazio."
+    },
+    "FilterBar": {
+      "version": 1,
+      "requiredProps": [
+        "facets"
+      ],
+      "optionalProps": [
+        "query",
+        "searchEnabled"
+      ],
+      "behavior": "Estado em query strings; valores validados."
+    },
+    "ArticleHeader": {
+      "version": 1,
+      "requiredProps": [
+        "title"
+      ],
+      "optionalProps": [
+        "publishedAt",
+        "authors",
+        "readingMinutes"
+      ],
+      "behavior": "H1, data e metadados discretos."
+    },
+    "RichText": {
+      "version": 1,
+      "requiredProps": [
+        "content"
+      ],
+      "optionalProps": [],
+      "behavior": "Documento estruturado sanitizado; sem scripts ou HTML arbitrário."
+    },
+    "MediaFigure": {
+      "version": 1,
+      "requiredProps": [
+        "media"
+      ],
+      "optionalProps": [
+        "caption"
+      ],
+      "behavior": "Imagem local com dimensões e alt; legenda opcional."
+    },
+    "EvidenceList": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "title"
+      ],
+      "behavior": "Fontes verificadas; vazio explícito nos mocks."
+    },
+    "RelatedContent": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "title",
+        "variant"
+      ],
+      "behavior": "Links de continuidade editorial ou recursos relacionados."
+    },
+    "MapExplorer": {
+      "version": 1,
+      "requiredProps": [
+        "nodes",
+        "edges",
+        "legend"
+      ],
+      "optionalProps": [
+        "initialSelection"
+      ],
+      "behavior": "Mapa interativo com lista equivalente acessível."
+    },
+    "FormSection": {
+      "version": 1,
+      "requiredProps": [
+        "formId",
+        "fields",
+        "submitLabel"
+      ],
+      "optionalProps": [
+        "endpoint"
+      ],
+      "behavior": "Validação; erros por campo; sucesso só após resposta real ou modo demo explícito."
+    },
+    "DiscussionFeed": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "allowPosting",
+        "mode"
+      ],
+      "behavior": "Lista de publicações ou comentários; moderação e autenticação ao escrever."
+    },
+    "BenefitsRow": {
+      "version": 1,
+      "requiredProps": [
+        "items"
+      ],
+      "optionalProps": [
+        "title"
+      ],
+      "behavior": "Benefícios informativos; sem promessas inventadas."
+    },
+    "DirectoryLinks": {
+      "version": 1,
+      "requiredProps": [
+        "groups"
+      ],
+      "optionalProps": [
+        "title"
+      ],
+      "behavior": "Links para destinos já existentes no manifesto."
+    },
+    "Newsletter": {
+      "version": 1,
+      "requiredProps": [
+        "title"
+      ],
+      "optionalProps": [
+        "description",
+        "endpoint"
+      ],
+      "behavior": "Inscrição com consentimento; reutilizar formulário."
+    },
+    "DetailHeader": {
+      "version": 1,
+      "requiredProps": [
+        "title",
+        "media"
+      ],
+      "optionalProps": [
+        "description",
+        "actions",
+        "price",
+        "currency"
+      ],
+      "behavior": "Cabeçalho de app, produto ou recurso; só mostrar preço informado."
+    },
+    "AccountPanel": {
+      "version": 1,
+      "requiredProps": [
+        "mode"
+      ],
+      "optionalProps": [
+        "user"
+      ],
+      "behavior": "Área pessoal; sessão exigida no ambiente integrado."
+    },
+    "AdminPanel": {
+      "version": 1,
+      "requiredProps": [
+        "entity"
+      ],
+      "optionalProps": [
+        "permissions"
+      ],
+      "behavior": "Operações de CMS autorizadas no servidor."
+    },
+    "SearchResults": {
+      "version": 1,
+      "requiredProps": [
+        "query",
+        "items"
+      ],
+      "optionalProps": [
+        "pagination"
+      ],
+      "behavior": "Resultados públicos; estado vazio e carregamento."
+    },
+    "AuthForm": {
+      "version": 1,
+      "requiredProps": [
+        "mode"
+      ],
+      "optionalProps": [
+        "returnTo"
+      ],
+      "behavior": "Autenticação real quando integrada; returnTo interno validado."
+    }
+  }
+}

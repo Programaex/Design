@@ -1,0 +1,2363 @@
+{
+  "schemaVersion": 1,
+  "status": "proposta",
+  "source": "EXECUTAR_rotas.csv",
+  "entryCount": 78,
+  "rules": [
+    "Página dinâmica só entra no sitemap após resolver um slug publicado.",
+    "Filtro e âncora não criam arquivos de página.",
+    "nextAppRouterFile é sugestão condicionada ao framework do projeto.",
+    "contentBlocks define receita; preencher props com dados do CMS ou mocks identificados.",
+    "Shell público envolve contentBlocks com GlobalHeader/EcosystemMenu/GlobalFooter; shell admin permanece restrito."
+  ],
+  "routes": [
+    {
+      "id": "inicio",
+      "parentId": null,
+      "title": "Início",
+      "url": "/",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "landing",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/page.tsx",
+      "resolvesTo": "/",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "logo",
+        "mobile_principal"
+      ],
+      "menuGroup": "Principal",
+      "order": 1,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "HeroCampaign",
+        "HeroCampaign",
+        "HeroCampaign",
+        "PromoGrid",
+        "RelatedContent",
+        "Newsletter"
+      ],
+      "instructions": "Logo leva a esta página. Ordem principal: logo; blog; riscos; mapa; apps; ferramentas. No celular usar logo; busca; hambúrguer."
+    },
+    {
+      "id": "blog",
+      "parentId": "inicio",
+      "title": "Blog",
+      "url": "/blog",
+      "entryType": "pagina",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/blog/page.tsx",
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "principal",
+        "hamburguer",
+        "mobile_principal"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 2,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "FilterBar",
+        "RelatedContent",
+        "ResourceGrid",
+        "Newsletter"
+      ],
+      "instructions": "Unificar artigos e demais formatos neste catálogo."
+    },
+    {
+      "id": "riscos",
+      "parentId": "inicio",
+      "title": "Riscos cognitivos",
+      "url": "/riscos-cognitivos",
+      "entryType": "pagina",
+      "family": "editorial",
+      "template": "catalogo_riscos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/riscos-cognitivos/page.tsx",
+      "resolvesTo": "/riscos-cognitivos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "principal",
+        "hamburguer",
+        "mobile_principal"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 3,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "ResourceGrid",
+        "EvidenceList"
+      ],
+      "instructions": "Conteúdo educativo com fontes. Não apresentar classificação como diagnóstico."
+    },
+    {
+      "id": "mapa",
+      "parentId": "inicio",
+      "title": "Mapa cognitivo",
+      "url": "/mapa-cognitivo",
+      "entryType": "pagina",
+      "family": "funcional_mapa",
+      "template": "mapa_interativo",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/mapa-cognitivo/page.tsx",
+      "resolvesTo": "/mapa-cognitivo",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "principal",
+        "hamburguer",
+        "mobile_principal"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 4,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "MapExplorer",
+        "EvidenceList",
+        "RelatedContent"
+      ],
+      "instructions": "Entrada principal para o mapa cognitivo."
+    },
+    {
+      "id": "apps",
+      "parentId": "inicio",
+      "title": "Apps",
+      "url": "/apps",
+      "entryType": "pagina",
+      "family": "showroom",
+      "template": "catalogo_apps",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/apps/page.tsx",
+      "resolvesTo": "/apps",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "principal",
+        "hamburguer",
+        "mobile_principal"
+      ],
+      "menuGroup": "Apps",
+      "order": 5,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "CategoryRail",
+        "FeaturedCarousel",
+        "CollectionTabs",
+        "FilterBar",
+        "ResourceGrid",
+        "BenefitsRow",
+        "DirectoryLinks"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "ferramentas",
+      "parentId": "inicio",
+      "title": "Ferramentas",
+      "url": "/ferramentas",
+      "entryType": "pagina",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/ferramentas/page.tsx",
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "principal",
+        "hamburguer",
+        "mobile_principal"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 6,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "CategoryRail",
+        "FeaturedCarousel",
+        "CollectionTabs",
+        "FilterBar",
+        "ResourceGrid",
+        "BenefitsRow",
+        "DirectoryLinks"
+      ],
+      "instructions": "Recursos gratuitos e pagos; compra direciona ao produto correspondente na loja. Filtros: perfil=tdah|dislexia|autismo|altas-habilidades|neurodivergencia; objetivo=estudar|trabalhar|rotina|projetos|processos; tecnologia=ia|agentes|skills|prompts|workflows|apps; disponibilidade=gratuito|pago. Aplicar também nos demais catálogos compatíveis."
+    },
+    {
+      "id": "sobre",
+      "parentId": "inicio",
+      "title": "Sobre o EXECUTAR",
+      "url": "/sobre",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "institucional",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/sobre/page.tsx",
+      "resolvesTo": "/sobre",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Conheça o EXECUTAR",
+      "order": 7,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "autor",
+      "parentId": "sobre",
+      "title": "Autor e minha história",
+      "url": "/sobre/autor",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "institucional",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/sobre/autor/page.tsx",
+      "resolvesTo": "/sobre/autor",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Conheça o EXECUTAR",
+      "order": 8,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "metodologia",
+      "parentId": "sobre",
+      "title": "Metodologia e ciência",
+      "url": "/sobre/metodologia",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "institucional",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/sobre/metodologia/page.tsx",
+      "resolvesTo": "/sobre/metodologia",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Conheça o EXECUTAR",
+      "order": 9,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "editorial",
+      "parentId": "sobre",
+      "title": "Princípios editoriais e curadoria",
+      "url": "/sobre/editorial",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "institucional",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/sobre/editorial/page.tsx",
+      "resolvesTo": "/sobre/editorial",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Conheça o EXECUTAR",
+      "order": 10,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "parceiros",
+      "parentId": "sobre",
+      "title": "Parceiros",
+      "url": "/sobre/parceiros",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "institucional",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/sobre/parceiros/page.tsx",
+      "resolvesTo": "/sobre/parceiros",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Conheça o EXECUTAR",
+      "order": 11,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "blog_artigo",
+      "parentId": "blog",
+      "title": "Artigos",
+      "url": "/blog?formato=artigo",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "artigo"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 12,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_guia",
+      "parentId": "blog",
+      "title": "Guias",
+      "url": "/blog?formato=guia",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "guia"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 13,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_tutorial",
+      "parentId": "blog",
+      "title": "Tutoriais",
+      "url": "/blog?formato=tutorial",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "tutorial"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 14,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_video",
+      "parentId": "blog",
+      "title": "Vídeos",
+      "url": "/blog?formato=video",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "video"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 15,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_noticia",
+      "parentId": "blog",
+      "title": "Notícias sobre neurodivergência",
+      "url": "/blog?formato=noticia",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "noticia"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 16,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_framework",
+      "parentId": "blog",
+      "title": "Frameworks rápidos",
+      "url": "/blog?formato=framework",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "framework"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 17,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_evidencia",
+      "parentId": "blog",
+      "title": "Evidências científicas",
+      "url": "/blog?formato=evidencia",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "evidencia"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 18,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "blog_curadoria",
+      "parentId": "blog",
+      "title": "Curadoria editorial",
+      "url": "/blog?formato=curadoria",
+      "entryType": "filtro",
+      "family": "editorial",
+      "template": "catalogo_conteudos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog",
+      "anchorId": null,
+      "query": {
+        "formato": "curadoria"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 19,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Usar a página /blog com query string; não criar outro arquivo de página. Canonical /blog."
+    },
+    {
+      "id": "conteudo",
+      "parentId": "blog",
+      "title": "Detalhe do conteúdo",
+      "url": "/blog/[slug]",
+      "entryType": "dinamica",
+      "family": "editorial",
+      "template": "conteudo",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/blog/[slug]/page.tsx",
+      "resolvesTo": "/blog/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 20,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "ArticleHeader",
+        "MediaFigure",
+        "RichText",
+        "MediaFigure",
+        "RichText",
+        "EvidenceList",
+        "RelatedContent",
+        "DiscussionFeed"
+      ],
+      "instructions": "Resolver slug publicado no CMS; retornar 404 para inexistente. Renderizar conforme formato.",
+      "requiredAnchors": [
+        "referencias",
+        "comentarios"
+      ]
+    },
+    {
+      "id": "conteudo_refs",
+      "parentId": "conteudo",
+      "title": "Referências científicas",
+      "url": "/blog/[slug]#referencias",
+      "entryType": "ancora",
+      "family": "editorial",
+      "template": "conteudo",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog/[slug]",
+      "anchorId": "referencias",
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 21,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Seção do conteúdo; não criar página."
+    },
+    {
+      "id": "conteudo_comentarios",
+      "parentId": "conteudo",
+      "title": "Comentários",
+      "url": "/blog/[slug]#comentarios",
+      "entryType": "ancora",
+      "family": "editorial",
+      "template": "conteudo",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/blog/[slug]",
+      "anchorId": "comentarios",
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Conteúdos",
+      "order": 22,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Leitura pública; envio exige conta e moderação."
+    },
+    {
+      "id": "risco_detalhe",
+      "parentId": "riscos",
+      "title": "Detalhe do risco cognitivo",
+      "url": "/riscos-cognitivos/[slug]",
+      "entryType": "dinamica",
+      "family": "editorial",
+      "template": "risco",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/riscos-cognitivos/[slug]/page.tsx",
+      "resolvesTo": "/riscos-cognitivos/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 23,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "ArticleHeader",
+        "RichText",
+        "EvidenceList",
+        "RelatedContent"
+      ],
+      "instructions": "Resolver slug no CMS; 404 para inexistente."
+    },
+    {
+      "id": "mapas",
+      "parentId": "mapa",
+      "title": "Todos os mapas",
+      "url": "/mapas",
+      "entryType": "pagina",
+      "family": "showroom",
+      "template": "catalogo_mapas",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/mapas/page.tsx",
+      "resolvesTo": "/mapas",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 24,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FilterBar",
+        "ResourceGrid"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "mapa_neuro",
+      "parentId": "mapas",
+      "title": "Mapa de neurodivergência",
+      "url": "/mapas/neurodivergencia",
+      "entryType": "pagina",
+      "family": "funcional_mapa",
+      "template": "mapa_interativo",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/mapas/neurodivergencia/page.tsx",
+      "resolvesTo": "/mapas/neurodivergencia",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 25,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "MapExplorer",
+        "EvidenceList",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "mapa_projetos",
+      "parentId": "mapas",
+      "title": "Mapa de projetos e processos",
+      "url": "/mapas/projetos-e-processos",
+      "entryType": "pagina",
+      "family": "funcional_mapa",
+      "template": "mapa_interativo",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/mapas/projetos-e-processos/page.tsx",
+      "resolvesTo": "/mapas/projetos-e-processos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 26,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "MapExplorer",
+        "EvidenceList",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "mapa_detalhe",
+      "parentId": "mapas",
+      "title": "Detalhe de outro mapa",
+      "url": "/mapas/[slug]",
+      "entryType": "dinamica",
+      "family": "funcional_mapa",
+      "template": "mapa_interativo",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/mapas/[slug]/page.tsx",
+      "resolvesTo": "/mapas/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Cognição e mapas",
+      "order": 27,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "MapExplorer",
+        "EvidenceList",
+        "RelatedContent"
+      ],
+      "instructions": "Reservar neurodivergencia e projetos-e-processos para as rotas explícitas. Slugs inexistentes retornam 404."
+    },
+    {
+      "id": "executar_app",
+      "parentId": "apps",
+      "title": "Executar App",
+      "url": "/apps/executar",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "produto_app",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/apps/executar/page.tsx",
+      "resolvesTo": "/apps/executar",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Apps",
+      "order": 28,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "DetailHeader",
+        "FeatureSplit",
+        "RichText",
+        "BenefitsRow",
+        "RelatedContent"
+      ],
+      "instructions": "Substitui o nome Programa Executar.",
+      "requiredAnchors": [
+        "funcionalidades",
+        "como-funciona",
+        "acesse"
+      ]
+    },
+    {
+      "id": "app_funcoes",
+      "parentId": "executar_app",
+      "title": "Funcionalidades",
+      "url": "/apps/executar#funcionalidades",
+      "entryType": "ancora",
+      "family": "institucional",
+      "template": "produto_app",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/apps/executar",
+      "anchorId": "funcionalidades",
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Apps",
+      "order": 29,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Seção da página do Executar App."
+    },
+    {
+      "id": "app_como",
+      "parentId": "executar_app",
+      "title": "Como funciona",
+      "url": "/apps/executar#como-funciona",
+      "entryType": "ancora",
+      "family": "institucional",
+      "template": "produto_app",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/apps/executar",
+      "anchorId": "como-funciona",
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Apps",
+      "order": 30,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Seção da página do Executar App."
+    },
+    {
+      "id": "app_acessar",
+      "parentId": "executar_app",
+      "title": "Acessar Executar App",
+      "url": "/apps/executar#acesse",
+      "entryType": "ancora",
+      "family": "institucional",
+      "template": "produto_app",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/apps/executar",
+      "anchorId": "acesse",
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "cta"
+      ],
+      "menuGroup": "Apps",
+      "order": 31,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Seção com CTA; configurar URL real do aplicativo antes de ativar acesso. Não inventar destino externo."
+    },
+    {
+      "id": "app_detalhe",
+      "parentId": "apps",
+      "title": "Detalhe de outro app",
+      "url": "/apps/[slug]",
+      "entryType": "dinamica",
+      "family": "institucional",
+      "template": "produto_app",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/apps/[slug]/page.tsx",
+      "resolvesTo": "/apps/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Apps",
+      "order": 32,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "DetailHeader",
+        "FeatureSplit",
+        "RichText",
+        "BenefitsRow",
+        "RelatedContent"
+      ],
+      "instructions": "Reservar executar para rota explícita; 404 para slug inexistente."
+    },
+    {
+      "id": "recurso_ia-agentes",
+      "parentId": "ferramentas",
+      "title": "IA e agentes",
+      "url": "/ferramentas?tipo=ia-agentes",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "ia-agentes"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 33,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_skills",
+      "parentId": "ferramentas",
+      "title": "Skills",
+      "url": "/ferramentas?tipo=skills",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "skills"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 34,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_prompts",
+      "parentId": "ferramentas",
+      "title": "Prompts",
+      "url": "/ferramentas?tipo=prompts",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "prompts"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 35,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_photoprompts",
+      "parentId": "ferramentas",
+      "title": "Photoprompts",
+      "url": "/ferramentas?tipo=photoprompts",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "photoprompts"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 36,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_workflows",
+      "parentId": "ferramentas",
+      "title": "Workflows",
+      "url": "/ferramentas?tipo=workflows",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "workflows"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 37,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_templates",
+      "parentId": "ferramentas",
+      "title": "Templates",
+      "url": "/ferramentas?tipo=templates",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "templates"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 38,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_assets",
+      "parentId": "ferramentas",
+      "title": "Assets",
+      "url": "/ferramentas?tipo=assets",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "assets"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 39,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_ebooks",
+      "parentId": "ferramentas",
+      "title": "E-books",
+      "url": "/ferramentas?tipo=ebooks",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_recursos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/ferramentas",
+      "anchorId": null,
+      "query": {
+        "tipo": "ebooks"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 40,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo existente; canonical /ferramentas."
+    },
+    {
+      "id": "recurso_detalhe",
+      "parentId": "ferramentas",
+      "title": "Detalhe do recurso",
+      "url": "/ferramentas/[slug]",
+      "entryType": "dinamica",
+      "family": "showroom",
+      "template": "recurso",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/ferramentas/[slug]/page.tsx",
+      "resolvesTo": "/ferramentas/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Ferramentas e recursos",
+      "order": 41,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "DetailHeader",
+        "MediaFigure",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": "Resolver slug no CMS; controlar permissão de download de recursos pagos."
+    },
+    {
+      "id": "loja",
+      "parentId": "inicio",
+      "title": "Loja e marketplace",
+      "url": "/loja",
+      "entryType": "pagina",
+      "family": "showroom",
+      "template": "catalogo_produtos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/loja/page.tsx",
+      "resolvesTo": "/loja",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 42,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "CategoryRail",
+        "FeaturedCarousel",
+        "CollectionTabs",
+        "FilterBar",
+        "ResourceGrid",
+        "BenefitsRow",
+        "DirectoryLinks"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "loja_digitais",
+      "parentId": "loja",
+      "title": "Produtos digitais",
+      "url": "/loja?categoria=digitais",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_produtos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/loja",
+      "anchorId": null,
+      "query": {
+        "categoria": "digitais"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 43,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo; canonical /loja. Identificar links de afiliados."
+    },
+    {
+      "id": "loja_fisicos",
+      "parentId": "loja",
+      "title": "Produtos físicos",
+      "url": "/loja?categoria=fisicos",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_produtos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/loja",
+      "anchorId": null,
+      "query": {
+        "categoria": "fisicos"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 44,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo; canonical /loja. Identificar links de afiliados."
+    },
+    {
+      "id": "loja_livros",
+      "parentId": "loja",
+      "title": "Livros recomendados",
+      "url": "/loja?categoria=livros",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_produtos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/loja",
+      "anchorId": null,
+      "query": {
+        "categoria": "livros"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 45,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo; canonical /loja. Identificar links de afiliados."
+    },
+    {
+      "id": "loja_cursos",
+      "parentId": "loja",
+      "title": "Cursos",
+      "url": "/loja?categoria=cursos",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_produtos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/loja",
+      "anchorId": null,
+      "query": {
+        "categoria": "cursos"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 46,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo; canonical /loja. Identificar links de afiliados."
+    },
+    {
+      "id": "loja_afiliados",
+      "parentId": "loja",
+      "title": "Parceiros e afiliados",
+      "url": "/loja?categoria=afiliados",
+      "entryType": "filtro",
+      "family": "showroom",
+      "template": "catalogo_produtos",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/loja",
+      "anchorId": null,
+      "query": {
+        "categoria": "afiliados"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 47,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [],
+      "instructions": "Filtrar catálogo; canonical /loja. Identificar links de afiliados."
+    },
+    {
+      "id": "produto",
+      "parentId": "loja",
+      "title": "Detalhe do produto",
+      "url": "/loja/[slug]",
+      "entryType": "dinamica",
+      "family": "showroom",
+      "template": "produto",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/loja/[slug]/page.tsx",
+      "resolvesTo": "/loja/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Loja e marketplace",
+      "order": 48,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "DetailHeader",
+        "MediaFigure",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": "Configurar checkout ou destino afiliado real; não inventar integração de pagamento."
+    },
+    {
+      "id": "comunidade",
+      "parentId": "inicio",
+      "title": "Comunidade",
+      "url": "/comunidade",
+      "entryType": "pagina",
+      "family": "funcional_comunidade",
+      "template": "comunidade",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/comunidade/page.tsx",
+      "resolvesTo": "/comunidade",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Comunidade",
+      "order": 49,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "FilterBar",
+        "DiscussionFeed"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "comunidade_discussoes",
+      "parentId": "comunidade",
+      "title": "Discussões",
+      "url": "/comunidade?tipo=discussoes",
+      "entryType": "filtro",
+      "family": "funcional_comunidade",
+      "template": "comunidade",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/comunidade",
+      "anchorId": null,
+      "query": {
+        "tipo": "discussoes"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Comunidade",
+      "order": 50,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [],
+      "instructions": "Filtrar comunidade; canonical /comunidade. Leitura pública; participação exige conta e moderação."
+    },
+    {
+      "id": "comunidade_perguntas",
+      "parentId": "comunidade",
+      "title": "Perguntas e respostas",
+      "url": "/comunidade?tipo=perguntas",
+      "entryType": "filtro",
+      "family": "funcional_comunidade",
+      "template": "comunidade",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/comunidade",
+      "anchorId": null,
+      "query": {
+        "tipo": "perguntas"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Comunidade",
+      "order": 51,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [],
+      "instructions": "Filtrar comunidade; canonical /comunidade. Leitura pública; participação exige conta e moderação."
+    },
+    {
+      "id": "comunidade_compartilhamentos",
+      "parentId": "comunidade",
+      "title": "Compartilhamentos",
+      "url": "/comunidade?tipo=compartilhamentos",
+      "entryType": "filtro",
+      "family": "funcional_comunidade",
+      "template": "comunidade",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/comunidade",
+      "anchorId": null,
+      "query": {
+        "tipo": "compartilhamentos"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Comunidade",
+      "order": 52,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [],
+      "instructions": "Filtrar comunidade; canonical /comunidade. Leitura pública; participação exige conta e moderação."
+    },
+    {
+      "id": "comunidade_sugestoes",
+      "parentId": "comunidade",
+      "title": "Sugestões e ideias",
+      "url": "/comunidade?tipo=sugestoes",
+      "entryType": "filtro",
+      "family": "funcional_comunidade",
+      "template": "comunidade",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/comunidade",
+      "anchorId": null,
+      "query": {
+        "tipo": "sugestoes"
+      },
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Comunidade",
+      "order": 53,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [],
+      "instructions": "Filtrar comunidade; canonical /comunidade. Leitura pública; participação exige conta e moderação."
+    },
+    {
+      "id": "topico",
+      "parentId": "comunidade",
+      "title": "Tópico da comunidade",
+      "url": "/comunidade/topicos/[slug]",
+      "entryType": "dinamica",
+      "family": "funcional_comunidade",
+      "template": "topico",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/comunidade/topicos/[slug]/page.tsx",
+      "resolvesTo": "/comunidade/topicos/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Comunidade",
+      "order": 54,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "ArticleHeader",
+        "RichText",
+        "DiscussionFeed",
+        "FormSection"
+      ],
+      "instructions": "Leitura pública; publicar e responder exige conta."
+    },
+    {
+      "id": "studio",
+      "parentId": "inicio",
+      "title": "Consultoria e Studio",
+      "url": "/studio",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "servicos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/studio/page.tsx",
+      "resolvesTo": "/studio",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Consultoria e Studio",
+      "order": 55,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "PromoGrid",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "consultoria",
+      "parentId": "studio",
+      "title": "Consultoria",
+      "url": "/studio/consultoria",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "servico",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/studio/consultoria/page.tsx",
+      "resolvesTo": "/studio/consultoria",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Consultoria e Studio",
+      "order": 56,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "HeroCampaign",
+        "FeatureSplit",
+        "BenefitsRow",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "studio_servicos",
+      "parentId": "studio",
+      "title": "Studio",
+      "url": "/studio/servicos",
+      "entryType": "pagina",
+      "family": "institucional",
+      "template": "servicos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/studio/servicos/page.tsx",
+      "resolvesTo": "/studio/servicos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Consultoria e Studio",
+      "order": 57,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-01"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "FeatureSplit",
+        "PromoGrid",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "cases",
+      "parentId": "studio",
+      "title": "Projetos e casos",
+      "url": "/studio/projetos",
+      "entryType": "pagina",
+      "family": "showroom",
+      "template": "catalogo_projetos",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/studio/projetos/page.tsx",
+      "resolvesTo": "/studio/projetos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Consultoria e Studio",
+      "order": 58,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-03"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "PageIntro",
+        "ResourceGrid"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "case",
+      "parentId": "cases",
+      "title": "Detalhe do projeto",
+      "url": "/studio/projetos/[slug]",
+      "entryType": "dinamica",
+      "family": "editorial",
+      "template": "case",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/studio/projetos/[slug]/page.tsx",
+      "resolvesTo": "/studio/projetos/[slug]",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Consultoria e Studio",
+      "order": 59,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [
+        "REF-02"
+      ],
+      "referenceRelation": "familia_visual",
+      "contentBlocks": [
+        "ArticleHeader",
+        "MediaFigure",
+        "RichText",
+        "RelatedContent"
+      ],
+      "instructions": ""
+    },
+    {
+      "id": "briefing",
+      "parentId": "studio",
+      "title": "Contato e briefing",
+      "url": "/studio/briefing",
+      "entryType": "pagina",
+      "family": "funcional_formulario",
+      "template": "formulario",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/studio/briefing/page.tsx",
+      "resolvesTo": "/studio/briefing",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer"
+      ],
+      "menuGroup": "Consultoria e Studio",
+      "order": 60,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "FormSection"
+      ],
+      "instructions": "Validar formulário e configurar destino no CMS."
+    },
+    {
+      "id": "busca",
+      "parentId": "inicio",
+      "title": "Busca",
+      "url": "/busca",
+      "entryType": "pagina",
+      "family": "funcional_busca",
+      "template": "busca_global",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/busca/page.tsx",
+      "resolvesTo": "/busca",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "utilitario",
+        "hamburguer"
+      ],
+      "menuGroup": "Utilidades",
+      "order": 61,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "FilterBar",
+        "SearchResults"
+      ],
+      "instructions": "Usar ?q=termo; pesquisar conteúdos públicos; não indexar resultados."
+    },
+    {
+      "id": "conta",
+      "parentId": "inicio",
+      "title": "Minha conta",
+      "url": "/minha-conta",
+      "entryType": "pagina",
+      "family": "funcional_conta",
+      "template": "conta",
+      "createPage": true,
+      "nextAppRouterFile": "app/(account)/minha-conta/page.tsx",
+      "resolvesTo": "/minha-conta",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "utilitario",
+        "hamburguer"
+      ],
+      "menuGroup": "Utilidades",
+      "order": 62,
+      "access": "autenticado",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AccountPanel"
+      ],
+      "instructions": "Exigir sessão no servidor."
+    },
+    {
+      "id": "login",
+      "parentId": "conta",
+      "title": "Entrar",
+      "url": "/entrar",
+      "entryType": "pagina",
+      "family": "funcional_conta",
+      "template": "autenticacao",
+      "createPage": true,
+      "nextAppRouterFile": "app/(account)/entrar/page.tsx",
+      "resolvesTo": "/entrar",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "interna"
+      ],
+      "menuGroup": "Utilidades",
+      "order": 63,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AuthForm"
+      ],
+      "instructions": "Restringir returnTo a rotas internas válidas."
+    },
+    {
+      "id": "newsletter",
+      "parentId": "inicio",
+      "title": "Newsletter",
+      "url": "/newsletter",
+      "entryType": "pagina",
+      "family": "funcional_formulario",
+      "template": "formulario",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/newsletter/page.tsx",
+      "resolvesTo": "/newsletter",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Utilidades",
+      "order": 64,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "FormSection"
+      ],
+      "instructions": "Permitir inscrição também na home."
+    },
+    {
+      "id": "contato",
+      "parentId": "inicio",
+      "title": "Contato",
+      "url": "/contato",
+      "entryType": "pagina",
+      "family": "funcional_formulario",
+      "template": "formulario",
+      "createPage": true,
+      "nextAppRouterFile": "app/(public)/contato/page.tsx",
+      "resolvesTo": "/contato",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Utilidades",
+      "order": 65,
+      "access": "publico",
+      "indexable": true,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "FormSection"
+      ],
+      "instructions": "",
+      "requiredAnchors": [
+        "redes-sociais"
+      ]
+    },
+    {
+      "id": "redes",
+      "parentId": "contato",
+      "title": "Redes sociais",
+      "url": "/contato#redes-sociais",
+      "entryType": "ancora",
+      "family": "funcional_formulario",
+      "template": "formulario",
+      "createPage": false,
+      "nextAppRouterFile": null,
+      "resolvesTo": "/contato",
+      "anchorId": "redes-sociais",
+      "query": {},
+      "navigation": [
+        "hamburguer",
+        "rodape"
+      ],
+      "menuGroup": "Utilidades",
+      "order": 66,
+      "access": "publico",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [],
+      "instructions": "Cadastrar destinos reais no CMS; não criar páginas locais para cada rede."
+    },
+    {
+      "id": "admin",
+      "parentId": "inicio",
+      "title": "Administração",
+      "url": "/admin",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/page.tsx",
+      "resolvesTo": "/admin",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 67,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Exigir sessão e papel administrador no servidor. Nunca exibir em navegação pública."
+    },
+    {
+      "id": "admin_paginas",
+      "parentId": "admin",
+      "title": "Páginas e textos",
+      "url": "/admin/paginas",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/paginas/page.tsx",
+      "resolvesTo": "/admin/paginas",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 68,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_conteudos",
+      "parentId": "admin",
+      "title": "Conteúdos e referências",
+      "url": "/admin/conteudos",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/conteudos/page.tsx",
+      "resolvesTo": "/admin/conteudos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 69,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_mapas",
+      "parentId": "admin",
+      "title": "Mapas",
+      "url": "/admin/mapas",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/mapas/page.tsx",
+      "resolvesTo": "/admin/mapas",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 70,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_apps",
+      "parentId": "admin",
+      "title": "Apps",
+      "url": "/admin/apps",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/apps/page.tsx",
+      "resolvesTo": "/admin/apps",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 71,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_recursos",
+      "parentId": "admin",
+      "title": "Ferramentas e recursos",
+      "url": "/admin/recursos",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/recursos/page.tsx",
+      "resolvesTo": "/admin/recursos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 72,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_produtos",
+      "parentId": "admin",
+      "title": "Produtos e afiliados",
+      "url": "/admin/produtos",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/produtos/page.tsx",
+      "resolvesTo": "/admin/produtos",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 73,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_taxonomias",
+      "parentId": "admin",
+      "title": "Categorias e filtros",
+      "url": "/admin/taxonomias",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/taxonomias/page.tsx",
+      "resolvesTo": "/admin/taxonomias",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 74,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_moderacao",
+      "parentId": "admin",
+      "title": "Comentários e comunidade",
+      "url": "/admin/moderacao",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/moderacao/page.tsx",
+      "resolvesTo": "/admin/moderacao",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 75,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_formularios",
+      "parentId": "admin",
+      "title": "Formulários e inscrições",
+      "url": "/admin/formularios",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/formularios/page.tsx",
+      "resolvesTo": "/admin/formularios",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 76,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_integracoes",
+      "parentId": "admin",
+      "title": "Integrações e webhooks",
+      "url": "/admin/integracoes",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/integracoes/page.tsx",
+      "resolvesTo": "/admin/integracoes",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 77,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    },
+    {
+      "id": "admin_parceiros",
+      "parentId": "admin",
+      "title": "Parceiros e redes sociais",
+      "url": "/admin/parceiros",
+      "entryType": "pagina",
+      "family": "funcional_admin",
+      "template": "admin_crud",
+      "createPage": true,
+      "nextAppRouterFile": "app/(admin)/admin/parceiros/page.tsx",
+      "resolvesTo": "/admin/parceiros",
+      "anchorId": null,
+      "query": {},
+      "navigation": [
+        "admin"
+      ],
+      "menuGroup": "Administração",
+      "order": 78,
+      "access": "administrador",
+      "indexable": false,
+      "referenceIds": [],
+      "referenceRelation": "adaptacao_proposta",
+      "contentBlocks": [
+        "PageIntro",
+        "AdminPanel"
+      ],
+      "instructions": "Proteger leitura e escrita no servidor por papel. Segredos de integrações apenas no servidor."
+    }
+  ]
+}

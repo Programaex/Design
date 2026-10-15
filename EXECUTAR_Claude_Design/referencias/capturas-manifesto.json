@@ -1,0 +1,57 @@
+{
+  "captures": [
+    {
+      "file": "01_institucional_apple_full.png",
+      "url": "https://www.apple.com/br/",
+      "captureDate": "2026-10-15",
+      "width": 1348,
+      "height": 5203,
+      "format": "PNG",
+      "sourceFormat": "JPEG",
+      "method": "fullPage",
+      "viewportCSS": {
+        "width": 1363,
+        "height": 936
+      },
+      "state": "desktop; default tab/collection; images loaded by scrolling",
+      "sha256": "7ecee76c609878e1e4a4ad715ada5aa56e89437e36ccc7afa28f8742f058dfc2"
+    },
+    {
+      "file": "02_artigo_apple_developer_full.png",
+      "url": "https://developer.apple.com/news/?id=to37r18t",
+      "captureDate": "2026-10-15",
+      "width": 1348,
+      "height": 7772,
+      "format": "PNG",
+      "sourceFormat": "JPEG",
+      "method": "composição de 11 capturas com sobreposição",
+      "viewportCSS": {
+        "width": 1363,
+        "height": 936
+      },
+      "state": "desktop; default tab/collection; images loaded by scrolling",
+      "sha256": "552124e27e18b56d595eba9ff4b9d97e76af4596bc8f0a7eb37916b05154437b"
+    },
+    {
+      "file": "03_showroom_acessorios_full.png",
+      "url": "https://www.apple.com/br/shop/accessories/all",
+      "captureDate": "2026-10-15",
+      "width": 1348,
+      "height": 5898,
+      "format": "PNG",
+      "sourceFormat": "JPEG",
+      "method": "fullPage",
+      "viewportCSS": {
+        "width": 1363,
+        "height": 936
+      },
+      "state": "desktop; default tab/collection; images loaded by scrolling",
+      "sha256": "17da9b697e00025a1affed646049f86b40e4995a75be9ccb95eb19156b62119c"
+    }
+  ],
+  "notes": [
+    "Captura do artigo escalada pelo navegador; alinhamento das sobreposições conferido por comparação de pixels.",
+    "As imagens representam estado público observado, não layouts do EXECUTAR.",
+    "Full-page vertical não expande slides ocultos, abas ou menus."
+  ]
+}

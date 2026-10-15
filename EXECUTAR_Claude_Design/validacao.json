@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "routeEntries": 78,
+  "pageDefinitions": 47,
+  "navigationOnlyEntries": 31,
+  "blocks": 28,
+  "placeholderFiles": 6,
+  "screenshots": 3,
+  "checks": [
+    "unique IDs",
+    "all route targets resolve",
+    "all recipe blocks registered",
+    "example required props",
+    "local image paths exist",
+    "PNG signatures readable",
+    "article overlaps aligned"
+  ],
+  "scope": "Especificação e integridade de arquivos; aplicação não implementada nem testada."
+}
