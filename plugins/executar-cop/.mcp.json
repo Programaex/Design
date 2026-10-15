@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"executar": {
+			"type": "http",
+			"url": "${EXECUTAR_URL:-https://workflows-starter-template.hub-executar.workers.dev}/mcp"
+		}
+	}
+}
