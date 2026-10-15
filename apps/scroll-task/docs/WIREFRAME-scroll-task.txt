@@ -1,0 +1,30 @@
+EXECUTAR — SCROLL TASK
+
+┌────────────────────────────────────────────┐
+│ [•••]  Projeto X               5 pendentes │  <- barra fixa
+│        [15] [30] [45]  Timer/Select         │
+├────────────────────────────────────────────┤
+│                                            │
+│               espaço leve                  │  ~33%
+│                                            │
+│            ─────────────────               │
+│            1  AÇÃO X                       │
+│            ─────────────────               │
+│                                            │  ~33% foco
+│                                            │
+│               espaço leve                  │  ~33%
+│                                            │
+└────────────────────────────────────────────┘
+
+SCROLL ↓
+A estrutura visual permanece quase imóvel; apenas a unidade central muda:
+
+[1 AÇÃO X] → [2 AÇÃO Y] → [3 AÇÃO Z]
+
+INTERAÇÕES
+- Select/Timer: define previsão de execução.
+- •••: escopo = ação | tarefa | fase | workflow.
+- Scroll deliberado: próxima/anterior unidade.
+- Auto-scroll: avança ao encerrar timer.
+- Duplo toque na unidade: expande contexto/notas/status.
+- Unidade ativa: 3–4 palavras preferencialmente, verbo + objeto.

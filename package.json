@@ -1,0 +1,29 @@
+{
+  "name": "executar-workflow-turborepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.9.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "deploy": "npm run deploy --workspace apps/workflow",
+    "deploy:inline": "npm run deploy:inline --workspace apps/workflow",
+    "bootstrap": "npm run bootstrap --workspace apps/workflow",
+    "doctor": "npm run doctor --workspace apps/workflow",
+    "cf-typegen": "npm run cf-typegen --workspace apps/workflow",
+    "agent:token": "npm run agent:token --workspace apps/workflow"
+  },
+  "devDependencies": {
+    "turbo": "2.11.8"
+  }
+}

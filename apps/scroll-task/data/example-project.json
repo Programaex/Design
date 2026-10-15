@@ -1,0 +1,32 @@
+{
+  "project": {
+    "id": "PRJ-EXEC-001",
+    "name": "Projeto X",
+    "cycle": "Ciclo atual"
+  },
+  "execution": {
+    "granularity": "action",
+    "defaultDurationMinutes": 30,
+    "autoScroll": false
+  },
+  "items": [
+    {
+      "id": "ACT-001",
+      "type": "action",
+      "title": "Abrir documento",
+      "context": "Abra o documento principal do projeto e valide a última versão.",
+      "estimateMinutes": 30,
+      "status": "ready",
+      "notes": ""
+    },
+    {
+      "id": "ACT-002",
+      "type": "action",
+      "title": "Revisar escopo",
+      "context": "Compare o escopo atual com os entregáveis previstos.",
+      "estimateMinutes": 30,
+      "status": "ready",
+      "notes": ""
+    }
+  ]
+}

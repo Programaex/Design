@@ -1,0 +1,45 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "globalDependencies": [
+    ".claude/**",
+    "plugins/**"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "worker/generated/**",
+        "admin/data/ai-registry.generated.json",
+        ".wrangler/deploy/**"
+      ],
+      "env": [
+        "VITE_*"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!worker/generated/**",
+        "!admin/data/ai-registry.generated.json"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": []
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "cache": false,
+      "outputs": []
+    }
+  }
+}
