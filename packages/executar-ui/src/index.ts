@@ -9,3 +9,4 @@ export { MapaTab, PrismaTab, TaskRow, isOpen } from './screens/PrismaTab';
 export { ExecutarTab } from './screens/ExecutarTab';
 export { AjustesScreen, ContaTab, DadosScreen, RotinasTab, SyncScreen, ago, syncInfo, type SyncKind } from './screens/AccountTabs';
 export { ExportViewer, type ExportViewerProps } from './export/ExportViewer';
+export { SheetView } from './screens/SheetView';
