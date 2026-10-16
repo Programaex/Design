@@ -27,6 +27,10 @@ Linke o stylesheet em cada página e use as variáveis CSS (`var(--color-*)`, `v
 
 O tema escuro é o padrão; o claro é ativado com `data-theme="light"`. Veja o guia completo em [`DESIGN_SYSTEM-NOTURNO/readme.md`](DESIGN_SYSTEM-NOTURNO/readme.md).
 
+## CMS EXECUTAR
+
+`apps/site` publica o CMS e o site real no Worker `design` (https://design.bus-programa.workers.dev). Veja [`apps/site/README.md`](apps/site/README.md).
+
 ## Apps EXECUTAR · Prisma
 
 | Pasta | O que é |

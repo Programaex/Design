@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 2480 3508">
+<rect width="2480" height="3508" fill="white"/>
+<style>text{font-family:DejaVu Sans,sans-serif;fill:#111113}.muted{fill:#667085}.blue{fill:#2F9FDC}</style>
+<text x="140" y="165" font-size="40" class="blue" font-weight="bold">EXECUTAR</text>
+<text x="140" y="270" font-size="92" class="" font-weight="bold">Mapa das áreas</text>
+<text x="140" y="340" font-size="35" class="muted" font-weight="normal">16 áreas · IDs preservados · inventário visual</text>
+<rect x="140" y="410" width="2200" height="145" rx="26" fill="#FAFCFD" stroke="#DDE7EE"/>
+<text x="180" y="472" font-size="34" class="" font-weight="bold">FONTE  /  On My iPad</text>
+<text x="180" y="520" font-size="28" class="muted" font-weight="normal">Agrupamento visual; caminhos e hierarquia física não confirmados.</text>
+<rect x="140" y="625" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="677" font-size="33" class="blue" font-weight="bold">D01</text>
+<circle cx="1015" cy="665" r="7" fill="#2DBE78"/>
+<text x="1031" y="674" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="732" font-size="34" class="" font-weight="bold">Gestão empresarial</text>
+<text x="172" y="830" font-size="19" class="muted" font-weight="normal">D01_gestao-empresarial</text>
+<rect x="1260" y="625" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="677" font-size="33" class="blue" font-weight="bold">D02</text>
+<circle cx="2135" cy="665" r="7" fill="#2DBE78"/>
+<text x="2151" y="674" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="732" font-size="34" class="" font-weight="bold">Jurídico, riscos e conformidade</text>
+<text x="1292" y="830" font-size="19" class="muted" font-weight="normal">D02_juridico-riscos-conformidade</text>
+<rect x="140" y="915" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="967" font-size="33" class="blue" font-weight="bold">D03</text>
+<circle cx="1015" cy="955" r="7" fill="#2DBE78"/>
+<text x="1031" y="964" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="1022" font-size="34" class="" font-weight="bold">Finanças</text>
+<text x="172" y="1120" font-size="19" class="muted" font-weight="normal">D03_financas</text>
+<rect x="1260" y="915" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="967" font-size="33" class="blue" font-weight="bold">D04</text>
+<circle cx="2135" cy="955" r="7" fill="#2DBE78"/>
+<text x="2151" y="964" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="1022" font-size="34" class="" font-weight="bold">Pessoas e recursos humanos</text>
+<text x="1292" y="1120" font-size="19" class="muted" font-weight="normal">D04_pessoas-recursos-humanos</text>
+<rect x="140" y="1205" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="1257" font-size="33" class="blue" font-weight="bold">D05</text>
+<circle cx="1015" cy="1245" r="7" fill="#2DBE78"/>
+<text x="1031" y="1254" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="1312" font-size="34" class="" font-weight="bold">Dados</text>
+<text x="172" y="1410" font-size="19" class="muted" font-weight="normal">D05_dados</text>
+<rect x="1260" y="1205" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="1257" font-size="33" class="blue" font-weight="bold">D06</text>
+<circle cx="2135" cy="1245" r="7" fill="#2DBE78"/>
+<text x="2151" y="1254" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="1312" font-size="34" class="" font-weight="bold">Conhecimento e busca</text>
+<text x="1292" y="1355" font-size="34" class="" font-weight="bold">corporativa</text>
+<text x="1292" y="1410" font-size="19" class="muted" font-weight="normal">D06_conhecimento-busca-corporativa</text>
+<rect x="140" y="1495" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="1547" font-size="33" class="blue" font-weight="bold">D07</text>
+<circle cx="1015" cy="1535" r="7" fill="#2DBE78"/>
+<text x="1031" y="1544" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="1602" font-size="34" class="" font-weight="bold">Produtividade e execução</text>
+<text x="172" y="1700" font-size="19" class="muted" font-weight="normal">D07_produtividade-execucao</text>
+<rect x="1260" y="1495" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="1547" font-size="33" class="blue" font-weight="bold">D08</text>
+<circle cx="2135" cy="1535" r="7" fill="#2DBE78"/>
+<text x="2151" y="1544" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="1602" font-size="34" class="" font-weight="bold">Operações</text>
+<text x="1292" y="1700" font-size="19" class="muted" font-weight="normal">D08_operacoes</text>
+<rect x="140" y="1785" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="1837" font-size="33" class="blue" font-weight="bold">D09</text>
+<circle cx="1015" cy="1825" r="7" fill="#2DBE78"/>
+<text x="1031" y="1834" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="1892" font-size="34" class="" font-weight="bold">Pesquisa e inovação</text>
+<text x="172" y="1990" font-size="19" class="muted" font-weight="normal">D09_pesquisa-inovacao</text>
+<rect x="1260" y="1785" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="1837" font-size="33" class="blue" font-weight="bold">D10</text>
+<circle cx="2135" cy="1825" r="7" fill="#2DBE78"/>
+<text x="2151" y="1834" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="1892" font-size="34" class="" font-weight="bold">Gestão de produto</text>
+<text x="1292" y="1990" font-size="19" class="muted" font-weight="normal">D10_gestao-produto</text>
+<rect x="140" y="2075" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="2127" font-size="33" class="blue" font-weight="bold">D11</text>
+<circle cx="1015" cy="2115" r="7" fill="#2DBE78"/>
+<text x="1031" y="2124" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="2182" font-size="34" class="" font-weight="bold">Experiência e projeto</text>
+<text x="172" y="2280" font-size="19" class="muted" font-weight="normal">D11_experiencia-projeto</text>
+<rect x="1260" y="2075" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="2127" font-size="33" class="blue" font-weight="bold">D12</text>
+<circle cx="2135" cy="2115" r="7" fill="#2DBE78"/>
+<text x="2151" y="2124" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="2182" font-size="34" class="" font-weight="bold">Engenharia</text>
+<text x="1292" y="2280" font-size="19" class="muted" font-weight="normal">D12_engenharia</text>
+<rect x="140" y="2365" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="2417" font-size="33" class="blue" font-weight="bold">D13</text>
+<circle cx="1015" cy="2405" r="7" fill="#2DBE78"/>
+<text x="1031" y="2414" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="2472" font-size="34" class="" font-weight="bold">Mercado e geração de demanda</text>
+<text x="172" y="2570" font-size="19" class="muted" font-weight="normal">D13_mercado-geracao-demanda</text>
+<rect x="1260" y="2365" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="2417" font-size="33" class="blue" font-weight="bold">D14</text>
+<circle cx="2135" cy="2405" r="7" fill="#2DBE78"/>
+<text x="2151" y="2414" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="2472" font-size="34" class="" font-weight="bold">Vendas</text>
+<text x="1292" y="2570" font-size="19" class="muted" font-weight="normal">D14_vendas</text>
+<rect x="140" y="2655" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="172" y="2707" font-size="33" class="blue" font-weight="bold">D15</text>
+<circle cx="1015" cy="2695" r="7" fill="#2DBE78"/>
+<text x="1031" y="2704" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="172" y="2762" font-size="34" class="" font-weight="bold">Atendimento e sucesso do</text>
+<text x="172" y="2805" font-size="34" class="" font-weight="bold">cliente</text>
+<text x="172" y="2860" font-size="19" class="muted" font-weight="normal">D15_atendimento-sucesso-cliente</text>
+<rect x="1260" y="2655" width="1080" height="250" rx="26" fill="#FAFCFD" stroke="#DDE7EE" stroke-width="2"/>
+<text x="1292" y="2707" font-size="33" class="blue" font-weight="bold">D16</text>
+<circle cx="2135" cy="2695" r="7" fill="#2DBE78"/>
+<text x="2151" y="2704" font-size="22" class="muted" font-weight="normal">existing</text>
+<text x="1292" y="2762" font-size="34" class="" font-weight="bold">Mídias sociais e distribuição</text>
+<text x="1292" y="2805" font-size="34" class="" font-weight="bold">digital</text>
+<text x="1292" y="2860" font-size="19" class="muted" font-weight="normal">D16_midias-sociais-distribuicao-digital</text>
+<text x="140" y="3020" font-size="26" class="blue" font-weight="bold">PASTA ADICIONAL OBSERVADA</text>
+<text x="140" y="3076" font-size="33" class="" font-weight="bold">EXECUTAR GTM VIDEO ASSETS EXECUTADOS</text>
+<text x="140" y="3123" font-size="26" class="muted" font-weight="normal">SRC-FOLDER-001 · ID gerado · vínculo com as áreas não confirmado</text>
+<text x="140" y="3210" font-size="27" class="muted" font-weight="normal">● existing = observado na fonte; não comprova implementação.</text>
+<text x="140" y="3260" font-size="27" class="muted" font-weight="normal">Os 7 itens indicados por área não foram abertos nem individualizados.</text>
+<path d="M140 3320H2340" stroke="#DDE7EE" stroke-width="2"/>
+<text x="140" y="3375" font-size="24" class="muted" font-weight="normal">EXEC-INFO-DOMAIN-001 · v1.0.0 · HIERARCHY_MAP · 01/01</text>
+<text x="140" y="3425" font-size="24" class="muted" font-weight="normal">Fonte: IMG_4287.jpeg · 17 entidades · render determinístico</text>
+</svg>
