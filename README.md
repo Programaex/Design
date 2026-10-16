@@ -26,3 +26,11 @@ Linke o stylesheet em cada página e use as variáveis CSS (`var(--color-*)`, `v
 ```
 
 O tema escuro é o padrão; o claro é ativado com `data-theme="light"`. Veja o guia completo em [`DESIGN_SYSTEM-NOTURNO/readme.md`](DESIGN_SYSTEM-NOTURNO/readme.md).
+
+## Apps EXECUTAR · Prisma
+
+| Pasta | O que é |
+|---|---|
+| [`apps/executar-web`](apps/executar-web) | Landing do produto, app Prisma (PWA), modelos A4 e API Next.js + Prisma ORM |
+| [`apps/executar-mobile`](apps/executar-mobile) | App nativo iOS/Android (Expo SDK 58) |
+| [`packages/executar-core`](packages/executar-core) | Domínio compartilhado: plano, execução, modelos A4, sync |
