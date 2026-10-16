@@ -16,8 +16,9 @@ async function hmac(secret, data) {
 }
 
 // Credenciais padrão enquanto os secrets não estão no Worker. Defina CMS_USER/CMS_PASS para trocá-las.
-export const DEFAULT_USER = '000';
-export const DEFAULT_PASS = '003';
+// Não exportar constantes: o workerd só aceita funções/handlers como exports nomeados do módulo principal.
+const DEFAULT_USER = '000';
+const DEFAULT_PASS = '003';
 const creds = env => ({ user: env.CMS_USER || DEFAULT_USER, pass: env.CMS_PASS || DEFAULT_PASS });
 
 function secretOf(env) {
