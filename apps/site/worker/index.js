@@ -14,14 +14,20 @@ async function hmac(secret, data) {
 	return b64url(await crypto.subtle.sign('HMAC', key, enc.encode(data)));
 }
 
+// Credenciais padrão enquanto os secrets não estão no Worker. Defina CMS_USER/CMS_PASS para trocá-las.
+export const DEFAULT_USER = '000';
+export const DEFAULT_PASS = '003';
+const creds = env => ({ user: env.CMS_USER || DEFAULT_USER, pass: env.CMS_PASS || DEFAULT_PASS });
+
 function secretOf(env) {
 	// SESSION_SECRET dedicado; se faltar, deriva das credenciais (sessões caem quando a senha muda).
-	return env.SESSION_SECRET || `${env.CMS_USER}:${env.CMS_PASS}:executar-cms`;
+	const c = creds(env);
+	return env.SESSION_SECRET || `${c.user}:${c.pass}:executar-cms`;
 }
 
 export async function makeSession(env, now = Date.now()) {
 	const exp = Math.floor(now / 1000) + SESSION_TTL;
-	const payload = `${env.CMS_USER}.${exp}`;
+	const payload = `${creds(env).user}.${exp}`;
 	return `${payload}.${await hmac(secretOf(env), payload)}`;
 }
 
@@ -34,7 +40,7 @@ export async function readSession(env, request, now = Date.now()) {
 	const payload = value.slice(0, i), sig = value.slice(i + 1);
 	if (sig !== (await hmac(secretOf(env), payload))) return null;
 	const exp = Number(payload.split('.').pop());
-	return exp * 1000 > now ? { user: env.CMS_USER } : null;
+	return exp * 1000 > now ? { user: creds(env).user } : null;
 }
 
 const json = (data, status = 200, headers = {}) =>
@@ -45,12 +51,12 @@ function cookie(value, maxAge) {
 }
 
 async function login(request, env) {
-	if (!env.CMS_USER || !env.CMS_PASS) return json({ ok: false, error: 'CMS_USER/CMS_PASS não configurados no Worker' }, 503);
 	let body = {};
 	const type = request.headers.get('content-type') || '';
 	if (type.includes('application/json')) body = await request.json().catch(() => ({}));
 	else body = Object.fromEntries(await request.formData().catch(() => new FormData()));
-	const ok = String(body.user ?? '') === env.CMS_USER && String(body.pass ?? '') === env.CMS_PASS;
+	const c = creds(env);
+	const ok = String(body.user ?? '') === c.user && String(body.pass ?? '') === c.pass;
 	if (!ok) return json({ ok: false, error: 'Usuário ou senha inválidos' }, 401);
 	return json({ ok: true }, 200, { 'set-cookie': cookie(await makeSession(env), SESSION_TTL) });
 }
