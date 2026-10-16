@@ -1,0 +1,52 @@
+# Publica apps/site no Worker "design" a cada push na main que muda o CMS ou o design system.
+# Requer os secrets do repositório CLOUDFLARE_API_TOKEN (permissão Workers Scripts: Edit + Workers KV: Edit)
+# e CLOUDFLARE_ACCOUNT_ID. Sem eles o job termina sem fazer nada.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - apps/site/**
+      - packages/design-system/**
+      - EXECUTAR_Claude_Design/**
+      - docs/**
+      - package-lock.json
+      - .github/workflows/deploy-site.yml
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Conferir secrets
+        id: gate
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::notice::CLOUDFLARE_API_TOKEN/CLOUDFLARE_ACCOUNT_ID não configurados; deploy ignorado."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'true'
+        with:
+          node-version: 22
+          cache: npm
+      - if: steps.gate.outputs.run == 'true'
+        run: npm ci
+      - name: Testes
+        if: steps.gate.outputs.run == 'true'
+        run: npm test -w apps/site && npm run routes:check -w apps/site
+      - name: Deploy
+        if: steps.gate.outputs.run == 'true'
+        run: npm run deploy -w apps/site
