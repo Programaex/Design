@@ -1,6 +1,7 @@
 import { env, SELF } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
-import worker, { analytics } from '../worker/index.js';
+import worker from '../worker/index.js';
+import { analytics } from '../worker/analytics.js';
 
 const login = (user, pass) =>
 	SELF.fetch('https://cms.test/api/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ user, pass }) });

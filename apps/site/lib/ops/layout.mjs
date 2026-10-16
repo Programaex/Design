@@ -86,9 +86,20 @@ export function dagLayout(tasks, deps, { direction = 'LR', node = NODE } = {}) {
 		return v;
 	};
 	tasks.forEach(t => depth(t.id));
+	// Colunas: fases na ordem de início; dentro de cada fase, a profundidade de dependência.
+	// Assim, sem dependências, as tarefas se distribuem por fase em vez de uma coluna única.
+	const phaseStart = new Map();
+	for (const t of tasks) { const p = t.phase || ''; const s = t.plannedStart || '9999'; if (!phaseStart.has(p) || s < phaseStart.get(p)) phaseStart.set(p, s); }
+	const phases = [...phaseStart.keys()].sort((a, b) => phaseStart.get(a).localeCompare(phaseStart.get(b)) || a.localeCompare(b));
+	const depthIn = new Map(phases.map(p => [p, 0]));
+	for (const t of tasks) depthIn.set(t.phase || '', Math.max(depthIn.get(t.phase || ''), layer.get(t.id)));
+	const base = new Map();
+	let acc = 0;
+	for (const p of phases) { base.set(p, acc); acc += depthIn.get(p) + 1; }
 	const cols = new Map();
 	for (const t of [...tasks].sort((a, b) => (a.plannedStart || '9999').localeCompare(b.plannedStart || '9999') || a.id.localeCompare(b.id))) {
-		const l = layer.get(t.id);
+		const l = base.get(t.phase || '') + layer.get(t.id);
+		layer.set(t.id, l);
 		(cols.get(l) || cols.set(l, []).get(l)).push(t);
 	}
 	const items = [];

@@ -187,3 +187,26 @@ export function seedDoc(parsedDatasets, editorial) {
 	doc.revision = 1;
 	return doc;
 }
+
+// Nova tarefa criada no CMS (calendário, Gantt ou workflow). ID sequencial T-0001…
+export function createTask(doc, { title, plannedStart = null, plannedEnd = null, dateKind = 'exact', categoryId = 'outros', channel = '', phase = 'CMS', projectId = 'executar-lancamento' }, { author = 'cms' } = {}) {
+	if (!title?.trim()) return fail('Título obrigatório.');
+	if (plannedStart && plannedEnd && plannedEnd < plannedStart) return fail('Fim antes do início.');
+	const next = clone(doc);
+	const n = next.tasks.filter(t => /^T-\d+$/.test(t.id)).length + 1;
+	const task = { id: 'T-' + String(n).padStart(4, '0'), projectId, title: title.trim(), status: 'pending', ownerId: null, plannedStart, plannedEnd: plannedEnd || plannedStart, originalStart: plannedStart, originalEnd: plannedEnd || plannedStart, plannedDateRaw: null, dateKind, timezone: 'America/Sao_Paulo', phase, categoryId, channel, flags: [], sourceNodeId: null, workflowNodeId: null, instruction: '', expectedOutput: '', requiredEvidence: '', completedAt: null, revision: 0 };
+	next.tasks.push(task);
+	if (plannedStart) next.events.push(eventForTask(task));
+	next.history.push({ at: now(), author, taskId: task.id, field: 'created', before: null, after: task.title });
+	next.revision++;
+	return { doc: next, task };
+}
+
+// Evidência registrada ao concluir no foco.
+export function addEvidence(doc, { taskId, uri, label, runId = 'global' }, { author = 'cms' } = {}) {
+	if (!uri?.trim() && !label?.trim()) return fail('Informe a evidência (link ou descrição).');
+	const next = clone(doc);
+	next.evidence.push({ id: `EVD-${String(next.evidence.length + 1).padStart(4, '0')}`, taskId, runId, uri: uri || '', label: label || '', createdAt: now(), createdBy: author });
+	next.revision++;
+	return { doc: next };
+}
