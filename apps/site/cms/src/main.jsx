@@ -13,9 +13,11 @@ import { Automation } from './views/automation.jsx';
 import { Analytics } from './views/analytics.jsx';
 import { Completeness, Kanban } from './views/completeness.jsx';
 import { ModuleView, VocabView } from './views/modules.jsx';
+import { OpsArea } from './ops/index.jsx';
 
 const NAV = [
 	{ title: null, items: [['painel', 'Painel de hoje', 'ph-squares-four']] },
+	{ title: 'Operações e Dados', items: [['ops/dashboard', 'Dashboard', 'ph-gauge'], ['ops/calendario', 'Calendário', 'ph-calendar'], ['ops/gantt', 'Gantt', 'ph-chart-bar-horizontal'], ['ops/mapa', 'Mapa mental', 'ph-graph'], ['ops/workflow', 'Workflow', 'ph-flow-arrow'], ['ops/foco', 'Foco', 'ph-target'], ['ops/importar', 'Importar', 'ph-upload-simple'], ['ops/exportar', 'Exportar / PDF', 'ph-printer']] },
 	{ title: 'Controle', items: [['completude', 'Completude', 'ph-chart-donut'], ['kanban', 'Kanban', 'ph-kanban'], ['automacao', 'Automação', 'ph-lightning'], ['analytics', 'Analytics', 'ph-chart-line-up']] },
 	{ title: 'Ecossistema', items: [['pastas', 'Pastas e docs', 'ph-folders'], ['rotas', 'Rotas e QR', 'ph-qr-code'], ['blog', 'Preview do blog', 'ph-article'], ['storybook', 'Storybook', 'ph-stack'], ['site', 'Site real ↗', 'ph-globe']] },
 	{ title: 'Editorial', items: [['m/content', 'Conteúdos', 'ph-files'], ['m/brief', 'Briefs', 'ph-clipboard-text'], ['m/arguments', 'Argumentos', 'ph-chats'], ['m/evidence', 'Evidências', 'ph-books'], ['m/production', 'Produção de texto', 'ph-pen-nib']] },
@@ -93,6 +95,7 @@ function App() {
 	const props = { data, progress, setProgress, automation };
 	let body;
 	switch (view) {
+		case 'ops': body = <OpsArea view={arg} />; break;
 		case 'completude': body = <Completeness {...props} focus={arg} />; break;
 		case 'kanban': body = <Kanban {...props} />; break;
 		case 'automacao': body = <Automation {...props} />; break;
@@ -107,7 +110,7 @@ function App() {
 		case 'adr': body = <DocView data={data} path="docs/adr/ADR-CENTRAL-CONTROLE-CMS.md" />; break;
 		default: body = <Painel data={data} progress={progress} log={automation.log} />;
 	}
-	return <div className="cms"><Rail route={route} mode={mode} /><main className="cms-main" key={route}>{body}</main></div>;
+	return <div className="cms"><Rail route={route} mode={mode} /><main className="cms-main" key={view === 'ops' ? 'ops' : route}>{body}</main></div>;
 }
 
 createRoot(document.getElementById('root')).render(<App />);

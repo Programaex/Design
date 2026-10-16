@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "DATA-001",
+      "records": 37,
+      "edges": 36,
+      "locked_records": 35,
+      "sha256": "0bbf2d53d1f584a261b8522260de7d8a088ada8f824dcdef04392faf91e6aa64"
+    },
+    {
+      "dataset_id": "DATA-002",
+      "records": 53,
+      "edges": 52,
+      "locked_records": 51,
+      "sha256": "79a35836a7146365600e247fa6b3ee226e86ca46ac8cf0d2af05cfecfa26dc44"
+    },
+    {
+      "dataset_id": "DATA-003",
+      "records": 20,
+      "edges": 19,
+      "locked_records": 18,
+      "sha256": "05c85da68caa05336a1aa0d8307870c2d6d22c368a918094a2da1136b7760dca"
+    }
+  ],
+  "nodes": 110,
+  "edges": 107,
+  "editorial_records": 45,
+  "editorial_issues": [
+    {
+      "id": "W1-011",
+      "flags": [
+        "truncated_source"
+      ]
+    },
+    {
+      "id": "W2-003",
+      "flags": [
+        "title_shifted_from_channel_review_required"
+      ]
+    },
+    {
+      "id": "W2-013",
+      "flags": [
+        "truncated_source"
+      ]
+    },
+    {
+      "id": "W3-012",
+      "flags": [
+        "truncated_source"
+      ]
+    },
+    {
+      "id": "W4-002",
+      "flags": [
+        "truncated_source"
+      ]
+    }
+  ],
+  "checks": [
+    "unique IDs",
+    "parents resolved",
+    "3 roots",
+    "raw files unchanged by normalization",
+    "editorial source cells retained"
+  ],
+  "scope": "Structural validation only; no medical/editorial validation and no application build."
+}

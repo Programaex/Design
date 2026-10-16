@@ -4,10 +4,10 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import { Button, FolderCard, Table, Tag, TextField } from '../ds.js';
 import { go } from '../store.js';
-import { parseCsv } from '../../../lib/content.mjs';
+import { parseCsv } from '../../../lib/csv.mjs';
 
-const ICON = { md: 'ph-file-text', mdx: 'ph-file-code', csv: 'ph-table', json: 'ph-brackets-curly', svg: 'ph-file-svg', png: 'ph-image', jpg: 'ph-image', jpeg: 'ph-image', pdf: 'ph-file-pdf' };
-const KIND = { md: 'Documento', mdx: 'Artigo', csv: 'Planilha', json: 'Dados', svg: 'Vetor', png: 'Imagem', jpg: 'Imagem', jpeg: 'Imagem', pdf: 'PDF' };
+const ICON = { md: 'ph-file-text', mdx: 'ph-file-code', csv: 'ph-table', json: 'ph-brackets-curly', svg: 'ph-file-svg', png: 'ph-image', jpg: 'ph-image', jpeg: 'ph-image', pdf: 'ph-file-pdf', html: 'ph-browser' };
+const KIND = { md: 'Documento', mdx: 'Artigo', csv: 'Planilha', json: 'Dados', svg: 'Vetor', png: 'Imagem', jpg: 'Imagem', jpeg: 'Imagem', pdf: 'PDF', html: 'Página HTML' };
 
 export function Folders({ data, folder }) {
 	const byFolder = React.useMemo(() => data.docs.reduce((m, d) => ((m[d.folder] ||= []).push(d), m), {}), [data]);
@@ -67,6 +67,7 @@ export function DocView({ data, path }) {
 	if (doc.ext === 'md' || doc.ext === 'mdx') body = text == null ? null : <article className="cms-doc" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(text.replace(/^---\n[\s\S]*?\n---\n/, ''), { gfm: true })) }} />;
 	else if (doc.ext === 'csv') body = text == null ? null : <CsvView text={text} />;
 	else if (doc.ext === 'json') body = text == null ? null : <pre className="cms-pre">{JSON.stringify(JSON.parse(text), null, 2)}</pre>;
+	else if (doc.ext === 'html') body = <iframe className="cms-pdf" src={src} title={doc.name} sandbox="allow-same-origin" />;
 	else if (doc.ext === 'pdf') body = <iframe className="cms-pdf" src={src} title={doc.name} />;
 	else body = <figure className="cms-img"><img src={src} alt={doc.name} /></figure>;
 	return (

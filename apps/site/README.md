@@ -17,8 +17,28 @@ O CMS segue o ADR em `docs/adr/ADR-CENTRAL-CONTROLE-CMS.md`: entrada única, ID 
 | Automação | `#/automacao` | botões visíveis, sem backend; log no KV `automation-log` |
 | Analytics | `#/analytics` | GraphQL Analytics da Cloudflare via `/api/analytics` |
 | Módulos editoriais | `#/m/<módulo>` | arquitetura e seed do Hub Editorial; dados no KV `hub` |
+| Operações e Dados | `#/ops/<view>` | documento `ops` no KV (seed: `content/ops/*.csv`); WIP=1 no Durable Object `FocusLock` |
 
 Um único design system: o CMS, o storybook e o site real usam o mesmo `packages/design-system` (tokens, `styles.css` e componentes). Nenhum token do Hub Editorial original foi trazido.
+
+## Operações e Dados (PRD em `docs/prd`)
+
+As views são projeções de um mesmo documento (`/api/ops`, KV `ops`, com `revision` e 409 em conflito). Editar uma tarefa em qualquer view atualiza todas.
+
+| View | Rota | O que faz |
+|---|---|---|
+| Dashboard | `#/ops/dashboard` | KPIs com regra, período, fonte e drill-down. Receita, leads e conversão ficam N/D até existir fonte (Q-03) |
+| Calendário | `#/ops/calendario` | agenda, dia, semana útil, semana e mês. Janela editorial ≠ data exata, sem hora inventada |
+| Gantt | `#/ops/gantt` | mover datas com alerta finish-to-start e cascata só depois do diff confirmado |
+| Mapa mental | `#/ops/mapa` | árvores AlsoAsked em LR, TB ou bilateral; busca, zoom, filho/irmão, converter pergunta em tarefa |
+| Workflow | `#/ops/workflow` | DAG de tarefas por fase; dependência nova é rejeitada se criar ciclo |
+| Foco | `#/ops/foco` | uma tarefa por vez em todo o CMS (WIP=1 global no Durable Object, com chave idempotente) |
+| Importar | `#/ops/importar` | CSV AlsoAsked com preview, erros, lote transacional, reimportação por hash e desfazer |
+| Exportar | `#/ops/exportar` | JSON/CSV (round-trip com IDs) e PDF (A4, A3 ou papel personalizado) |
+
+O PDF segue a SPEC-03. A escala é calculada pela área útil, e a página que ficaria abaixo de 9 pt é bloqueada. Nesse caso, o CMS sugere o papel personalizado mínimo, outro formato ou um escopo menor.
+
+Lógica pura em `lib/ops/`, testada com `node --test`. Campos bloqueados, títulos `[cortado]` e datas sem confirmação continuam sinalizados, sem preenchimento inventado.
 
 ## Comandos
 

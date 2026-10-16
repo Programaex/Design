@@ -1,3 +1,7 @@
+import { analytics } from './analytics.js';
+import { focusRoute } from './focus.js';
+
+export { FocusLock } from './focus.js';
 // Worker do CMS EXECUTAR: sessão por cookie assinado, progresso em KV e proxy de analytics.
 // Os arquivos estáticos (dist/) só são servidos depois que a sessão é validada aqui.
 const COOKIE = 'cms_session';
@@ -15,8 +19,8 @@ async function hmac(secret, data) {
 }
 
 // Credenciais padrão enquanto os secrets não estão no Worker. Defina CMS_USER/CMS_PASS para trocá-las.
-export const DEFAULT_USER = '000';
-export const DEFAULT_PASS = '003';
+const DEFAULT_USER = '000';
+const DEFAULT_PASS = '003';
 const creds = env => ({ user: env.CMS_USER || DEFAULT_USER, pass: env.CMS_PASS || DEFAULT_PASS });
 
 function secretOf(env) {
@@ -25,13 +29,13 @@ function secretOf(env) {
 	return env.SESSION_SECRET || `${c.user}:${c.pass}:executar-cms`;
 }
 
-export async function makeSession(env, now = Date.now()) {
+async function makeSession(env, now = Date.now()) {
 	const exp = Math.floor(now / 1000) + SESSION_TTL;
 	const payload = `${creds(env).user}.${exp}`;
 	return `${payload}.${await hmac(secretOf(env), payload)}`;
 }
 
-export async function readSession(env, request, now = Date.now()) {
+async function readSession(env, request, now = Date.now()) {
 	const raw = (request.headers.get('cookie') || '').split(/;\s*/).find(c => c.startsWith(COOKIE + '='));
 	if (!raw) return null;
 	const value = raw.slice(COOKIE.length + 1);
@@ -62,7 +66,7 @@ async function login(request, env) {
 }
 
 // Progresso: um documento JSON por chave ("progress" para completude/Kanban, "automation-log" etc.).
-const KV_KEYS = new Set(['progress', 'automation-log', 'settings', 'hub']);
+const KV_KEYS = new Set(['progress', 'automation-log', 'settings', 'hub', 'viewstate']);
 
 async function kvRoute(request, env, key) {
 	if (!KV_KEYS.has(key)) return json({ error: 'chave desconhecida' }, 404);
@@ -78,31 +82,22 @@ async function kvRoute(request, env, key) {
 	return json({ error: 'método não permitido' }, 405);
 }
 
-// Analytics do próprio Worker via GraphQL Analytics API. Sem token: { connected:false }.
-const ANALYTICS_QUERY = `query($account:String!,$script:String!,$since:Time!,$until:Time!){viewer{accounts(filter:{accountTag:$account}){
- workersInvocationsAdaptive(limit:1000,filter:{scriptName:$script,datetime_geq:$since,datetime_leq:$until},orderBy:[date_ASC]){
-  sum{requests errors subrequests} dimensions{date} }}}}`;
-
-export async function analytics(env, days = 7, fetcher = fetch) {
-	if (!env.CF_ANALYTICS_TOKEN || !env.CF_ACCOUNT_ID) return { connected: false, reason: 'Defina os secrets CF_ANALYTICS_TOKEN e CF_ACCOUNT_ID' };
-	const until = new Date(), since = new Date(until.getTime() - days * 864e5);
-	const r = await fetcher('https://api.cloudflare.com/client/v4/graphql', {
-		method: 'POST',
-		headers: { authorization: `Bearer ${env.CF_ANALYTICS_TOKEN}`, 'content-type': 'application/json' },
-		body: JSON.stringify({ query: ANALYTICS_QUERY, variables: { account: env.CF_ACCOUNT_ID, script: env.CF_SCRIPT_NAME || 'design', since: since.toISOString(), until: until.toISOString() } }),
-	});
-	const data = await r.json().catch(() => ({}));
-	if (!r.ok || data.errors?.length) return { connected: true, ok: false, error: data.errors?.[0]?.message || `HTTP ${r.status}` };
-	const rows = data.data?.viewer?.accounts?.[0]?.workersInvocationsAdaptive || [];
-	const byDay = {};
-	for (const row of rows) {
-		const d = row.dimensions.date;
-		byDay[d] ??= { date: d, requests: 0, errors: 0 };
-		byDay[d].requests += row.sum.requests;
-		byDay[d].errors += row.sum.errors;
-	}
-	const series = Object.values(byDay);
-	return { connected: true, ok: true, days, series, totals: series.reduce((t, d) => ({ requests: t.requests + d.requests, errors: t.errors + d.errors }), { requests: 0, errors: 0 }) };
+// Documento operacional (Operações e Dados): concorrência otimista por revision (409 em conflito).
+const OPS_MAX = 8_000_000;
+async function opsRoute(request, env) {
+	if (!env.CMS_KV) return json({ error: 'KV CMS_KV não vinculado' }, 503);
+	if (request.method === 'GET') return json((await env.CMS_KV.get('ops', 'json')) ?? null);
+	if (request.method !== 'PUT') return json({ error: 'método não permitido' }, 405);
+	const text = await request.text();
+	if (text.length > OPS_MAX) return json({ error: 'documento grande demais' }, 413);
+	let doc;
+	try { doc = JSON.parse(text); } catch { return json({ error: 'JSON inválido' }, 400); }
+	if (doc?.schemaVersion?.split('.')[0] !== '1') return json({ error: 'schemaVersion incompatível' }, 422);
+	const base = Number(request.headers.get('if-match'));
+	const cur = await env.CMS_KV.get('ops', 'json');
+	if (cur && Number.isFinite(base) && cur.revision !== base) return json({ error: 'conflito', revision: cur.revision }, 409);
+	await env.CMS_KV.put('ops', text);
+	return json({ ok: true, revision: doc.revision });
 }
 
 export default {
@@ -127,6 +122,9 @@ export default {
 		if (path === '/api/analytics') return json(await analytics(env, Math.min(30, Number(url.searchParams.get('days')) || 7)));
 		const kv = path.match(/^\/api\/kv\/([a-z-]+)$/);
 		if (kv) return kvRoute(request, env, kv[1]);
+		if (path === '/api/ops') return opsRoute(request, env);
+		const focus = path.match(/^\/api\/focus\/(start|complete|fail|reject|state)$/);
+		if (focus) return focusRoute(request, env, focus[1]);
 		if (path.startsWith('/api/')) return json({ error: 'rota desconhecida' }, 404);
 
 		return env.ASSETS.fetch(request);
