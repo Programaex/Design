@@ -11,6 +11,7 @@ export function pwa(): Plugin {
 	return {
 		name: 'executar-miniapps-pwa',
 		apply: 'build',
+		enforce: 'post',
 		generateBundle(_, bundle) {
 			for (const a of APPS) {
 				const scope = BASE + a.slug + '/';
