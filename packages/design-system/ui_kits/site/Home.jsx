@@ -14,7 +14,7 @@ function Home({ go }) {
           <h1 style={display}><span style={{ display: 'block' }}>Pense antes.</span><span style={{ display: 'block' }}>Decida melhor.</span></h1>
           <p style={sub}>Entenda como o cérebro planeja, inibe e decide — e onde estão os riscos de cada processo cognitivo.</p>
           <div style={row}><Button onClick={() => go('explore')}>Explorar o cérebro</Button><Button variant="ghost" iconAfter={caret} onClick={() => go('topic')}>Ver funções executivas</Button></div>
-          <img className="blend" src="../../assets/logo/brain-mark.png" alt="Ilustração do cérebro em três lobos" style={{ width: 'min(420px, 80%)', margin: 'var(--space-12) auto 0' }} />
+          <img className="blend" src="../../assets/brand/svg/02_brain.svg" alt="Ilustração do cérebro em três lobos" style={{ width: 'min(420px, 80%)', margin: 'var(--space-12) auto 0' }} />
         </section>
       </div>
       <section style={{ background: 'var(--color-section)', color: 'var(--color-on-section)', padding: 'var(--space-16) 0' }}>

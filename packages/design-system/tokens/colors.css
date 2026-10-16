@@ -27,7 +27,7 @@
   --color-accent-800: #003a77;
   --color-accent-900: #001d3d;
 
-  /* Brand brain palette — sampled from assets/logo/brain-mark.png.
+  /* Brand brain palette — sampled from assets/brand/svg/02_brain.svg.
      Illustration / anatomy-region coding ONLY; never for UI actions or text. */
   --brain-blue: #429fe8;     /* frontal lobe lobe-shape */
   --brain-pink: #f08de7;     /* parietal/occipital lobe-shape */

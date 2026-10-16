@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Cartões com confirmação — família monocromática</title>
+  <desc>Reconstrução vetorial da referência IMG_3944; versão 1.0.0.</desc>
+  <g id="back"><path fill="#D2D2D7" d="M176 96H336C389 96 416 135 416 184V328C416 381 379 416 328 416H184C132 416 96 380 96 328V184C96 135 128 96 176 96Z"/></g>
+  <g id="middle"><path fill="#86868B" d="M158 160C127 157 96 181 96 218V328C96 381 132 416 184 416H328C379 416 416 381 416 328V234C416 203 395 183 364 180Z"/></g>
+  <g id="front"><path fill="#1D1D1F" d="M155 275L348 255C386 251 416 278 416 316V328C416 381 379 416 328 416H184C132 416 96 380 96 328C96 300 122 279 155 275Z"/></g>
+  <g id="check"><path fill="#FFFFFF" d="M138 329C134 325 134 319 138 315C142 311 148 311 152 315L174 337L222 289C226 285 232 285 236 289C240 293 240 299 236 303L181 358C177 362 171 362 167 358Z"/></g>
+</svg>

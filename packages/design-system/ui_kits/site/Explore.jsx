@@ -12,7 +12,7 @@ function Explore({ go }) {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 360px), 1fr))', gap: 'var(--space-12)', alignItems: 'center', marginTop: 'var(--space-12)' }}>
         <div style={{ position: 'relative', aspectRatio: '1 / 1', maxWidth: 480, width: '100%', margin: '0 auto' }}>
-          <img className="blend" src="../../assets/logo/brain-mark.png" alt="Cérebro" style={{ width: '100%', height: '100%' }} />
+          <img className="blend" src="../../assets/brand/svg/02_brain.svg" alt="Cérebro" style={{ width: '100%', height: '100%' }} />
           {regions.map(x => (
             <button key={x.id} aria-label={x.name} onClick={() => setSel(x.id)} style={{ position: 'absolute', left: x.x + '%', top: x.y + '%', width: 28, height: 28, marginLeft: -14, marginTop: -14, borderRadius: '50%', border: '2px solid #fff', background: sel === x.id ? 'var(--color-accent)' : 'rgba(29,29,31,0.55)', boxShadow: sel === x.id ? '0 0 0 6px color-mix(in srgb, var(--color-accent) 25%, transparent)' : 'none', cursor: 'pointer', transition: 'all var(--duration-base) var(--ease-standard)' }}></button>
           ))}

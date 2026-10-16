@@ -1,0 +1,18 @@
+id,parent_id,type,name,canonical_name,status,version,owner,source_ref,path,notes
+D01,,folder,D01_gestao-empresarial,Gestão empresarial,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D02,,folder,D02_juridico-riscos-conformidade,"Jurídico, riscos e conformidade",existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D03,,folder,D03_financas,Finanças,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D04,,folder,D04_pessoas-recursos-humanos,Pessoas e recursos humanos,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D05,,folder,D05_dados,Dados,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D06,,folder,D06_conhecimento-busca-corporativa,Conhecimento e busca corporativa,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D07,,folder,D07_produtividade-execucao,Produtividade e execução,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D08,,folder,D08_operacoes,Operações,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D09,,folder,D09_pesquisa-inovacao,Pesquisa e inovação,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D10,,folder,D10_gestao-produto,Gestão de produto,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D11,,folder,D11_experiencia-projeto,Experiência e projeto,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D12,,folder,D12_engenharia,Engenharia,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D13,,folder,D13_mercado-geracao-demanda,Mercado e geração de demanda,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D14,,folder,D14_vendas,Vendas,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D15,,folder,D15_atendimento-sucesso-cliente,Atendimento e sucesso do cliente,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+D16,,folder,D16_midias-sociais-distribuicao-digital,Mídias sociais e distribuição digital,existing,,,IMG_4287.jpeg,,Pasta visível na foto; interface indica 7 itens. Conteúdo interno não inspecionado.
+SRC-FOLDER-001,,folder,EXECUTAR GTM VIDEO ASSETS EXECUTADOS,EXECUTAR GTM VIDEO ASSETS EXECUTADOS,existing,,,IMG_4287.jpeg,,Nome transcrito da linha inferior; ID gerado. Relação com D01–D16 não demonstrada.

@@ -6,7 +6,7 @@
 
   const SITES = {
     executar: { key: 'executar', name: 'EXECUTAR', logo: '../../assets/logo/executar-mark.svg', mono: true, about: 'Conheça o EXECUTAR', domain: 'executar — domínio a definir' },
-    risco: { key: 'risco', name: 'Risco Cognitivo', logo: '../../assets/logo/brain-mark.png', about: 'Conheça o Risco Cognitivo', domain: 'riscocognitivo — domínio a definir' }
+    risco: { key: 'risco', name: 'Risco Cognitivo', logo: '../../assets/brand/svg/02_brain.svg', about: 'Conheça o Risco Cognitivo', domain: 'riscocognitivo — domínio a definir' }
   };
 
   // Main nav (CSV order): logo = inicio; then 5 links. Utilities: busca · conta · hambúrguer.
