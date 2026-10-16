@@ -1,0 +1,11 @@
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+	"name": "risco-cognitivo-site",
+	"compatibility_date": "2025-10-08",
+	"workers_dev": true,
+	// Static site only: dist/ is produced by build.mjs from packages/design-system.
+	"assets": {
+		"directory": "./dist",
+		"not_found_handling": "404-page"
+	}
+}
