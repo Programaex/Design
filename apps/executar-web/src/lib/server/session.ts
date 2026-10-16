@@ -1,6 +1,6 @@
 import 'server-only';
 import { createHash, createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 
 // Stateless session: base64url(JSON {uid, exp}) + "." + HMAC-SHA256(AUTH_SECRET). HttpOnly, SameSite=Lax.
 export const SESSION_COOKIE = 'executar_session';
@@ -37,7 +37,10 @@ export async function setSession(uid: string) {
 export async function clearSession() {
 	(await cookies()).delete(SESSION_COOKIE);
 }
+/** Browser: HttpOnly cookie. Native app: `Authorization: Bearer <session>` (same signed token, kept in the device keychain). */
 export async function sessionUserId() {
+	const auth = (await headers()).get('authorization');
+	if (auth?.startsWith('Bearer ')) return decodeSession(auth.slice(7).trim());
 	return decodeSession((await cookies()).get(SESSION_COOKIE)?.value);
 }
 

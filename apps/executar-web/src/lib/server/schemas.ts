@@ -31,7 +31,7 @@ export const SetupSchema = z.object({
 });
 export const SyncSchema = z.object({ base: PlanSchema.nullable(), local: PlanSchema, setup: SetupSchema.optional() });
 export const SettingsSchema = z.object({ reminders: z.boolean(), remTime: z.string().regex(/^\d{2}:\d{2}$/), lateAlerts: z.boolean(), ai: z.boolean() });
-export const EmailSchema = z.object({ email: z.string().trim().toLowerCase().email().max(254), next: z.string().max(200).optional() });
+export const EmailSchema = z.object({ email: z.string().trim().toLowerCase().email().max(254), next: z.string().max(200).optional(), client: z.enum(['web', 'native']).optional() });
 
 // zod's inferred types are structurally the core types; this keeps the API honest if either side drifts.
 type Same<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;
