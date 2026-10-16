@@ -1,3 +1,6 @@
+import { focusRoute } from './focus.js';
+
+export { FocusLock } from './focus.js';
 // Worker do CMS EXECUTAR: sessão por cookie assinado, progresso em KV e proxy de analytics.
 // Os arquivos estáticos (dist/) só são servidos depois que a sessão é validada aqui.
 const COOKIE = 'cms_session';
@@ -83,6 +86,24 @@ const ANALYTICS_QUERY = `query($account:String!,$script:String!,$since:Time!,$un
  workersInvocationsAdaptive(limit:1000,filter:{scriptName:$script,datetime_geq:$since,datetime_leq:$until},orderBy:[date_ASC]){
   sum{requests errors subrequests} dimensions{date} }}}}`;
 
+// Documento operacional (Operações e Dados): concorrência otimista por revision (409 em conflito).
+const OPS_MAX = 8_000_000;
+async function opsRoute(request, env) {
+	if (!env.CMS_KV) return json({ error: 'KV CMS_KV não vinculado' }, 503);
+	if (request.method === 'GET') return json((await env.CMS_KV.get('ops', 'json')) ?? null);
+	if (request.method !== 'PUT') return json({ error: 'método não permitido' }, 405);
+	const text = await request.text();
+	if (text.length > OPS_MAX) return json({ error: 'documento grande demais' }, 413);
+	let doc;
+	try { doc = JSON.parse(text); } catch { return json({ error: 'JSON inválido' }, 400); }
+	if (doc?.schemaVersion?.split('.')[0] !== '1') return json({ error: 'schemaVersion incompatível' }, 422);
+	const base = Number(request.headers.get('if-match'));
+	const cur = await env.CMS_KV.get('ops', 'json');
+	if (cur && Number.isFinite(base) && cur.revision !== base) return json({ error: 'conflito', revision: cur.revision }, 409);
+	await env.CMS_KV.put('ops', text);
+	return json({ ok: true, revision: doc.revision });
+}
+
 export async function analytics(env, days = 7, fetcher = fetch) {
 	if (!env.CF_ANALYTICS_TOKEN || !env.CF_ACCOUNT_ID) return { connected: false, reason: 'Defina os secrets CF_ANALYTICS_TOKEN e CF_ACCOUNT_ID' };
 	const until = new Date(), since = new Date(until.getTime() - days * 864e5);
@@ -127,6 +148,9 @@ export default {
 		if (path === '/api/analytics') return json(await analytics(env, Math.min(30, Number(url.searchParams.get('days')) || 7)));
 		const kv = path.match(/^\/api\/kv\/([a-z-]+)$/);
 		if (kv) return kvRoute(request, env, kv[1]);
+		if (path === '/api/ops') return opsRoute(request, env);
+		const focus = path.match(/^\/api\/focus\/(start|complete|fail|reject|state)$/);
+		if (focus) return focusRoute(request, env, focus[1]);
 		if (path.startsWith('/api/')) return json({ error: 'rota desconhecida' }, 404);
 
 		return env.ASSETS.fetch(request);

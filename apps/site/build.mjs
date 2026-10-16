@@ -10,6 +10,9 @@ import { execFileSync } from 'node:child_process';
 import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, extname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseAlsoAsked } from './lib/ops/alsoasked.mjs';
+import { editorialToTasks } from './lib/ops/editorial.mjs';
+import { seedDoc } from './lib/ops/model.mjs';
 import { assignFolder, attachArticle, buildCompleteness, parseEcoBlueprints, parseFolders, parseMdx, parseRoutes } from './lib/content.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -93,6 +96,15 @@ const data = {
 await mkdir(join(out, 'cms'), { recursive: true });
 await writeFile(join(out, 'cms/data.json'), JSON.stringify(data));
 
+// Operações e Dados: seed do documento ops (3 datasets AlsoAsked + 45 registros editoriais).
+const opsDir = join(here, 'content/ops');
+const opsFiles = (await readdir(opsDir)).filter(f => f.startsWith('DATA-') && f.endsWith('.csv')).sort();
+const parsed = await Promise.all(opsFiles.map(async f => parseAlsoAsked(await readFile(join(opsDir, f), 'utf8'), f, { importedAt: 'seed' })));
+const bad = parsed.filter(p => p.errors.length);
+if (bad.length) throw new Error('Fixtures AlsoAsked inválidos: ' + JSON.stringify(bad.map(b => b.errors)));
+const ops = seedDoc(parsed, editorialToTasks(await readFile(join(opsDir, 'editorial_workflow.csv'), 'utf8')));
+await writeFile(join(out, 'cms/ops-seed.json'), JSON.stringify(ops));
+
 // ---------- app do CMS e login (React do npm, pré-compilado) ----------
 await build({
 	entryPoints: { app: join(here, 'cms/src/main.jsx'), login: join(here, 'cms/src/login.jsx') },
@@ -110,4 +122,5 @@ const shell = (title, script) => `<!doctype html><html lang="pt-BR"><head><meta 
 await writeFile(join(out, 'index.html'), shell('CMS · EXECUTAR', 'app'));
 await writeFile(join(out, 'login.html'), shell('Entrar · CMS EXECUTAR', 'login'));
 await writeFile(join(out, '404.html'), '<!doctype html><meta charset="utf-8"><title>404</title><link rel="stylesheet" href="/styles.css"><p style="padding:24px">Página não encontrada. <a href="/">Voltar ao CMS</a></p>\n');
+console.log(`ops: ${ops.nodes.length} nós · ${ops.edges.length} relações · ${ops.tasks.length} tarefas`);
 console.log(`built dist · ${routes.length} rotas · ${docs.length} docs · ${articles.length} artigos · ${componentNames.length} componentes`);

@@ -13,6 +13,9 @@
 		"not_found_handling": "404-page"
 	},
 	"kv_namespaces": [{ "binding": "CMS_KV", "id": "544a27ed6dc743d99f155184dfe65292" }],
+	// WIP=1 global do foco (Operações e Dados): uma instância "global" serializa início/conclusão.
+	"durable_objects": { "bindings": [{ "name": "FOCUS_LOCK", "class_name": "FocusLock" }] },
+	"migrations": [{ "tag": "v1", "new_sqlite_classes": ["FocusLock"] }],
 	// Secrets (wrangler secret put): CMS_USER, CMS_PASS, SESSION_SECRET, CF_ANALYTICS_TOKEN, CF_ACCOUNT_ID.
 	"vars": { "CF_SCRIPT_NAME": "design" },
 	"observability": { "enabled": true }
