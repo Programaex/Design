@@ -6,7 +6,7 @@ import { Button, SegmentedControl, Tag, TextField } from '../ds.js';
 import { exportJson, importJson, toCsv } from '../../../lib/ops/exportio.mjs';
 import { bar, groupTasks, range } from '../../../lib/ops/gantt.mjs';
 import { dagLayout, treeLayout } from '../../../lib/ops/layout.mjs';
-import { DEFAULT_OPTIONS, MIN_PT, mmToPx, pageCss, sheetMm, usableArea } from '../../../lib/ops/pagefit.mjs';
+import { DEFAULT_OPTIONS, MIN_PT, minSheetFor, mmToPx, pageCss, sheetMm, usableArea } from '../../../lib/ops/pagefit.mjs';
 import { catLabel, catStyle, fmt, Legend } from './shared.jsx';
 import { MAP_NODE, TreeSvg } from './mindmap.jsx';
 import { MonthWeeks } from './calendar.jsx';
@@ -132,7 +132,7 @@ function PrintSheet({ page, o, index, total, onMeasure, filtersLabel }) {
 		return () => { alive = false; };
 	}, [page.key, Uw, Uh]);
 	return (
-		<section className="print-sheet" style={{ width: `${w - m.left - m.right}mm`, height: `${h - m.top - m.bottom}mm` }} data-page={index + 1}>
+		<section className="print-sheet" style={{ width: `${w - m.left - m.right}mm`, height: `${h - m.top - m.bottom - 0.5}mm` }} data-page={index + 1}>
 			{o.includeHeader && <header className="print-head" style={{ height: `${o.headerMm}mm` }}><b>{page.title}</b><span>{filtersLabel} · {page.count} registros{page.hidden ? ` · ${page.hidden} ocultos (estado visível)` : ''} · página {index + 1}/{total}</span></header>}
 			<div className="print-body" style={{ width: Uw, height: Uh }}>
 				<div ref={inner} className="print-inner" style={fit ? { transform: `translate(${fit.dx}px, ${fit.dy}px) scale(${fit.s})` } : { visibility: 'hidden' }}>{page.node}</div>
@@ -147,15 +147,22 @@ export function Export({ doc, tasks, filters, viewState }) {
 	const [o, setO] = React.useState({ ...DEFAULT_OPTIONS, visibleOnly: false });
 	const [fits, setFits] = React.useState({});
 	const [jsonMsg, setJsonMsg] = React.useState(null);
-	const set = patch => { setFits({}); window.__printReady = false; setO(x => ({ ...x, ...patch })); };
+	const set = patch => { window.__printReady = false; setO(x => ({ ...x, ...patch })); };
 	const pages = React.useMemo(() => buildPages(o, doc, tasks, viewState), [o, doc, tasks, viewState]);
-	const measured = pages.every(p => fits[p.key]);
-	const illegible = pages.filter(p => fits[p.key] && !fits[p.key].legible);
+	// Medições indexadas pelas opções que as produziram: mudar uma opção nunca reaproveita medida antiga.
+	const optsKey = JSON.stringify(o);
+	const fitOf = p => fits[optsKey + '|' + p.key];
+	const measured = pages.every(fitOf);
+	const illegible = pages.filter(p => fitOf(p) && !fitOf(p).legible);
 	const multi = pages.length > 1 && o.overflowMode === 'ask';
 	const blocked = !measured || illegible.length > 0 || multi;
-	React.useEffect(() => { if (measured) { window.__printReady = true; document.documentElement.dataset.printReady = blocked ? 'blocked' : 'ok'; } }, [measured, blocked]);
+	React.useEffect(() => { if (measured) { window.__printReady = true; document.documentElement.dataset.printReady = blocked ? 'blocked' : 'ok'; } }, [measured, blocked, fits, pages]);
 	const filtersLabel = Object.entries(filters).filter(([, v]) => v).map(([k, v]) => `${k}=${v}`).join(', ') || 'sem filtros';
 	const sug = illegible.length ? ['A3 landscape', 'A3 portrait', 'A4 portrait'].filter(s => s !== `${o.paper} ${o.orientation}`) : [];
+	// Menor folha personalizada que deixa todas as páginas ilegíveis no piso de 9 pt.
+	const need = illegible.reduce((acc, p) => { const [w, h] = minSheetFor(fitOf(p).W, fitOf(p).H, o, { fontPx: FONT_PX[o.view] }); return [Math.max(acc[0], w), Math.max(acc[1], h)]; }, [0, 0]);
+	const useCustom = ([w, h]) => set({ paper: 'custom', custom: [w, h], orientation: w >= h ? 'landscape' : 'portrait' });
+	const custom = o.custom || sheetMm({ ...o, paper: o.paper === 'custom' ? 'A4' : o.paper });
 	const importFile = async f => {
 		const r = importJson(await f.text());
 		if (r.error) return setJsonMsg({ tone: 'danger', text: r.error });
@@ -170,8 +177,10 @@ export function Export({ doc, tasks, filters, viewState }) {
   body * { visibility: hidden !important; }
   #print-root, #print-root * { visibility: visible !important; }
   #print-root { position: absolute; left: 0; top: 0; width: auto; }
-  #print-root .print-preview-scale { transform: none !important; }
-  .print-sheet { break-after: page; box-shadow: none !important; margin: 0 !important; }
+  html, body { margin: 0 !important; padding: 0 !important; height: auto !important; overflow: visible !important; }
+  #print-root { margin: 0 !important; overflow: visible !important; }
+  #print-root .print-preview-scale { transform: none !important; display: block !important; gap: 0 !important; }
+  .print-sheet { break-after: page; break-inside: avoid; box-shadow: none !important; margin: 0 !important; }
   .print-sheet:last-child { break-after: auto; }
   .print-root { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }`}</style>
@@ -190,8 +199,12 @@ export function Export({ doc, tasks, filters, viewState }) {
 				<div className="ops-print-opts">
 					<label className="field"><span className="field-label">View</span><select className="input" value={o.view} onChange={e => set({ view: e.target.value })}><option value="calendar">Calendário (mês)</option><option value="agenda">Agenda (paginada)</option><option value="mindmap">Mapa mental</option><option value="workflow">Workflow</option><option value="gantt">Gantt</option></select></label>
 					<label className="field"><span className="field-label">Escopo</span><select className="input" value={o.scope} onChange={e => set({ scope: e.target.value })}><option value="selection">Seleção atual</option><option value="filtered">Filtrado</option><option value="all">Tudo</option></select></label>
-					<label className="field"><span className="field-label">Papel</span><select className="input" value={o.paper} onChange={e => set({ paper: e.target.value })}><option>A4</option><option>A3</option></select></label>
-					<SegmentedControl name="ori" value={o.orientation} onChange={v => set({ orientation: v })} ariaLabel="Orientação" options={[{ value: 'landscape', label: 'Paisagem' }, { value: 'portrait', label: 'Retrato' }]} />
+					<label className="field"><span className="field-label">Papel</span><select className="input" value={o.paper} onChange={e => e.target.value === 'custom' ? useCustom(custom) : set({ paper: e.target.value })}><option>A4</option><option>A3</option><option value="custom">Personalizado</option></select></label>
+					{o.paper === 'custom' && <>
+						<TextField label="Largura (mm)" type="number" min="50" max="5000" value={o.custom[0]} onChange={e => useCustom([Math.max(50, Math.min(5000, Number(e.target.value) || 50)), o.custom[1]])} />
+						<TextField label="Altura (mm)" type="number" min="50" max="5000" value={o.custom[1]} onChange={e => useCustom([o.custom[0], Math.max(50, Math.min(5000, Number(e.target.value) || 50))])} />
+					</>}
+					{o.paper !== 'custom' && <SegmentedControl name="ori" value={o.orientation} onChange={v => set({ orientation: v })} ariaLabel="Orientação" options={[{ value: 'landscape', label: 'Paisagem' }, { value: 'portrait', label: 'Retrato' }]} />}
 					<TextField label="Margens (mm)" type="number" min="0" max="30" value={o.marginsMm.top} onChange={e => { const v = Math.max(0, Math.min(30, Number(e.target.value) || 0)); set({ marginsMm: { top: v, right: v, bottom: v, left: v } }); }} />
 					{(o.view === 'mindmap' || o.view === 'workflow') && <label className="field"><span className="field-label">Layout</span><select className="input" value={o.layoutDirection} onChange={e => set({ layoutDirection: e.target.value })}><option value="LR">Esq → dir</option><option value="TB">Cima → baixo</option>{o.view === 'mindmap' && <option value="bilateral">Bilateral</option>}</select></label>}
 					{o.view === 'mindmap' && <label className="ops-check"><input type="checkbox" checked={o.visibleOnly} onChange={e => set({ visibleOnly: e.target.checked })} /> Só o estado visível (não expandir tudo)</label>}
@@ -201,15 +214,16 @@ export function Export({ doc, tasks, filters, viewState }) {
 				</div>
 				<div className="ops-print-status" role="status">
 					<b>{pages.length} página(s) · {pages.reduce((a, p) => a + p.count, 0)} registros</b>
-					{pages.map(p => fits[p.key] && <span key={p.key}><code>{p.key}</code> escala {(fits[p.key].s * 100).toFixed(0)}% → fonte {fits[p.key].pt.toFixed(1)} pt {fits[p.key].legible ? <Tag tone="success">legível</Tag> : <Tag tone="danger">abaixo de {MIN_PT} pt</Tag>}</span>)}
+					{pages.map(p => fitOf(p) && <span key={p.key}><code>{p.key}</code> escala {(fitOf(p).s * 100).toFixed(0)}% → fonte {fitOf(p).pt.toFixed(1)} pt {fitOf(p).legible ? <Tag tone="success">legível</Tag> : <Tag tone="danger">abaixo de {MIN_PT} pt</Tag>}</span>)}
 					{illegible.length > 0 && <p className="ops-notice is-warning">Não cabe legível em {o.paper} {o.orientation === 'landscape' ? 'paisagem' : 'retrato'}. Tente {sug.join(' ou ')}, reduza o escopo (filtros, "Seleção atual" ou "Só o estado visível") ou escolha outra view. Nenhum PDF ilegível é gerado.</p>}
+					{illegible.length > 0 && <div className="cms-actions"><Button size="sm" variant="secondary" onClick={() => useCustom(need)}>Usar papel personalizado {need[0]} × {need[1]} mm (mínimo para {MIN_PT} pt)</Button></div>}
 					{multi && illegible.length === 0 && <p className="ops-notice is-warning">O escopo gera {pages.length} páginas. Escolha "Paginar" para imprimir todas ou "Seleção atual" para uma página.</p>}
 				</div>
 				<div className="cms-actions"><Button disabled={blocked} onClick={() => window.print()}>Imprimir / salvar PDF</Button><span className="text-muted ops-small">No diálogo do navegador, desative "Cabeçalhos e rodapés" e ative "Gráficos de fundo".</span></div>
 			</section>
 			<div id="print-root" className="print-root">
 				<div className="print-preview-scale">
-					{pages.map((p, i) => <PrintSheet key={p.key + JSON.stringify(o)} page={p} o={o} index={i} total={pages.length} filtersLabel={filtersLabel} onMeasure={(k, f) => setFits(x => ({ ...x, [k]: f }))} />)}
+					{pages.map((p, i) => <PrintSheet key={optsKey + '|' + p.key} page={p} o={o} index={i} total={pages.length} filtersLabel={filtersLabel} onMeasure={(k, f) => setFits(x => ({ ...x, [optsKey + '|' + k]: f }))} />)}
 				</div>
 			</div>
 		</div>

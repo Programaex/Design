@@ -5,7 +5,7 @@ import { diffDatasets, parseAlsoAsked } from '../lib/ops/alsoasked.mjs';
 import { editorialToTasks } from '../lib/ops/editorial.mjs';
 import { addDependency, addNode, cascadeDiff, convertQuestionToTask, fsViolations, importDataset, seedDoc, undoBatch, updateTask } from '../lib/ops/model.mjs';
 import { addDays, agenda, eventsOn, monthGrid, viewDays, weekSegments } from '../lib/ops/calendar.mjs';
-import { calendarHeight, fitToPage, pageCss, suggestions, usableArea } from '../lib/ops/pagefit.mjs';
+import { calendarHeight, fitToPage, minSheetFor, pageCss, suggestions, usableArea } from '../lib/ops/pagefit.mjs';
 import { exportJson, importJson, neutralize, toCsv, fromCsv } from '../lib/ops/exportio.mjs';
 import { bar, groupTasks, range } from '../lib/ops/gantt.mjs';
 import { dagLayout, pathTo, treeLayout } from '../lib/ops/layout.mjs';
@@ -175,4 +175,13 @@ test('Gantt e layouts: barras, não agendadas, orientação não muda relações
 	assert.equal(pathTo(nodes, leaf.id).length, 3);
 	const dag = dagLayout(doc.tasks.slice(0, 3), [{ id: 'd', predecessorId: doc.tasks[0].id, successorId: doc.tasks[1].id }]);
 	assert.equal(dag.items.find(i => i.task.id === doc.tasks[1].id).layer, 1);
+});
+
+test('SPEC-03: papel personalizado mínimo deixa o conteúdo no piso de 9 pt', () => {
+	const opts = { paper: 'A4', orientation: 'landscape' };
+	const [w, h] = minSheetFor(3000, 1200, opts, { fontPx: 12 });
+	const f = fitToPage({ x: 0, y: 0, width: 3000, height: 1200 }, { ...opts, paper: 'custom', custom: [w, h], orientation: w >= h ? 'landscape' : 'portrait' }, { fontPx: 12 });
+	assert.ok(f.legible, `pt=${f.pt}`);
+	assert.ok(f.pt < 9.5);
+	assert.match(pageCss({ paper: 'custom', custom: [w, h], orientation: 'landscape' }), new RegExp(`size: ${w}mm ${h}mm`));
 });

@@ -58,3 +58,13 @@ export function pageCss(opts) {
 	const m = o.marginsMm;
 	return `@page { size: ${w}mm ${h}mm; margin: ${m.top}mm ${m.right}mm ${m.bottom}mm ${m.left}mm; }`;
 }
+
+// Menor folha personalizada (mm, já com margens/cabeçalho/rodapé) em que conteúdo W×H px fica ≥ minPt.
+export function minSheetFor(W, H, opts, { fontPx = 16, minPt = MIN_PT } = {}) {
+	const o = { ...DEFAULT_OPTIONS, ...opts, marginsMm: { ...DEFAULT_OPTIONS.marginsMm, ...(opts.marginsMm || {}) } };
+	const s = Math.min(1, (minPt * 96) / (72 * fontPx));
+	const m = o.marginsMm;
+	const w = (W * s) / MM_TO_PX + m.left + m.right;
+	const h = (H * s) / MM_TO_PX + m.top + m.bottom + (o.includeHeader ? o.headerMm : 0) + (o.includeLegend ? o.footerMm : 0);
+	return [Math.ceil(w + 1), Math.ceil(h + 1)];
+}
