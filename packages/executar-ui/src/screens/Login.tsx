@@ -1,6 +1,6 @@
 'use client';
 import { Button, TextField } from '../ds';
-import type { PrismaApp } from '@/lib/use-prisma-app';
+import type { PrismaApp } from '../use-prisma-app';
 
 export function Login({ app }: { app: PrismaApp }) {
 	const { s, a } = app;

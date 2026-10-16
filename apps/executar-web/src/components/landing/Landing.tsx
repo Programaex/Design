@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { PrismaApp } from '../app/PrismaApp';
-import { Button, Icon } from '../ds';
+import { Button, Icon } from '@executar/ui';
 import { DocumentComparison, EnvironmentComparison, TasksComparison } from './Comparisons';
 import { Diagram, WorkflowHero } from './WorkflowHero';
 

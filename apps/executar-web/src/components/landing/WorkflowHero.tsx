@@ -3,7 +3,7 @@
 // orthogonal connectors (stroke-dashoffset), travelling signals and output activation. `Diagram` is a pure function of
 // time, so the storyboard frames (and a 1920×1080 video render) reuse the exact same drawing.
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { Icon } from '../ds';
+import { Icon } from '@executar/ui';
 
 const W = 640, H = 400;
 export const TIMELINE_END = 10.5;

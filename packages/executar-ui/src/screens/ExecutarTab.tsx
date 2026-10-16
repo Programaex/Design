@@ -4,7 +4,7 @@
 import * as C from '@executar/core';
 import { useRef } from 'react';
 import { Button, Icon, Switch, Tag } from '../ds';
-import type { PrismaApp } from '@/lib/use-prisma-app';
+import type { PrismaApp } from '../use-prisma-app';
 
 const ST: Record<C.ItemStatus, [string, 'neutral' | 'success' | 'warning']> = { ready: ['Pronto', 'neutral'], done: ['Concluído', 'success'], deferred: ['Adiado', 'warning'] };
 

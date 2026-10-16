@@ -4,8 +4,7 @@ import * as C from '@executar/core';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { PrismaApp } from '../app/PrismaApp';
-import { SegmentedControl } from '../ds';
-import { readSaved, type StartView } from '@/lib/use-prisma-app';
+import { SegmentedControl, readSaved, type StartView } from '@executar/ui';
 
 const VIEWS: [StartView, string, string, number?, boolean?][] = [
 	['login', 'Login', 'E-mail, Apple, Google ou uso sem conta.'],

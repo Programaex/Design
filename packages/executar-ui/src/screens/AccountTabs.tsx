@@ -1,9 +1,8 @@
 'use client';
 import * as C from '@executar/core';
-import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
 import { Button, Check, Icon, ProgressBar, SegmentedControl, Switch, Tag } from '../ds';
-import type { AppState, PrismaApp } from '@/lib/use-prisma-app';
+import type { AppState, PrismaApp } from '../use-prisma-app';
 
 const H1 = 'mt-1 text-[34px] leading-[1.08] font-semibold tracking-[-0.015em]';
 const SECTION = 'px-1 pb-2 text-[12px] font-semibold text-text-muted';
@@ -153,12 +152,8 @@ export function SyncScreen({ app, plan }: { app: PrismaApp; plan: C.Plan }) {
 
 export function DadosScreen({ app, plan }: { app: PrismaApp; plan: C.Plan }) {
 	const { s, a } = app;
-	const router = useRouter();
 	const fileRef = useRef<HTMLInputElement>(null);
-	const openExport = () => {
-		if (app.isolated) return a.say('Abra o app para exportar');
-		router.push('/app/exportar?template=' + s.exportTpl);
-	};
+	const openExport = () => app.openExport(s.exportTpl);
 	const exportJson = () => {
 		const blob = new Blob([JSON.stringify(C.exportPayload(plan, s.setup), null, 2)], { type: 'application/json' });
 		const el = document.createElement('a'); el.href = URL.createObjectURL(blob); el.download = 'prisma-' + (C.slug(plan.nome) || 'plano') + '.json';

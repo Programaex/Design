@@ -2,22 +2,34 @@
 // "Prisma Export": the four A4 templates filled with the saved plan (or lorem ipsum for the layout audit).
 // Opens in the same tab, so it works inside installed PWAs and on phones; pages are zoomed to fit and print at true size.
 import * as C from '@executar/core';
-import { useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Button, Icon, SegmentedControl } from '../ds';
-import { readSaved, STORAGE_KEY } from '@/lib/use-prisma-app';
+import { readSaved, STORAGE_KEY } from '../use-prisma-app';
 
 type Content = 'lorem' | 'plan';
 interface Audit { faces: number; over: string[]; clamped: number }
 
-export function ExportViewer({ chrome = 'full', template, content: contentProp, plan: planProp }: { chrome?: 'full' | 'none'; template?: C.TemplateId; content?: Content; plan?: C.Plan }) {
-	const router = useRouter();
-	const q = useSearchParams();
+export interface ExportViewerProps {
+	chrome?: 'full' | 'none';
+	/** Initial template / content (e.g. from the URL); without them the last template saved on this device is used. */
+	template?: C.TemplateId | null;
+	content?: Content | null;
+	plan?: C.Plan;
+	/** Opens the print dialog once the pages are laid out. */
+	autoPrint?: boolean;
+	/** Lets the host mirror the choice in its URL. */
+	onChange?: (template: C.TemplateId, content: Content) => void;
+	/** Back button (hidden when absent). */
+	onBack?: () => void;
+	backLabel?: string;
+}
+
+export function ExportViewer({ chrome = 'full', template, content: contentProp, plan: planProp, autoPrint, onChange, onBack, backLabel = 'App' }: ExportViewerProps) {
 	const [ready, setReady] = useState(false);
 	const [saved, setSaved] = useState<{ plan: C.Plan | null; user: { email: string } | null; tpl: C.TemplateId | null }>({ plan: null, user: null, tpl: null });
-	const qTpl = q.get('template'), qContent = q.get('content');
-	const [tpl, setTpl] = useState<C.TemplateId>(template ?? (C.isTemplateId(qTpl) ? qTpl : 'prisma'));
-	const [content, setContent] = useState<Content>(contentProp ?? (qContent === 'lorem' || qContent === 'plan' ? qContent : 'plan'));
+	const [tpl, setTpl] = useState<C.TemplateId>(C.isTemplateId(template) ? template : 'prisma');
+	const [content, setContentRaw] = useState<Content>(contentProp === 'lorem' ? 'lorem' : 'plan');
+	const setContent = (c: Content) => { setContentRaw(c); onChange?.(tpl, c); };
 	const [audit, setAudit] = useState<Audit | null>(null);
 	const [shareLabel, setShareLabel] = useState('Salvar HTML');
 	const pk = useRef<HTMLDivElement>(null);
@@ -26,7 +38,7 @@ export function ExportViewer({ chrome = 'full', template, content: contentProp, 
 		const load = () => {
 			const s = readSaved();
 			setSaved({ plan: s?.plan ?? null, user: s?.user ?? null, tpl: s?.exportTpl ?? null });
-			if (!qTpl && !template && s?.exportTpl) setTpl(s.exportTpl);
+			if (!C.isTemplateId(template) && s?.exportTpl) setTpl(s.exportTpl);
 			setReady(true);
 		};
 		load();
@@ -75,8 +87,8 @@ export function ExportViewer({ chrome = 'full', template, content: contentProp, 
 	}, [html, ready, chrome]);
 
 	useEffect(() => {
-		if (ready && q.get('print') === '1') { const t = setTimeout(() => window.print(), 1200); return () => clearTimeout(t); }
-	}, [ready, q]);
+		if (ready && autoPrint) { const t = setTimeout(() => window.print(), 1200); return () => clearTimeout(t); }
+	}, [ready, autoPrint]);
 
 	const share = () => {
 		const doc = C.documentHtml(tpl, plan);
@@ -92,7 +104,7 @@ export function ExportViewer({ chrome = 'full', template, content: contentProp, 
 		setTpl(id);
 		const s = readSaved();
 		if (s) try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...s, exportTpl: id })); } catch { /* ignore */ }
-		router.replace('/app/exportar?template=' + id + (content === 'lorem' ? '&content=lorem' : ''), { scroll: false });
+		onChange?.(id, content);
 	};
 	const ok = audit && !audit.over.length;
 
@@ -102,7 +114,7 @@ export function ExportViewer({ chrome = 'full', template, content: contentProp, 
 			{chrome !== 'none' && (
 				<div data-noprint className="sticky top-0 z-20 flex flex-col gap-2 border-b border-[#EAEAE8] bg-white/90 px-3 py-2.5 backdrop-blur-[20px] backdrop-saturate-[180%]">
 					<div className="flex flex-wrap items-center gap-2">
-						<button type="button" onClick={() => router.push('/app')} className="flex h-11 cursor-pointer items-center gap-1 border-0 bg-transparent pr-2.5 pl-1 text-[16px] text-[#2563EB]"><Icon name="caret-left" className="text-[20px]" />App</button>
+						{onBack && <button type="button" onClick={onBack} className="flex h-11 cursor-pointer items-center gap-1 border-0 bg-transparent pr-2.5 pl-1 text-[16px] text-[#2563EB]"><Icon name="caret-left" className="text-[20px]" />{backLabel}</button>}
 						<span className="flex min-w-[140px] flex-1 flex-col">
 							<span className="text-[15px] font-semibold text-[#202124]">{T.t}</span>
 							<span className="font-[family-name:var(--font-mono-doc)] text-[10px] tracking-[.06em] text-[#6B7280]">A4 retrato · margem 10 mm · 3 faces de 92,33 mm · {vm.pages.length} {vm.pages.length === 1 ? 'página' : 'páginas'}</span>

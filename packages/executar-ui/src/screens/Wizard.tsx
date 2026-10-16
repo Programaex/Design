@@ -2,7 +2,7 @@
 import * as C from '@executar/core';
 import { useEffect, useRef } from 'react';
 import { Button, Icon, ProgressBar, SegmentedControl, TextField } from '../ds';
-import type { PrismaApp } from '@/lib/use-prisma-app';
+import type { PrismaApp } from '../use-prisma-app';
 
 interface Opt { key: string; t: string; s: string; on: boolean; onClick: () => void; ic?: string; color?: string }
 

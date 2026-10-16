@@ -53,7 +53,18 @@ function demo(): Pick<AppState, 'setup' | 'plan' | 'open'> {
 	return { ...r, open: { ['e:' + r.plan.ents[0].id]: true } };
 }
 
-export function usePrismaApp({ isolated = false, startView, startStep, execContext }: { isolated?: boolean; startView?: StartView; startStep?: number; execContext?: boolean } = {}) {
+export interface PrismaAppOptions {
+	/** Demo instance (landing, gallery): sample data, no storage, no server. */
+	isolated?: boolean;
+	/** Talks to the EXECUTAR API (session, sync, sharing). Off in the local mini apps: the plan lives only on this device. */
+	remote?: boolean;
+	startView?: StartView; startStep?: number; execContext?: boolean;
+	/** Opens the A4 export for a template (each host routes it its own way). */
+	onOpenExport?: (template: C.TemplateId) => void;
+}
+
+export function usePrismaApp({ isolated = false, remote = false, startView, startStep, execContext, onOpenExport }: PrismaAppOptions = {}) {
+	const online = remote && !isolated;
 	const [s, setS] = useState<AppState>(initial);
 	const ref = useRef(s);
 	ref.current = s;
@@ -108,7 +119,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 	/* ---------- server session ---------- */
 	const flush = useCallback(async () => {
 		const st = ref.current;
-		if (isolated || !st.user || !st.plan || st.offline || inFlight.current) return;
+		if (!online || !st.user || !st.plan || st.offline || inFlight.current) return;
 		if (typeof navigator !== 'undefined' && !navigator.onLine) return;
 		inFlight.current = true;
 		const sent = st.plan, sentCount = st.outbox.length;
@@ -133,7 +144,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 		} finally {
 			inFlight.current = false;
 		}
-	}, [isolated, up]);
+	}, [online, up]);
 
 	flushRef.current = flush;
 
@@ -143,7 +154,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 	}, [flush]);
 
 	useEffect(() => {
-		if (!s.ready || isolated) return;
+		if (!s.ready || !online) return;
 		let cancelled = false;
 		api.me().then(async ({ user }) => {
 			if (cancelled) return;
@@ -162,17 +173,17 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 			if (cancelled) return;
 			up({ plan: r.plan, base: r.plan, setup: { ...C.defaultSetup(), ...(r.setup || {}) }, members: r.members, screen: 'app', tab: 'prisma', sub: null, lastSync: Date.now() });
 		}).catch(() => { /* offline: keep working locally */ });
-		const online = () => scheduleFlush(0);
-		window.addEventListener('online', online);
-		return () => { cancelled = true; window.removeEventListener('online', online); };
+		const onOnline = () => scheduleFlush(0);
+		window.addEventListener('online', onOnline);
+		return () => { cancelled = true; window.removeEventListener('online', onOnline); };
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [s.ready, isolated]);
+	}, [s.ready, online]);
 
 	const track = useCallback((label: string) => {
-		if (isolated || !ref.current.user) return;
+		if (!online || !ref.current.user) return;
 		up(st => ({ outbox: [...st.outbox, { id: C.uid(), label, at: Date.now() }] }));
 		scheduleFlush();
-	}, [isolated, up, scheduleFlush]);
+	}, [online, up, scheduleFlush]);
 
 	const mutate = useCallback((fn: (p: C.Plan) => C.Plan, label: string) => {
 		up(st => (st.plan ? { plan: fn(st.plan) } : {}));
@@ -245,7 +256,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 		async requestLogin(email: string) {
 			const em = email.trim();
 			if (!/\S+@\S+\.\S+/.test(em)) return say('Digite um e-mail válido');
-			if (isolated) return say('Abra o app para entrar');
+			if (!online) return say('Abra o app para entrar');
 			try {
 				const r = await api.requestLogin(em);
 				if (r.devLink) { window.location.href = r.devLink; return; }
@@ -257,7 +268,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 		oauth(provider: 'Apple' | 'Google') { say(`Entrar com ${provider} ainda não está configurado neste servidor.`); },
 		guest() { up(st => ({ user: null, screen: st.plan ? 'app' : 'wizard', step: 0 })); },
 		async logout() {
-			if (!isolated) await api.logout().catch(() => undefined);
+			if (online) await api.logout().catch(() => undefined);
 			up({ user: null, screen: 'login', base: null, outbox: [], conflict: null });
 		},
 		toggleOpen(k: string, def: boolean) { up(st => ({ open: { ...st.open, [k]: !(k in st.open ? st.open[k] : def) } })); },
@@ -277,7 +288,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 			if (sh.kind === 'rename') { if (v) mutate(p => C.renameTask(p, sh.taskId, v), 'Tarefa editada'); else mutate(p => C.removeTask(p, sh.taskId), 'Tarefa removida'); }
 			if (sh.kind === 'share') {
 				if (!/\S+@\S+\.\S+/.test(v)) return say('Digite um e-mail válido');
-				if (isolated || !st.user || !st.plan) return say('Crie uma conta para compartilhar.');
+				if (!online || !st.user || !st.plan) return say('Crie uma conta para compartilhar.');
 				try {
 					if (!st.base) await flush();
 					const r = await api.addMember(st.plan.id, v);
@@ -298,7 +309,7 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 		saveSettings(patch: Partial<Settings>) {
 			const settings = { ...ref.current.settings, ...patch };
 			up({ settings });
-			if (!isolated && ref.current.user) api.saveSettings(settings).catch(() => undefined);
+			if (online && ref.current.user) api.saveSettings(settings).catch(() => undefined);
 		},
 		importPlan(r: { plan: C.Plan; setup: C.Setup }) {
 			up({ plan: r.plan, base: null, setup: r.setup, tab: 'prisma', sub: null, open: {}, screen: 'app' });
@@ -325,9 +336,9 @@ export function usePrismaApp({ isolated = false, startView, startStep, execConte
 				return patch;
 			});
 		}
-	}), [up, say, mutate, track, setExec, execMove, flush, isolated, scheduleFlush]);
+	}), [up, say, mutate, track, setExec, execMove, flush, isolated, online, scheduleFlush]);
 
-	return { s, a: actions, isolated };
+	return { s, a: actions, isolated, online, openExport: (tpl: C.TemplateId) => (isolated || !onOpenExport ? actions.say('Abra o app para exportar') : onOpenExport(tpl)) };
 }
 
 export type PrismaApp = ReturnType<typeof usePrismaApp>;

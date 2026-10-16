@@ -1,0 +1,63 @@
+/* Risco Cognitivo design system (Claude Design bundle, values verbatim). Tokens are custom properties;
+   element and component rules live in cascade layers so Tailwind utilities always win over them. */
+@import './ds/colors.css';
+@import './ds/typography.css';
+@import './ds/spacing.css';
+@import './ds/patterns.css';
+@import './ds/executar.css';
+@import './ds/base.css' layer(base);
+@import './ds/components.css' layer(components);
+@import '@phosphor-icons/web/regular' layer(components);
+
+/* Utilities read the design-system roles, so data-theme="dark" re-skins everything. */
+@theme {
+	--color-bg: #ffffff;
+	--color-surface: #f5f5f7;
+	--color-surface-raised: #ffffff;
+	--color-text: #1d1d1f;
+	--color-text-muted: #6e6e73;
+	--color-accent: #0071e3;
+	--color-on-accent: #ffffff;
+	--color-link: #0066cc;
+	--color-divider: rgb(29 29 31 / 0.16);
+	--color-success: #248a3d;
+	--color-warning: #b25000;
+	--color-danger: #d70015;
+	--color-section: #000000;
+	--color-on-section: #f5f5f7;
+	--color-section-ghost: #424245;
+	--color-warm: #f7f6f3;
+	--color-pill: #e8e8ed;
+	--font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-mono-doc: var(--font-plex-mono), ui-monospace, monospace;
+	--ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+:root {
+	--font-heading: -apple-system, BlinkMacSystemFont, 'SF Pro Display', var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+	html { -webkit-text-size-adjust: 100%; }
+	button { font: inherit; color: inherit; }
+	.no-scrollbar { scrollbar-width: none; }
+	.no-scrollbar::-webkit-scrollbar { width: 0; height: 0; }
+}
+
+@keyframes pmspin { to { transform: rotate(360deg); } }
+@keyframes hlprog { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.animate-pmspin { animation: pmspin 1s linear infinite; }
+
+[data-reveal] { transition: opacity 0.7s var(--ease-standard), transform 0.7s var(--ease-standard); }
+[data-reveal='hidden'] { opacity: 0; transform: translateY(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto !important; }
+	[data-reveal='hidden'] { opacity: 1; transform: none; }
+}
+
+@media print {
+	[data-noprint] { display: none !important; }
+	body { background: #fff !important; }
+}

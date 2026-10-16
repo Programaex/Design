@@ -2,13 +2,8 @@
 import * as C from '@executar/core';
 import Link from 'next/link';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
-import { Button, Icon, Tag, TextField } from '../ds';
-import { usePrismaApp, type PrismaApp as App, type StartView, type Tab } from '@/lib/use-prisma-app';
-import { AjustesScreen, ContaTab, DadosScreen, RotinasTab, SyncScreen, syncInfo } from './AccountTabs';
-import { ExecutarTab } from './ExecutarTab';
-import { Login } from './Login';
-import { MapaTab, PrismaTab } from './PrismaTab';
-import { Wizard } from './Wizard';
+import { AjustesScreen, Button, ContaTab, DadosScreen, ExecutarTab, Icon, Login, MapaTab, PrismaTab, RotinasTab, SyncScreen, Tag, TextField, Wizard, syncInfo, usePrismaApp, type PrismaApp as App, type StartView, type Tab } from '@executar/ui';
+import { useRouter } from 'next/navigation';
 
 const TABS: [Tab, string, string][] = [['prisma', 'Prisma', 'list-checks'], ['executar', 'Executar', 'play-circle'], ['mapa', 'Mapa', 'tree-structure'], ['rotinas', 'Rotinas', 'sun-horizon'], ['conta', 'Conta', 'user-circle']];
 
@@ -48,7 +43,8 @@ export interface PrismaAppProps {
 }
 
 export function PrismaApp({ isolated, startView, startStep, execContext, frame = 'auto', chrome = 'ios', theme: themeProp }: PrismaAppProps) {
-	const app = usePrismaApp({ isolated, startView, startStep, execContext });
+	const router = useRouter();
+	const app = usePrismaApp({ isolated, remote: true, startView, startStep, execContext, onOpenExport: tpl => router.push('/app/exportar?template=' + tpl) });
 	const wide = useWide();
 	const [theme, setTheme] = useState<'light' | 'dark'>(themeProp ?? 'light');
 	useEffect(() => {

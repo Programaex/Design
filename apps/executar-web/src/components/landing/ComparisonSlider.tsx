@@ -2,7 +2,7 @@
 // Reusable before/after comparator: pointer drag (mouse, touch, pen), keyboard (← → PgUp PgDn Home End) and presets.
 // Both states render the same content; the "before" layer is clipped, never removed, so nothing changes between states.
 import { useRef, useState, type ReactNode } from 'react';
-import { Icon } from '../ds';
+import { Icon } from '@executar/ui';
 
 export interface ComparisonSliderProps {
 	/** Header line, e.g. the shared objective. */

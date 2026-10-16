@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
 	// @executar/core ships TypeScript source (shared with the Expo app).
-	transpilePackages: ['@executar/core'],
+	transpilePackages: ['@executar/core', '@executar/ui'],
 	poweredByHeader: false,
 	async headers() {
 		return [

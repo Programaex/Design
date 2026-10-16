@@ -1,7 +1,7 @@
 'use client';
 import * as C from '@executar/core';
 import { Check, Icon, ProgressBar, Tag } from '../ds';
-import type { PrismaApp } from '@/lib/use-prisma-app';
+import type { PrismaApp } from '../use-prisma-app';
 
 export const isOpen = (open: Record<string, boolean>, k: string, def: boolean) => (k in open ? open[k] : def);
 
