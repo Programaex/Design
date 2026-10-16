@@ -1,6 +1,6 @@
 # apps/site — CMS EXECUTAR (Worker `design`)
 
-Publica em `https://design.bus-programa.workers.dev`. Todo o site exige login: o CMS fica na raiz e o site real (os kits do Claude Design) em `/ui_kits/...`.
+Publica em `https://design.bus-programa.workers.dev`. O CMS fica na raiz e exige login (`/`, `/cms/`, `/files/`, `/api/`). O site real (os kits do Claude Design, em `/ui_kits/...`) e os mini apps (`/m/...`) são públicos.
 
 O CMS segue o ADR em `docs/adr/ADR-CENTRAL-CONTROLE-CMS.md`: entrada única, ID primeiro, fluxo guiado por estado e automação observável. Os dados ficam em documentos JSON, no formato das Collections do ADR, para migrar para Payload depois.
 
@@ -16,6 +16,7 @@ O CMS segue o ADR em `docs/adr/ADR-CENTRAL-CONTROLE-CMS.md`: entrada única, ID 
 | Storybook | `#/storybook` | `packages/design-system/components` |
 | Automação | `#/automacao` | botões visíveis, sem backend; log no KV `automation-log` |
 | Analytics | `#/analytics` | GraphQL Analytics da Cloudflare via `/api/analytics` |
+| Mini apps PWA (público) | `/m/`, `/m/<slug>/` | `apps/miniapps` (build copiado para `dist/m`); catálogo em `apps/miniapps/catalog.json` → `ui_kits/ecossistema/miniapps.js` |
 | Módulos editoriais | `#/m/<módulo>` | arquitetura e seed do Hub Editorial; dados no KV `hub` |
 
 Um único design system: o CMS, o storybook e o site real usam o mesmo `packages/design-system` (tokens, `styles.css` e componentes). Nenhum token do Hub Editorial original foi trazido.

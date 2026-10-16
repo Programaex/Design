@@ -163,7 +163,7 @@ function miniCatalogOverride(page, type, p, res) {
   if (type === 'PageIntro') return { ...p, description: page.id === 'apps'
     ? 'Apps que funcionam no navegador, sem conta e mesmo sem conexão. Todos usam o mesmo plano salvo no seu aparelho.'
     : 'Ferramentas gratuitas para levar o plano para o papel e trazer planos de outras fontes.', links: [['Todos os mini apps', '/m/'], ['Executar App', '/apps/executar']] };
-  if (type === 'FeaturedCarousel') return { label: 'Novos: mini apps locais.', items: MINIAPPS.map(miniItem).map(it => ({ ...it, kicker: 'Novo · ' + it.kicker })) };
+  if (type === 'FeaturedCarousel') return { label: 'Novos: mini apps locais.', items: mine.concat(MINIAPPS.filter(m => m.catalog !== page.id)).map(miniItem).map(it => ({ ...it, kicker: 'Novo · ' + it.kicker })) };
   if (type === 'ResourceGrid') { const items = mine.filter(m => miniMatch(m, res.query)).map(miniItem); return { items, total: items.length, variant: 'mosaic', pagination: { page: 1, pages: 1 } }; }
   if (type === 'BenefitsRow') return MINI_BENEFITS;
   return p;
