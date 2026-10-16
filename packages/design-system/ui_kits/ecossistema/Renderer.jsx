@@ -143,6 +143,50 @@ const ASSET = src => '../../assets/' + src;
 const FORMAT_LABEL = { article: 'Artigo', manifesto: 'Manifesto' };
 const articleItem = a => ({ slug: a.slug, href: '/blog/' + a.slug, title: a.title, kicker: FORMAT_LABEL[a.contentType] || 'Artigo', category: (FORMAT_LABEL[a.contentType] || 'Artigo') + ' · ' + a.tags.slice(0, 2).join(' · '), meta: a.readingMinutes + ' min · ' + a.tags[0], description: a.description, media: a.cover && { src: ASSET(a.cover.src), alt: a.cover.alt } });
 
+// Mini apps PWA (apps/miniapps/catalog.json → miniapps.js, gerado por apps/site/build.mjs). Sem eles, os catálogos seguem em lorem.
+const MINIAPPS = window.ECO_MINIAPPS || [];
+const miniBySlug = slug => MINIAPPS.find(m => m.slug === slug);
+const miniHref = m => '/' + m.catalog + '/' + m.slug;
+const miniMatch = (m, q) => Object.entries(q).every(([k, v]) => k === 'pagina' || k === 'colecao' ? true
+  : k === 'q' ? (m.title + ' ' + m.description).toLowerCase().includes(v.toLowerCase())
+  : k === 'disponibilidade' ? v === 'gratuito' : (m.facets[k] || []).includes(v));
+const miniItem = m => ({ slug: m.slug, href: miniHref(m), real: true, title: m.title, kicker: m.kicker, category: (m.catalog === 'apps' ? 'App' : 'Ferramenta') + ' · ' + m.kicker, meta: 'Gratuito · offline · sem conta', description: m.description, media: { src: m.icon, alt: '', icon: true } });
+
+const MINI_BENEFITS = { title: 'Feito para funcionar em qualquer lugar.', items: [
+  { icon: 'ph-wifi-slash', title: 'Offline', description: 'Abre e salva sem conexão.', more: 'Depois da primeira visita, todos os mini apps ficam guardados no navegador e funcionam sem internet.' },
+  { icon: 'ph-user-circle-dashed', title: 'Sem conta', description: 'O plano fica no seu aparelho.', more: 'Nada é enviado a servidores. Para levar o plano a outro aparelho, exporte o arquivo JSON no Prisma.' },
+  { icon: 'ph-device-mobile', title: 'Instalável', description: 'Vira um app na tela de início.', more: 'No celular, use “Adicionar à tela de início”. No computador, o ícone de instalar na barra de endereço.' }
+] };
+
+function miniCatalogOverride(page, type, p, res) {
+  const mine = MINIAPPS.filter(m => m.catalog === page.id);
+  if (type === 'PageIntro') return { ...p, description: page.id === 'apps'
+    ? 'Apps que funcionam no navegador, sem conta e mesmo sem conexão. Todos usam o mesmo plano salvo no seu aparelho.'
+    : 'Ferramentas gratuitas para levar o plano para o papel e trazer planos de outras fontes.', links: [['Todos os mini apps', '/m/'], ['Executar App', '/apps/executar']] };
+  if (type === 'FeaturedCarousel') return { label: 'Novos: mini apps locais.', items: MINIAPPS.map(miniItem).map(it => ({ ...it, kicker: 'Novo · ' + it.kicker })) };
+  if (type === 'ResourceGrid') { const items = mine.filter(m => miniMatch(m, res.query)).map(miniItem); return { items, total: items.length, variant: 'mosaic', pagination: { page: 1, pages: 1 } }; }
+  if (type === 'BenefitsRow') return MINI_BENEFITS;
+  return p;
+}
+
+function miniDetailOverride(m, type, id, p) {
+  const open = { label: 'Abrir ' + m.title, href: '/m/' + m.slug + '/' };
+  const others = MINIAPPS.filter(x => x.slug !== m.slug).slice(0, 3).map(x => ({ href: miniHref(x), kicker: x.kicker, title: x.title, cta: 'Ver detalhes' }));
+  if (type === 'DetailHeader') return { ...p, kicker: (m.catalog === 'apps' ? 'App' : 'Ferramenta') + ' · gratuito', title: m.name, description: m.description, media: { kind: 'square', src: m.icon, alt: '', icon: true }, actions: [open, { label: 'Todos os mini apps', href: '/m/' }], note: 'Funciona no navegador, offline e sem conta. O plano fica salvo neste aparelho e é o mesmo em todos os mini apps.' };
+  if (id === 'funcionalidades' || type === 'FeatureSplit') return { ...p, eyebrow: 'Funcionalidades', title: m.features.join(' · ') + '.', body: m.description, media: { kind: 'landscape', src: m.icon, alt: '', icon: true } };
+  if (type === 'MediaFigure') return { media: { kind: 'landscape', src: m.icon, alt: m.title, icon: true }, caption: m.name };
+  if (id === 'como-funciona' || id === 'instrucoes' || type === 'RichText') return { content: [
+    { t: 'h2', text: 'Como usar' },
+    { t: 'p', text: 'Abra o app pelo botão acima. Ele roda direto no navegador, sem cadastro. Depois da primeira visita, continua funcionando sem conexão.' },
+    { t: 'p', text: 'Para instalar no celular, use “Adicionar à tela de início” no menu do navegador. No computador, use o ícone de instalar na barra de endereço.' },
+    { t: 'p', text: 'Os seis mini apps compartilham o mesmo plano salvo neste aparelho: crie no Prisma, execute no Executar, acompanhe no Mapa e nas Rotinas e imprima nas Folhas A4.' }
+  ] };
+  if (type === 'BenefitsRow') return MINI_BENEFITS;
+  if (type === 'RelatedContent') return { title: 'Outros mini apps', items: others, variant: 'cards' };
+  if (type === 'PageIntro') return { variant: 'cta', title: 'Abra o ' + m.title + '.', description: m.description, actions: [open, { label: 'Ver todos', href: '/' + m.catalog }], note: null };
+  return p;
+}
+
 function articleOverride(a, type, id, p) {
   if (type === 'ArticleHeader') return { kicker: (FORMAT_LABEL[a.contentType] || 'Artigo') + ' · ' + a.tags.slice(0, 3).join(' · '), title: a.title, publishedAt: 'Pronto para revisão', authors: null, readingMinutes: a.readingMinutes };
   if (id === 'capa') return { media: a.cover ? { kind: 'cover', src: ASSET(a.cover.src), alt: a.cover.alt } : media('cover'), caption: a.cover && a.cover.caption };
@@ -155,6 +199,21 @@ function articleOverride(a, type, id, p) {
 }
 
 function override(t, page, type, id, idx, p, res, site) {
+  if ((page.id === 'apps' || page.id === 'ferramentas') && MINIAPPS.some(m => m.catalog === page.id)) return miniCatalogOverride(page, type, p, res);
+  if ((t === 'produto_app' || t === 'recurso') && res.slug && miniBySlug(res.slug)) return miniDetailOverride(miniBySlug(res.slug), type, id, p);
+  if (t === 'produto_app' && !res.slug && miniBySlug('prisma')) {
+    const open = { label: 'Abrir o Prisma', href: '/m/prisma/' };
+    if (type === 'DetailHeader') return { ...p, kicker: 'App · gratuito', title: 'Executar App', description: 'Planeje em três horizontes, execute uma ação por vez e leve o plano para o papel. Seis mini apps que funcionam no navegador, offline e sem conta.', media: { kind: 'square', src: miniBySlug('prisma').icon, alt: '', icon: true }, actions: [open, { label: 'Como funciona', href: '/apps/executar#como-funciona' }], note: null };
+    if (id === 'funcionalidades') return { ...p, eyebrow: 'Funcionalidades', title: 'Seis apps. Um plano.', body: MINIAPPS.map(m => m.title + ': ' + m.description).join(' ') };
+    if (id === 'como-funciona') return { content: [
+      { t: 'h2', text: 'Como funciona' },
+      { t: 'p', text: 'Comece pelo Prisma: oito perguntas montam os entregáveis em Agora, Próximo e Depois, cada um com prova de conclusão.' },
+      { t: 'p', text: 'Na hora de fazer, o Executar mostra uma ação por vez com timer. O Mapa mental e as Rotinas acompanham o mesmo plano, e as Folhas A4 o levam para o papel. Nenhuma tarefa é marcada como feita sem você.' },
+      { t: 'p', text: 'Tudo fica salvo no seu aparelho. Não precisa de conta e funciona sem conexão depois da primeira visita.' }
+    ] };
+    if (type === 'RelatedContent') return { title: 'Os mini apps', items: MINIAPPS.map(m => ({ href: miniHref(m), kicker: m.kicker, title: m.title, cta: 'Ver detalhes' })), variant: 'cards' };
+    if (type === 'PageIntro') return { variant: 'cta', title: 'Acesse o Executar App.', description: 'Abra o Prisma e crie seu primeiro plano em poucos minutos.', actions: [open, { label: 'Todos os mini apps', href: '/m/' }], note: null };
+  }
   if (t === 'conteudo' && page.id === 'conteudo' && articleBySlug(res.slug)) return articleOverride(articleBySlug(res.slug), type, id, p);
   if (t === 'catalogo_conteudos' && ARTICLES.length) {
     if (type === 'RelatedContent') { const a = ARTICLES[0]; return { variant: 'featured', items: [{ href: '/blog/' + a.slug, kicker: 'Destaque', title: a.title, description: a.description, media: a.cover && { src: ASSET(a.cover.src), alt: a.cover.alt } }] }; }

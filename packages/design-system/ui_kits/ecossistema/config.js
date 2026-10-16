@@ -79,7 +79,9 @@
     if (!page) {
       for (const d of dynamics) { const m = p.path.match(d.re); if (m) { page = d.r; slug = m[1]; break; } }
       const isArticle = page && page.id === 'conteudo' && (window.ECO_ARTICLES || []).some(a => a.slug === slug);
-      if (page && !DEMO_SLUG.test(slug) && !isArticle) return { ...p, url, entry: null, page: null, slug, pattern: 'notfound' };
+      // mini apps PWA (apps/miniapps/catalog.json → miniapps.js) têm página de detalhe em /apps/<slug> ou /ferramentas/<slug>
+      const isMiniApp = page && (window.ECO_MINIAPPS || []).some(a => a.slug === slug && p.path === '/' + a.catalog + '/' + slug);
+      if (page && !DEMO_SLUG.test(slug) && !isArticle && !isMiniApp) return { ...p, url, entry: null, page: null, slug, pattern: 'notfound' };
     }
     if (!page) return { ...p, url, entry, page: null, pattern: 'notfound' };
     const bp = BP[page.id];

@@ -18,8 +18,12 @@ const PH = {
   square: ['resource-square.svg', 1000, 1000], icon: ['category-icon.svg', 240, 240], portrait: ['portrait.svg', 600, 800]
 };
 
+// Destinos fora do roteador por hash: os mini apps PWA (/m/…) e URLs absolutas abrem como páginas normais.
+const isExternal = to => typeof to === 'string' && (to.startsWith('/m/') || /^https?:\/\//.test(to));
+
 function A({ to, children, className, style, ...rest }) {
   const { go } = useEco();
+  if (isExternal(to)) return <a href={to} className={className} style={style} {...rest}>{children}</a>;
   return <a href={'#' + to} className={className} style={style} onClick={e => { e.preventDefault(); go(to); }} {...rest}>{children}</a>;
 }
 
@@ -48,7 +52,7 @@ function Actions({ actions = [], center = true, size }) {
   return (
     <div className={'eco-actions' + (center ? ' center' : '')}>
       {actions.slice(0, 2).map((a, k) => a.href
-        ? <Button key={k} variant={k === 0 ? 'primary' : 'secondary'} size={size} onClick={() => go(a.href)}>{a.label}</Button>
+        ? <Button key={k} variant={k === 0 ? 'primary' : 'secondary'} size={size} onClick={() => (isExternal(a.href) ? window.location.assign(a.href) : go(a.href))}>{a.label}</Button>
         : <Button key={k} variant={k === 0 ? 'primary' : 'secondary'} size={size} disabled title={a.reason}>{a.label}</Button>)}
     </div>
   );
