@@ -41,7 +41,7 @@ npx wrangler secret put CF_ANALYTICS_TOKEN  # token com Account Analytics: Read 
 npx wrangler secret put CF_ACCOUNT_ID       # opcional, para analytics
 ```
 
-A senha `003` é trivial. O login é verificado no servidor, com cookie HttpOnly assinado, mas qualquer pessoa que conheça as credenciais entra. Troque-as antes de expor dados sensíveis.
+Enquanto `CMS_USER`/`CMS_PASS` não estiverem definidos no Worker, vale o padrão **000 / 003**. Ao gravar os secrets, o padrão deixa de funcionar. A senha `003` é trivial. O login é verificado no servidor, com cookie HttpOnly assinado, mas qualquer pessoa que conheça as credenciais entra. Troque-as antes de expor dados sensíveis.
 
 ## Artigos
 

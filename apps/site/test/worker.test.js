@@ -1,6 +1,6 @@
 import { env, SELF } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
-import { analytics } from '../worker/index.js';
+import worker, { analytics } from '../worker/index.js';
 
 const login = (user, pass) =>
 	SELF.fetch('https://cms.test/api/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ user, pass }) });
@@ -32,6 +32,22 @@ describe('login', () => {
 	it('recusa cookie adulterado', async () => {
 		const c = (await sessionCookie()).replace(/.$/, ch => (ch === 'A' ? 'B' : 'A'));
 		expect((await SELF.fetch('https://cms.test/api/session', { headers: { cookie: c } })).status).toBe(401);
+	});
+});
+
+describe('credenciais padrão (Worker sem secrets)', () => {
+	const post = (user, pass) => worker.fetch(new Request('https://cms.test/api/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ user, pass }) }), {});
+	it('aceita 000 / 003 quando CMS_USER e CMS_PASS não existem', async () => {
+		const r = await post('000', '003');
+		expect(r.status).toBe(200);
+		expect(r.headers.get('set-cookie')).toMatch(/cms_session=/);
+	});
+	it('continua recusando senha errada', async () => {
+		expect((await post('000', '1')).status).toBe(401);
+	});
+	it('secrets, quando definidos, substituem o padrão', async () => {
+		const r = await worker.fetch(new Request('https://cms.test/api/login', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ user: '000', pass: '003' }) }), { CMS_USER: 'ana', CMS_PASS: 'x' });
+		expect(r.status).toBe(401);
 	});
 });
 
