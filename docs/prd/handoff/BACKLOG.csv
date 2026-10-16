@@ -1,0 +1,11 @@
+﻿id,priority,title,requirements,depends_on,acceptance,status,owner,estimate
+B-01,P0,Contratos e adapters,FR-01–03;FR-20,,AT-01;AT-02,planned,,
+B-02,P0,Importação CSV com preview e reimportação,FR-01–03;FR-18,B-01,AT-01;AT-02,planned,,
+B-03,P0,Mapa e grafo expansível,FR-04–06,B-02,AT-03;AT-04,planned,,
+B-04,P0,Foco e concorrência WIP=1,FR-07–08,B-01,AT-05,planned,,
+B-05,P0,Calendário multiview e edição,FR-09–11;FR-20,B-01,AT-06,planned,,
+B-06,P0,Gantt e sincronização de datas,FR-12–13;FR-20,B-05,AT-07,planned,,
+B-07,P0,Renderer de impressão e preview,FR-14–15,B-03;B-05,AT-08,planned,,
+B-08,P0,Dashboard integrado,FR-16,B-04;B-05;B-06,AT-09,planned,,
+B-09,P0,"Mobile, acessibilidade e erro",FR-17,B-03;B-04;B-05;B-06,AT-10,planned,,
+B-10,P1,Round-trip JSON/CSV,FR-19,B-02,AT-11,planned,,
