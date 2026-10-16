@@ -1,0 +1,13 @@
+<!-- @dsCard group="Components" viewport="700x520" name="Cards, tiles & dialog" subtitle="Flat 18px cards, centred 28px promo tile, blurred-scrim dialog" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:20px 24px}.h{font-size:12px;font-weight:600;letter-spacing:-0.01em;color:var(--color-text-muted);margin:18px 0 10px}.h:first-child{margin-top:0}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}</style></head><body><div id="root"></div>
+<script type="text/babel">const { Card, PromoTile, Dialog, Button } = window.RiscoCognitivoDesignSystem_fab0ba;
+const I = n => <i className={"ph ph-" + n}></i>;
+function Demo(){ return (<>
+<div className="g3"><Card kicker="Função executiva" title="Controle inibitório" body="Frear uma resposta automática para escolher a adequada." meta={<>{I('clock')}<span>6 min</span></>} interactive /><Card kicker="Neurobiologia" title="Córtex pré-frontal" body="A região que orquestra planejamento e decisão." meta={<>{I('brain')}<span>Anatomia</span></>} interactive /><Card kicker="Risco" title="Viés de confirmação" body="Quando a atenção só encontra o que espera." meta={<>{I('warning')}<span>Estratégias</span></>} interactive /></div>
+<div className="g2" style={{marginTop:16}}><PromoTile title="Mapa do cérebro" body="Explore cada região." actions={<><Button size="sm">Explorar</Button><Button size="sm" variant="ghost">Saiba mais</Button></>} /><div style={{position:'relative',height:200,borderRadius:18,overflow:'hidden',border:'1px solid var(--color-divider)'}}><Dialog contained title="Salvar resultado?" actions={<><Button size="sm" variant="secondary">Cancelar</Button><Button size="sm">Salvar</Button></>}>Fica visível só para você.</Dialog></div></div></>); }
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);</script></body></html>

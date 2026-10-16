@@ -1,0 +1,23 @@
+{
+  "_comment": "Anexos visuais por artigo. Caminhos relativos a packages/design-system/assets/. Cenas EV-xxx: ELEMENTOS_VISUAIS_CONTEXTOS v1.0.0 (licença comercial das fontes não fornecida).",
+  "tarefa-decolagem-voo-aterrissagem": {
+    "id": "A01",
+    "cover": { "src": "elementos/projeto/EV-010__lancamento-de-foguete.svg", "alt": "Ilustração de um foguete sendo lançado", "caption": "Toda tarefa precisa de destino, decolagem, voo e aterrissagem." },
+    "figure": { "after": "O que uma tarefa pede de você", "src": "elementos/trabalho/EV-015__carga-de-trabalho.svg", "alt": "Pessoa carregando uma pilha de trabalho", "caption": "Funções executivas transformam intenção em ação." }
+  },
+  "quando-mensagens-disputam-atencao": {
+    "id": "A02",
+    "cover": { "src": "elementos/comunicacao/EV-048__anuncio-com-megafone.svg", "alt": "Pessoa anunciando com um megafone", "caption": "Várias mensagens disputam a mesma atenção." },
+    "figure": { "after": "O que isso significa para o seu dia", "src": "elementos/comunicacao/EV-041__consulta-ao-celular.svg", "alt": "Pessoa consultando o celular", "caption": "Organizar a informação reduz o esforço de escolher o que olhar." }
+  },
+  "o-que-custa-quando-o-processo-falha": {
+    "id": "A03",
+    "cover": { "src": "elementos/financas/EV-089__analise-de-percentual-e-documento.svg", "alt": "Análise de percentual e documento", "caption": "Cada estudo mede só uma parte do custo." },
+    "figure": { "after": "Troca de tarefas: o custo depende da troca", "src": "elementos/trabalho/EV-017__documentos-em-movimento.svg", "alt": "Documentos em movimento", "caption": "Anotar onde parou reduz o que você precisa lembrar na volta." }
+  },
+  "manifesto": {
+    "id": "MAN",
+    "cover": { "src": "brand/svg/01_stack_check.svg", "alt": "Símbolo EXECUTAR", "caption": "Entender, estruturar e executar." },
+    "figure": { "after": "O que esperamos de você", "src": "elementos/colaboracao/EV-091__apoio-mutuo-para-crescimento.svg", "alt": "Pessoas se apoiando para subir", "caption": "Teste, observe e ajuste." }
+  }
+}

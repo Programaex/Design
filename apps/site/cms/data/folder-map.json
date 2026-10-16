@@ -1,0 +1,14 @@
+{
+  "_comment": "Regras (regex sobre o caminho no repo) que ligam cada arquivo de documentação a uma pasta da taxonomia EXEC-INFO-DOMAIN-001. A primeira regra que casar vence; arquivos sem regra não aparecem no CMS.",
+  "rules": [
+    { "folder": "D01", "match": "^docs/adr/" },
+    { "folder": "D02", "match": "^packages/design-system/assets/(elementos|brand)/README\\.md$" },
+    { "folder": "D05", "match": "^(EXECUTAR_Claude_Design/[^/]+\\.(csv|json)|docs/taxonomia/MASTER_INDEX\\.csv|packages/design-system/assets/elementos/inventario\\.csv|EXECUTAR_Claude_Design/referencias/capturas-manifesto\\.json)$" },
+    { "folder": "D06", "match": "^apps/site/content/articles/.*\\.mdx$" },
+    { "folder": "D07", "match": "^(docs/WORKFLOW_TURBOREPO\\.md|apps/workflow/(README|CLAUDE)\\.md)$" },
+    { "folder": "D08", "match": "^(docs/rotas/|EXECUTAR_Claude_Design/CLAUDE_DESIGN_PROMPT\\.md$)" },
+    { "folder": "D10", "match": "^apps/scroll-task/(docs/.*|README\\.md|INSTRUCOES_DESENVOLVIMENTO\\.md)$" },
+    { "folder": "D11", "match": "^(docs/taxonomia/EXECUTAR_mapa_A4\\.(svg|png)|DESIGN_SYSTEM-NOTURNO/readme\\.md|packages/design-system/readme\\.md|EXECUTAR_Claude_Design/referencias/.*\\.png)$" },
+    { "folder": "D12", "match": "^(README\\.md|apps/site/README\\.md|packages/README\\.md|EXECUTAR_Claude_Design/(README|ADR-001-arquitetura-blocos)\\.md)$" }
+  ]
+}
