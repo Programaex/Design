@@ -27,6 +27,18 @@ describe('login', () => {
 		expect(r.status).toBe(302);
 		expect(r.headers.get('location')).toBe('https://cms.test/login?next=%2Fcms%2F%3Fx%3D1');
 	});
+	it('serve o site público e os mini apps sem sessão', async () => {
+		for (const path of ['/ui_kits/ecossistema/', '/ui_kits/ecossistema/miniapps.js', '/m/', '/m/prisma/', '/m/sw.js', '/m/prisma/manifest.webmanifest', '/_ds_bundle.js']) {
+			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
+			expect(r.status, path).not.toBe(302);
+		}
+	});
+	it('mantém CMS e documentos do repo atrás do login', async () => {
+		for (const path of ['/', '/cms/app.js', '/cms/data.json', '/files/README.md']) {
+			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
+			expect(r.status, path).toBe(302);
+		}
+	});
 	it('nega API sem sessão', async () => {
 		expect((await SELF.fetch('https://cms.test/api/kv/progress')).status).toBe(401);
 	});

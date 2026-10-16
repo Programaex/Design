@@ -65,6 +65,12 @@ for (const f of (await readdir(artDir)).filter(f => f.endsWith('.mdx')).sort()) 
 }
 const order = ['tarefa-decolagem-voo-aterrissagem', 'quando-mensagens-disputam-atencao', 'o-que-custa-quando-o-processo-falha', 'manifesto'];
 articles.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+// ---------- mini apps PWA (apps/miniapps) → dist/m/ + itens reais dos catálogos /apps e /ferramentas ----------
+execFileSync('npm', ['run', 'build', '-w', 'apps/miniapps'], { cwd: root, stdio: 'inherit' });
+await cp(join(root, 'apps/miniapps/dist'), join(out, 'm'), { recursive: true });
+const { apps: miniapps } = JSON.parse(await read('apps/miniapps/catalog.json'));
+await writeFile(join(out, 'ui_kits/ecossistema/miniapps.js'), `// Gerado por apps/site/build.mjs a partir de apps/miniapps/catalog.json. Não editar.\nwindow.ECO_MINIAPPS = ${JSON.stringify(miniapps.map(a => ({ ...a, href: '/m/' + a.slug + '/', icon: '/m/icons/' + a.slug + '.svg' })))};\n`);
+
 await writeFile(join(out, 'ui_kits/ecossistema/articles.js'), `// Gerado por apps/site/build.mjs a partir de apps/site/content/articles/*.mdx. Não editar.\nwindow.ECO_ARTICLES = ${JSON.stringify(articles)};\n`);
 
 // Documentos do repo (somente arquivos versionados) → pastas da taxonomia.
@@ -123,4 +129,4 @@ await writeFile(join(out, 'index.html'), shell('CMS · EXECUTAR', 'app'));
 await writeFile(join(out, 'login.html'), shell('Entrar · CMS EXECUTAR', 'login'));
 await writeFile(join(out, '404.html'), '<!doctype html><meta charset="utf-8"><title>404</title><link rel="stylesheet" href="/styles.css"><p style="padding:24px">Página não encontrada. <a href="/">Voltar ao CMS</a></p>\n');
 console.log(`ops: ${ops.nodes.length} nós · ${ops.edges.length} relações · ${ops.tasks.length} tarefas`);
-console.log(`built dist · ${routes.length} rotas · ${docs.length} docs · ${articles.length} artigos · ${componentNames.length} componentes`);
+console.log(`built dist · ${routes.length} rotas · ${docs.length} docs · ${articles.length} artigos · ${miniapps.length} mini apps · ${componentNames.length} componentes`);

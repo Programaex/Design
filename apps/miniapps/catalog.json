@@ -1,0 +1,77 @@
+{
+  "$comment": "Fonte única dos mini apps: gera os manifests PWA, o service worker, as páginas e os itens dos catálogos /apps e /ferramentas do ecossistema (apps/site/build.mjs → miniapps.js).",
+  "apps": [
+    {
+      "slug": "prisma",
+      "title": "Prisma",
+      "name": "Prisma · plano em três horizontes",
+      "catalog": "apps",
+      "icon": "list-checks",
+      "color": "#0071e3",
+      "kicker": "Planejar",
+      "description": "Responda oito perguntas e receba seus entregáveis em Agora, Próximo e Depois, cada um com prova de conclusão e tarefas editáveis.",
+      "features": ["Questionário de 8 perguntas", "Três horizontes com datas", "Tarefas em linguagem simples ou executiva", "Exportar e importar o plano em JSON"],
+      "facets": { "perfil": ["tdah", "dislexia", "autismo", "altas-habilidades", "neurodivergencia"], "objetivo": ["trabalhar", "projetos", "estudar"], "tecnologia": ["apps"] }
+    },
+    {
+      "slug": "executar",
+      "title": "Executar",
+      "name": "Executar · uma ação por vez",
+      "catalog": "apps",
+      "icon": "play-circle",
+      "color": "#1d1d1f",
+      "kicker": "Focar",
+      "description": "Uma ação no centro da tela, timer de 15, 30 ou 45 minutos e quatro escopos. A conclusão é sempre sua: o timer nunca marca nada sozinho.",
+      "features": ["Ação, tarefa, fase ou workflow", "Timer que sobrevive ao recarregar", "Auto-scroll opcional", "Contexto e nota por item"],
+      "facets": { "perfil": ["tdah", "autismo", "neurodivergencia"], "objetivo": ["trabalhar", "rotina", "projetos"], "tecnologia": ["apps"] }
+    },
+    {
+      "slug": "mapa",
+      "title": "Mapa mental",
+      "name": "Mapa mental do plano",
+      "catalog": "apps",
+      "icon": "tree-structure",
+      "color": "#4054e9",
+      "kicker": "Visualizar",
+      "description": "Do grupo ao entregável e à tarefa: abra um nível por vez e marque o que terminou sem sair do mapa.",
+      "features": ["Grupos por tipo de trabalho", "Progresso por entregável", "Prova de conclusão à vista"],
+      "facets": { "perfil": ["tdah", "dislexia", "altas-habilidades", "neurodivergencia"], "objetivo": ["projetos", "processos", "estudar"], "tecnologia": ["apps"] }
+    },
+    {
+      "slug": "rotinas",
+      "title": "Rotinas",
+      "name": "Rotinas do dia",
+      "catalog": "apps",
+      "icon": "sun-horizon",
+      "color": "#b25000",
+      "kicker": "Sustentar",
+      "description": "Abrir o dia, bloco de foco, pausas, fechar o dia e revisão semanal. As marcações recomeçam toda manhã.",
+      "features": ["Até cinco rotinas", "Reinício automático a cada dia", "Horário de cada rotina"],
+      "facets": { "perfil": ["tdah", "autismo", "neurodivergencia"], "objetivo": ["rotina", "trabalhar", "estudar"], "tecnologia": ["apps"] }
+    },
+    {
+      "slug": "folhas-a4",
+      "title": "Folhas A4",
+      "name": "Folhas A4 do plano",
+      "catalog": "ferramentas",
+      "icon": "file-pdf",
+      "color": "#2563eb",
+      "kicker": "Templates",
+      "description": "Quatro modelos preenchidos com o seu plano — Prisma, Semana, Workbook 7 dias e Status — em A4 retrato com três faces, para imprimir, salvar em PDF ou compartilhar em HTML.",
+      "features": ["4 modelos A4", "Auditoria de overflow por face", "PDF e HTML que abre no celular"],
+      "facets": { "perfil": ["tdah", "dislexia", "neurodivergencia"], "objetivo": ["trabalhar", "projetos", "processos"], "tecnologia": ["workflows"], "tipo": ["templates"] }
+    },
+    {
+      "slug": "importar-csv",
+      "title": "Importar CSV",
+      "name": "Plano a partir do CSV",
+      "catalog": "ferramentas",
+      "icon": "file-arrow-up",
+      "color": "#248a3d",
+      "kicker": "Workflows",
+      "description": "Transforme o CSV do plano operacional rastreável em um plano do Prisma: cada cluster vira um entregável e a prioridade define o horizonte.",
+      "features": ["Colunas tarefa_id, cluster_id, cluster_nome, titulo", "Alta → Agora, Média → Próximo, Baixa → Depois", "Prévia antes de usar"],
+      "facets": { "perfil": ["neurodivergencia"], "objetivo": ["processos", "projetos", "trabalhar"], "tecnologia": ["workflows"], "tipo": ["workflows"] }
+    }
+  ]
+}

@@ -45,7 +45,7 @@ function FeatureSplit({ id, title, body, media, alignment = 'left', actions, eye
           <p className="eco-lead">{body}</p>
           <Actions actions={actions} center={false} />
         </div>
-        <Media kind={media.kind || 'landscape'} name={id} className="r24" alt={media.alt} />
+        <Media kind={media.kind || 'landscape'} name={id} className={'r24' + (media.icon ? ' eco-media-icon' : '')} alt={media.alt} src={media.src} />
       </div>
     </div>
   );
@@ -188,7 +188,7 @@ function DetailHeader({ id, title, description, media, actions, price, kicker, n
         <Actions actions={actions.slice(0, 1)} center={false} size="sm" />
       </div>
       <div className="eco-wrap eco-detail">
-        <Media kind={media.kind || 'square'} name={id} className="r24 eco-detail-media" />
+        <Media kind={media.kind || 'square'} name={id} className={'r24 eco-detail-media' + (media.icon ? ' eco-media-icon' : '')} src={media.src} alt={media.alt} />
         <div className="eco-detail-copy">
           {first && <BuildTag />}
           {kicker && <span className="eco-kicker">{kicker}</span>}
