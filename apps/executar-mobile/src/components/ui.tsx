@@ -6,19 +6,19 @@ import { Pressable, StyleSheet, Text, TextInput, View, type PressableProps, type
 import { radius, tone, type, useTheme } from '@/lib/theme';
 
 const ICONS: Record<string, P.Icon> = {
-	'pen-nib': P.PenNib, code: P.Code, handshake: P.Handshake, 'gear-six': P.GearSix, 'book-open': P.BookOpen, house: P.House,
-	'list-checks': P.ListChecks, 'play-circle': P.PlayCircle, 'tree-structure': P.TreeStructure, 'sun-horizon': P.SunHorizon, 'user-circle': P.UserCircle,
-	'caret-left': P.CaretLeft, 'caret-right': P.CaretRight, 'caret-down': P.CaretDown, 'caret-up': P.CaretUp, check: P.Check, 'check-circle': P.CheckCircle,
-	circle: P.Circle, plus: P.Plus, trash: P.Trash, warning: P.Warning, 'warning-circle': P.WarningCircle, x: P.X, 'dots-three': P.DotsThree,
-	play: P.Play, pause: P.Pause, 'arrow-counter-clockwise': P.ArrowCounterClockwise, alarm: P.Alarm, bell: P.Bell, 'bell-slash': P.BellSlash,
-	cloud: P.Cloud, 'cloud-check': P.CloudCheck, 'cloud-slash': P.CloudSlash, 'arrows-clockwise': P.ArrowsClockwise, 'device-mobile': P.DeviceMobile,
-	users: P.Users, 'download-simple': P.DownloadSimple, 'sign-out': P.SignOut, clock: P.Clock, 'file-arrow-down': P.FileArrowDown,
-	'file-arrow-up': P.FileArrowUp, 'file-pdf': P.FilePdf, 'squares-four': P.SquaresFour, 'calendar-blank': P.CalendarBlank, notebook: P.Notebook,
-	'chart-bar': P.ChartBar, 'share-network': P.ShareNetwork, printer: P.Printer
+	'pen-nib': P.PenNibIcon, code: P.CodeIcon, handshake: P.HandshakeIcon, 'gear-six': P.GearSixIcon, 'book-open': P.BookOpenIcon, house: P.HouseIcon,
+	'list-checks': P.ListChecksIcon, 'play-circle': P.PlayCircleIcon, 'tree-structure': P.TreeStructureIcon, 'sun-horizon': P.SunHorizonIcon, 'user-circle': P.UserCircleIcon,
+	'caret-left': P.CaretLeftIcon, 'caret-right': P.CaretRightIcon, 'caret-down': P.CaretDownIcon, 'caret-up': P.CaretUpIcon, check: P.CheckIcon, 'check-circle': P.CheckCircleIcon,
+	circle: P.CircleIcon, plus: P.PlusIcon, trash: P.TrashIcon, warning: P.WarningIcon, 'warning-circle': P.WarningCircleIcon, x: P.XIcon, 'dots-three': P.DotsThreeIcon,
+	play: P.PlayIcon, pause: P.PauseIcon, 'arrow-counter-clockwise': P.ArrowCounterClockwiseIcon, alarm: P.AlarmIcon, bell: P.BellIcon, 'bell-slash': P.BellSlashIcon,
+	cloud: P.CloudIcon, 'cloud-check': P.CloudCheckIcon, 'cloud-slash': P.CloudSlashIcon, 'arrows-clockwise': P.ArrowsClockwiseIcon, 'device-mobile': P.DeviceMobileIcon,
+	users: P.UsersIcon, 'download-simple': P.DownloadSimpleIcon, 'sign-out': P.SignOutIcon, clock: P.ClockIcon, 'file-arrow-down': P.FileArrowDownIcon,
+	'file-arrow-up': P.FileArrowUpIcon, 'file-pdf': P.FilePdfIcon, 'squares-four': P.SquaresFourIcon, 'calendar-blank': P.CalendarBlankIcon, notebook: P.NotebookIcon,
+	'chart-bar': P.ChartBarIcon, 'share-network': P.ShareNetworkIcon, printer: P.PrinterIcon
 };
 export function Icon({ name, size = 20, color }: { name: string; size?: number; color?: string }) {
 	const t = useTheme();
-	const C = ICONS[name] ?? P.Circle;
+	const C = ICONS[name] ?? P.CircleIcon;
 	return <C size={size} color={color ?? t.text} weight="regular" />;
 }
 
@@ -49,7 +49,7 @@ export function Tag({ toneKey = 'neutral', children }: { toneKey?: Parameters<ty
 	return <View style={{ backgroundColor: bg, borderRadius: radius.pill, paddingHorizontal: 10, paddingVertical: 3, alignSelf: 'flex-start' }}><Text style={{ color: fg, fontSize: 12, fontWeight: '500' }}>{children}</Text></View>;
 }
 
-export const Field = forwardRef<TextInput, TextInputProps & { label: string }>(function Field({ label, style, ...rest }, ref) {
+export const Field = forwardRef<React.ComponentRef<typeof TextInput>, TextInputProps & { label: string }>(function Field({ label, style, ...rest }, ref) {
 	const t = useTheme();
 	return (
 		<View>
@@ -92,7 +92,7 @@ export function Check({ done, size = 22 }: { done: boolean; size?: number }) {
 	const t = useTheme();
 	return (
 		<View style={{ width: size, height: size, borderRadius: size / 2, borderWidth: 1.5, borderColor: done ? t.success : t.neutral400, backgroundColor: done ? t.success : 'transparent', alignItems: 'center', justifyContent: 'center' }}>
-			{done && <P.Check size={size * 0.6} color="#fff" weight="bold" />}
+			{done && <P.CheckIcon size={size * 0.6} color="#fff" weight="bold" />}
 		</View>
 	);
 }

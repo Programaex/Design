@@ -9,7 +9,7 @@ export default function TabsLayout() {
 	return (
 		<Tabs screenOptions={{ headerShown: false, tabBarActiveTintColor: t.accent, tabBarInactiveTintColor: t.muted, tabBarStyle: { backgroundColor: t.bg, borderTopColor: t.divider }, tabBarLabelStyle: { fontSize: 11 } }}>
 			{TABS.map(([name, title, icon]) => (
-				<Tabs.Screen key={name} name={name} options={{ title, tabBarIcon: ({ color }) => <Icon name={icon} size={24} color={color} /> }} />
+				<Tabs.Screen key={name} name={name} options={{ title, tabBarIcon: ({ color }) => <Icon name={icon} size={24} color={String(color)} /> }} />
 			))}
 		</Tabs>
 	);

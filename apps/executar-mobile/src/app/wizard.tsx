@@ -13,7 +13,7 @@ export default function Wizard() {
 	const t = useTheme();
 	const insets = useSafeAreaInsets();
 	const { s, a } = useStore();
-	const sc = useRef<ScrollView>(null);
+	const sc = useRef<React.ComponentRef<typeof ScrollView>>(null);
 	const st = C.STEPS[s.step], su = s.setup;
 	const choose = <T extends string | number>(list: C.Choice<T>[], key: 'periodo' | 'energia' | 'lang'): Opt[] =>
 		list.map(o => ({ key: String(o.id), t: o.t, s: o.s, on: su[key] === o.id, onPress: () => a.setSetup(x => ({ ...x, [key]: o.id })) }));
@@ -38,7 +38,7 @@ export default function Wizard() {
 		a.setSetup(x => x.ents.some(e => e.grupo === g && e.titulo.toLowerCase() === v.toLowerCase()) ? x : { ...x, ents: [...x.ents, { id: C.uid(), titulo: v, grupo: g, hz: null }] });
 	};
 	const drafts = useRef<Record<string, string>>({});
-	const inputs = useRef<Record<string, TextInput | null>>({});
+	const inputs = useRef<Record<string, React.ComponentRef<typeof TextInput> | null>>({});
 	const last = s.step === C.STEPS.length - 1;
 	const next = () => { if (a.next()) router.replace('/(tabs)'); else sc.current?.scrollTo({ y: 0, animated: false }); };
 
