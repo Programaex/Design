@@ -78,7 +78,8 @@
     let page = pagePaths[p.path], slug = null;
     if (!page) {
       for (const d of dynamics) { const m = p.path.match(d.re); if (m) { page = d.r; slug = m[1]; break; } }
-      if (page && !DEMO_SLUG.test(slug)) return { ...p, url, entry: null, page: null, slug, pattern: 'notfound' };
+      const isArticle = page && page.id === 'conteudo' && (window.ECO_ARTICLES || []).some(a => a.slug === slug);
+      if (page && !DEMO_SLUG.test(slug) && !isArticle) return { ...p, url, entry: null, page: null, slug, pattern: 'notfound' };
     }
     if (!page) return { ...p, url, entry, page: null, pattern: 'notfound' };
     const bp = BP[page.id];

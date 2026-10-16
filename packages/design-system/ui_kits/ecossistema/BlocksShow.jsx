@@ -126,7 +126,7 @@ function ResourceGrid({ id, items, variant = 'mosaic', pagination, total }) {
         <div className="eco-cards3">
           {items.map((it, k) => (
             <A key={it.slug} to={it.href} className="eco-rcard">
-              <Media kind={variant === 'people' ? 'portrait' : 'cover'} name={`${id}-${it.slug}`} className="r18" />
+              <Media kind={variant === 'people' ? 'portrait' : 'cover'} name={`${id}-${it.slug}`} className="r18" src={it.media && it.media.src} alt={it.media && it.media.alt} />
               <span className="eco-kicker">{it.kicker}</span><h3>{it.title}</h3><p className="muted">{it.meta}</p>
             </A>
           ))}

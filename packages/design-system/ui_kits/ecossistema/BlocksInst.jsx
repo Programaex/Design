@@ -80,7 +80,7 @@ function RelatedContent({ id, title, items, variant = 'rail' }) {
   if (variant === 'featured') return (
     <div className="eco-wrap eco-pad-sm">
       <A to={items[0].href} className="eco-feat">
-        <Media kind="cover" name={`${id}-1`} className="r24" />
+        <Media kind="cover" name={`${id}-1`} className="r24" src={items[0].media && items[0].media.src} alt={items[0].media && items[0].media.alt} />
         <div className="eco-feat-copy"><span className="eco-kicker">{items[0].kicker}</span><h2 className="eco-section-title">{items[0].title}</h2><p className="eco-lead">{items[0].description}</p></div>
       </A>
     </div>

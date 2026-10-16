@@ -125,16 +125,47 @@ function recipe(res, site) {
     const ctx = { page, res, site, idx };
     let props = (ECO.PATTERN[t] === 'showroom' && CATALOG_OF[page.id] && ['apps', 'ferramentas', 'loja'].includes(page.id) && showroomProps(type, ctx)) || propsFor(type, ctx);
     props = override(t, page, type, id, idx, props, res, site);
+    if (props === null) return null;
     let surface = null;
     if (['CollectionTabs', 'FilterBar', 'ResourceGrid'].includes(type) && ['apps', 'ferramentas', 'loja'].includes(page.id)) surface = 'alt';
     if (type === 'DirectoryLinks' && page.id !== 'contato') surface = 'alt2';
     if (type === 'Newsletter' || (type === 'DiscussionFeed' && t === 'conteudo') || (type === 'RelatedContent' && t !== 'landing' && t !== 'catalogo_conteudos')) surface = 'alt';
     return { id, type, version: 1, props, surface };
   });
-  return anyFilter ? blocks.filter(b => b.type !== 'FeaturedCarousel') : blocks;
+  const kept = blocks.filter(Boolean);
+  return anyFilter ? kept.filter(b => b.type !== 'FeaturedCarousel') : kept;
+}
+
+// Artigos do CMS (apps/site/content/articles → articles.js). Ausentes no Claude Design: tudo segue em lorem.
+const ARTICLES = window.ECO_ARTICLES || [];
+const articleBySlug = slug => ARTICLES.find(a => a.slug === slug);
+const ASSET = src => '../../assets/' + src;
+const FORMAT_LABEL = { article: 'Artigo', manifesto: 'Manifesto' };
+const articleItem = a => ({ slug: a.slug, href: '/blog/' + a.slug, title: a.title, kicker: FORMAT_LABEL[a.contentType] || 'Artigo', category: (FORMAT_LABEL[a.contentType] || 'Artigo') + ' · ' + a.tags.slice(0, 2).join(' · '), meta: a.readingMinutes + ' min · ' + a.tags[0], description: a.description, media: a.cover && { src: ASSET(a.cover.src), alt: a.cover.alt } });
+
+function articleOverride(a, type, id, p) {
+  if (type === 'ArticleHeader') return { kicker: (FORMAT_LABEL[a.contentType] || 'Artigo') + ' · ' + a.tags.slice(0, 3).join(' · '), title: a.title, publishedAt: 'Pronto para revisão', authors: null, readingMinutes: a.readingMinutes };
+  if (id === 'capa') return { media: a.cover ? { kind: 'cover', src: ASSET(a.cover.src), alt: a.cover.alt } : media('cover'), caption: a.cover && a.cover.caption };
+  if (id === 'introducao') return { content: [{ t: 'p', text: a.description }] };
+  if (id === 'midia') return null; // as figuras entram no corpo, na seção indicada pelos anexos
+  if (id === 'corpo') return { content: a.segments.filter(s => !(s.t === 'panel' && s.kind === 'evidence')).map(s => (s.t === 'figure' ? { ...s, src: ASSET(s.src) } : s)) };
+  if (type === 'EvidenceList') return { title: 'Referências científicas', items: a.sources, real: true };
+  if (type === 'RelatedContent') return { title: 'Continue lendo', variant: 'cards', items: ARTICLES.filter(x => x.slug !== a.slug).slice(0, 3).map(x => ({ href: '/blog/' + x.slug, kicker: FORMAT_LABEL[x.contentType] || 'Artigo', title: x.title, cta: 'Ler artigo' })) };
+  return p;
 }
 
 function override(t, page, type, id, idx, p, res, site) {
+  if (t === 'conteudo' && page.id === 'conteudo' && articleBySlug(res.slug)) return articleOverride(articleBySlug(res.slug), type, id, p);
+  if (t === 'catalogo_conteudos' && ARTICLES.length) {
+    if (type === 'RelatedContent') { const a = ARTICLES[0]; return { variant: 'featured', items: [{ href: '/blog/' + a.slug, kicker: 'Destaque', title: a.title, description: a.description, media: a.cover && { src: ASSET(a.cover.src), alt: a.cover.alt } }] }; }
+    if (type === 'ResourceGrid') {
+      const q = res.query;
+      const all = ARTICLES.map(articleItem)
+        .filter(it => !q.q || it.title.toLowerCase().includes(q.q.toLowerCase()))
+        .filter(() => !q.formato || q.formato === 'artigo');
+      return { items: all, total: all.length, variant: 'editorial', pagination: { page: 1, pages: 1 } };
+    }
+  }
   if (t === 'landing') {
     if (id === 'inicio') return { ...p, title: site.name, description: 'Lorem ipsum dolor sit amet.', actions: [{ label: 'Explorar o mapa', href: '/mapa-cognitivo' }, { label: 'Conhecer o projeto', href: '/sobre' }], theme: 'light', headingLevel: 1 };
     if (id === 'mapa') return { ...p, title: 'Mapa cognitivo', description: 'Lorem ipsum dolor sit amet.', actions: [{ label: 'Explorar', href: '/mapa-cognitivo' }, { label: 'Todos os mapas', href: '/mapas' }], theme: 'dark', headingLevel: 2 };

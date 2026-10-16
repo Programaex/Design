@@ -23,8 +23,9 @@ function A({ to, children, className, style, ...rest }) {
   return <a href={'#' + to} className={className} style={style} onClick={e => { e.preventDefault(); go(to); }} {...rest}>{children}</a>;
 }
 
-function Media({ kind = 'landscape', name, fit, ratio, alt = '', className = '', style }) {
+function Media({ kind = 'landscape', name, fit, ratio, alt = '', className = '', style, src }) {
   const { site, res } = useEco();
+  if (src) return <div className={'eco-media eco-media-real ' + className} style={{ aspectRatio: ratio || PH[kind][1] + '/' + PH[kind][2], ...style }}><img src={src} alt={alt} loading="lazy" /></div>;
   const [file, w, h] = PH[kind];
   const pid = res.page ? res.page.id + (res.slug ? '-' + res.slug : '') : 'x';
   return (

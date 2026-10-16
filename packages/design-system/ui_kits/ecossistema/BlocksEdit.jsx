@@ -10,11 +10,17 @@ function ArticleHeader({ id, title, publishedAt, authors, readingMinutes, kicker
   );
 }
 
-// content: [{ t:'p'|'q'|'h2'|'lead', text, by? }] — structured, no raw HTML.
+// content: [{ t:'p'|'q'|'h2'|'lead', text, by? }] — structured. Artigos do CMS também trazem:
+// { t:'html' } (markdown do repositório, gerado no build), { t:'panel'|'ascii' } e { t:'figure' }.
+const ECO_DS_CONTENT = window.RiscoCognitivoDesignSystem_fab0ba;
 function RichText({ id, content }) {
   return (
     <div className="eco-col eco-rich">
-      {content.map((c, k) => c.t === 'h2' ? <h2 key={k}>{c.text}</h2>
+      {content.map((c, k) => c.t === 'html' ? <div key={k} className="eco-md" dangerouslySetInnerHTML={{ __html: c.html }} />
+        : c.t === 'panel' ? <ECO_DS_CONTENT.PlainTextPanel key={k} id={c.id} kind={c.kind} title={c.title}>{c.text}</ECO_DS_CONTENT.PlainTextPanel>
+        : c.t === 'ascii' ? <ECO_DS_CONTENT.AsciiDiagram key={k} id={c.id} kind={c.kind} title={c.title}>{c.text}</ECO_DS_CONTENT.AsciiDiagram>
+        : c.t === 'figure' ? <figure key={k} className="eco-figure eco-figure-inline"><Media kind="landscape" name={id + '-' + k} src={c.src} alt={c.alt} className="r12" fit="contain" />{c.caption && <figcaption>{c.caption}</figcaption>}</figure>
+        : c.t === 'h2' ? <h2 key={k}>{c.text}</h2>
         : c.t === 'q' ? <p key={k}><b>{c.by}:</b> {c.text}</p>
         : c.t === 'strong' ? <p key={k}><b>{c.text}</b></p>
         : <p key={k}>{c.text}</p>)}
@@ -25,19 +31,19 @@ function RichText({ id, content }) {
 function MediaFigure({ id, media, caption, link }) {
   return (
     <figure className="eco-col eco-figure">
-      <Media kind={media.kind || 'cover'} name={id} className="r12 eco-figure-media" alt={media.alt} />
+      <Media kind={media.kind || 'cover'} name={id} className="r12 eco-figure-media" alt={media.alt} src={media.src} fit={media.src ? 'contain' : undefined} />
       {caption && <figcaption>{caption}{link && <><br /><A to={link[1]}>{link[0]} ›</A></>}</figcaption>}
     </figure>
   );
 }
 
-function EvidenceList({ id, title = 'Referências científicas', items }) {
+function EvidenceList({ id, title = 'Referências científicas', items, real = false }) {
   return (
     <div className="eco-col eco-evidence">
       <hr />
       <h2>{title}</h2>
       {items.length ? <ol>{items.map((r, k) => <li key={k}>{r}</li>)}</ol> : null}
-      <p className="eco-note"><i className="ph ph-info"></i>Fontes reais a cadastrar no CMS. As linhas acima mostram apenas o formato (autor, ano, título, periódico, DOI).</p>
+      {!real && <p className="eco-note"><i className="ph ph-info"></i>Fontes reais a cadastrar no CMS. As linhas acima mostram apenas o formato (autor, ano, título, periódico, DOI).</p>}
     </div>
   );
 }

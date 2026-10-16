@@ -2,7 +2,9 @@
 // Os arquivos estáticos (dist/) só são servidos depois que a sessão é validada aqui.
 const COOKIE = 'cms_session';
 const SESSION_TTL = 60 * 60 * 12; // 12 h
-const PUBLIC = ['/login', '/login/', '/api/login', '/cms/login.css', '/favicon.ico'];
+const LOGIN_PAGES = ['/login', '/login/'];
+// Só o necessário para desenhar a tela de login fica fora da sessão.
+const PUBLIC_ASSETS = ['/styles.css', '/tokens/', '/components/components.css', '/cms/login.js', '/cms/cms.css', '/assets/brand/', '/favicon.ico'];
 
 const enc = new TextEncoder();
 const b64url = buf => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -54,7 +56,7 @@ async function login(request, env) {
 }
 
 // Progresso: um documento JSON por chave ("progress" para completude/Kanban, "automation-log" etc.).
-const KV_KEYS = new Set(['progress', 'automation-log', 'settings']);
+const KV_KEYS = new Set(['progress', 'automation-log', 'settings', 'hub']);
 
 async function kvRoute(request, env, key) {
 	if (!KV_KEYS.has(key)) return json({ error: 'chave desconhecida' }, 404);
@@ -104,7 +106,8 @@ export default {
 
 		if (path === '/api/login' && request.method === 'POST') return login(request, env);
 		if (path === '/api/logout') return json({ ok: true }, 200, { 'set-cookie': cookie('', 0) });
-		if (PUBLIC.includes(path)) return env.ASSETS.fetch(new Request(new URL('/login.html', url), request));
+		if (LOGIN_PAGES.includes(path)) return env.ASSETS.fetch(new Request(new URL('/login', url), request));
+		if (PUBLIC_ASSETS.some(p => (p.endsWith('/') ? path.startsWith(p) : path === p))) return env.ASSETS.fetch(request);
 
 		const session = await readSession(env, request);
 		if (!session) {
