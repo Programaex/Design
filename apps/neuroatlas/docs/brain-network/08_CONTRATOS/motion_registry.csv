@@ -1,0 +1,11 @@
+id,name,transition,transform,duration_target,easing,accessibility,fr_id
+MOT-01,Entrada da cena,idle → ready,opacity 0→1 + camera settled,650 ms,ease-out-cubic,Desabilitada com reduced motion,BN-FR-004
+MOT-02,Troca de preset,camera A → B,quaternion slerp; centro constante,700 ms,ease-in-out-cubic,Instantânea quando reduced motion,BN-FR-006
+MOT-03,Seleção de avatar,unselected → selected,"halo 0→1, escala de destaque leve, dim de contexto",220 ms,ease-out,Sem pulsação contínua; alternativa contorno,BN-FR-009
+MOT-04,Foco em vínculo,edge muted → active,opacidade e espessura da aresta,180 ms,ease-out,Traço sólido + label também identificam,BN-FR-011
+MOT-05,Expansão de rede,compact → expanded,lerp por posições determinísticas pré-calculadas,900 ms,ease-in-out-sine,Permite scrub e reversão perfeita,BN-FR-026
+MOT-06,Inspector,closed → open,opacity + translateX 12→0,240 ms,ease-out,Drawer instantâneo em reduced motion,BN-FR-015
+MOT-07,Filtro aplicado,unfiltered → filtered,crossfade limitado de nós e arestas,300 ms,ease-in-out,Não deslocar anéis durante leitura,BN-FR-014
+MOT-08,Auto-rotação,manual → autoplay,"yaw progressivo, sem alteração de pitch",12 s / volta (proposta),linear,Pausar em gesto/hover/foco/reduced motion,BN-FR-025
+MOT-09,Feedback de busca,input → results,realce estático + camera focus opcional,250 ms,ease-out,Sem camera auto-focus se usuário não solicitar,BN-FR-013
+MOT-10,Carregamento,loading → ready,placeholder estático → 3D pronto,≤ 400 ms visual,ease-out,Nunca bloquear alternativa textual,BN-FR-032

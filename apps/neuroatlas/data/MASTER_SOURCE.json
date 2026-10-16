@@ -1,0 +1,1508 @@
+{
+  "schema_version": "0.3.0",
+  "date": "2026-10-16",
+  "source_of_truth": "data/MASTER_SOURCE.json",
+  "state": "PESQUISA E ESPECIFICAÇÃO; BUILD 3D BLOQUEADO",
+  "source_nodes_reported": 437,
+  "subset_nodes_exported": 33,
+  "source_category_counts": {
+    "cortex": 128,
+    "cranial_nerves": 44,
+    "brainstem": 30,
+    "tracts": 54,
+    "diencephalon": 41,
+    "arteries": 48,
+    "white_matter": 9,
+    "veins_sinuses": 17,
+    "cerebellum": 33,
+    "deep_grey": 23,
+    "ventricles": 7,
+    "meninges_dura": 3
+  },
+  "models": [
+    {
+      "id": "MDL-001",
+      "provider": "Z-Anatomy",
+      "title": "Atlas fonte: cabeça e corpo humano",
+      "url": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+      "format": "Blender template / pacote-fonte",
+      "bytes": null,
+      "license": "CC BY-SA 4.0 (repositório; verificar créditos dos subativos)",
+      "binary_download": false,
+      "decision": "PRIORIDADE PARA CONJUNTO INTEGRADO",
+      "coverage": "Fonte para derivar pele, crânio e encéfalo em uma cena única; disponibilidade exata requer extração",
+      "evidence": "Readme público verificado; arquivo anatômico não obtido"
+    },
+    {
+      "id": "MDL-002",
+      "provider": "brainproject / itayinbarr",
+      "title": "brain-atlas/models/brain.glb",
+      "url": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/brain.glb",
+      "format": "GLB (declara Draco)",
+      "bytes": 4650816,
+      "license": "CC BY-SA 4.0 declarada pelo autor; revisar proveniência por nó",
+      "binary_download": false,
+      "decision": "MVP CEREBRAL CONDICIONAL",
+      "coverage": "Cérebro/vasos/nervos, sem cabeça externa nem crânio",
+      "evidence": "Arquivo e tamanho no diretório GitHub; 437 entradas no manifest, binário não inspecionado"
+    },
+    {
+      "id": "MDL-003",
+      "provider": "Open Anatomy / SPL",
+      "title": "SPL Head and Neck Atlas",
+      "url": "https://www.openanatomy.org/atlas-pages/atlas-spl-head-and-neck.html",
+      "format": "ZIP, superfície a converter",
+      "bytes": null,
+      "license": "3D Slicer License Part B; terceiros podem ter restrições",
+      "binary_download": false,
+      "decision": "ALTERNATIVA CRÂNIO/PESCOÇO; NÃO MESCLAR AUTOMATICAMENTE",
+      "coverage": "Crânio, mandíbula, coluna cervical, músculos e vasos; encéfalo não afirmado na ficha",
+      "evidence": "Página oficial com descrição/autor/licença/download"
+    },
+    {
+      "id": "MDL-004",
+      "provider": "Anatria-3D",
+      "title": "skeletal_male.glb + nervous_male.glb (derivados Z-Anatomy)",
+      "url": "https://github.com/Nurkan1/Anatria-3D/tree/main/public/anatomy",
+      "format": "GLB separados",
+      "bytes": null,
+      "license": "CC BY-SA 4.0 atribuída aos ativos masculinos; verificar NOTICE",
+      "binary_download": false,
+      "decision": "ALTERNATIVA DE REUSO; ALINHAMENTO A INSPECIONAR",
+      "coverage": "Arquivos listados; correspondência coordenada e cabeça externa não comprovadas",
+      "evidence": "README e diretório público do GitHub"
+    }
+  ],
+  "structures": [
+    {
+      "id": "NEU-0000",
+      "external_id": 0,
+      "name": "Posterior transverse collateral sulcus",
+      "node_manifest_name": " Posterior transverse collateral sulcus.l",
+      "side": "left",
+      "group": "cortex",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0001",
+      "external_id": 1,
+      "name": "Posterior transverse collateral sulcus",
+      "node_manifest_name": " Posterior transverse collateral sulcus.r",
+      "side": "right",
+      "group": "cortex",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0011",
+      "external_id": 11,
+      "name": "Angular gyrus",
+      "node_manifest_name": "Angular gyrus.l",
+      "side": "left",
+      "group": "cortex",
+      "region": "Parietal lobe",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0012",
+      "external_id": 12,
+      "name": "Angular gyrus",
+      "node_manifest_name": "Angular gyrus.r",
+      "side": "right",
+      "group": "cortex",
+      "region": "Parietal lobe",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0006",
+      "external_id": 6,
+      "name": "Accessory nucleus of oculomotor nerve",
+      "node_manifest_name": "Accessory nucleus of oculomotor nerve.l",
+      "side": "left",
+      "group": "brainstem",
+      "region": "Brainstem",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0007",
+      "external_id": 7,
+      "name": "Accessory nucleus of oculomotor nerve",
+      "node_manifest_name": "Accessory nucleus of oculomotor nerve.r",
+      "side": "right",
+      "group": "brainstem",
+      "region": "Brainstem",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0034",
+      "external_id": 34,
+      "name": "Aqueduct of midbrain",
+      "node_manifest_name": "Aqueduct of midbrain",
+      "side": "median",
+      "group": "brainstem",
+      "region": "Brainstem",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0130",
+      "external_id": 130,
+      "name": "Inferior colliculus",
+      "node_manifest_name": "Inferior colliculus.l",
+      "side": "left",
+      "group": "brainstem",
+      "region": "Brainstem",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0028",
+      "external_id": 28,
+      "name": "Anterior quadrangular lobule",
+      "node_manifest_name": "Anterior quadrangular lobule.l",
+      "side": "left",
+      "group": "cerebellum",
+      "region": "Cerebellum",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0029",
+      "external_id": 29,
+      "name": "Anterior quadrangular lobule",
+      "node_manifest_name": "Anterior quadrangular lobule.r",
+      "side": "right",
+      "group": "cerebellum",
+      "region": "Cerebellum",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0041",
+      "external_id": 41,
+      "name": "Biventral lobule",
+      "node_manifest_name": "Biventral lobule.l",
+      "side": "left",
+      "group": "cerebellum",
+      "region": "Cerebellum",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0042",
+      "external_id": 42,
+      "name": "Biventral lobule",
+      "node_manifest_name": "Biventral lobule.r",
+      "side": "right",
+      "group": "cerebellum",
+      "region": "Cerebellum",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0010",
+      "external_id": 10,
+      "name": "Adenohypophysis",
+      "node_manifest_name": "Adenohypophysis",
+      "side": "median",
+      "group": "diencephalon",
+      "region": "Diencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0019",
+      "external_id": 19,
+      "name": "Anterior hypothalamus",
+      "node_manifest_name": "Anterior hypothalamus.l",
+      "side": "left",
+      "group": "diencephalon",
+      "region": "Diencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Neudorfer 2020",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0020",
+      "external_id": 20,
+      "name": "Anterior hypothalamus",
+      "node_manifest_name": "Anterior hypothalamus.r",
+      "side": "right",
+      "group": "diencephalon",
+      "region": "Diencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Neudorfer 2020",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0024",
+      "external_id": 24,
+      "name": "Anterior nuclei of thalamus",
+      "node_manifest_name": "Anterior nuclei of thalamus.l",
+      "side": "left",
+      "group": "diencephalon",
+      "region": "Diencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Najdenovska 2018",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0039",
+      "external_id": 39,
+      "name": "Basolateral complex",
+      "node_manifest_name": "Basolateral complex.l",
+      "side": "left",
+      "group": "deep_grey",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "CIT168 amygdala (Tyszka 2016)",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0040",
+      "external_id": 40,
+      "name": "Basolateral complex",
+      "node_manifest_name": "Basolateral complex.r",
+      "side": "right",
+      "group": "deep_grey",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "CIT168 amygdala (Tyszka 2016)",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0049",
+      "external_id": 49,
+      "name": "Caudate nucleus",
+      "node_manifest_name": "Caudate nucleus.l",
+      "side": "left",
+      "group": "deep_grey",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0050",
+      "external_id": 50,
+      "name": "Caudate nucleus",
+      "node_manifest_name": "Caudate nucleus.r",
+      "side": "right",
+      "group": "deep_grey",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0058",
+      "external_id": 58,
+      "name": "Choroid plexus",
+      "node_manifest_name": "Choroid plexus.l",
+      "side": "left",
+      "group": "ventricles",
+      "region": "ventricles",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0059",
+      "external_id": 59,
+      "name": "Choroid plexus",
+      "node_manifest_name": "Choroid plexus.r",
+      "side": "right",
+      "group": "ventricles",
+      "region": "ventricles",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0109",
+      "external_id": 109,
+      "name": "Fourth ventricle",
+      "node_manifest_name": "Fourth ventricle",
+      "side": "median",
+      "group": "ventricles",
+      "region": "Brainstem",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0173",
+      "external_id": 173,
+      "name": "Lateral ventricle",
+      "node_manifest_name": "Lateral ventricle.l",
+      "side": "left",
+      "group": "ventricles",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0103",
+      "external_id": 103,
+      "name": "Falx cerebri",
+      "node_manifest_name": "Falx cerebri",
+      "side": "median",
+      "group": "meninges_dura",
+      "region": "meninges_dura",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0002",
+      "external_id": 2,
+      "name": "Abducens nerve (VI)",
+      "node_manifest_name": "Abducens nerve (VI).l",
+      "side": "left",
+      "group": "cranial_nerves",
+      "region": "cranial_nerves",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0013",
+      "external_id": 13,
+      "name": "Anterior cerebral artery",
+      "node_manifest_name": "Anterior cerebral artery.l",
+      "side": "left",
+      "group": "arteries",
+      "region": "arteries",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0015",
+      "external_id": 15,
+      "name": "Anterior commissure",
+      "node_manifest_name": "Anterior commissure",
+      "side": "median",
+      "group": "white_matter",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0074",
+      "external_id": 74,
+      "name": "Corpus callosum",
+      "node_manifest_name": "Corpus callosum",
+      "side": "median",
+      "group": "white_matter",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0107",
+      "external_id": 107,
+      "name": "Fornix",
+      "node_manifest_name": "Fornix.l",
+      "side": "left",
+      "group": "white_matter",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0108",
+      "external_id": 108,
+      "name": "Fornix",
+      "node_manifest_name": "Fornix.r",
+      "side": "right",
+      "group": "white_matter",
+      "region": "Telencephalon",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0023",
+      "external_id": 23,
+      "name": "Anterior intercavernous sinus",
+      "node_manifest_name": "Anterior intercavernous sinus",
+      "side": "median",
+      "group": "veins_sinuses",
+      "region": "veins_sinuses",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "Z-Anatomy / BodyParts3D",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    },
+    {
+      "id": "NEU-0008",
+      "external_id": 8,
+      "name": "Acoustic radiation",
+      "node_manifest_name": "Acoustic radiation.l",
+      "side": "left",
+      "group": "tracts",
+      "region": "Temporal lobe",
+      "model_id": "MDL-002",
+      "file": "assets/models/brain.glb",
+      "object_name": null,
+      "verified_object": false,
+      "source": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+      "provenance": "HCP1065 (Yeh 2022, CC BY-SA 4.0)",
+      "review": "PENDENTE: verificar nó/metadata no GLB e terminologia FIPAT",
+      "position": null,
+      "anchor": null
+    }
+  ],
+  "layers": [
+    {
+      "id": "LYR-000",
+      "key": "external_head",
+      "name": "Pele / cabeça externa",
+      "structure_ids": [],
+      "initial_visible": false,
+      "order": 0,
+      "available": false,
+      "notes": "Ausente no candidato cerebral MDL-002; requer MDL-001 extraído e alinhado"
+    },
+    {
+      "id": "LYR-SKL",
+      "key": "skull",
+      "name": "Crânio",
+      "structure_ids": [],
+      "initial_visible": false,
+      "order": 1,
+      "available": false,
+      "notes": "Ausente no candidato cerebral MDL-002; requer MDL-001 extraído e alinhado"
+    },
+    {
+      "id": "LYR-001",
+      "key": "cortex",
+      "name": "Córtex",
+      "structure_ids": [
+        "NEU-0000",
+        "NEU-0001",
+        "NEU-0011",
+        "NEU-0012"
+      ],
+      "initial_visible": true,
+      "order": 1,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-002",
+      "key": "cranial_nerves",
+      "name": "Nervos cranianos",
+      "structure_ids": [
+        "NEU-0002"
+      ],
+      "initial_visible": false,
+      "order": 2,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-003",
+      "key": "brainstem",
+      "name": "Tronco encefálico",
+      "structure_ids": [
+        "NEU-0006",
+        "NEU-0007",
+        "NEU-0034",
+        "NEU-0130"
+      ],
+      "initial_visible": true,
+      "order": 3,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-004",
+      "key": "tracts",
+      "name": "Tratos (representação do atlas)",
+      "structure_ids": [
+        "NEU-0008"
+      ],
+      "initial_visible": false,
+      "order": 4,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-005",
+      "key": "diencephalon",
+      "name": "Diencéfalo",
+      "structure_ids": [
+        "NEU-0010",
+        "NEU-0019",
+        "NEU-0020",
+        "NEU-0024"
+      ],
+      "initial_visible": false,
+      "order": 5,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-006",
+      "key": "arteries",
+      "name": "Artérias",
+      "structure_ids": [
+        "NEU-0013"
+      ],
+      "initial_visible": false,
+      "order": 6,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-007",
+      "key": "white_matter",
+      "name": "Substância branca",
+      "structure_ids": [
+        "NEU-0015",
+        "NEU-0074",
+        "NEU-0107",
+        "NEU-0108"
+      ],
+      "initial_visible": false,
+      "order": 7,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-008",
+      "key": "veins_sinuses",
+      "name": "Veias e seios venosos",
+      "structure_ids": [
+        "NEU-0023"
+      ],
+      "initial_visible": false,
+      "order": 8,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-009",
+      "key": "cerebellum",
+      "name": "Cerebelo",
+      "structure_ids": [
+        "NEU-0028",
+        "NEU-0029",
+        "NEU-0041",
+        "NEU-0042"
+      ],
+      "initial_visible": true,
+      "order": 9,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-010",
+      "key": "deep_grey",
+      "name": "Núcleos profundos",
+      "structure_ids": [
+        "NEU-0039",
+        "NEU-0040",
+        "NEU-0049",
+        "NEU-0050"
+      ],
+      "initial_visible": false,
+      "order": 10,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-011",
+      "key": "ventricles",
+      "name": "Sistema ventricular",
+      "structure_ids": [
+        "NEU-0058",
+        "NEU-0059",
+        "NEU-0109",
+        "NEU-0173"
+      ],
+      "initial_visible": false,
+      "order": 11,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-012",
+      "key": "meninges_dura",
+      "name": "Meninges e dura-máter",
+      "structure_ids": [
+        "NEU-0103"
+      ],
+      "initial_visible": false,
+      "order": 12,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    }
+  ],
+  "materials": [
+    {
+      "id": "MAT-SKIN",
+      "application": "external_head",
+      "color": "#E8AF9B",
+      "roughness": 0.78,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO — SEM MALHA"
+    },
+    {
+      "id": "MAT-BONE",
+      "application": "skull",
+      "color": "#F3F0E8",
+      "roughness": 0.72,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO — SEM MALHA"
+    },
+    {
+      "id": "MAT-BRAIN",
+      "application": "cortex",
+      "color": "#DB9D98",
+      "roughness": 0.65,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO"
+    },
+    {
+      "id": "MAT-NERVE",
+      "application": "cranial_nerves",
+      "color": "#FFD52A",
+      "roughness": 0.5,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO/DIDÁTICO"
+    },
+    {
+      "id": "MAT-ARTERY",
+      "application": "arteries",
+      "color": "#F04D36",
+      "roughness": 0.58,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO/DIDÁTICO"
+    },
+    {
+      "id": "MAT-VENOUS",
+      "application": "veins_sinuses",
+      "color": "#86B9F2",
+      "roughness": 0.58,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO/DIDÁTICO"
+    }
+  ],
+  "controls": [
+    {
+      "id": "CTL-PLAY",
+      "name": "Reproduzir/pausar",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "ANIM-8S",
+      "behavior": "Alternar linha do tempo somente após trajetórias validadas",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-TIME",
+      "name": "Linha do tempo",
+      "type": "slider",
+      "range": "0..8s",
+      "initial": 0,
+      "target": "ANIM-8S",
+      "behavior": "Seek puro t->estado, sem acumulação",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-SPEED",
+      "name": "Velocidade",
+      "type": "select",
+      "range": "0.5|1|1.5",
+      "initial": 1,
+      "target": "ANIM-8S",
+      "behavior": "Multiplicar taxa de tempo, sem alterar trajetória",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-ROTATE",
+      "name": "Rotação automática",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "camera",
+      "behavior": "Girar base do atlas sem mover objetos individualmente",
+      "status": "PLANEJADO"
+    },
+    {
+      "id": "CTL-LAYERS",
+      "name": "Camadas",
+      "type": "multi-toggle",
+      "range": "",
+      "initial": null,
+      "target": "layers.json",
+      "behavior": "Ocultar/exibir grupos de nós resolvidos; desabilitar ausentes",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-OPACITY",
+      "name": "Opacidade",
+      "type": "slider",
+      "range": "0..1",
+      "initial": 1,
+      "target": "selected-layer",
+      "behavior": "Aplicar opacidade mantendo ordem/transparência",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-SELECT",
+      "name": "Selecionar estrutura",
+      "type": "raycast",
+      "range": "",
+      "initial": null,
+      "target": "structures.json",
+      "behavior": "Highlight a partir do mesh.parent userData.bx_id",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-ISOLATE",
+      "name": "Isolar",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "selection",
+      "behavior": "Somente objeto identificado; restauração reversível",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-EXPLODE",
+      "name": "Explodido",
+      "type": "slider",
+      "range": "0..1",
+      "initial": 0,
+      "target": "animations.json",
+      "behavior": "No manual, pausar autoplay; offsets medidos",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-CUT",
+      "name": "Corte anatômico",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "cut asset",
+      "behavior": "Não simular superfície de corte sem malha cap",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-LABELS",
+      "name": "Legendas",
+      "type": "toggle",
+      "range": "",
+      "initial": true,
+      "target": "labels.json",
+      "behavior": "HTML editável, oclusão e colisão",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-RESET",
+      "name": "Restaurar",
+      "type": "button",
+      "range": "",
+      "initial": null,
+      "target": "presets.json",
+      "behavior": "Restaurar modos e controles ao estado definido",
+      "status": "PLANEJADO"
+    },
+    {
+      "id": "CTL-DEVICE",
+      "name": "Prévia responsiva",
+      "type": "select",
+      "range": "desktop|tablet|mobile",
+      "initial": "desktop",
+      "target": "layout",
+      "behavior": "Mudar largura real da viewport interna",
+      "status": "PLANEJADO"
+    }
+  ],
+  "cameras": [
+    {
+      "id": "CAM-DEFAULT",
+      "purpose": "Visão inicial",
+      "position": null,
+      "target": null,
+      "near": null,
+      "far": null,
+      "min_distance": null,
+      "max_distance": null,
+      "verified": false,
+      "notes": "Definir somente após medir bounding box, up-axis e orientação"
+    },
+    {
+      "id": "CAM-SAGITTAL",
+      "purpose": "Plano sagital",
+      "position": null,
+      "target": null,
+      "near": null,
+      "far": null,
+      "min_distance": null,
+      "max_distance": null,
+      "verified": false,
+      "notes": "Aguardando anatomia e convenção esquerda/direita"
+    }
+  ],
+  "animations": [
+    {
+      "id": "ANIM-8S",
+      "objects": [],
+      "initial_state": "separado",
+      "final_state": "separado",
+      "duration_s": 8,
+      "interpolation": "smoothstep segmentado (proposta)",
+      "keyframes": [
+        {
+          "t": 0,
+          "state": "separado"
+        },
+        {
+          "t": 2,
+          "state": "separado"
+        },
+        {
+          "t": 4,
+          "state": "montado"
+        },
+        {
+          "t": 5,
+          "state": "montado"
+        },
+        {
+          "t": 7,
+          "state": "separado"
+        },
+        {
+          "t": 8,
+          "state": "separado"
+        }
+      ],
+      "exploded_offsets": null,
+      "ready": false,
+      "notes": "Trajetórias e offsets indefinidos até identificar objetos, eixo e escala"
+    }
+  ],
+  "labels": [
+    {
+      "id": "LBL-NEU-0000",
+      "structure_id": "NEU-0000",
+      "text": "Posterior transverse collateral sulcus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0001",
+      "structure_id": "NEU-0001",
+      "text": "Posterior transverse collateral sulcus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0011",
+      "structure_id": "NEU-0011",
+      "text": "Angular gyrus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0012",
+      "structure_id": "NEU-0012",
+      "text": "Angular gyrus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0006",
+      "structure_id": "NEU-0006",
+      "text": "Accessory nucleus of oculomotor nerve",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0007",
+      "structure_id": "NEU-0007",
+      "text": "Accessory nucleus of oculomotor nerve",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0034",
+      "structure_id": "NEU-0034",
+      "text": "Aqueduct of midbrain",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0130",
+      "structure_id": "NEU-0130",
+      "text": "Inferior colliculus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0028",
+      "structure_id": "NEU-0028",
+      "text": "Anterior quadrangular lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0029",
+      "structure_id": "NEU-0029",
+      "text": "Anterior quadrangular lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0041",
+      "structure_id": "NEU-0041",
+      "text": "Biventral lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0042",
+      "structure_id": "NEU-0042",
+      "text": "Biventral lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0010",
+      "structure_id": "NEU-0010",
+      "text": "Adenohypophysis",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0019",
+      "structure_id": "NEU-0019",
+      "text": "Anterior hypothalamus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0020",
+      "structure_id": "NEU-0020",
+      "text": "Anterior hypothalamus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0024",
+      "structure_id": "NEU-0024",
+      "text": "Anterior nuclei of thalamus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0039",
+      "structure_id": "NEU-0039",
+      "text": "Basolateral complex",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0040",
+      "structure_id": "NEU-0040",
+      "text": "Basolateral complex",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0049",
+      "structure_id": "NEU-0049",
+      "text": "Caudate nucleus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0050",
+      "structure_id": "NEU-0050",
+      "text": "Caudate nucleus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0058",
+      "structure_id": "NEU-0058",
+      "text": "Choroid plexus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0059",
+      "structure_id": "NEU-0059",
+      "text": "Choroid plexus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0109",
+      "structure_id": "NEU-0109",
+      "text": "Fourth ventricle",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0173",
+      "structure_id": "NEU-0173",
+      "text": "Lateral ventricle",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0103",
+      "structure_id": "NEU-0103",
+      "text": "Falx cerebri",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0002",
+      "structure_id": "NEU-0002",
+      "text": "Abducens nerve (VI)",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0013",
+      "structure_id": "NEU-0013",
+      "text": "Anterior cerebral artery",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0015",
+      "structure_id": "NEU-0015",
+      "text": "Anterior commissure",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0074",
+      "structure_id": "NEU-0074",
+      "text": "Corpus callosum",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0107",
+      "structure_id": "NEU-0107",
+      "text": "Fornix",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0108",
+      "structure_id": "NEU-0108",
+      "text": "Fornix",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0023",
+      "structure_id": "NEU-0023",
+      "text": "Anterior intercavernous sinus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0008",
+      "structure_id": "NEU-0008",
+      "text": "Acoustic radiation",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    }
+  ],
+  "presets": [
+    {
+      "id": "PST-DEFAULT",
+      "mode": "default",
+      "camera_id": "CAM-DEFAULT",
+      "layers_visible": [
+        "LYR-001",
+        "LYR-003",
+        "LYR-009"
+      ],
+      "animation_time_s": 0,
+      "autoplay": false,
+      "labels_visible": true,
+      "ready": false
+    },
+    {
+      "id": "PST-EXPLODED",
+      "mode": "exploded",
+      "camera_id": "CAM-DEFAULT",
+      "layers_visible": [],
+      "animation_time_s": 0,
+      "autoplay": false,
+      "labels_visible": true,
+      "ready": false
+    }
+  ],
+  "validation": [
+    {
+      "id": "VAL-01",
+      "requirement": "Arquivo GLB baixado, hash SHA256 e licença anexada",
+      "status": "PENDENTE",
+      "owner": "Responsável pela integração",
+      "evidence": "Não obtido no ambiente de geração"
+    },
+    {
+      "id": "VAL-02",
+      "requirement": "Nomes / userData IDs batem com structures.json",
+      "status": "PENDENTE",
+      "owner": "Engenharia 3D",
+      "evidence": "Inspeção do GLB necessária"
+    },
+    {
+      "id": "VAL-03",
+      "requirement": "Cabeça + crânio + cérebro são co-registrados",
+      "status": "BLOQUEADO",
+      "owner": "Artista 3D / anatomista",
+      "evidence": "Fonte integrada não extraída"
+    },
+    {
+      "id": "VAL-04",
+      "requirement": "Taxonomia / lateralidade validada FIPAT",
+      "status": "PENDENTE",
+      "owner": "Revisor anatômico",
+      "evidence": "Texto do manifesto não equivale a revisão"
+    },
+    {
+      "id": "VAL-05",
+      "requirement": "Corte mostra fechamento interno verdadeiro",
+      "status": "BLOQUEADO",
+      "owner": "Engenharia 3D",
+      "evidence": "Cap / geometria de corte ausente"
+    },
+    {
+      "id": "VAL-06",
+      "requirement": "Seek 0/2/4/5/7/8s determinístico",
+      "status": "BLOQUEADO",
+      "owner": "QA",
+      "evidence": "Offsets ausentes"
+    },
+    {
+      "id": "VAL-07",
+      "requirement": "Teclado, foco, reduced motion e descrição alternativa",
+      "status": "A IMPLEMENTAR",
+      "owner": "Frontend QA",
+      "evidence": "Critérios no PRD"
+    },
+    {
+      "id": "VAL-08",
+      "requirement": "Visual em 1440/1024/390px sem clipping",
+      "status": "A IMPLEMENTAR",
+      "owner": "Frontend QA",
+      "evidence": "Prancha apenas conceitual"
+    },
+    {
+      "id": "VAL-09",
+      "requirement": "60 fps desktop / 30 fps mobile (alvos propostos)",
+      "status": "A MEDIR",
+      "owner": "Performance QA",
+      "evidence": "Registrar equipamento/duração"
+    },
+    {
+      "id": "VAL-10",
+      "requirement": "Atribuições e share-alike publicadas",
+      "status": "PENDENTE",
+      "owner": "Jurídico/editor",
+      "evidence": "Confirmar licenças de subcomponentes"
+    },
+    {
+      "id": "VAL-11",
+      "requirement": "JSON e XLSX da mesma base",
+      "status": "VERIFICADO NA GERAÇÃO",
+      "owner": "Gerador",
+      "evidence": "MASTER_SOURCE.json exportado uma só vez"
+    },
+    {
+      "id": "VAL-12",
+      "requirement": "Poster visual rotulado como arte conceitual",
+      "status": "VERIFICADO NA GERAÇÃO",
+      "owner": "Design",
+      "evidence": "Não usar como prova de geometria"
+    }
+  ],
+  "sources": {
+    "ZAN": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+    "BRAIN": "https://github.com/itayinbarr/brainproject",
+    "BRAIN_MANIFEST": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/manifest.json",
+    "BRAIN_GLB": "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/brain.glb",
+    "OPEN": "https://www.openanatomy.org/atlas-pages/atlas-spl-head-and-neck.html",
+    "OPEN_LICENSE": "https://www.openanatomy.org/atlas-pages/slicer-license.html",
+    "CC": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "FIPAT": "https://ifaa.net/committees/anatomical-terminology-fipat/fipat-ifaa-terminologies/",
+    "GLTF": "https://threejs.org/docs/pages/GLTFLoader.html",
+    "DRACO": "https://threejs.org/docs/pages/DRACOLoader.html",
+    "RAY": "https://threejs.org/docs/pages/Raycaster.html",
+    "ANIM": "https://threejs.org/docs/pages/AnimationMixer.html",
+    "STENCIL": "https://threejs.org/examples/webgl_clipping_stencil.html",
+    "PERF": "https://github.com/pmndrs/react-three-fiber/blob/master/docs/advanced/scaling-performance.mdx",
+    "GLTF_TRANSFORM": "https://gltf-transform.dev/cli",
+    "CF": "https://developers.cloudflare.com/pages/framework-guides/deploy-a-react-site/"
+  }
+}

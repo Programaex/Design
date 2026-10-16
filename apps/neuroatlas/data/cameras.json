@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "CAM-DEFAULT",
+      "purpose": "Visão inicial",
+      "position": null,
+      "target": null,
+      "near": null,
+      "far": null,
+      "min_distance": null,
+      "max_distance": null,
+      "verified": false,
+      "notes": "Definir somente após medir bounding box, up-axis e orientação"
+    },
+    {
+      "id": "CAM-SAGITTAL",
+      "purpose": "Plano sagital",
+      "position": null,
+      "target": null,
+      "near": null,
+      "far": null,
+      "min_distance": null,
+      "max_distance": null,
+      "verified": false,
+      "notes": "Aguardando anatomia e convenção esquerda/direita"
+    }
+  ]
+}

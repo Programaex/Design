@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://executar.example/neuroatlas/schemas/controls.schema.json",
+  "title": "controls",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "items",
+    "derived_from"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "type",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "derived_from": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

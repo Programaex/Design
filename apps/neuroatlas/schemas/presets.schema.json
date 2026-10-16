@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://executar.example/neuroatlas/schemas/presets.schema.json",
+  "title": "presets",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "items",
+    "derived_from"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "mode",
+          "ready"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "derived_from": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

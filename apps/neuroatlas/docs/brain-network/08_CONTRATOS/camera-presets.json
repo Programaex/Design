@@ -1,0 +1,72 @@
+[
+  {
+    "id": "CAM-01",
+    "name": "Frontal",
+    "yawDegrees": 0,
+    "pitchDegrees": 0,
+    "description": "Apresentação inicial da composição"
+  },
+  {
+    "id": "CAM-02",
+    "name": "Direita oblíqua",
+    "yawDegrees": 36,
+    "pitchDegrees": 0,
+    "description": "Mostra profundidade do anel superior"
+  },
+  {
+    "id": "CAM-03",
+    "name": "Lateral direita",
+    "yawDegrees": 90,
+    "pitchDegrees": 0,
+    "description": "Mostra o perfil e organização em camadas"
+  },
+  {
+    "id": "CAM-04",
+    "name": "Posterior",
+    "yawDegrees": 180,
+    "pitchDegrees": 0,
+    "description": "Verifica distribuição no lado oposto"
+  },
+  {
+    "id": "CAM-05",
+    "name": "Lateral esquerda",
+    "yawDegrees": 270,
+    "pitchDegrees": 0,
+    "description": "Revela o perfil esquerdo"
+  },
+  {
+    "id": "CAM-06",
+    "name": "Esquerda oblíqua",
+    "yawDegrees": 324,
+    "pitchDegrees": 0,
+    "description": "Retorna ao frontal pelo lado esquerdo"
+  },
+  {
+    "id": "CAM-07",
+    "name": "Superior oblíqua",
+    "yawDegrees": 0,
+    "pitchDegrees": 45,
+    "description": "Expõe camadas em profundidade"
+  },
+  {
+    "id": "CAM-08",
+    "name": "Superior",
+    "yawDegrees": 0,
+    "pitchDegrees": 80,
+    "description": "Vista topo respeitando limite do orbit"
+  },
+  {
+    "id": "CAM-09",
+    "name": "Direita elevada",
+    "yawDegrees": 135,
+    "pitchDegrees": 25,
+    "description": "Mostra ângulo posterior elevado"
+  },
+  {
+    "id": "CAM-10",
+    "name": "Frontal elevado",
+    "yawDegrees": 0,
+    "pitchDegrees": 25,
+    "description": "Apresentação editorial da rede"
+  }
+]

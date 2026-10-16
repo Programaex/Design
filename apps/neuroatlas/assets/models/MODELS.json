@@ -1,0 +1,165 @@
+{
+  "schema_version": "0.1.0",
+  "recorded": "2026-10-16",
+  "note": "Medições feitas por leitura do cabeçalho/JSON glTF e do cabeçalho PLY. Não há validação anatômica.",
+  "models": [
+    {
+      "id": "MDL-005",
+      "file": "assets/models/brain-surface.glb",
+      "role": "primary-candidate",
+      "sha256": "ce97da58a5d4cdcf55b40d47a25ef55ca677e5e12a9f71e9ad0942cee2860c93",
+      "bytes": 9471892,
+      "generator": "HOME-BRAIN-001 build-brain-assets.js",
+      "license": "CC0-1.0 (asset.copyright / extras)",
+      "license_verified": false,
+      "dataset": "OpenNeuro ds006128 sub-01 snapshot 1.0.11",
+      "scene_root": "HOME-BRAIN-001",
+      "objects": [
+        {
+          "object_name": "cortex-left",
+          "vertices": 61185,
+          "triangles": 132887,
+          "material": "brain-cortex",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0",
+            "_SULC"
+          ]
+        },
+        {
+          "object_name": "cortex-right",
+          "vertices": 60739,
+          "triangles": 132217,
+          "material": "brain-cortex",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0",
+            "_SULC"
+          ]
+        },
+        {
+          "object_name": "cerebellum",
+          "vertices": 33369,
+          "triangles": 66736,
+          "material": "brain-subcortical",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0",
+            "_SULC"
+          ]
+        },
+        {
+          "object_name": "brain-stem",
+          "vertices": 9200,
+          "triangles": 18396,
+          "material": "brain-subcortical",
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "COLOR_0",
+            "_SULC"
+          ]
+        }
+      ],
+      "units": "scene units; mmPerUnit=45.578587180689766 (scale_unitsPerMm=0.021940127192526693)",
+      "axes": "scene.x=A, scene.y=S, scene.z=R (permutação cíclica, det +1)",
+      "target_extent_units": 3.8,
+      "bounds_all_meshes_scene_units": {
+        "min": [
+          -1.9,
+          -1.4139,
+          -1.4372
+        ],
+        "max": [
+          1.9,
+          1.4139,
+          1.4372
+        ]
+      },
+      "bounds_note": "união aproximada dos min/max dos accessors POSITION; recalcular no loader",
+      "textures": 0,
+      "extras_per_object": false,
+      "notes": "Hemisférios separados (esq./dir.) + cerebelo + tronco. Sem giros/lobos/estruturas profundas nomeadas: NÃO atende às 33 associações NEU-XXXX."
+    },
+    {
+      "id": "MDL-006",
+      "file": "assets/models/brain-point-cloud.ply",
+      "role": "companion-visual",
+      "sha256": "dc1657d59398da6c9c4f05c84d6721d882cf732387adfe6d9aee45eb332f19ec",
+      "bytes": 504119,
+      "format": "PLY binary_little_endian 1.0",
+      "vertices": 42000,
+      "properties": [
+        "x",
+        "y",
+        "z"
+      ],
+      "license": "CC0-1.0 (herdada de MDL-005, a confirmar)",
+      "license_verified": false,
+      "correspondence": "42000 = 36000 cortex + 5000 cerebellum + 1000 brainstem (params.particles em MDL-005); bounds x ±1.9000, y ±1.4163, z ±1.4369 — mesmo espaço de cena. Ordem por região NÃO verificada.",
+      "notes": "Sem cor/normais/rótulo por ponto."
+    },
+    {
+      "id": "MDL-007",
+      "file": "assets/models/brain-sketchfab-mwtb33.glb",
+      "role": "alternative-visual-only",
+      "sha256": "96165b23ef4dbc335a979cdf21c8f704eb60fef64e2b50c2742bb80525297b7c",
+      "bytes": 2672064,
+      "generator": "Sketchfab-12.68.0",
+      "title": "3D Model Of Brain",
+      "author": "mwtb33 (https://sketchfab.com/mwtb33)",
+      "source": "https://sketchfab.com/3d-models/3d-model-of-brain-1429cacf7ec040cd825e2f24ceaf8183",
+      "license": "CC-BY-4.0",
+      "license_verified": false,
+      "origin_hint": "nome do nó: 3DPX-003765_3DModel_of_Brain_Nevit_Dilmen.stl (NIH 3D Print Exchange); licença do original a confirmar",
+      "objects": [
+        {
+          "object_name": "Object_2",
+          "mesh": "Object_0",
+          "vertices": 65532,
+          "triangles": 79253
+        },
+        {
+          "object_name": "Object_3",
+          "mesh": "Object_1",
+          "vertices": 4488,
+          "triangles": 3185
+        }
+      ],
+      "root_matrix": "rotação +90° em X (Sketchfab, Z-up→Y-up)",
+      "bounds_raw_mesh_units": {
+        "Object_0": {
+          "min": [
+            -83.74,
+            -66.46,
+            0.14
+          ],
+          "max": [
+            83.8,
+            66.55,
+            208.46
+          ]
+        },
+        "Object_1": {
+          "min": [
+            -45.87,
+            -64.73,
+            97.83
+          ],
+          "max": [
+            33.99,
+            64.36,
+            199.46
+          ]
+        }
+      },
+      "units": "desconhecida (provável mm do STL); NÃO verificada",
+      "materials": 1,
+      "textures": 0,
+      "notes": "Nomes genéricos; sem lateralidade/regiões; função do Object_1 não identificada. Uso: visual alternativo; exige crédito CC-BY."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+stateDiagram-v2
+[*] --> loading
+loading --> idle: scene_loaded
+loading --> fallback: scene_failed
+idle --> selected: select_person
+selected --> idle: clear_selection
+selected --> isolated: isolate_person
+isolated --> selected: restore_all
+idle --> filtered: apply_filter
+selected --> filtered: apply_filter
+filtered --> empty: no_results
+empty --> idle: clear_filter
+idle --> playing: play
+selected --> playing: play
+filtered --> playing: play
+playing --> paused: scrub / drag / pause
+paused --> playing: play
+idle --> access_denied: permission_error
+selected --> access_denied: permission_error
+idle --> error: runtime_error
+error --> fallback: use_2d

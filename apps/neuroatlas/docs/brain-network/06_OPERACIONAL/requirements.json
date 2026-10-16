@@ -1,0 +1,442 @@
+[
+  {
+    "id": "BN-FR-001",
+    "modulo": "Workspace e navegação",
+    "descricao": "Selecionar workspace ativo e navegar módulos",
+    "prioridade": "P0",
+    "papeis": "Admin|Editor|Viewer",
+    "regra": "O seletor troca contexto; acesso condicionado à associação",
+    "evento": "workspace_changed",
+    "teste": "T-001"
+  },
+  {
+    "id": "BN-FR-002",
+    "modulo": "Sessão",
+    "descricao": "Entrar, sair e restaurar sessão",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Proteger rotas e expirar sessão; provedor de auth a definir",
+    "evento": "session_changed",
+    "teste": "T-002"
+  },
+  {
+    "id": "BN-FR-003",
+    "modulo": "RBAC",
+    "descricao": "Aplicar perfis admin/editor/viewer e escopo de dados",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Dados não autorizados não retornam na API nem aparecem na UI",
+    "evento": "permission_denied",
+    "teste": "T-003"
+  },
+  {
+    "id": "BN-FR-004",
+    "modulo": "Visão 3D",
+    "descricao": "Renderizar representação cerebral/globo 3D como plano de fundo",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "O globo é metáfora de organização; nenhuma relação neuroanatômica é presumida",
+    "evento": "scene_ready",
+    "teste": "T-004"
+  },
+  {
+    "id": "BN-FR-005",
+    "modulo": "Navegação orbital",
+    "descricao": "Orbitar por pointer/touch e teclado",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Restringir pitch/zoom por bounds; não inverter laterais na UI",
+    "evento": "camera_changed",
+    "teste": "T-005"
+  },
+  {
+    "id": "BN-FR-006",
+    "modulo": "Presets de câmera",
+    "descricao": "Escolher 10 enquadramentos e restabelecer frontal",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Presets usam yaw/pitch relativos ao centro do modelo; distância via bounding sphere",
+    "evento": "camera_preset_selected",
+    "teste": "T-006"
+  },
+  {
+    "id": "BN-FR-007",
+    "modulo": "Camadas de rede",
+    "descricao": "Mostrar/ocultar grupos Executivo/Núcleo/Expandida",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Classificações operacionais configuráveis; não divisões anatômicas",
+    "evento": "layer_visibility_changed",
+    "teste": "T-007"
+  },
+  {
+    "id": "BN-FR-008",
+    "modulo": "Anéis e nós",
+    "descricao": "Posicionar avatares em anéis/cluster com algoritmo determinístico",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Mesmo dataset + parâmetros + versão => mesmas posições",
+    "evento": "layout_computed",
+    "teste": "T-008"
+  },
+  {
+    "id": "BN-FR-009",
+    "modulo": "Selecionar pessoa",
+    "descricao": "Abrir inspector do perfil selecionado",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Selecionar um nó mantém contexto e destaca suas relações permitidas",
+    "evento": "person_selected",
+    "teste": "T-009"
+  },
+  {
+    "id": "BN-FR-010",
+    "modulo": "Multisseleção",
+    "descricao": "Comparar até dois perfis em modo comparação",
+    "prioridade": "P2",
+    "papeis": "Todos",
+    "regra": "Duas fichas lado a lado; sem inferir equivalência algorítmica",
+    "evento": "people_compared",
+    "teste": "T-010"
+  },
+  {
+    "id": "BN-FR-011",
+    "modulo": "Tipos de conexão",
+    "descricao": "Alternar Affiliation, Matching, Responsibility",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Cada aresta é tipificada; sem arestas fantasmas a partir da proximidade visual",
+    "evento": "relation_filter_changed",
+    "teste": "T-011"
+  },
+  {
+    "id": "BN-FR-012",
+    "modulo": "Caminho destacado",
+    "descricao": "Destacar conexão direta e cadeia de até N saltos",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "N configurável; exibir origem e evidência do vínculo",
+    "evento": "path_highlighted",
+    "teste": "T-012"
+  },
+  {
+    "id": "BN-FR-013",
+    "modulo": "Busca",
+    "descricao": "Buscar pessoas, equipes e conexões com teclado",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Aplicar permissões, debounce e estado sem resultados",
+    "evento": "search_submitted",
+    "teste": "T-013"
+  },
+  {
+    "id": "BN-FR-014",
+    "modulo": "Filtros",
+    "descricao": "Filtrar por equipe, papel, tipo de vínculo, camada e status",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Filtros combinados por AND; OR dentro de multisseleção da mesma faceta",
+    "evento": "filter_applied",
+    "teste": "T-014"
+  },
+  {
+    "id": "BN-FR-015",
+    "modulo": "Painel contextual",
+    "descricao": "Mostrar identidade, papel, relações e fonte dos dados",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Não exibir métricas sem fonte ou dados válidos",
+    "evento": "inspector_opened",
+    "teste": "T-015"
+  },
+  {
+    "id": "BN-FR-016",
+    "modulo": "Isolar rede",
+    "descricao": "Ocultar demais nós e arestas ao isolar um perfil",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Preservar seleções e filtros para restauração reversível",
+    "evento": "isolation_toggled",
+    "teste": "T-016"
+  },
+  {
+    "id": "BN-FR-017",
+    "modulo": "Visões",
+    "descricao": "Alternar Visão geral/Pessoas/Regiões visuais/Conexões",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Regiões são agrupamentos de layout, não regiões funcionais do cérebro",
+    "evento": "view_changed",
+    "teste": "T-017"
+  },
+  {
+    "id": "BN-FR-018",
+    "modulo": "Cadastro de pessoas",
+    "descricao": "CRUD com validação e consentimento/legitimidade de dados",
+    "prioridade": "P1",
+    "papeis": "Admin|Editor",
+    "regra": "Email opcional e único por workspace quando presente; imagem autorizada",
+    "evento": "person_saved",
+    "teste": "T-018"
+  },
+  {
+    "id": "BN-FR-019",
+    "modulo": "Cadastro de vínculos",
+    "descricao": "Criar/editar/remover conexão com origem, tipo, direção e fonte",
+    "prioridade": "P1",
+    "papeis": "Admin|Editor",
+    "regra": "Não criar automaticamente relações sem confirmação/evidência",
+    "evento": "relation_saved",
+    "teste": "T-019"
+  },
+  {
+    "id": "BN-FR-020",
+    "modulo": "Importação CSV",
+    "descricao": "Wizard de upload, mapeamento, preview e confirmação",
+    "prioridade": "P1",
+    "papeis": "Admin|Editor",
+    "regra": "Idempotência por external_id; mostrar conflitos e rollback de lote",
+    "evento": "import_completed",
+    "teste": "T-020"
+  },
+  {
+    "id": "BN-FR-021",
+    "modulo": "Exportação",
+    "descricao": "Exportar visão filtrada CSV/PNG conforme permissão",
+    "prioridade": "P1",
+    "papeis": "Admin|Editor",
+    "regra": "Redigir/remover campos restritos; arquivo registra parâmetros",
+    "evento": "export_completed",
+    "teste": "T-021"
+  },
+  {
+    "id": "BN-FR-022",
+    "modulo": "Métricas",
+    "descricao": "Exibir total pessoas, vínculos, clusters e tipos",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Taxas dependem de denominador e período; nada fictício",
+    "evento": "metrics_loaded",
+    "teste": "T-022"
+  },
+  {
+    "id": "BN-FR-023",
+    "modulo": "Relatórios",
+    "descricao": "Cards analíticos e tabelas detalhadas com filtros sincronizados",
+    "prioridade": "P2",
+    "papeis": "Todos",
+    "regra": "Representação analítica usa o mesmo filtro do grafo",
+    "evento": "report_viewed",
+    "teste": "T-023"
+  },
+  {
+    "id": "BN-FR-024",
+    "modulo": "Linha do tempo",
+    "descricao": "Persistir timestamp de alterações e filtro temporal",
+    "prioridade": "P2",
+    "papeis": "Admin|Editor",
+    "regra": "Histórico é evento auditado; sem inferir dados de datas ausentes",
+    "evento": "time_filter_changed",
+    "teste": "T-024"
+  },
+  {
+    "id": "BN-FR-025",
+    "modulo": "Auto rotação",
+    "descricao": "Ativar/desativar órbita automática da câmera",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Interação manual pausa auto rotação; preferência persistível localmente",
+    "evento": "auto_rotate_toggled",
+    "teste": "T-025"
+  },
+  {
+    "id": "BN-FR-026",
+    "modulo": "Animação de expansão",
+    "descricao": "Expandir nós ou conexões em trajetória estável",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Scrubbing determinístico; sem retarget que altera IDs",
+    "evento": "expand_progress_changed",
+    "teste": "T-026"
+  },
+  {
+    "id": "BN-FR-027",
+    "modulo": "Controle de movimento",
+    "descricao": "Play/pause, velocidade, progresso e reset",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Controles refletem estado real e param ao editar manualmente",
+    "evento": "motion_state_changed",
+    "teste": "T-027"
+  },
+  {
+    "id": "BN-FR-028",
+    "modulo": "Redução de movimento",
+    "descricao": "Respeitar prefers-reduced-motion e opção manual",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Iniciar animações desligadas; estados visíveis sem transição",
+    "evento": "motion_preference_changed",
+    "teste": "T-028"
+  },
+  {
+    "id": "BN-FR-029",
+    "modulo": "Responsive",
+    "descricao": "Desktop/tablet/mobile com layout realmente redimensionado",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Viewport mantém área útil; inspector vira drawer em mobile",
+    "evento": "breakpoint_changed",
+    "teste": "T-029"
+  },
+  {
+    "id": "BN-FR-030",
+    "modulo": "Acessibilidade",
+    "descricao": "Navegação de controles via teclado e alternativa não 3D",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Foco visível, sem traps, lista de relações equivalente",
+    "evento": "a11y_mode_changed",
+    "teste": "T-030"
+  },
+  {
+    "id": "BN-FR-031",
+    "modulo": "Fallback",
+    "descricao": "Representação SVG/lista quando WebGL indisponível",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Dados e ações principais seguem acessíveis",
+    "evento": "fallback_activated",
+    "teste": "T-031"
+  },
+  {
+    "id": "BN-FR-032",
+    "modulo": "Estados do sistema",
+    "descricao": "Skeleton, vazio, sem autorização, erro e retry",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Não mostrar sucesso falso; erro não remove alterações não salvas",
+    "evento": "error_state_shown",
+    "teste": "T-032"
+  },
+  {
+    "id": "BN-FR-033",
+    "modulo": "Undo e reset",
+    "descricao": "Desfazer seleção/filtros recentes e restaurar câmera",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Reset de visualização não apaga dados persistidos",
+    "evento": "visual_reset",
+    "teste": "T-033"
+  },
+  {
+    "id": "BN-FR-034",
+    "modulo": "Persistência da visão",
+    "descricao": "Salvar presets pessoais e link de estado compartilhável",
+    "prioridade": "P2",
+    "papeis": "Todos",
+    "regra": "URL não inclui PII nem concede acesso sem autorização",
+    "evento": "preset_saved",
+    "teste": "T-034"
+  },
+  {
+    "id": "BN-FR-035",
+    "modulo": "Auditoria",
+    "descricao": "Logar mutations, importações e exportações sensíveis",
+    "prioridade": "P0",
+    "papeis": "Admin",
+    "regra": "Trilha com actor, action, entity, timestamp e resultado",
+    "evento": "audit_event",
+    "teste": "T-035"
+  },
+  {
+    "id": "BN-FR-036",
+    "modulo": "Busca em relacionamentos",
+    "descricao": "Exibir origem, data, método e confiança da conexão",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Matching é resultado atribuído e qualificado, não verdade objetiva",
+    "evento": "relation_inspected",
+    "teste": "T-036"
+  },
+  {
+    "id": "BN-FR-037",
+    "modulo": "Tratamento de avatares",
+    "descricao": "Foto ou iniciais com fallback; autorização",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Não usar rostos das referências como usuários reais",
+    "evento": "avatar_rendered",
+    "teste": "T-037"
+  },
+  {
+    "id": "BN-FR-038",
+    "modulo": "Painel de dispositivos",
+    "descricao": "Prévia desktop, tablet, mobile em largura real",
+    "prioridade": "P2",
+    "papeis": "Admin|Editor",
+    "regra": "Iframe responsivo/viewport de simulação; não apenas escalar screenshot",
+    "evento": "device_preview_selected",
+    "teste": "T-038"
+  },
+  {
+    "id": "BN-FR-039",
+    "modulo": "Feedback de conexão",
+    "descricao": "Tooltip acessível para rótulos/linhas e tipos",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Cor nunca é o único identificador; legenda sempre disponível",
+    "evento": "edge_focused",
+    "teste": "T-039"
+  },
+  {
+    "id": "BN-FR-040",
+    "modulo": "Dados de demonstração",
+    "descricao": "Exibir fixtures explicitamente marcados como DEMO",
+    "prioridade": "P0",
+    "papeis": "Todos",
+    "regra": "Nenhuma métrica ou correspondência fictícia apresentada como real",
+    "evento": "demo_mode_entered",
+    "teste": "T-040"
+  },
+  {
+    "id": "BN-FR-041",
+    "modulo": "Integração Neuroatlas",
+    "descricao": "Abrir módulo anatômico separado com semântica própria",
+    "prioridade": "P3",
+    "papeis": "Todos",
+    "regra": "Jamais compartilhar objetos anatômicos e grafo de pessoas como evidência causal",
+    "evento": "anatomy_module_opened",
+    "teste": "T-041"
+  },
+  {
+    "id": "BN-FR-042",
+    "modulo": "Notificações",
+    "descricao": "Indicar jobs de importação e operações concluídas",
+    "prioridade": "P1",
+    "papeis": "Admin|Editor",
+    "regra": "Toast autoexpira; alterações críticas permanecem no histórico",
+    "evento": "notification_shown",
+    "teste": "T-042"
+  },
+  {
+    "id": "BN-FR-043",
+    "modulo": "Aprovação de matching",
+    "descricao": "Revisar vínculos inferidos antes de publicar",
+    "prioridade": "P1",
+    "papeis": "Admin|Editor",
+    "regra": "Predição não vira vínculo validado sem aprovação humana",
+    "evento": "match_reviewed",
+    "teste": "T-043"
+  },
+  {
+    "id": "BN-FR-044",
+    "modulo": "Atalhos",
+    "descricao": "Atalhos documentados para zoom, seleção, busca e reset",
+    "prioridade": "P1",
+    "papeis": "Todos",
+    "regra": "Ignorar atalhos em inputs e fornecer ajuda visível",
+    "evento": "shortcut_used",
+    "teste": "T-044"
+  }
+]

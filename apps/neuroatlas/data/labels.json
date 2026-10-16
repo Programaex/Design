@@ -1,0 +1,270 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "LBL-NEU-0000",
+      "structure_id": "NEU-0000",
+      "text": "Posterior transverse collateral sulcus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0001",
+      "structure_id": "NEU-0001",
+      "text": "Posterior transverse collateral sulcus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0011",
+      "structure_id": "NEU-0011",
+      "text": "Angular gyrus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0012",
+      "structure_id": "NEU-0012",
+      "text": "Angular gyrus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0006",
+      "structure_id": "NEU-0006",
+      "text": "Accessory nucleus of oculomotor nerve",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0007",
+      "structure_id": "NEU-0007",
+      "text": "Accessory nucleus of oculomotor nerve",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0034",
+      "structure_id": "NEU-0034",
+      "text": "Aqueduct of midbrain",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0130",
+      "structure_id": "NEU-0130",
+      "text": "Inferior colliculus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0028",
+      "structure_id": "NEU-0028",
+      "text": "Anterior quadrangular lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0029",
+      "structure_id": "NEU-0029",
+      "text": "Anterior quadrangular lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0041",
+      "structure_id": "NEU-0041",
+      "text": "Biventral lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0042",
+      "structure_id": "NEU-0042",
+      "text": "Biventral lobule",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0010",
+      "structure_id": "NEU-0010",
+      "text": "Adenohypophysis",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0019",
+      "structure_id": "NEU-0019",
+      "text": "Anterior hypothalamus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0020",
+      "structure_id": "NEU-0020",
+      "text": "Anterior hypothalamus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0024",
+      "structure_id": "NEU-0024",
+      "text": "Anterior nuclei of thalamus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0039",
+      "structure_id": "NEU-0039",
+      "text": "Basolateral complex",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0040",
+      "structure_id": "NEU-0040",
+      "text": "Basolateral complex",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0049",
+      "structure_id": "NEU-0049",
+      "text": "Caudate nucleus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0050",
+      "structure_id": "NEU-0050",
+      "text": "Caudate nucleus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0058",
+      "structure_id": "NEU-0058",
+      "text": "Choroid plexus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0059",
+      "structure_id": "NEU-0059",
+      "text": "Choroid plexus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0109",
+      "structure_id": "NEU-0109",
+      "text": "Fourth ventricle",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0173",
+      "structure_id": "NEU-0173",
+      "text": "Lateral ventricle",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0103",
+      "structure_id": "NEU-0103",
+      "text": "Falx cerebri",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0002",
+      "structure_id": "NEU-0002",
+      "text": "Abducens nerve (VI)",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0013",
+      "structure_id": "NEU-0013",
+      "text": "Anterior cerebral artery",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0015",
+      "structure_id": "NEU-0015",
+      "text": "Anterior commissure",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0074",
+      "structure_id": "NEU-0074",
+      "text": "Corpus callosum",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0107",
+      "structure_id": "NEU-0107",
+      "text": "Fornix",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0108",
+      "structure_id": "NEU-0108",
+      "text": "Fornix",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0023",
+      "structure_id": "NEU-0023",
+      "text": "Anterior intercavernous sinus",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    },
+    {
+      "id": "LBL-NEU-0008",
+      "structure_id": "NEU-0008",
+      "text": "Acoustic radiation",
+      "anchor": null,
+      "visible_when": "selecionado e não ocluído",
+      "status": "RASCUNHO — inglês do manifesto, sem validação terminológica"
+    }
+  ]
+}

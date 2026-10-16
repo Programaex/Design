@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://executar.example/neuroatlas/schemas/animations.schema.json",
+  "title": "animations",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "items",
+    "derived_from"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "duration_s",
+          "keyframes",
+          "exploded_offsets",
+          "ready"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "duration_s": {
+            "type": "number"
+          },
+          "keyframes": {
+            "type": "array"
+          },
+          "exploded_offsets": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "derived_from": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

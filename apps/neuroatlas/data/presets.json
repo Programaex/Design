@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "PST-DEFAULT",
+      "mode": "default",
+      "camera_id": "CAM-DEFAULT",
+      "layers_visible": [
+        "LYR-001",
+        "LYR-003",
+        "LYR-009"
+      ],
+      "animation_time_s": 0,
+      "autoplay": false,
+      "labels_visible": true,
+      "ready": false
+    },
+    {
+      "id": "PST-EXPLODED",
+      "mode": "exploded",
+      "camera_id": "CAM-DEFAULT",
+      "layers_visible": [],
+      "animation_time_s": 0,
+      "autoplay": false,
+      "labels_visible": true,
+      "ready": false
+    }
+  ]
+}

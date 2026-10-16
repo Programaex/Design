@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "MAT-SKIN",
+      "application": "external_head",
+      "color": "#E8AF9B",
+      "roughness": 0.78,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO — SEM MALHA"
+    },
+    {
+      "id": "MAT-BONE",
+      "application": "skull",
+      "color": "#F3F0E8",
+      "roughness": 0.72,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO — SEM MALHA"
+    },
+    {
+      "id": "MAT-BRAIN",
+      "application": "cortex",
+      "color": "#DB9D98",
+      "roughness": 0.65,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO"
+    },
+    {
+      "id": "MAT-NERVE",
+      "application": "cranial_nerves",
+      "color": "#FFD52A",
+      "roughness": 0.5,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO/DIDÁTICO"
+    },
+    {
+      "id": "MAT-ARTERY",
+      "application": "arteries",
+      "color": "#F04D36",
+      "roughness": 0.58,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO/DIDÁTICO"
+    },
+    {
+      "id": "MAT-VENOUS",
+      "application": "veins_sinuses",
+      "color": "#86B9F2",
+      "roughness": 0.58,
+      "opacity": 1,
+      "texture": null,
+      "status": "PROPOSTO/DIDÁTICO"
+    }
+  ]
+}

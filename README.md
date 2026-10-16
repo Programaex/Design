@@ -30,3 +30,7 @@ O tema escuro é o padrão; o claro é ativado com `data-theme="light"`. Veja o 
 ## CMS EXECUTAR
 
 `apps/site` publica o CMS e o site real no Worker `design` (https://design.bus-programa.workers.dev). Veja [`apps/site/README.md`](apps/site/README.md).
+
+## NEUROATLAS
+
+`apps/neuroatlas` é o root do app de atlas 3D do encéfalo (rota `/neuroatlas/`): documentação, dados, schemas e modelos para o Claude Design. Comece por [`apps/neuroatlas/README.md`](apps/neuroatlas/README.md).

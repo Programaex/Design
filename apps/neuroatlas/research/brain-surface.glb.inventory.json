@@ -1,0 +1,108 @@
+{
+  "file": "assets/models/brain-surface.glb",
+  "sha256": "ce97da58a5d4cdcf55b40d47a25ef55ca677e5e12a9f71e9ad0942cee2860c93",
+  "size_bytes": 9471892,
+  "format": "glTF 2.0 GLB",
+  "node_count": 5,
+  "mesh_count": 4,
+  "material_count": 2,
+  "texture_count": 0,
+  "image_count": 0,
+  "accessors": 20,
+  "extensionsUsed": [],
+  "nodes": [
+    {
+      "index": 0,
+      "name": "cortex-left",
+      "mesh": 0,
+      "children": [],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 1,
+      "name": "cortex-right",
+      "mesh": 1,
+      "children": [],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 2,
+      "name": "cerebellum",
+      "mesh": 2,
+      "children": [],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 3,
+      "name": "brain-stem",
+      "mesh": 3,
+      "children": [],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 4,
+      "name": "HOME-BRAIN-001",
+      "mesh": null,
+      "children": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "extras": {
+        "id": "HOME-BRAIN-001",
+        "dataset": "OpenNeuro ds006128 sub-01 snapshot 1.0.11",
+        "license": "CC0-1.0",
+        "transform": {
+          "from": "FreeSurfer surface RAS / TKR (mm); aseg voxels via TKR vox2ras",
+          "axes": "scene.x = A, scene.y = S, scene.z = R (cyclic permutation, det +1)",
+          "centreMm_sceneAxes": [
+            -9.407360076904297,
+            24.77861785888672,
+            0.5291595458984375
+          ],
+          "scale_unitsPerMm": 0.021940127192526693,
+          "mmPerUnit": 45.578587180689766,
+          "extentMm_sceneAxes": [
+            173.1986312866211,
+            128.89129638671875,
+            131.01019287109375
+          ],
+          "targetExtentUnits": 3.8
+        },
+        "params": {
+          "cellMm": 1.35,
+          "targetExtent": 3.8,
+          "seed": 41005,
+          "smoothIters": 6,
+          "particles": {
+            "cortex": 36000,
+            "cerebellum": 5000,
+            "brainstem": 1000
+          },
+          "particleLift": 0.012
+        }
+      },
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    }
+  ]
+}

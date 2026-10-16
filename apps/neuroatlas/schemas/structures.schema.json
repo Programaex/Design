@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://executar.example/neuroatlas/schemas/structures.schema.json",
+  "title": "structures",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "items",
+    "derived_from"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "external_id",
+          "name",
+          "node_manifest_name",
+          "side",
+          "group",
+          "file",
+          "object_name",
+          "verified_object",
+          "position",
+          "anchor"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "external_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "node_manifest_name": {
+            "type": "string"
+          },
+          "side": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "object_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "verified_object": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "anchor": {
+            "type": [
+              "array",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "derived_from": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,110 @@
+{
+  "version": "0.1.0",
+  "demo": true,
+  "workspace": {
+    "id": "ws_demo",
+    "name": "Workspace DEMO"
+  },
+  "people": [
+    {
+      "id": "p001",
+      "name": "Perfil A (DEMO)",
+      "role": "Coordenação",
+      "layerId": "executive",
+      "teamId": "t1",
+      "avatarUri": null,
+      "status": "active"
+    },
+    {
+      "id": "p002",
+      "name": "Perfil B (DEMO)",
+      "role": "Operações",
+      "layerId": "core",
+      "teamId": "t1",
+      "avatarUri": null,
+      "status": "active"
+    },
+    {
+      "id": "p003",
+      "name": "Perfil C (DEMO)",
+      "role": "Pesquisa",
+      "layerId": "core",
+      "teamId": "t2",
+      "avatarUri": null,
+      "status": "active"
+    },
+    {
+      "id": "p004",
+      "name": "Perfil D (DEMO)",
+      "role": "Colaboração",
+      "layerId": "extended",
+      "teamId": "t2",
+      "avatarUri": null,
+      "status": "active"
+    },
+    {
+      "id": "p005",
+      "name": "Perfil E (DEMO)",
+      "role": "Análise",
+      "layerId": "extended",
+      "teamId": "t3",
+      "avatarUri": null,
+      "status": "active"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r001",
+      "from": "p001",
+      "to": "p002",
+      "kind": "responsibility",
+      "status": "verified",
+      "directed": true,
+      "provenance": "fixture_demo"
+    },
+    {
+      "id": "r002",
+      "from": "p001",
+      "to": "p003",
+      "kind": "affiliation",
+      "status": "verified",
+      "directed": false,
+      "provenance": "fixture_demo"
+    },
+    {
+      "id": "r003",
+      "from": "p002",
+      "to": "p004",
+      "kind": "matching",
+      "status": "proposed",
+      "directed": false,
+      "provenance": "fixture_demo"
+    },
+    {
+      "id": "r004",
+      "from": "p003",
+      "to": "p005",
+      "kind": "affiliation",
+      "status": "verified",
+      "directed": false,
+      "provenance": "fixture_demo"
+    }
+  ],
+  "layers": [
+    {
+      "id": "executive",
+      "label": "Executivo",
+      "visibilityDefault": true
+    },
+    {
+      "id": "core",
+      "label": "Núcleo",
+      "visibilityDefault": true
+    },
+    {
+      "id": "extended",
+      "label": "Expandida",
+      "visibilityDefault": true
+    }
+  ]
+}

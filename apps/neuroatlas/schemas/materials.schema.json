@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://executar.example/neuroatlas/schemas/materials.schema.json",
+  "title": "materials",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "items",
+    "derived_from"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "application",
+          "color",
+          "roughness",
+          "opacity"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "application": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "roughness": {
+            "type": "number"
+          },
+          "opacity": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "derived_from": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

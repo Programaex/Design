@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "CTL-PLAY",
+      "name": "Reproduzir/pausar",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "ANIM-8S",
+      "behavior": "Alternar linha do tempo somente após trajetórias validadas",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-TIME",
+      "name": "Linha do tempo",
+      "type": "slider",
+      "range": "0..8s",
+      "initial": 0,
+      "target": "ANIM-8S",
+      "behavior": "Seek puro t->estado, sem acumulação",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-SPEED",
+      "name": "Velocidade",
+      "type": "select",
+      "range": "0.5|1|1.5",
+      "initial": 1,
+      "target": "ANIM-8S",
+      "behavior": "Multiplicar taxa de tempo, sem alterar trajetória",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-ROTATE",
+      "name": "Rotação automática",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "camera",
+      "behavior": "Girar base do atlas sem mover objetos individualmente",
+      "status": "PLANEJADO"
+    },
+    {
+      "id": "CTL-LAYERS",
+      "name": "Camadas",
+      "type": "multi-toggle",
+      "range": "",
+      "initial": null,
+      "target": "layers.json",
+      "behavior": "Ocultar/exibir grupos de nós resolvidos; desabilitar ausentes",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-OPACITY",
+      "name": "Opacidade",
+      "type": "slider",
+      "range": "0..1",
+      "initial": 1,
+      "target": "selected-layer",
+      "behavior": "Aplicar opacidade mantendo ordem/transparência",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-SELECT",
+      "name": "Selecionar estrutura",
+      "type": "raycast",
+      "range": "",
+      "initial": null,
+      "target": "structures.json",
+      "behavior": "Highlight a partir do mesh.parent userData.bx_id",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-ISOLATE",
+      "name": "Isolar",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "selection",
+      "behavior": "Somente objeto identificado; restauração reversível",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-EXPLODE",
+      "name": "Explodido",
+      "type": "slider",
+      "range": "0..1",
+      "initial": 0,
+      "target": "animations.json",
+      "behavior": "No manual, pausar autoplay; offsets medidos",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-CUT",
+      "name": "Corte anatômico",
+      "type": "toggle",
+      "range": "",
+      "initial": false,
+      "target": "cut asset",
+      "behavior": "Não simular superfície de corte sem malha cap",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-LABELS",
+      "name": "Legendas",
+      "type": "toggle",
+      "range": "",
+      "initial": true,
+      "target": "labels.json",
+      "behavior": "HTML editável, oclusão e colisão",
+      "status": "BLOQUEADO"
+    },
+    {
+      "id": "CTL-RESET",
+      "name": "Restaurar",
+      "type": "button",
+      "range": "",
+      "initial": null,
+      "target": "presets.json",
+      "behavior": "Restaurar modos e controles ao estado definido",
+      "status": "PLANEJADO"
+    },
+    {
+      "id": "CTL-DEVICE",
+      "name": "Prévia responsiva",
+      "type": "select",
+      "range": "desktop|tablet|mobile",
+      "initial": "desktop",
+      "target": "layout",
+      "behavior": "Mudar largura real da viewport interna",
+      "status": "PLANEJADO"
+    }
+  ]
+}

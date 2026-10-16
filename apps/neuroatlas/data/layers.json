@@ -1,0 +1,191 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "LYR-000",
+      "key": "external_head",
+      "name": "Pele / cabeça externa",
+      "structure_ids": [],
+      "initial_visible": false,
+      "order": 0,
+      "available": false,
+      "notes": "Ausente no candidato cerebral MDL-002; requer MDL-001 extraído e alinhado"
+    },
+    {
+      "id": "LYR-SKL",
+      "key": "skull",
+      "name": "Crânio",
+      "structure_ids": [],
+      "initial_visible": false,
+      "order": 1,
+      "available": false,
+      "notes": "Ausente no candidato cerebral MDL-002; requer MDL-001 extraído e alinhado"
+    },
+    {
+      "id": "LYR-001",
+      "key": "cortex",
+      "name": "Córtex",
+      "structure_ids": [
+        "NEU-0000",
+        "NEU-0001",
+        "NEU-0011",
+        "NEU-0012"
+      ],
+      "initial_visible": true,
+      "order": 1,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-002",
+      "key": "cranial_nerves",
+      "name": "Nervos cranianos",
+      "structure_ids": [
+        "NEU-0002"
+      ],
+      "initial_visible": false,
+      "order": 2,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-003",
+      "key": "brainstem",
+      "name": "Tronco encefálico",
+      "structure_ids": [
+        "NEU-0006",
+        "NEU-0007",
+        "NEU-0034",
+        "NEU-0130"
+      ],
+      "initial_visible": true,
+      "order": 3,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-004",
+      "key": "tracts",
+      "name": "Tratos (representação do atlas)",
+      "structure_ids": [
+        "NEU-0008"
+      ],
+      "initial_visible": false,
+      "order": 4,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-005",
+      "key": "diencephalon",
+      "name": "Diencéfalo",
+      "structure_ids": [
+        "NEU-0010",
+        "NEU-0019",
+        "NEU-0020",
+        "NEU-0024"
+      ],
+      "initial_visible": false,
+      "order": 5,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-006",
+      "key": "arteries",
+      "name": "Artérias",
+      "structure_ids": [
+        "NEU-0013"
+      ],
+      "initial_visible": false,
+      "order": 6,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-007",
+      "key": "white_matter",
+      "name": "Substância branca",
+      "structure_ids": [
+        "NEU-0015",
+        "NEU-0074",
+        "NEU-0107",
+        "NEU-0108"
+      ],
+      "initial_visible": false,
+      "order": 7,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-008",
+      "key": "veins_sinuses",
+      "name": "Veias e seios venosos",
+      "structure_ids": [
+        "NEU-0023"
+      ],
+      "initial_visible": false,
+      "order": 8,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-009",
+      "key": "cerebellum",
+      "name": "Cerebelo",
+      "structure_ids": [
+        "NEU-0028",
+        "NEU-0029",
+        "NEU-0041",
+        "NEU-0042"
+      ],
+      "initial_visible": true,
+      "order": 9,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-010",
+      "key": "deep_grey",
+      "name": "Núcleos profundos",
+      "structure_ids": [
+        "NEU-0039",
+        "NEU-0040",
+        "NEU-0049",
+        "NEU-0050"
+      ],
+      "initial_visible": false,
+      "order": 10,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-011",
+      "key": "ventricles",
+      "name": "Sistema ventricular",
+      "structure_ids": [
+        "NEU-0058",
+        "NEU-0059",
+        "NEU-0109",
+        "NEU-0173"
+      ],
+      "initial_visible": false,
+      "order": 11,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    },
+    {
+      "id": "LYR-012",
+      "key": "meninges_dura",
+      "name": "Meninges e dura-máter",
+      "structure_ids": [
+        "NEU-0103"
+      ],
+      "initial_visible": false,
+      "order": 12,
+      "available": false,
+      "notes": "Habilitar somente após verificar cada objeto no GLB; amostra de manifesto"
+    }
+  ]
+}

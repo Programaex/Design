@@ -1,0 +1,11 @@
+id,name,yaw_degrees,pitch_degrees,description
+CAM-01,Frontal,0,0,Apresentação inicial da composição
+CAM-02,Direita oblíqua,36,0,Mostra profundidade do anel superior
+CAM-03,Lateral direita,90,0,Mostra o perfil e organização em camadas
+CAM-04,Posterior,180,0,Verifica distribuição no lado oposto
+CAM-05,Lateral esquerda,270,0,Revela o perfil esquerdo
+CAM-06,Esquerda oblíqua,324,0,Retorna ao frontal pelo lado esquerdo
+CAM-07,Superior oblíqua,0,45,Expõe camadas em profundidade
+CAM-08,Superior,0,80,Vista topo respeitando limite do orbit
+CAM-09,Direita elevada,135,25,Mostra ângulo posterior elevado
+CAM-10,Frontal elevado,0,25,Apresentação editorial da rede

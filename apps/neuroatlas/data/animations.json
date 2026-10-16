@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.3.0",
+  "derived_from": "MASTER_SOURCE.json",
+  "items": [
+    {
+      "id": "ANIM-8S",
+      "objects": [],
+      "initial_state": "separado",
+      "final_state": "separado",
+      "duration_s": 8,
+      "interpolation": "smoothstep segmentado (proposta)",
+      "keyframes": [
+        {
+          "t": 0,
+          "state": "separado"
+        },
+        {
+          "t": 2,
+          "state": "separado"
+        },
+        {
+          "t": 4,
+          "state": "montado"
+        },
+        {
+          "t": 5,
+          "state": "montado"
+        },
+        {
+          "t": 7,
+          "state": "separado"
+        },
+        {
+          "t": 8,
+          "state": "separado"
+        }
+      ],
+      "exploded_offsets": null,
+      "ready": false,
+      "notes": "Trajetórias e offsets indefinidos até identificar objetos, eixo e escala"
+    }
+  ]
+}

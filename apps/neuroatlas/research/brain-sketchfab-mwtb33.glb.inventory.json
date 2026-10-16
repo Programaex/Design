@@ -1,0 +1,81 @@
+{
+  "file": "assets/models/brain-sketchfab-mwtb33.glb",
+  "sha256": "96165b23ef4dbc335a979cdf21c8f704eb60fef64e2b50c2742bb80525297b7c",
+  "size_bytes": 2672064,
+  "format": "glTF 2.0 GLB",
+  "node_count": 4,
+  "mesh_count": 2,
+  "material_count": 1,
+  "texture_count": 0,
+  "image_count": 0,
+  "accessors": 6,
+  "extensionsUsed": [],
+  "nodes": [
+    {
+      "index": 0,
+      "name": "Sketchfab_model",
+      "mesh": null,
+      "children": [
+        1
+      ],
+      "extras": {},
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 1,
+      "name": "3DPX-003765_3DModel_of_Brain_Nevit_Dilmen.stl.cleaner.materialmerger.gles",
+      "mesh": null,
+      "children": [
+        2,
+        3
+      ],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 2,
+      "name": "Object_2",
+      "mesh": 0,
+      "children": [],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    },
+    {
+      "index": 3,
+      "name": "Object_3",
+      "mesh": 1,
+      "children": [],
+      "extras": {},
+      "matrix": null,
+      "translation": null,
+      "rotation": null,
+      "scale": null
+    }
+  ]
+}
