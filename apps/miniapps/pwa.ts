@@ -32,7 +32,8 @@ export function pwa(): Plugin {
 			}
 			const files = Object.keys(bundle).filter(f => !f.endsWith('.map'));
 			const pages = files.filter(f => f.endsWith('index.html')).map(f => BASE + f.replace(/index\.html$/, ''));
-			const assets = files.filter(f => !f.endsWith('.html')).map(f => BASE + f);
+			// legacy icon-font formats (svg/ttf/woff, ~3.5 MB) stay out: every supported browser loads the woff2
+			const assets = files.filter(f => !f.endsWith('.html') && !/Phosphor-[\w-]+\.(svg|ttf|woff)$/.test(f)).map(f => BASE + f);
 			const icons = APPS.flatMap(a => [`${BASE}icons/${a.slug}.svg`, `${BASE}icons/${a.slug}-192.png`]);
 			// built file names carry content hashes, so this changes exactly when something changed
 			const version = createHash('sha256').update(files.sort().join('\n')).digest('hex').slice(0, 12);

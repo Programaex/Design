@@ -14,6 +14,5 @@ export default defineConfig({
 		rollupOptions: {
 			input: Object.fromEntries([['hub', resolve(__dirname, 'index.html')], ...APPS.map(a => [a.slug, resolve(__dirname, a.slug, 'index.html')])])
 		}
-	},
-	test: { include: ['test/**/*.test.ts'], environment: 'node' }
+	}
 });
