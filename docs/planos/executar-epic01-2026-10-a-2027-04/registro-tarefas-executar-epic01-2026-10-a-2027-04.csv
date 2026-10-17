@@ -1,0 +1,1120 @@
+tarefa_id,cluster_id,cluster_nome,titulo,verbo_acao,camada_operacional,resultado_esperado,criterio_smart_especifico,criterio_smart_mensuravel,criterio_smart_atingivel,criterio_smart_relevante,criterio_smart_temporal,prompt_ia_self_contained,passos,concluido_quando,evidencia_conclusao,tags,tarefas_relacionadas,dependencia_bloqueante,responsavel,prioridade,prazo,tempo_estimado,status,fonte_id
+TSK-0001,CLU-01,Planejamento e controle,Confirmar a capacidade semanal real e o escopo do lançamento de 05/11,confirmar,Abrir a tabela de capacidade deste plano e anotar quantas horas por dia estão realmente disponíveis até 04/11.,Decisão registrada: horas por semana confirmadas e escolha entre lançar tudo em 05/11 ou lançar o núcleo em 05/11 com liberações semanais até 05/12.,Cobre só a confirmação de horas e a escolha do escopo de 05/11; não altera tarefas.,Duas respostas registradas por escrito: horas/semana e opção de escopo (A ou B).,"Estimativa de 1,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Sem essa decisão a carga do lançamento fica perto do dobro da capacidade estimada até 04/11.,Em 17/10/2026.,"<tarefa id=""TSK-0001"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Planejamento e controle. Mantém o plano rastreável, com escopo e capacidade confirmados antes da execução.</contexto>
+  <objetivo>Decisão registrada: horas por semana confirmadas e escolha entre lançar tudo em 05/11 ou lançar o núcleo em 05/11 com liberações semanais até 05/12.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só a confirmação de horas e a escolha do escopo de 05/11; não altera tarefas.</restricoes>
+  <passos>
+    Conferir as horas disponíveis por dia até 04/11.
+    Comparar com a carga estimada das opções A e B.
+    Registrar a decisão e a data.
+  </passos>
+  <criterio_de_conclusao>A decisão (horas/semana e opção A ou B) estiver registrada por escrito.</criterio_de_conclusao>
+  <formato_de_saida>Nota de decisão datada no registro de tarefas. Prazo: 17/10/2026. Tempo previsto: 1,0h.</formato_de_saida>
+  <evidencia_esperada>Nota de decisão datada no registro de tarefas.</evidencia_esperada>
+  <lacunas_conhecidas>Capacidade semanal real. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Conferir as horas disponíveis por dia até 04/11|Comparar com a carga estimada das opções A e B|Registrar a decisão e a data,A decisão (horas/semana e opção A ou B) estiver registrada por escrito.,Nota de decisão datada no registro de tarefas.,planejamento|capacidade|decisao,,,Titular,Alta,17/10/2026,"1,0 horas",Não iniciada,DEC-03
+TSK-0002,CLU-01,Planejamento e controle,"Registrar o EPIC 01, a Campanha 02 e o EPIC Emprego no GitHub e no workbook",registrar,Abrir o repositório workbook e ler a regra de tripla clonagem em 500_Copiloto_templates/regras/OPERACOES.md.,Três épicos criados no GitHub e clonados nas pastas de tarefas do owner e no registro de tarefas do workbook.,Cobre só o registro dos três épicos; sub-issues ficam para depois.,3 issues no GitHub + 3 arquivos de tarefa do owner + 3 arquivos no registro de tarefas.,"Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",O acompanhamento semanal precisa de IDs estáveis para cada épico.,De 18/10/2026 até 19/10/2026.,"<tarefa id=""TSK-0002"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Planejamento e controle. Mantém o plano rastreável, com escopo e capacidade confirmados antes da execução.</contexto>
+  <objetivo>Três épicos criados no GitHub e clonados nas pastas de tarefas do owner e no registro de tarefas do workbook.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0001 (Confirmar a capacidade semanal real e o escopo do lançamento de 05/11). Sem acesso ao GitHub: parar e avisar. Owner de cada épico a confirmar com o titular. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só o registro dos três épicos; sub-issues ficam para depois.</restricoes>
+  <passos>
+    Criar os três épicos no GitHub.
+    Clonar cada épico na pasta de tarefas do owner.
+    Clonar no registro de tarefas do workbook.
+  </passos>
+  <criterio_de_conclusao>Os três épicos existirem nos três lugares com o mesmo ID.</criterio_de_conclusao>
+  <formato_de_saida>Links das 3 issues e caminhos dos 6 arquivos. Prazo: 19/10/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Links das 3 issues e caminhos dos 6 arquivos.</evidencia_esperada>
+  <lacunas_conhecidas>Owner (área) de cada épico no workbook. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Criar os três épicos no GitHub|Clonar cada épico na pasta de tarefas do owner|Clonar no registro de tarefas do workbook,Os três épicos existirem nos três lugares com o mesmo ID.,Links das 3 issues e caminhos dos 6 arquivos.,governanca|github|workbook,,TSK-0001,Titular,Alta,19/10/2026,"2,0 horas",Não iniciada,FACT-07
+TSK-0003,CLU-01,Planejamento e controle,Inventariar os ativos já existentes do ecossistema com o status real de cada um,inventariar,"Abrir o repositório Design e listar as pastas apps/, apps/site/content/articles e plugins/.","Lista única de ativos (apps, artigos, skills, templates, rascunhos de e-book) com status: pronto, rascunho ou inexistente.",Cobre só o levantamento; não corrige nem publica nada.,Cada item do pacote do EPIC 01 aparece na lista com um dos três status.,"Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Evita produzir do zero o que já existe e corrige as estimativas de horas.,De 17/10/2026 até 19/10/2026.,"<tarefa id=""TSK-0003"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Planejamento e controle. Mantém o plano rastreável, com escopo e capacidade confirmados antes da execução.</contexto>
+  <objetivo>Lista única de ativos (apps, artigos, skills, templates, rascunhos de e-book) com status: pronto, rascunho ou inexistente.</objetivo>
+  <entrada>Repositórios Design e workbook do Programa EXECUTAR.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só o levantamento; não corrige nem publica nada.</restricoes>
+  <passos>
+    Listar os ativos dos repositórios.
+    Marcar o status real de cada um.
+    Apontar o que falta para cada item do pacote.
+  </passos>
+  <criterio_de_conclusao>Todos os itens do pacote do EPIC 01 tiverem status marcado.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo de inventário salvo no repositório. Prazo: 19/10/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo de inventário salvo no repositório.</evidencia_esperada>
+  <lacunas_conhecidas>Status real dos apps Prisma, Meu processo de trabalho, Plano Operacional Rastreável e workflow. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Listar os ativos dos repositórios|Marcar o status real de cada um|Apontar o que falta para cada item do pacote,Todos os itens do pacote do EPIC 01 tiverem status marcado.,Arquivo de inventário salvo no repositório.,inventario|ativos|planejamento,,,Titular,Alta,19/10/2026,"2,0 horas",Não iniciada,FACT-05
+TSK-0004,CLU-02,Site riscocognitivo.org,"Confirmar o domínio riscocognitivo.org, o DNS e a hospedagem na Cloudflare",confirmar,Entrar no painel da Cloudflare e procurar o domínio riscocognitivo.org na lista de sites.,"Domínio ativo apontando para o Worker do site, com HTTPS funcionando.","Cobre domínio, DNS e certificado; não cobre o conteúdo do site.",https://riscocognitivo.org responde com o site (ou página provisória) e certificado válido.,"Estimativa de 1,5h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Sem domínio não há lançamento em 05/11.,De 19/10/2026 até 20/10/2026.,"<tarefa id=""TSK-0004"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Domínio ativo apontando para o Worker do site, com HTTPS funcionando.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre domínio, DNS e certificado; não cobre o conteúdo do site.</restricoes>
+  <passos>
+    Verificar o registro do domínio.
+    Apontar o DNS para o Worker do site.
+    Testar o acesso por HTTPS.
+  </passos>
+  <criterio_de_conclusao>O endereço https://riscocognitivo.org abrir com certificado válido.</criterio_de_conclusao>
+  <formato_de_saida>Print do navegador e da configuração de DNS. Prazo: 20/10/2026. Tempo previsto: 1,5h.</formato_de_saida>
+  <evidencia_esperada>Print do navegador e da configuração de DNS.</evidencia_esperada>
+  <lacunas_conhecidas>Situação do registro do domínio. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Verificar o registro do domínio|Apontar o DNS para o Worker do site|Testar o acesso por HTTPS,O endereço https://riscocognitivo.org abrir com certificado válido.,Print do navegador e da configuração de DNS.,dominio|cloudflare|site,,,Titular,Alta,20/10/2026,"1,5 horas",Não iniciada,FACT-01
+TSK-0005,CLU-02,Site riscocognitivo.org,Definir as rotas que entram no lançamento a partir do mapa de rotas do EXECUTAR,definir,Abrir o arquivo EXECUTAR_rotas.csv e filtrar as rotas públicas.,"Lista de rotas marcadas como lançamento 05/11, liberação até 05/12 ou depois.",Cobre a seleção de rotas; não constrói páginas.,Cada uma das 78 rotas do arquivo recebe uma das três marcações.,"Estimativa de 1,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.","Evita construir agora páginas de frentes previstas para depois (comunidade, studio, conta).",Em 20/10/2026.,"<tarefa id=""TSK-0005"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Lista de rotas marcadas como lançamento 05/11, liberação até 05/12 ou depois.</objetivo>
+  <entrada>Arquivo EXECUTAR_rotas.csv (78 rotas).</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0003 (Inventariar os ativos já existentes do ecossistema com o status real de cada um). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a seleção de rotas; não constrói páginas.</restricoes>
+  <passos>
+    Marcar as rotas do lançamento.
+    Marcar as rotas com liberação até 05/12.
+    Marcar as rotas para depois.
+  </passos>
+  <criterio_de_conclusao>As 78 rotas tiverem marcação.</criterio_de_conclusao>
+  <formato_de_saida>CSV de rotas com a coluna de marcação. Prazo: 20/10/2026. Tempo previsto: 1,0h.</formato_de_saida>
+  <evidencia_esperada>CSV de rotas com a coluna de marcação.</evidencia_esperada>
+</tarefa>",Marcar as rotas do lançamento|Marcar as rotas com liberação até 05/12|Marcar as rotas para depois,As 78 rotas tiverem marcação.,CSV de rotas com a coluna de marcação.,rotas|site|escopo,,TSK-0003,Titular,Alta,20/10/2026,"1,0 horas",Não iniciada,FACT-02
+TSK-0006,CLU-03,Conteúdo do blog,Pesquisar evidências citáveis para o artigo fundador e os quatro artigos pilares,pesquisar,Abrir um documento novo e escrever as cinco perguntas centrais dos artigos.,"Mapa de evidências com fontes verificáveis por artigo (dados, estudos e exemplos).",Cobre a pesquisa; não redige os artigos.,"Pelo menos 2 fontes verificáveis por artigo, com link e data de acesso.","Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",O padrão editorial exige evidência por afirmação e citabilidade em buscadores de IA.,De 19/10/2026 até 21/10/2026.,"<tarefa id=""TSK-0006"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Mapa de evidências com fontes verificáveis por artigo (dados, estudos e exemplos).</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não usar fonte sem autor ou data identificável. Conteúdo educativo, sem diagnóstico. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a pesquisa; não redige os artigos.</restricoes>
+  <passos>
+    Listar as perguntas de cada artigo.
+    Reunir fontes verificáveis por pergunta.
+    Registrar o mapa de evidências.
+  </passos>
+  <criterio_de_conclusao>Os cinco artigos tiverem pelo menos 2 fontes verificáveis cada.</criterio_de_conclusao>
+  <formato_de_saida>Mapa de evidências salvo com links. Prazo: 21/10/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Mapa de evidências salvo com links.</evidencia_esperada>
+</tarefa>",Listar as perguntas de cada artigo|Reunir fontes verificáveis por pergunta|Registrar o mapa de evidências,Os cinco artigos tiverem pelo menos 2 fontes verificáveis cada.,Mapa de evidências salvo com links.,pesquisa|evidencias|blog|no-n4,TSK-0009,,Titular,Alta,21/10/2026,"3,0 horas",Não iniciada,FACT-03
+TSK-0007,CLU-02,Site riscocognitivo.org,Revisar o Manifesto e escrever as metaexplicações da home,revisar,Abrir o arquivo manifesto.mdx do site e ler do início ao fim.,Manifesto final e textos curtos que explicam o método e as principais funcionalidades na home.,Cobre os textos da home; não cobre o layout.,Manifesto aprovado + 1 texto curto por funcionalidade principal.,"Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",A home premium apresenta o Manifesto e converte o visitante.,De 21/10/2026 até 22/10/2026.,"<tarefa id=""TSK-0007"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Manifesto final e textos curtos que explicam o método e as principais funcionalidades na home.</objetivo>
+  <entrada>Arquivo apps/site/content/articles/manifesto.mdx (rascunho existente).</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre os textos da home; não cobre o layout.</restricoes>
+  <passos>
+    Revisar o Manifesto.
+    Escrever as metaexplicações.
+    Aprovar os textos.
+  </passos>
+  <criterio_de_conclusao>Manifesto e metaexplicações estiverem aprovados pelo titular.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo do Manifesto atualizado no repositório. Prazo: 22/10/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo do Manifesto atualizado no repositório.</evidencia_esperada>
+</tarefa>",Revisar o Manifesto|Escrever as metaexplicações|Aprovar os textos,Manifesto e metaexplicações estiverem aprovados pelo titular.,Arquivo do Manifesto atualizado no repositório.,manifesto|home|texto,TSK-0008,,Titular,Alta,22/10/2026,"2,0 horas",Não iniciada,FACT-01
+TSK-0008,CLU-02,Site riscocognitivo.org,Construir a home premium de conversão com o Manifesto e as principais funcionalidades,construir,Abrir o kit de interface do site no design system e copiar a seção de apresentação.,"Home publicada em ambiente de teste com apresentação, Manifesto, funcionalidades, CTAs e newsletter.",Cobre a home; não cobre as páginas de catálogo.,"Os 6 componentes da rota início (apresentação, metodologia, conteúdos, ferramentas, CTA do app, newsletter) visíveis no celular e no computador.","Estimativa de 6,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",É a página de entrada e de conversão do lançamento.,De 22/10/2026 até 26/10/2026.,"<tarefa id=""TSK-0008"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Home publicada em ambiente de teste com apresentação, Manifesto, funcionalidades, CTAs e newsletter.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0007 (Revisar o Manifesto e escrever as metaexplicações da home). O CTA do Executar App não leva a destino inventado: fica como 'em breve' até 05/01. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a home; não cobre as páginas de catálogo.</restricoes>
+  <passos>
+    Montar as seções da home.
+    Inserir Manifesto e CTAs.
+    Testar no celular.
+  </passos>
+  <criterio_de_conclusao>A home abrir no ambiente de teste com as 6 seções e os CTAs funcionando.</criterio_de_conclusao>
+  <formato_de_saida>Link do ambiente de teste e prints celular/computador. Prazo: 26/10/2026. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Link do ambiente de teste e prints celular/computador.</evidencia_esperada>
+</tarefa>",Montar as seções da home|Inserir Manifesto e CTAs|Testar no celular,A home abrir no ambiente de teste com as 6 seções e os CTAs funcionando.,Link do ambiente de teste e prints celular/computador.,home|site|conversao,TSK-0010,TSK-0007,Titular,Alta,26/10/2026,"6,0 horas",Não iniciada,FACT-02
+TSK-0009,CLU-03,Conteúdo do blog,"Escrever o artigo fundador (Peça 01): neurodivergência, demandas cognitivas e soluções",escrever,Abrir o mapa de evidências e escrever o gancho de abertura com um dado.,"Artigo fundador de 1.800 a 2.400 palavras, com evidências, exemplos, tutorial e CTA para ferramenta.",Cobre o artigo fundador; os quatro pilares são tarefas separadas.,"Texto entre 1.800 e 2.400 palavras, 11 blocos, pelo menos 2 evidências citadas e 1 CTA.","Estimativa de 6,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",É a peça-mãe do lançamento e do ciclo de 30 dias.,De 21/10/2026 até 24/10/2026.,"<tarefa id=""TSK-0009"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Artigo fundador de 1.800 a 2.400 palavras, com evidências, exemplos, tutorial e CTA para ferramenta.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0006 (Pesquisar evidências citáveis para o artigo fundador e os quatro artigos pilares). Tom jornalístico, sem tom de coach, sem promessa de cura ou diagnóstico. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o artigo fundador; os quatro pilares são tarefas separadas.</restricoes>
+  <passos>
+    Estruturar os 11 blocos.
+    Redigir com evidências e exemplos.
+    Inserir o CTA da ferramenta.
+  </passos>
+  <criterio_de_conclusao>O artigo tiver entre 1.800 e 2.400 palavras, 2 evidências citadas e 1 CTA.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo do artigo no CMS em rascunho. Prazo: 24/10/2026. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo do artigo no CMS em rascunho.</evidencia_esperada>
+</tarefa>",Estruturar os 11 blocos|Redigir com evidências e exemplos|Inserir o CTA da ferramenta,"O artigo tiver entre 1.800 e 2.400 palavras, 2 evidências citadas e 1 CTA.",Arquivo do artigo no CMS em rascunho.,artigo-fundador|blog|peca-01,TSK-0024,TSK-0006,Titular,Alta,24/10/2026,"6,0 horas",Não iniciada,FACT-01
+TSK-0010,CLU-02,Site riscocognitivo.org,Adaptar o catálogo do blog e a página de artigo com CTA para as ferramentas,adaptar,Abrir a rota /blog no ambiente de teste e listar o que falta em relação ao mapa de rotas.,"Catálogo /blog com busca, filtros e cards, e página /blog/[slug] com referências e CTA.",Cobre catálogo e página de artigo; comentários ficam desativados.,"Os 5 filtros (perfil, objetivo, formato, tecnologia, disponibilidade) funcionando e slug inexistente retornando 404.","Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Os artigos precisam levar o leitor às ferramentas e soluções.,De 23/10/2026 até 24/10/2026.,"<tarefa id=""TSK-0010"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Catálogo /blog com busca, filtros e cards, e página /blog/[slug] com referências e CTA.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0005 (Definir as rotas que entram no lançamento a partir do mapa de rotas do EXECUTAR). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre catálogo e página de artigo; comentários ficam desativados.</restricoes>
+  <passos>
+    Ajustar busca e filtros do catálogo.
+    Ajustar a página do artigo com CTA.
+    Testar o 404.
+  </passos>
+  <criterio_de_conclusao>Filtros funcionarem e o slug inexistente retornar 404.</criterio_de_conclusao>
+  <formato_de_saida>Prints e lista de testes. Prazo: 24/10/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Prints e lista de testes.</evidencia_esperada>
+</tarefa>",Ajustar busca e filtros do catálogo|Ajustar a página do artigo com CTA|Testar o 404,Filtros funcionarem e o slug inexistente retornar 404.,Prints e lista de testes.,blog|site|catalogo,,TSK-0005,Titular,Alta,24/10/2026,"3,0 horas",Não iniciada,FACT-02
+TSK-0011,CLU-02,Site riscocognitivo.org,Construir o mapa cognitivo simplificado com home e landing próprias,construir,"Desenhar no papel os quatro blocos do mapa: funções executivas, cognição, neurodivergência e matriz de riscos.","Mapa interativo simplificado em /mapa-cognitivo com legenda, busca e detalhes.",Cobre o mapa simplificado; mapas adicionais ficam para depois.,"Os 4 blocos navegáveis, com legenda e detalhe por item.","Estimativa de 6,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",O mapa é uma porta de entrada própria do ecossistema.,De 26/10/2026 até 29/10/2026.,"<tarefa id=""TSK-0011"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Mapa interativo simplificado em /mapa-cognitivo com legenda, busca e detalhes.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0005 (Definir as rotas que entram no lançamento a partir do mapa de rotas do EXECUTAR). Conteúdo educativo com fontes; não apresentar classificação como diagnóstico. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o mapa simplificado; mapas adicionais ficam para depois.</restricoes>
+  <passos>
+    Definir os itens de cada bloco.
+    Montar o mapa interativo.
+    Publicar a landing do mapa.
+  </passos>
+  <criterio_de_conclusao>Os 4 blocos estiverem navegáveis com legenda e detalhe.</criterio_de_conclusao>
+  <formato_de_saida>Link do mapa no ambiente de teste. Prazo: 29/10/2026. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Link do mapa no ambiente de teste.</evidencia_esperada>
+</tarefa>",Definir os itens de cada bloco|Montar o mapa interativo|Publicar a landing do mapa,Os 4 blocos estiverem navegáveis com legenda e detalhe.,Link do mapa no ambiente de teste.,mapa|site|funcoes-executivas,,TSK-0005,Titular,Alta,29/10/2026,"6,0 horas",Não iniciada,FACT-01
+TSK-0012,CLU-04,Apps e ferramentas,Empacotar o Prisma standalone para acesso público,empacotar,Abrir a versão atual do Prisma e anotar o que impede o uso por um visitante sem login.,"Prisma standalone acessível por link público, com instruções de uso.",Cobre só o Prisma; os demais apps são tarefas separadas.,Um visitante sem conta consegue abrir e usar o Prisma pelo link.,"Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",É o app principal do vídeo comercial e da loja.,De 23/10/2026 até 27/10/2026.,"<tarefa id=""TSK-0012"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Prisma standalone acessível por link público, com instruções de uso.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0003 (Inventariar os ativos já existentes do ecossistema com o status real de cada um). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só o Prisma; os demais apps são tarefas separadas.</restricoes>
+  <passos>
+    Remover bloqueios de acesso público.
+    Escrever as instruções de uso.
+    Testar com um usuário de fora.
+  </passos>
+  <criterio_de_conclusao>Um teste de uso por pessoa de fora for concluído sem ajuda.</criterio_de_conclusao>
+  <formato_de_saida>Link público e nota do teste. Prazo: 27/10/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Link público e nota do teste.</evidencia_esperada>
+  <lacunas_conhecidas>Status real do Prisma. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Remover bloqueios de acesso público|Escrever as instruções de uso|Testar com um usuário de fora,Um teste de uso por pessoa de fora for concluído sem ajuda.,Link público e nota do teste.,prisma|app|lancamento,TSK-0013,TSK-0003,Titular,Alta,27/10/2026,"3,0 horas",Não iniciada,FACT-01
+TSK-0013,CLU-04,Apps e ferramentas,Publicar o catálogo de apps com o Prisma e a página de cada app disponível,publicar,Abrir a rota /apps no ambiente de teste.,Catálogo /apps com cards dos apps disponíveis e página do Executar App marcada como 'em breve'.,Cobre o catálogo; o Executar App só é ativado em 05/01.,Cards de todos os apps prontos + filtros funcionando.,"Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Os apps são o destino dos CTAs dos artigos.,De 27/10/2026 até 28/10/2026.,"<tarefa id=""TSK-0013"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Catálogo /apps com cards dos apps disponíveis e página do Executar App marcada como 'em breve'.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0012 (Empacotar o Prisma standalone para acesso público). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o catálogo; o Executar App só é ativado em 05/01.</restricoes>
+  <passos>
+    Cadastrar os apps prontos no CMS.
+    Marcar o Executar App como em breve.
+    Testar filtros.
+  </passos>
+  <criterio_de_conclusao>Todos os apps prontos aparecerem no catálogo com página própria.</criterio_de_conclusao>
+  <formato_de_saida>Print do catálogo. Prazo: 28/10/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Print do catálogo.</evidencia_esperada>
+</tarefa>",Cadastrar os apps prontos no CMS|Marcar o Executar App como em breve|Testar filtros,Todos os apps prontos aparecerem no catálogo com página própria.,Print do catálogo.,apps|catalogo|site,,TSK-0012,Titular,Alta,28/10/2026,"3,0 horas",Não iniciada,FACT-02
+TSK-0014,CLU-04,Apps e ferramentas,"Criar o primeiro template da família por déficit executivo para TDAH, dislexia e autismo",criar,Listar os três déficits executivos mais citados no mapa de evidências.,"Um template por perfil (TDAH, dislexia, autismo) pronto para download.",Cobre o primeiro template de cada perfil; o restante da família vem depois.,3 templates exportados e testados.,"Estimativa de 5,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Ferramentas gratuitas são o CTA natural dos artigos.,De 26/10/2026 até 29/10/2026.,"<tarefa id=""TSK-0014"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Um template por perfil (TDAH, dislexia, autismo) pronto para download.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o primeiro template de cada perfil; o restante da família vem depois.</restricoes>
+  <passos>
+    Escolher o déficit de cada template.
+    Montar os três templates.
+    Exportar para download.
+  </passos>
+  <criterio_de_conclusao>Os 3 templates estiverem exportados e abertos sem erro.</criterio_de_conclusao>
+  <formato_de_saida>Arquivos dos 3 templates. Prazo: 29/10/2026. Tempo previsto: 5,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivos dos 3 templates.</evidencia_esperada>
+</tarefa>",Escolher o déficit de cada template|Montar os três templates|Exportar para download,Os 3 templates estiverem exportados e abertos sem erro.,Arquivos dos 3 templates.,templates|ferramentas|neurodivergencia,TSK-0015,,Titular,Alta,29/10/2026,"5,0 horas",Não iniciada,FACT-01
+TSK-0015,CLU-04,Apps e ferramentas,Publicar o catálogo de ferramentas com filtros e download dos templates,publicar,Abrir a rota /ferramentas no ambiente de teste.,"Catálogo /ferramentas com filtros por perfil, objetivo, tecnologia e disponibilidade, e download dos templates.",Cobre o catálogo e os downloads gratuitos.,Os filtros funcionam e os 3 templates baixam.,"Estimativa de 4,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Fecha o caminho artigo → ferramenta.,De 28/10/2026 até 30/10/2026.,"<tarefa id=""TSK-0015"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Catálogo /ferramentas com filtros por perfil, objetivo, tecnologia e disponibilidade, e download dos templates.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0014 (Criar o primeiro template da família por déficit executivo para TDAH, dislexia e autismo). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o catálogo e os downloads gratuitos.</restricoes>
+  <passos>
+    Cadastrar os templates no CMS.
+    Configurar os filtros.
+    Testar os downloads.
+  </passos>
+  <criterio_de_conclusao>Os 3 downloads funcionarem a partir do catálogo.</criterio_de_conclusao>
+  <formato_de_saida>Prints do catálogo e dos downloads. Prazo: 30/10/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Prints do catálogo e dos downloads.</evidencia_esperada>
+</tarefa>",Cadastrar os templates no CMS|Configurar os filtros|Testar os downloads,Os 3 downloads funcionarem a partir do catálogo.,Prints do catálogo e dos downloads.,ferramentas|catalogo|site,,TSK-0014,Titular,Alta,30/10/2026,"4,0 horas",Não iniciada,FACT-02
+TSK-0016,CLU-05,E-books,Escrever o e-book 1: Operações e Neurodivergência,escrever,Abrir o artigo fundador e listar os tópicos que o e-book vai aprofundar.,"E-book 1 diagramado em PDF, ligado ao CTA do artigo fundador.",Cobre o e-book 1; os outros três são tarefas separadas.,"PDF exportado com sumário, fontes e CTA.","Estimativa de 6,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Aprofunda o tema da peça-mãe e captura contatos.,De 26/10/2026 até 31/10/2026.,"<tarefa id=""TSK-0016"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: E-books. Os e-books aprofundam os temas e capturam contatos para a newsletter.</contexto>
+  <objetivo>E-book 1 diagramado em PDF, ligado ao CTA do artigo fundador.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0009 (Escrever o artigo fundador (Peça 01): neurodivergência, demandas cognitivas e soluções). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o e-book 1; os outros três são tarefas separadas.</restricoes>
+  <passos>
+    Montar o sumário.
+    Redigir e revisar.
+    Diagramar e exportar o PDF.
+  </passos>
+  <criterio_de_conclusao>O PDF estiver exportado e revisado.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo PDF. Prazo: 31/10/2026. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo PDF.</evidencia_esperada>
+</tarefa>",Montar o sumário|Redigir e revisar|Diagramar e exportar o PDF,O PDF estiver exportado e revisado.,Arquivo PDF.,ebook|operacoes|neurodivergencia,,TSK-0009,Titular,Alta,31/10/2026,"6,0 horas",Não iniciada,FACT-01
+TSK-0017,CLU-07,Loja e afiliados,Definir o checkout e os links de afiliado reais da loja,definir,"Listar os 6 produtos da loja e anotar, ao lado de cada um, onde ele é vendido hoje.",Destino real de compra (checkout próprio ou link de afiliado) definido para cada produto.,Cobre a definição dos destinos; não constrói a vitrine.,6 produtos com destino de compra real ou marcados como 'a definir'.,"Estimativa de 1,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",A rota de produto exige destino real; integração de pagamento não pode ser inventada.,De 20/10/2026 até 23/10/2026.,"<tarefa id=""TSK-0017"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Loja e afiliados. A loja transforma interesse em receita com produtos próprios e de afiliados.</contexto>
+  <objetivo>Destino real de compra (checkout próprio ou link de afiliado) definido para cada produto.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a definição dos destinos; não constrói a vitrine.</restricoes>
+  <passos>
+    Listar os produtos.
+    Definir o destino real de cada um.
+    Registrar preços conhecidos.
+  </passos>
+  <criterio_de_conclusao>Cada produto tiver destino real ou marcação 'a definir'.</criterio_de_conclusao>
+  <formato_de_saida>Tabela de produtos com destinos. Prazo: 23/10/2026. Tempo previsto: 1,0h.</formato_de_saida>
+  <evidencia_esperada>Tabela de produtos com destinos.</evidencia_esperada>
+  <lacunas_conhecidas>Plataforma de checkout, preços e links de afiliado. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Listar os produtos|Definir o destino real de cada um|Registrar preços conhecidos,Cada produto tiver destino real ou marcação 'a definir'.,Tabela de produtos com destinos.,loja|afiliados|checkout,,,Titular,Alta,23/10/2026,"1,0 horas",Não iniciada,FACT-02
+TSK-0018,CLU-02,Site riscocognitivo.org,"Configurar o CMS para conteúdos, recursos, produtos e agendamento",configurar,Entrar no CMS do site e abrir a área de administração de conteúdos.,"CMS com coleções de conteúdos, recursos, produtos e calendário prontos para o lançamento.",Cobre a configuração; a automação completa do CMS fica para depois.,As 4 coleções criadas e um item de teste em cada.,"Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",O CMS é onde o pacote é desmembrado para as plataformas.,De 21/10/2026 até 23/10/2026.,"<tarefa id=""TSK-0018"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>CMS com coleções de conteúdos, recursos, produtos e calendário prontos para o lançamento.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a configuração; a automação completa do CMS fica para depois.</restricoes>
+  <passos>
+    Criar as coleções.
+    Cadastrar um item de teste em cada.
+    Verificar as permissões de administrador.
+  </passos>
+  <criterio_de_conclusao>As 4 coleções tiverem item de teste e acesso restrito ao administrador.</criterio_de_conclusao>
+  <formato_de_saida>Prints do CMS. Prazo: 23/10/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Prints do CMS.</evidencia_esperada>
+</tarefa>",Criar as coleções|Cadastrar um item de teste em cada|Verificar as permissões de administrador,As 4 coleções tiverem item de teste e acesso restrito ao administrador.,Prints do CMS.,cms|site|admin,,,Titular,Alta,23/10/2026,"3,0 horas",Não iniciada,FACT-05
+TSK-0019,CLU-07,Loja e afiliados,Montar a vitrine da loja com os produtos e os links de afiliado reais,montar,Abrir a rota /loja no ambiente de teste.,"Vitrine /loja com Prisma, Timer 45, Sprint book, Rainbow book, infográfico 3D neuro e livros Barkley, com links de afiliado identificados.",Cobre a vitrine mínima; o marketplace completo fica para depois.,"6 produtos visíveis, cada um com destino real ou 'em breve'.","Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Gera a primeira receita do ecossistema.,De 29/10/2026 até 30/10/2026.,"<tarefa id=""TSK-0019"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Loja e afiliados. A loja transforma interesse em receita com produtos próprios e de afiliados.</contexto>
+  <objetivo>Vitrine /loja com Prisma, Timer 45, Sprint book, Rainbow book, infográfico 3D neuro e livros Barkley, com links de afiliado identificados.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0017 (Definir o checkout e os links de afiliado reais da loja). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a vitrine mínima; o marketplace completo fica para depois.</restricoes>
+  <passos>
+    Cadastrar os produtos no CMS.
+    Identificar os links de afiliado.
+    Testar os destinos.
+  </passos>
+  <criterio_de_conclusao>Os 6 produtos estiverem visíveis com destino testado ou 'em breve'.</criterio_de_conclusao>
+  <formato_de_saida>Print da vitrine. Prazo: 30/10/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Print da vitrine.</evidencia_esperada>
+  <lacunas_conhecidas>Destinos de compra. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Cadastrar os produtos no CMS|Identificar os links de afiliado|Testar os destinos,Os 6 produtos estiverem visíveis com destino testado ou 'em breve'.,Print da vitrine.,loja|afiliados|site,,TSK-0017,Titular,Alta,30/10/2026,"2,0 horas",Não iniciada,FACT-01
+TSK-0020,CLU-02,Site riscocognitivo.org,"Publicar as páginas institucionais, a newsletter e o contato",publicar,Abrir a rota /sobre no ambiente de teste.,"Páginas Sobre, Autor, Metodologia, Editorial, Newsletter e Contato publicadas.",Cobre as 6 páginas; Parceiros fica para depois.,6 páginas abrindo e formulário de newsletter gravando inscrição de teste.,"Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Dão credibilidade (E-E-A-T) e captam contatos.,De 29/10/2026 até 30/10/2026.,"<tarefa id=""TSK-0020"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Páginas Sobre, Autor, Metodologia, Editorial, Newsletter e Contato publicadas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre as 6 páginas; Parceiros fica para depois.</restricoes>
+  <passos>
+    Escrever os textos curtos.
+    Publicar as 6 páginas.
+    Testar a inscrição na newsletter.
+  </passos>
+  <criterio_de_conclusao>As 6 páginas abrirem e a inscrição de teste aparecer no CMS.</criterio_de_conclusao>
+  <formato_de_saida>Prints e registro da inscrição de teste. Prazo: 30/10/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Prints e registro da inscrição de teste.</evidencia_esperada>
+</tarefa>",Escrever os textos curtos|Publicar as 6 páginas|Testar a inscrição na newsletter,As 6 páginas abrirem e a inscrição de teste aparecer no CMS.,Prints e registro da inscrição de teste.,institucional|newsletter|site,,,Titular,Alta,30/10/2026,"2,0 horas",Não iniciada,FACT-02
+TSK-0021,CLU-06,Vídeos,Roteirizar e gravar o vídeo comercial de 5 minutos da landing com o Prisma,gravar,Abrir o Prisma e anotar as 3 telas que melhor mostram o produto.,"Vídeo de 5 minutos editado, com o Prisma e o SaaS em uso, pronto para a home.",Cobre o vídeo comercial; os outros dois vídeos são tarefas separadas.,Vídeo de até 5 minutos exportado e inserido na home.,"Estimativa de 4,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",É a peça principal de conversão da landing.,De 27/10/2026 até 31/10/2026.,"<tarefa id=""TSK-0021"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Vídeos. Os vídeos apresentam o ecossistema e alimentam YouTube, Reels, TikTok e Shorts.</contexto>
+  <objetivo>Vídeo de 5 minutos editado, com o Prisma e o SaaS em uso, pronto para a home.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0012 (Empacotar o Prisma standalone para acesso público). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o vídeo comercial; os outros dois vídeos são tarefas separadas.</restricoes>
+  <passos>
+    Escrever o roteiro.
+    Gravar as telas e a narração.
+    Editar e exportar.
+  </passos>
+  <criterio_de_conclusao>O vídeo estiver exportado e tocando na home de teste.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo do vídeo e print da home. Prazo: 31/10/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo do vídeo e print da home.</evidencia_esperada>
+</tarefa>",Escrever o roteiro|Gravar as telas e a narração|Editar e exportar,O vídeo estiver exportado e tocando na home de teste.,Arquivo do vídeo e print da home.,video|comercial|prisma,,TSK-0012,Titular,Alta,31/10/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0022,CLU-08,Distribuição multiplataforma,Desmembrar o pacote do lançamento em derivados por plataforma para o ciclo 1,desmembrar,Abrir o artigo fundador e marcar os trechos que viram posts.,"Banco de derivados do ciclo 1 (05/11 a 19/11): carrosséis, imagens, verticais, stories e 3 newsletters.",Cobre o ciclo 1; o ciclo 2 é tarefa separada.,Derivados do ciclo 1 com quantidade por plataforma registrada no CMS.,"Estimativa de 5,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Sustenta a primeira metade do ciclo de 30 dias.,De 29/10/2026 até 01/11/2026.,"<tarefa id=""TSK-0022"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>Banco de derivados do ciclo 1 (05/11 a 19/11): carrosséis, imagens, verticais, stories e 3 newsletters.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0009 (Escrever o artigo fundador (Peça 01): neurodivergência, demandas cognitivas e soluções). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o ciclo 1; o ciclo 2 é tarefa separada.</restricoes>
+  <passos>
+    Marcar os trechos-fonte.
+    Produzir os derivados por plataforma.
+    Cadastrar no CMS.
+  </passos>
+  <criterio_de_conclusao>Todos os derivados do ciclo 1 estiverem no CMS com plataforma e data.</criterio_de_conclusao>
+  <formato_de_saida>Lista do CMS com os derivados. Prazo: 01/11/2026. Tempo previsto: 5,0h.</formato_de_saida>
+  <evidencia_esperada>Lista do CMS com os derivados.</evidencia_esperada>
+  <lacunas_conhecidas>Lista final de plataformas e contas ativas. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Marcar os trechos-fonte|Produzir os derivados por plataforma|Cadastrar no CMS,Todos os derivados do ciclo 1 estiverem no CMS com plataforma e data.,Lista do CMS com os derivados.,derivados|multiplataforma|cms|no-n16,TSK-0023,TSK-0009,Titular,Alta,01/11/2026,"5,0 horas",Não iniciada,FACT-03
+TSK-0023,CLU-08,Distribuição multiplataforma,Agendar as publicações do ciclo 1 em todas as plataformas,agendar,Abrir a ferramenta de agendamento e conferir as contas conectadas.,Publicações de 05/11 a 19/11 agendadas em todas as plataformas ativas.,Cobre o ciclo 1; o ciclo 2 é agendado até 14/11.,100% dos derivados do ciclo 1 com data e hora agendadas.,"Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",A instrução do titular é ter os agendamentos feitos até 01/11.,De 31/10/2026 até 01/11/2026.,"<tarefa id=""TSK-0023"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>Publicações de 05/11 a 19/11 agendadas em todas as plataformas ativas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0022 (Desmembrar o pacote do lançamento em derivados por plataforma para o ciclo 1). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o ciclo 1; o ciclo 2 é agendado até 14/11.</restricoes>
+  <passos>
+    Conferir as contas conectadas.
+    Agendar cada derivado.
+    Conferir o calendário final.
+  </passos>
+  <criterio_de_conclusao>Todos os derivados do ciclo 1 estiverem agendados.</criterio_de_conclusao>
+  <formato_de_saida>Export ou print do calendário de agendamento. Prazo: 01/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Export ou print do calendário de agendamento.</evidencia_esperada>
+  <lacunas_conhecidas>Ferramenta de agendamento. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Conferir as contas conectadas|Agendar cada derivado|Conferir o calendário final,Todos os derivados do ciclo 1 estiverem agendados.,Export ou print do calendário de agendamento.,agendamento|multiplataforma|no-n17,,TSK-0022,Titular,Alta,01/11/2026,"3,0 horas",Não iniciada,DEC-03
+TSK-0024,CLU-03,Conteúdo do blog,"Revisar estilo, otimização para buscadores e CTAs do artigo fundador e do e-book 1",revisar,Abrir o checklist de estilo editorial e o artigo fundador lado a lado.,"Artigo e e-book revisados: estilo, perguntas e respostas diretas, fontes citadas e CTAs.",Cobre artigo fundador e e-book 1.,Checklist de estilo e de otimização 100% marcado.,"Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",A citabilidade em buscadores de IA depende dessa revisão.,De 30/10/2026 até 31/10/2026.,"<tarefa id=""TSK-0024"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Artigo e e-book revisados: estilo, perguntas e respostas diretas, fontes citadas e CTAs.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0009 (Escrever o artigo fundador (Peça 01): neurodivergência, demandas cognitivas e soluções). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre artigo fundador e e-book 1.</restricoes>
+  <passos>
+    Aplicar o checklist de estilo.
+    Aplicar o checklist de otimização.
+    Conferir os CTAs.
+  </passos>
+  <criterio_de_conclusao>Os dois checklists estiverem 100% marcados.</criterio_de_conclusao>
+  <formato_de_saida>Checklists preenchidos. Prazo: 31/10/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Checklists preenchidos.</evidencia_esperada>
+</tarefa>",Aplicar o checklist de estilo|Aplicar o checklist de otimização|Conferir os CTAs,Os dois checklists estiverem 100% marcados.,Checklists preenchidos.,revisao|geo|blog,,TSK-0009,Titular,Alta,31/10/2026,"2,0 horas",Não iniciada,FACT-03
+TSK-0025,CLU-08,Distribuição multiplataforma,"Configurar a medição do site, dos links e da newsletter",configurar,Abrir o painel de Analytics da Cloudflare do site.,"Medição ativa: visitas por página, cliques em CTA, downloads, cliques de afiliado e inscrições.",Cobre a configuração; a leitura dos dados é outra tarefa.,5 métricas aparecendo com dado de teste.,"Estimativa de 2,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",A campanha 02 será planejada a partir desses dados.,Em 03/11/2026.,"<tarefa id=""TSK-0025"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>Medição ativa: visitas por página, cliques em CTA, downloads, cliques de afiliado e inscrições.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a configuração; a leitura dos dados é outra tarefa.</restricoes>
+  <passos>
+    Ativar o analytics do site.
+    Padronizar parâmetros nos links.
+    Testar cada métrica.
+  </passos>
+  <criterio_de_conclusao>As 5 métricas registrarem um evento de teste.</criterio_de_conclusao>
+  <formato_de_saida>Prints do painel. Prazo: 03/11/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Prints do painel.</evidencia_esperada>
+</tarefa>",Ativar o analytics do site|Padronizar parâmetros nos links|Testar cada métrica,As 5 métricas registrarem um evento de teste.,Prints do painel.,metricas|analytics|utm|no-n19,,,Titular,Alta,03/11/2026,"2,0 horas",Não iniciada,FACT-05
+TSK-0026,CLU-02,Site riscocognitivo.org,Testar o site completo antes do lançamento,testar,Abrir o site de teste no celular e seguir a lista de rotas do lançamento.,"Lista de testes concluída: links, celular, páginas 404, formulários, metadados e velocidade.",Cobre as rotas do lançamento.,"Todas as rotas do lançamento testadas, sem erro crítico aberto.","Estimativa de 3,0h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Reduz o risco de falha pública em 05/11.,De 03/11/2026 até 04/11/2026.,"<tarefa id=""TSK-0026"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Lista de testes concluída: links, celular, páginas 404, formulários, metadados e velocidade.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0008 (Construir a home premium de conversão com o Manifesto e as principais funcionalidades). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre as rotas do lançamento.</restricoes>
+  <passos>
+    Testar todas as rotas.
+    Corrigir os erros críticos.
+    Registrar o resultado.
+  </passos>
+  <criterio_de_conclusao>Não houver erro crítico aberto.</criterio_de_conclusao>
+  <formato_de_saida>Lista de testes preenchida. Prazo: 04/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Lista de testes preenchida.</evidencia_esperada>
+</tarefa>",Testar todas as rotas|Corrigir os erros críticos|Registrar o resultado,Não houver erro crítico aberto.,Lista de testes preenchida.,testes|site|qualidade,,TSK-0008,Titular,Alta,04/11/2026,"3,0 horas",Não iniciada,FACT-02
+TSK-0027,CLU-01,Planejamento e controle,Decidir a liberação do lançamento de 05/11,decidir,Abrir a lista de testes do site e o calendário de agendamento.,Decisão registrada: lançar em 05/11 ou adiar itens específicos.,Cobre só a decisão.,Decisão escrita com os itens liberados e os adiados.,"Estimativa de 0,5h dentro da janela 17/10/2026 a 04/11/2026, cuja capacidade de execução é 84,5h.",Ponto de decisão antes da publicação pública.,Em 04/11/2026.,"<tarefa id=""TSK-0027"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Planejamento e controle. Mantém o plano rastreável, com escopo e capacidade confirmados antes da execução.</contexto>
+  <objetivo>Decisão registrada: lançar em 05/11 ou adiar itens específicos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0026 (Testar o site completo antes do lançamento). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só a decisão.</restricoes>
+  <passos>
+    Conferir os testes e os agendamentos.
+    Decidir item a item.
+    Registrar a decisão.
+  </passos>
+  <criterio_de_conclusao>A decisão estiver registrada.</criterio_de_conclusao>
+  <formato_de_saida>Nota de decisão datada. Prazo: 04/11/2026. Tempo previsto: 0,5h.</formato_de_saida>
+  <evidencia_esperada>Nota de decisão datada.</evidencia_esperada>
+</tarefa>",Conferir os testes e os agendamentos|Decidir item a item|Registrar a decisão,A decisão estiver registrada.,Nota de decisão datada.,decisao|lancamento,,TSK-0026,Titular,Alta,04/11/2026,"0,5 horas",Não iniciada,DEC-03
+TSK-0028,CLU-02,Site riscocognitivo.org,Publicar o riscocognitivo.org e acompanhar o dia do lançamento,publicar,Abrir o painel da Cloudflare e conferir a versão que vai para produção.,Site público em riscocognitivo.org e primeiras publicações no ar.,Cobre a publicação e o acompanhamento do dia 05/11.,Site público + primeiras publicações conferidas no ar.,"Estimativa de 3,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",É o marco do lançamento.,Em 05/11/2026.,"<tarefa id=""TSK-0028"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Site riscocognitivo.org. O site riscocognitivo.org é o ponto de chegada de todo o conteúdo e de todas as ofertas do lançamento.</contexto>
+  <objetivo>Site público em riscocognitivo.org e primeiras publicações no ar.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0027 (Decidir a liberação do lançamento de 05/11). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a publicação e o acompanhamento do dia 05/11.</restricoes>
+  <passos>
+    Publicar a versão aprovada.
+    Conferir as publicações do dia.
+    Registrar problemas do dia.
+  </passos>
+  <criterio_de_conclusao>O site estiver público e as publicações do dia estiverem conferidas.</criterio_de_conclusao>
+  <formato_de_saida>Prints do site e das publicações. Prazo: 05/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Prints do site e das publicações.</evidencia_esperada>
+</tarefa>",Publicar a versão aprovada|Conferir as publicações do dia|Registrar problemas do dia,O site estiver público e as publicações do dia estiverem conferidas.,Prints do site e das publicações.,lancamento|site|publicacao,,TSK-0027,Titular,Alta,05/11/2026,"3,0 horas",Não iniciada,DEC-03
+TSK-0029,CLU-03,Conteúdo do blog,"Escrever o artigo pilar sobre gestão de riscos, projetos e processos neuroadaptados",escrever,Abrir o mapa de evidências na seção deste pilar.,Artigo pilar publicado com CTA para a ferramenta relacionada.,Cobre o pilar 1.,Artigo publicado com 2 evidências e 1 CTA.,"Estimativa de 4,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Conteúdo novo para o ciclo de 30 dias.,De 05/11/2026 até 07/11/2026.,"<tarefa id=""TSK-0029"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Artigo pilar publicado com CTA para a ferramenta relacionada.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0006 (Pesquisar evidências citáveis para o artigo fundador e os quatro artigos pilares). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o pilar 1.</restricoes>
+  <passos>
+    Estruturar os blocos.
+    Redigir com evidências.
+    Publicar com CTA.
+  </passos>
+  <criterio_de_conclusao>O artigo estiver publicado com 2 evidências e 1 CTA.</criterio_de_conclusao>
+  <formato_de_saida>Link do artigo. Prazo: 07/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do artigo.</evidencia_esperada>
+</tarefa>",Estruturar os blocos|Redigir com evidências|Publicar com CTA,O artigo estiver publicado com 2 evidências e 1 CTA.,Link do artigo.,artigo-pilar|riscos|blog,,TSK-0006,Titular,Média,07/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0030,CLU-03,Conteúdo do blog,Escrever o artigo pilar sobre funções executivas,escrever,Abrir o mapa de evidências na seção de funções executivas.,Artigo pilar publicado com CTA para os templates.,Cobre o pilar 2.,Artigo publicado com 2 evidências e 1 CTA.,"Estimativa de 4,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Conteúdo novo para o ciclo de 30 dias.,De 09/11/2026 até 11/11/2026.,"<tarefa id=""TSK-0030"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Artigo pilar publicado com CTA para os templates.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0006 (Pesquisar evidências citáveis para o artigo fundador e os quatro artigos pilares). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o pilar 2.</restricoes>
+  <passos>
+    Estruturar os blocos.
+    Redigir com evidências.
+    Publicar com CTA.
+  </passos>
+  <criterio_de_conclusao>O artigo estiver publicado com 2 evidências e 1 CTA.</criterio_de_conclusao>
+  <formato_de_saida>Link do artigo. Prazo: 11/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do artigo.</evidencia_esperada>
+</tarefa>",Estruturar os blocos|Redigir com evidências|Publicar com CTA,O artigo estiver publicado com 2 evidências e 1 CTA.,Link do artigo.,artigo-pilar|funcoes-executivas|blog,,TSK-0006,Titular,Média,11/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0031,CLU-04,Apps e ferramentas,Criar a ferramenta de metacognição,criar,Escrever as 5 perguntas de autoavaliação que a ferramenta vai fazer.,Ferramenta de metacognição publicada no catálogo de ferramentas.,Cobre uma ferramenta.,Ferramenta publicada e testada por 1 pessoa.,"Estimativa de 3,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Completa a família de ferramentas prometida no lançamento.,De 06/11/2026 até 10/11/2026.,"<tarefa id=""TSK-0031"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Ferramenta de metacognição publicada no catálogo de ferramentas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Ferramenta de autoconhecimento, sem diagnóstico. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre uma ferramenta.</restricoes>
+  <passos>
+    Definir as perguntas.
+    Montar a ferramenta.
+    Publicar no catálogo.
+  </passos>
+  <criterio_de_conclusao>A ferramenta estiver publicada e testada.</criterio_de_conclusao>
+  <formato_de_saida>Link da ferramenta. Prazo: 10/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Link da ferramenta.</evidencia_esperada>
+</tarefa>",Definir as perguntas|Montar a ferramenta|Publicar no catálogo,A ferramenta estiver publicada e testada.,Link da ferramenta.,metacognicao|ferramentas,,,Titular,Média,10/11/2026,"3,0 horas",Não iniciada,FACT-01
+TSK-0032,CLU-04,Apps e ferramentas,Completar a família de templates por déficit executivo,completar,Abrir os 3 templates já publicados e listar os déficits ainda sem template.,Família de templates completa publicada no catálogo.,Cobre os templates restantes da família.,Todos os déficits listados com template publicado.,"Estimativa de 4,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Cumpre o item 'família de templates' do pacote.,De 09/11/2026 até 13/11/2026.,"<tarefa id=""TSK-0032"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Família de templates completa publicada no catálogo.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0014 (Criar o primeiro template da família por déficit executivo para TDAH, dislexia e autismo). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre os templates restantes da família.</restricoes>
+  <passos>
+    Listar os déficits restantes.
+    Criar os templates.
+    Publicar no catálogo.
+  </passos>
+  <criterio_de_conclusao>Todos os déficits listados tiverem template publicado.</criterio_de_conclusao>
+  <formato_de_saida>Prints do catálogo. Prazo: 13/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Prints do catálogo.</evidencia_esperada>
+</tarefa>",Listar os déficits restantes|Criar os templates|Publicar no catálogo,Todos os déficits listados tiverem template publicado.,Prints do catálogo.,templates|ferramentas,,TSK-0014,Titular,Média,13/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0033,CLU-06,Vídeos,Gravar o vídeo da Peça 01 para o YouTube,gravar,Abrir o artigo fundador e marcar os 5 pontos do roteiro.,Vídeo de 5 minutos da Peça 01 publicado no YouTube.,Cobre o vídeo da Peça 01.,Vídeo publicado com link para o artigo.,"Estimativa de 4,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Leva o artigo fundador ao YouTube e gera cortes verticais.,De 06/11/2026 até 10/11/2026.,"<tarefa id=""TSK-0033"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Vídeos. Os vídeos apresentam o ecossistema e alimentam YouTube, Reels, TikTok e Shorts.</contexto>
+  <objetivo>Vídeo de 5 minutos da Peça 01 publicado no YouTube.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0009 (Escrever o artigo fundador (Peça 01): neurodivergência, demandas cognitivas e soluções). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o vídeo da Peça 01.</restricoes>
+  <passos>
+    Roteirizar.
+    Gravar e editar.
+    Publicar com link para o artigo.
+  </passos>
+  <criterio_de_conclusao>O vídeo estiver publicado com link para o artigo.</criterio_de_conclusao>
+  <formato_de_saida>Link do vídeo. Prazo: 10/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do vídeo.</evidencia_esperada>
+</tarefa>",Roteirizar|Gravar e editar|Publicar com link para o artigo,O vídeo estiver publicado com link para o artigo.,Link do vídeo.,video|youtube|peca-01,,TSK-0009,Titular,Média,10/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0034,CLU-06,Vídeos,Gravar o vídeo sobre gestão de riscos cognitivos,gravar,Abrir o artigo pilar de gestão de riscos e marcar os pontos do roteiro.,Vídeo de 5 minutos publicado.,Cobre o terceiro vídeo.,Vídeo publicado com link para o site.,"Estimativa de 4,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Completa os 3 vídeos do pacote.,De 10/11/2026 até 13/11/2026.,"<tarefa id=""TSK-0034"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Vídeos. Os vídeos apresentam o ecossistema e alimentam YouTube, Reels, TikTok e Shorts.</contexto>
+  <objetivo>Vídeo de 5 minutos publicado.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0029 (Escrever o artigo pilar sobre gestão de riscos, projetos e processos neuroadaptados). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o terceiro vídeo.</restricoes>
+  <passos>
+    Roteirizar.
+    Gravar e editar.
+    Publicar com link.
+  </passos>
+  <criterio_de_conclusao>O vídeo estiver publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do vídeo. Prazo: 13/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do vídeo.</evidencia_esperada>
+</tarefa>",Roteirizar|Gravar e editar|Publicar com link,O vídeo estiver publicado.,Link do vídeo.,video|riscos,,TSK-0029,Titular,Média,13/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0035,CLU-04,Apps e ferramentas,Empacotar o Meu processo de trabalho e o Plano Operacional Rastreável como apps públicos,empacotar,Abrir cada um dos dois apps e anotar o que impede o uso público.,Dois apps com página no catálogo e acesso público ou lista de espera.,Cobre os dois apps.,2 páginas de app publicadas.,"Estimativa de 5,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Cumpre o item 'Apps' do pacote.,De 09/11/2026 até 13/11/2026.,"<tarefa id=""TSK-0035"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Dois apps com página no catálogo e acesso público ou lista de espera.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0013 (Publicar o catálogo de apps com o Prisma e a página de cada app disponível). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre os dois apps.</restricoes>
+  <passos>
+    Ajustar o acesso de cada app.
+    Escrever a página de cada app.
+    Publicar no catálogo.
+  </passos>
+  <criterio_de_conclusao>As 2 páginas estiverem publicadas.</criterio_de_conclusao>
+  <formato_de_saida>Links das páginas. Prazo: 13/11/2026. Tempo previsto: 5,0h.</formato_de_saida>
+  <evidencia_esperada>Links das páginas.</evidencia_esperada>
+  <lacunas_conhecidas>Status real dos apps. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Ajustar o acesso de cada app|Escrever a página de cada app|Publicar no catálogo,As 2 páginas estiverem publicadas.,Links das páginas.,apps|plano-operacional,,TSK-0013,Titular,Média,13/11/2026,"5,0 horas",Não iniciada,FACT-01
+TSK-0036,CLU-05,E-books,Escrever o e-book 2: Funções executivas,escrever,Abrir o artigo pilar de funções executivas e listar os tópicos do e-book.,E-book 2 em PDF publicado no catálogo.,Cobre o e-book 2.,PDF publicado com sumário e fontes.,"Estimativa de 6,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Aprofunda o pilar e capta contatos.,De 09/11/2026 até 14/11/2026.,"<tarefa id=""TSK-0036"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: E-books. Os e-books aprofundam os temas e capturam contatos para a newsletter.</contexto>
+  <objetivo>E-book 2 em PDF publicado no catálogo.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0030 (Escrever o artigo pilar sobre funções executivas). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o e-book 2.</restricoes>
+  <passos>
+    Montar o sumário.
+    Redigir e revisar.
+    Diagramar e publicar.
+  </passos>
+  <criterio_de_conclusao>O PDF estiver publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do e-book. Prazo: 14/11/2026. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Link do e-book.</evidencia_esperada>
+</tarefa>",Montar o sumário|Redigir e revisar|Diagramar e publicar,O PDF estiver publicado.,Link do e-book.,ebook|funcoes-executivas,,TSK-0030,Titular,Média,14/11/2026,"6,0 horas",Não iniciada,FACT-01
+TSK-0037,CLU-08,Distribuição multiplataforma,Desmembrar e agendar as publicações do ciclo 2,agendar,Abrir o CMS e listar as peças novas publicadas desde 05/11.,Publicações de 20/11 a 05/12 produzidas e agendadas.,Cobre o ciclo 2.,100% dos derivados do ciclo 2 agendados.,"Estimativa de 5,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Fecha o ciclo de 30 dias até 05/12.,De 11/11/2026 até 14/11/2026.,"<tarefa id=""TSK-0037"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>Publicações de 20/11 a 05/12 produzidas e agendadas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0023 (Agendar as publicações do ciclo 1 em todas as plataformas). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o ciclo 2.</restricoes>
+  <passos>
+    Marcar os trechos das peças novas.
+    Produzir os derivados.
+    Agendar.
+  </passos>
+  <criterio_de_conclusao>Todos os derivados do ciclo 2 estiverem agendados.</criterio_de_conclusao>
+  <formato_de_saida>Calendário de agendamento. Prazo: 14/11/2026. Tempo previsto: 5,0h.</formato_de_saida>
+  <evidencia_esperada>Calendário de agendamento.</evidencia_esperada>
+</tarefa>",Marcar os trechos das peças novas|Produzir os derivados|Agendar,Todos os derivados do ciclo 2 estiverem agendados.,Calendário de agendamento.,agendamento|multiplataforma|no-n17,,TSK-0023,Titular,Média,14/11/2026,"5,0 horas",Não iniciada,DEC-03
+TSK-0038,CLU-08,Distribuição multiplataforma,Escrever as 3 newsletters do ciclo 2,escrever,Abrir as peças do ciclo 2 e escolher o tema de cada e-mail.,3 newsletters do ciclo 2 agendadas.,Cobre as newsletters do ciclo 2.,3 e-mails agendados.,"Estimativa de 2,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",A newsletter é canal de aprofundamento e venda.,De 12/11/2026 até 14/11/2026.,"<tarefa id=""TSK-0038"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>3 newsletters do ciclo 2 agendadas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre as newsletters do ciclo 2.</restricoes>
+  <passos>
+    Escolher os temas.
+    Redigir os e-mails.
+    Agendar o envio.
+  </passos>
+  <criterio_de_conclusao>Os 3 e-mails estiverem agendados.</criterio_de_conclusao>
+  <formato_de_saida>Print da ferramenta de e-mail. Prazo: 14/11/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Print da ferramenta de e-mail.</evidencia_esperada>
+</tarefa>",Escolher os temas|Redigir os e-mails|Agendar o envio,Os 3 e-mails estiverem agendados.,Print da ferramenta de e-mail.,newsletter|email,TSK-0037,,Titular,Média,14/11/2026,"2,0 horas",Não iniciada,FACT-03
+TSK-0039,CLU-09,Campanha 02 e lançamento do app,Consolidar os dados da campanha 01 em um relatório de aprendizado,consolidar,Abrir o painel de Analytics e exportar os dados de 05/11 até hoje.,"Relatório com o desempenho por canal, peça e CTA, e as lições para a campanha 02.",Cobre o relatório parcial de 14/11.,Relatório com as 5 métricas por canal.,"Estimativa de 3,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",A campanha 02 será planejada a partir desses dados.,De 13/11/2026 até 14/11/2026.,"<tarefa id=""TSK-0039"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Relatório com o desempenho por canal, peça e CTA, e as lições para a campanha 02.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0025 (Configurar a medição do site, dos links e da newsletter). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o relatório parcial de 14/11.</restricoes>
+  <passos>
+    Exportar os dados.
+    Comparar canais, peças e CTAs.
+    Registrar as lições.
+  </passos>
+  <criterio_de_conclusao>O relatório estiver salvo com as 5 métricas e as lições.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo do relatório. Prazo: 14/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo do relatório.</evidencia_esperada>
+  <lacunas_conhecidas>Linha de base das métricas. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>","Exportar os dados|Comparar canais, peças e CTAs|Registrar as lições",O relatório estiver salvo com as 5 métricas e as lições.,Arquivo do relatório.,analytics|aprendizado|no-n19|no-n20,,TSK-0025,Titular,Alta,14/11/2026,"3,0 horas",Não iniciada,DEC-05
+TSK-0040,CLU-08,Distribuição multiplataforma,Acompanhar as métricas e os comentários semanalmente durante o ciclo de 30 dias,acompanhar,Abrir o painel de métricas toda sexta-feira.,Registro semanal de métricas e respostas aos comentários.,Cobre o acompanhamento de 06/11 a 05/12.,4 registros semanais.,"Estimativa de 4,0h dentro da janela 05/11/2026 a 14/11/2026, cuja capacidade de execução é 50,1h.",Gera os dados do relatório final do ciclo.,De 06/11/2026 até 05/12/2026.,"<tarefa id=""TSK-0040"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>Registro semanal de métricas e respostas aos comentários.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o acompanhamento de 06/11 a 05/12.</restricoes>
+  <passos>
+    Registrar as métricas da semana.
+    Responder aos comentários.
+    Anotar ajustes.
+  </passos>
+  <criterio_de_conclusao>Houver 4 registros semanais.</criterio_de_conclusao>
+  <formato_de_saida>Registros semanais. Prazo: 05/12/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Registros semanais.</evidencia_esperada>
+</tarefa>",Registrar as métricas da semana|Responder aos comentários|Anotar ajustes,Houver 4 registros semanais.,Registros semanais.,metricas|comunidade,,,Titular,Média,05/12/2026,"4,0 horas",Não iniciada,DEC-05
+TSK-0041,CLU-09,Campanha 02 e lançamento do app,Planejar a campanha 02 a partir dos dados da campanha 01,planejar,Abrir o relatório de aprendizado da campanha 01.,Plano da campanha 02 (lançamento do ecossistema com foco no app e nos produtos) aprovado.,Cobre o plano; a produção é outra tarefa.,"Plano com meta, peças, canais e datas.","Estimativa de 3,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",A campanha 02 aproveita a demanda de início de ano.,De 16/11/2026 até 17/11/2026.,"<tarefa id=""TSK-0041"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Plano da campanha 02 (lançamento do ecossistema com foco no app e nos produtos) aprovado.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0039 (Consolidar os dados da campanha 01 em um relatório de aprendizado). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o plano; a produção é outra tarefa.</restricoes>
+  <passos>
+    Ler as lições da campanha 01.
+    Definir meta, peças e canais.
+    Aprovar o plano.
+  </passos>
+  <criterio_de_conclusao>O plano estiver aprovado pelo titular.</criterio_de_conclusao>
+  <formato_de_saida>Plano salvo. Prazo: 17/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Plano salvo.</evidencia_esperada>
+</tarefa>","Ler as lições da campanha 01|Definir meta, peças e canais|Aprovar o plano",O plano estiver aprovado pelo titular.,Plano salvo.,campanha-02|planejamento,,TSK-0039,Titular,Alta,17/11/2026,"3,0 horas",Não iniciada,DEC-04
+TSK-0042,CLU-09,Campanha 02 e lançamento do app,Produzir o pacote de conteúdo da campanha 02,produzir,Abrir o plano da campanha 02 e escrever o título da peça-mãe.,"Pacote da campanha 02 pronto: peça-mãe, vídeos, derivados e e-mails sobre o app e os produtos.",Cobre a produção de 18/11 a 30/11.,Todas as peças do plano da campanha 02 prontas.,"Estimativa de 20,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",É o conteúdo do lançamento de 05/01.,De 18/11/2026 até 30/11/2026.,"<tarefa id=""TSK-0042"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Pacote da campanha 02 pronto: peça-mãe, vídeos, derivados e e-mails sobre o app e os produtos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0041 (Planejar a campanha 02 a partir dos dados da campanha 01). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a produção de 18/11 a 30/11.</restricoes>
+  <passos>
+    Produzir a peça-mãe.
+    Produzir os derivados.
+    Revisar o pacote.
+  </passos>
+  <criterio_de_conclusao>Todas as peças previstas estiverem prontas e revisadas.</criterio_de_conclusao>
+  <formato_de_saida>Lista de peças no CMS. Prazo: 30/11/2026. Tempo previsto: 20,0h.</formato_de_saida>
+  <evidencia_esperada>Lista de peças no CMS.</evidencia_esperada>
+</tarefa>",Produzir a peça-mãe|Produzir os derivados|Revisar o pacote,Todas as peças previstas estiverem prontas e revisadas.,Lista de peças no CMS.,campanha-02|producao,,TSK-0041,Titular,Alta,30/11/2026,"20,0 horas",Não iniciada,DEC-03
+TSK-0043,CLU-03,Conteúdo do blog,Escrever o artigo pilar sobre dark partners,escrever,Escrever em uma frase a definição de dark partners usada pelo EXECUTAR.,Artigo pilar publicado com CTA.,Cobre o pilar 3.,Artigo publicado com 2 evidências e 1 CTA.,"Estimativa de 4,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Completa os pilares do pacote.,De 16/11/2026 até 18/11/2026.,"<tarefa id=""TSK-0043"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Artigo pilar publicado com CTA.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o pilar 3.</restricoes>
+  <passos>
+    Definir o conceito.
+    Redigir com evidências.
+    Publicar com CTA.
+  </passos>
+  <criterio_de_conclusao>O artigo estiver publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do artigo. Prazo: 18/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do artigo.</evidencia_esperada>
+  <lacunas_conhecidas>Definição de dark partners. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Definir o conceito|Redigir com evidências|Publicar com CTA,O artigo estiver publicado.,Link do artigo.,artigo-pilar|dark-partners|blog,,,Titular,Média,18/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0044,CLU-03,Conteúdo do blog,"Escrever o artigo pilar sobre riscos cognitivos no estudo, no trabalho, na rotina e nos ambientes físicos e digitais",escrever,Abrir o mapa de evidências na seção de ambientes.,Artigo pilar publicado com CTA.,Cobre o pilar 4.,Artigo publicado com 2 evidências e 1 CTA.,"Estimativa de 4,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Completa os pilares do pacote.,De 19/11/2026 até 21/11/2026.,"<tarefa id=""TSK-0044"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Conteúdo do blog. Os artigos são as peças-mãe que geram os derivados multiplataforma e levam às ferramentas.</contexto>
+  <objetivo>Artigo pilar publicado com CTA.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0006 (Pesquisar evidências citáveis para o artigo fundador e os quatro artigos pilares). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o pilar 4.</restricoes>
+  <passos>
+    Estruturar os blocos.
+    Redigir com evidências.
+    Publicar com CTA.
+  </passos>
+  <criterio_de_conclusao>O artigo estiver publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do artigo. Prazo: 21/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do artigo.</evidencia_esperada>
+</tarefa>",Estruturar os blocos|Redigir com evidências|Publicar com CTA,O artigo estiver publicado.,Link do artigo.,artigo-pilar|ambientes|blog,,TSK-0006,Titular,Média,21/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0045,CLU-05,E-books,Escrever o e-book 3: Ambientes físicos e digitais,escrever,Abrir o artigo pilar de ambientes e listar os tópicos do e-book.,E-book 3 em PDF publicado.,Cobre o e-book 3.,PDF publicado com sumário e fontes.,"Estimativa de 5,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Completa os e-books do pacote.,De 16/11/2026 até 21/11/2026.,"<tarefa id=""TSK-0045"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: E-books. Os e-books aprofundam os temas e capturam contatos para a newsletter.</contexto>
+  <objetivo>E-book 3 em PDF publicado.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o e-book 3.</restricoes>
+  <passos>
+    Montar o sumário.
+    Redigir e revisar.
+    Diagramar e publicar.
+  </passos>
+  <criterio_de_conclusao>O PDF estiver publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do e-book. Prazo: 21/11/2026. Tempo previsto: 5,0h.</formato_de_saida>
+  <evidencia_esperada>Link do e-book.</evidencia_esperada>
+</tarefa>",Montar o sumário|Redigir e revisar|Diagramar e publicar,O PDF estiver publicado.,Link do e-book.,ebook|ambientes,,,Titular,Média,21/11/2026,"5,0 horas",Não iniciada,FACT-01
+TSK-0046,CLU-05,E-books,Escrever o e-book 4: Gerenciando o TDAH adulto com base em Barkley,escrever,Listar as obras de Barkley que serão citadas e as páginas de referência.,"E-book 4 em PDF publicado, com citações e referências a Barkley, sem reproduzir a obra.",Cobre o e-book 4.,PDF publicado com referências completas.,"Estimativa de 5,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Completa os e-books do pacote e liga aos livros de afiliado.,De 23/11/2026 até 27/11/2026.,"<tarefa id=""TSK-0046"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: E-books. Os e-books aprofundam os temas e capturam contatos para a newsletter.</contexto>
+  <objetivo>E-book 4 em PDF publicado, com citações e referências a Barkley, sem reproduzir a obra.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não reproduzir trechos longos de obras protegidas; não usar o nome do autor como endosso. Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o e-book 4.</restricoes>
+  <passos>
+    Listar as referências.
+    Redigir com citações curtas.
+    Diagramar e publicar.
+  </passos>
+  <criterio_de_conclusao>O PDF estiver publicado com referências completas.</criterio_de_conclusao>
+  <formato_de_saida>Link do e-book. Prazo: 27/11/2026. Tempo previsto: 5,0h.</formato_de_saida>
+  <evidencia_esperada>Link do e-book.</evidencia_esperada>
+  <lacunas_conhecidas>Uso do nome Barkley no título. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Listar as referências|Redigir com citações curtas|Diagramar e publicar,O PDF estiver publicado com referências completas.,Link do e-book.,ebook|tdah|barkley,,,Titular,Média,27/11/2026,"5,0 horas",Não iniciada,FACT-01
+TSK-0047,CLU-04,Apps e ferramentas,"Empacotar o workflow visual, o construtor de mapas e o operador de tarefas",empacotar,Abrir o app de workflow e anotar o que impede o uso público.,Página do app no catálogo com acesso público ou lista de espera.,Cobre o app de workflow.,Página publicada.,"Estimativa de 4,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Cumpre o último item de 'Apps' do pacote.,De 23/11/2026 até 26/11/2026.,"<tarefa id=""TSK-0047"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Página do app no catálogo com acesso público ou lista de espera.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o app de workflow.</restricoes>
+  <passos>
+    Ajustar o acesso.
+    Escrever a página.
+    Publicar no catálogo.
+  </passos>
+  <criterio_de_conclusao>A página estiver publicada.</criterio_de_conclusao>
+  <formato_de_saida>Link da página. Prazo: 26/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link da página.</evidencia_esperada>
+  <lacunas_conhecidas>Status real do app. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Ajustar o acesso|Escrever a página|Publicar no catálogo,A página estiver publicada.,Link da página.,apps|workflow,,,Titular,Média,26/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0048,CLU-04,Apps e ferramentas,Empacotar os plugins e agentes para download,empacotar,"Listar os arquivos do Copiloto EXECUTAR, do Plano Operacional Rastreável, das skills, do Safe Protocol e do Academic Flow.",Pacotes de plugins e agentes publicados no catálogo com instruções de instalação.,Cobre os 5 pacotes.,5 pacotes baixáveis com instruções.,"Estimativa de 4,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Cumpre o item 'Plugins e agentes' do pacote.,De 24/11/2026 até 27/11/2026.,"<tarefa id=""TSK-0048"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Pacotes de plugins e agentes publicados no catálogo com instruções de instalação.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre os 5 pacotes.</restricoes>
+  <passos>
+    Reunir os arquivos.
+    Escrever as instruções.
+    Publicar no catálogo.
+  </passos>
+  <criterio_de_conclusao>Os 5 pacotes estiverem publicados.</criterio_de_conclusao>
+  <formato_de_saida>Prints do catálogo. Prazo: 27/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Prints do catálogo.</evidencia_esperada>
+</tarefa>",Reunir os arquivos|Escrever as instruções|Publicar no catálogo,Os 5 pacotes estiverem publicados.,Prints do catálogo.,plugins|agentes|skills,,,Titular,Média,27/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0049,CLU-04,Apps e ferramentas,"Produzir o photo prompt de rotina, o guia de Obsidian para dislexia e os infográficos de IDs",produzir,Abrir o Obsidian e criar a nota-modelo para dislexia.,Três recursos publicados no catálogo de ferramentas.,Cobre os 3 recursos.,3 recursos publicados.,"Estimativa de 4,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.","Cumpre o item de photo prompt, Obsidian e infográficos do pacote.",De 23/11/2026 até 28/11/2026.,"<tarefa id=""TSK-0049"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Apps e ferramentas. Apps e ferramentas são a prova prática do método e o destino dos CTAs dos artigos.</contexto>
+  <objetivo>Três recursos publicados no catálogo de ferramentas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre os 3 recursos.</restricoes>
+  <passos>
+    Produzir o photo prompt.
+    Produzir o guia de Obsidian.
+    Produzir os infográficos.
+  </passos>
+  <criterio_de_conclusao>Os 3 recursos estiverem publicados.</criterio_de_conclusao>
+  <formato_de_saida>Links dos recursos. Prazo: 28/11/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Links dos recursos.</evidencia_esperada>
+</tarefa>",Produzir o photo prompt|Produzir o guia de Obsidian|Produzir os infográficos,Os 3 recursos estiverem publicados.,Links dos recursos.,photoprompt|obsidian|infografico,,,Titular,Média,28/11/2026,"4,0 horas",Não iniciada,FACT-01
+TSK-0050,CLU-10,Carreira na Europa,Planejar a estratégia de realocação profissional na Europa,planejar,"Escrever em uma página: país-alvo, cargos-alvo e data da viagem.","Plano estratégico com países, cargos, certificações candidatas, orçamento e marcos até 30/04.",Cobre o planejamento estratégico (item 0 do épico).,Plano com os 5 elementos.,"Estimativa de 3,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Abre o EPIC Emprego e realocação (19/11 a 30/03).,De 19/11/2026 até 21/11/2026.,"<tarefa id=""TSK-0050"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Plano estratégico com países, cargos, certificações candidatas, orçamento e marcos até 30/04.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o planejamento estratégico (item 0 do épico).</restricoes>
+  <passos>
+    Definir país e cargos-alvo.
+    Listar certificações candidatas e orçamento.
+    Fixar os marcos.
+  </passos>
+  <criterio_de_conclusao>O plano tiver os 5 elementos.</criterio_de_conclusao>
+  <formato_de_saida>Plano salvo. Prazo: 21/11/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Plano salvo.</evidencia_esperada>
+  <lacunas_conhecidas>Destino da viagem e documentação. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Definir país e cargos-alvo|Listar certificações candidatas e orçamento|Fixar os marcos,O plano tiver os 5 elementos.,Plano salvo.,carreira|planejamento|europa,,,Titular,Alta,21/11/2026,"3,0 horas",Não iniciada,DEC-07
+TSK-0051,CLU-10,Carreira na Europa,Escolher as certificações e verificar preços e datas de prova,escolher,Abrir o site oficial de cada certificação candidata.,"Uma certificação escolhida para cada área (projetos, processos, governança de IA), com preço e datas oficiais.",Cobre a escolha; não cobre a inscrição.,3 certificações com preço e data oficial.,"Estimativa de 2,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",As provas pagas são as referências de mercado na Europa.,De 23/11/2026 até 25/11/2026.,"<tarefa id=""TSK-0051"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Uma certificação escolhida para cada área (projetos, processos, governança de IA), com preço e datas oficiais.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0050 (Planejar a estratégia de realocação profissional na Europa). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a escolha; não cobre a inscrição.</restricoes>
+  <passos>
+    Comparar as candidatas por área.
+    Verificar preço e datas oficiais.
+    Registrar a escolha.
+  </passos>
+  <criterio_de_conclusao>As 3 escolhas tiverem preço e datas de fonte oficial.</criterio_de_conclusao>
+  <formato_de_saida>Tabela com links oficiais. Prazo: 25/11/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Tabela com links oficiais.</evidencia_esperada>
+  <lacunas_conhecidas>Certificações, preços e datas. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Comparar as candidatas por área|Verificar preço e datas oficiais|Registrar a escolha,As 3 escolhas tiverem preço e datas de fonte oficial.,Tabela com links oficiais.,certificacao|carreira|decisao,,TSK-0050,Titular,Alta,25/11/2026,"2,0 horas",Não iniciada,DEC-07
+TSK-0052,CLU-10,Carreira na Europa,"Montar o plano de estudos com autoestudo, cursos e simulados",montar,Abrir o edital oficial da primeira certificação escolhida.,"Plano de estudos semanal por certificação, com simulados e data-alvo de prova.",Cobre o plano de estudos.,Plano com horas semanais e 1 simulado por certificação.,"Estimativa de 2,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Organiza a capacitação do épico.,De 25/11/2026 até 27/11/2026.,"<tarefa id=""TSK-0052"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Plano de estudos semanal por certificação, com simulados e data-alvo de prova.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0051 (Escolher as certificações e verificar preços e datas de prova). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o plano de estudos.</restricoes>
+  <passos>
+    Listar os conteúdos de cada edital.
+    Distribuir por semana.
+    Marcar simulados e provas.
+  </passos>
+  <criterio_de_conclusao>O plano tiver horas semanais e simulados por certificação.</criterio_de_conclusao>
+  <formato_de_saida>Plano salvo. Prazo: 27/11/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Plano salvo.</evidencia_esperada>
+</tarefa>",Listar os conteúdos de cada edital|Distribuir por semana|Marcar simulados e provas,O plano tiver horas semanais e simulados por certificação.,Plano salvo.,estudos|certificacao,,TSK-0051,Titular,Alta,27/11/2026,"2,0 horas",Não iniciada,DEC-07
+TSK-0053,CLU-08,Distribuição multiplataforma,Fechar o relatório do ciclo de 30 dias da campanha 01,fechar,Exportar os dados de 05/11 a 05/12 do painel de métricas.,"Relatório final do ciclo com resultados, lições e recomendações.",Cobre o ciclo completo.,Relatório com as 5 métricas e as lições.,"Estimativa de 3,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Fecha a campanha 01 e ajusta a campanha 02.,De 03/12/2026 até 05/12/2026.,"<tarefa id=""TSK-0053"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Distribuição multiplataforma. A distribuição sustenta o ciclo de 30 dias (05/11 a 05/12) e gera os dados da campanha 02.</contexto>
+  <objetivo>Relatório final do ciclo com resultados, lições e recomendações.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0040 (Acompanhar as métricas e os comentários semanalmente durante o ciclo de 30 dias). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o ciclo completo.</restricoes>
+  <passos>
+    Exportar os dados.
+    Comparar com o relatório parcial.
+    Registrar as lições.
+  </passos>
+  <criterio_de_conclusao>O relatório final estiver salvo.</criterio_de_conclusao>
+  <formato_de_saida>Arquivo do relatório. Prazo: 05/12/2026. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivo do relatório.</evidencia_esperada>
+</tarefa>",Exportar os dados|Comparar com o relatório parcial|Registrar as lições,O relatório final estiver salvo.,Arquivo do relatório.,relatorio|aprendizado|no-n20,,TSK-0040,Titular,Alta,05/12/2026,"3,0 horas",Não iniciada,DEC-05
+TSK-0054,CLU-09,Campanha 02 e lançamento do app,Definir o escopo do Executar App e do Expo para o lançamento de 05/01,definir,Abrir o protótipo Scroll Task e listar as funções que já existem.,"Escopo mínimo do app para 05/01 aprovado, com o que fica para depois.",Cobre a definição de escopo.,Lista de funções 'entra'/'depois' aprovada.,"Estimativa de 2,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",O app é o foco da campanha 02.,De 01/12/2026 até 02/12/2026.,"<tarefa id=""TSK-0054"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Escopo mínimo do app para 05/01 aprovado, com o que fica para depois.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a definição de escopo.</restricoes>
+  <passos>
+    Listar as funções existentes.
+    Escolher o mínimo para 05/01.
+    Aprovar o escopo.
+  </passos>
+  <criterio_de_conclusao>O escopo estiver aprovado.</criterio_de_conclusao>
+  <formato_de_saida>Documento de escopo. Prazo: 02/12/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Documento de escopo.</evidencia_esperada>
+  <lacunas_conhecidas>Escopo funcional do app. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Listar as funções existentes|Escolher o mínimo para 05/01|Aprovar o escopo,O escopo estiver aprovado.,Documento de escopo.,app|escopo|decisao,,,Titular,Alta,02/12/2026,"2,0 horas",Não iniciada,DEC-04
+TSK-0055,CLU-09,Campanha 02 e lançamento do app,Desenvolver o Executar App e o Expo dentro do escopo aprovado,desenvolver,Abrir o documento de escopo e criar a lista de telas.,"App funcionando no escopo aprovado, pronto para testes.",Cobre o desenvolvimento do escopo mínimo.,Todas as funções do escopo funcionando em teste.,"Estimativa de 40,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",É o produto central do lançamento de 05/01.,De 03/12/2026 até 22/12/2026.,"<tarefa id=""TSK-0055"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>App funcionando no escopo aprovado, pronto para testes.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0054 (Definir o escopo do Executar App e do Expo para o lançamento de 05/01). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o desenvolvimento do escopo mínimo.</restricoes>
+  <passos>
+    Implementar as telas.
+    Integrar os dados.
+    Preparar a versão de teste.
+  </passos>
+  <criterio_de_conclusao>Todas as funções do escopo funcionarem na versão de teste.</criterio_de_conclusao>
+  <formato_de_saida>Versão de teste e lista de funções. Prazo: 22/12/2026. Tempo previsto: 40,0h.</formato_de_saida>
+  <evidencia_esperada>Versão de teste e lista de funções.</evidencia_esperada>
+  <lacunas_conhecidas>Escopo funcional do app. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Implementar as telas|Integrar os dados|Preparar a versão de teste,Todas as funções do escopo funcionarem na versão de teste.,Versão de teste e lista de funções.,app|expo|desenvolvimento,,TSK-0054,Titular,Alta,22/12/2026,"40,0 horas",Não iniciada,DEC-04
+TSK-0056,CLU-09,Campanha 02 e lançamento do app,Testar o Executar App e publicar a versão de lançamento,testar,Instalar a versão de teste em um celular.,Versão de lançamento publicada e página /apps/executar ativada com destino real.,Cobre testes e publicação.,Lista de testes sem erro crítico + link real ativo.,"Estimativa de 8,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Sem isso não há lançamento do app em 05/01.,De 28/12/2026 até 02/01/2027.,"<tarefa id=""TSK-0056"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Versão de lançamento publicada e página /apps/executar ativada com destino real.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0055 (Desenvolver o Executar App e o Expo dentro do escopo aprovado). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre testes e publicação.</restricoes>
+  <passos>
+    Testar as funções.
+    Corrigir erros críticos.
+    Publicar e ativar o link.
+  </passos>
+  <criterio_de_conclusao>A versão estiver publicada e o link real ativo.</criterio_de_conclusao>
+  <formato_de_saida>Link da versão publicada. Prazo: 02/01/2027. Tempo previsto: 8,0h.</formato_de_saida>
+  <evidencia_esperada>Link da versão publicada.</evidencia_esperada>
+</tarefa>",Testar as funções|Corrigir erros críticos|Publicar e ativar o link,A versão estiver publicada e o link real ativo.,Link da versão publicada.,app|testes|publicacao,,TSK-0055,Titular,Alta,02/01/2027,"8,0 horas",Não iniciada,DEC-04
+TSK-0057,CLU-09,Campanha 02 e lançamento do app,Preparar os épicos posteriores escolhidos para o lançamento de 05/01,preparar,Abrir a lista de épicos posteriores e marcar os que entram em 05/01.,"Épicos escolhidos (por exemplo consultoria e studio, cursos, loja) prontos para 05/01.",Cobre só os épicos aprovados no ponto de decisão de 20/12.,Cada épico escolhido com página publicada.,"Estimativa de 16,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",A campanha 02 lança o ecossistema inteiro.,De 07/12/2026 até 22/12/2026.,"<tarefa id=""TSK-0057"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Épicos escolhidos (por exemplo consultoria e studio, cursos, loja) prontos para 05/01.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0054 (Definir o escopo do Executar App e do Expo para o lançamento de 05/01). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só os épicos aprovados no ponto de decisão de 20/12.</restricoes>
+  <passos>
+    Confirmar os épicos escolhidos.
+    Produzir as páginas.
+    Revisar.
+  </passos>
+  <criterio_de_conclusao>Cada épico escolhido tiver página pronta.</criterio_de_conclusao>
+  <formato_de_saida>Links das páginas. Prazo: 22/12/2026. Tempo previsto: 16,0h.</formato_de_saida>
+  <evidencia_esperada>Links das páginas.</evidencia_esperada>
+</tarefa>",Confirmar os épicos escolhidos|Produzir as páginas|Revisar,Cada épico escolhido tiver página pronta.,Links das páginas.,ecossistema|epicos,,TSK-0054,Titular,Média,22/12/2026,"16,0 horas",Não iniciada,DEC-04
+TSK-0058,CLU-09,Campanha 02 e lançamento do app,Agendar as publicações da campanha 02,agendar,Abrir o pacote da campanha 02 no CMS.,Publicações da campanha 02 agendadas de dezembro a janeiro.,Cobre o agendamento da campanha 02.,100% das peças agendadas.,"Estimativa de 4,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Garante a cadência do lançamento de 05/01.,De 14/12/2026 até 18/12/2026.,"<tarefa id=""TSK-0058"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>Publicações da campanha 02 agendadas de dezembro a janeiro.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0042 (Produzir o pacote de conteúdo da campanha 02). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o agendamento da campanha 02.</restricoes>
+  <passos>
+    Conferir as peças.
+    Agendar por plataforma.
+    Conferir o calendário.
+  </passos>
+  <criterio_de_conclusao>Todas as peças estiverem agendadas.</criterio_de_conclusao>
+  <formato_de_saida>Calendário de agendamento. Prazo: 18/12/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Calendário de agendamento.</evidencia_esperada>
+</tarefa>",Conferir as peças|Agendar por plataforma|Conferir o calendário,Todas as peças estiverem agendadas.,Calendário de agendamento.,agendamento|campanha-02|no-n17,,TSK-0042,Titular,Alta,18/12/2026,"4,0 horas",Não iniciada,DEC-03
+TSK-0059,CLU-01,Planejamento e controle,Decidir a liberação do lançamento de 05/01,decidir,Abrir a lista de testes do app e o calendário da campanha 02.,Decisão registrada: lançar em 05/01 ou adiar itens específicos.,Cobre só a decisão.,Decisão escrita.,"Estimativa de 0,5h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Ponto de decisão antes do lançamento.,Em 04/01/2027.,"<tarefa id=""TSK-0059"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Planejamento e controle. Mantém o plano rastreável, com escopo e capacidade confirmados antes da execução.</contexto>
+  <objetivo>Decisão registrada: lançar em 05/01 ou adiar itens específicos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0056 (Testar o Executar App e publicar a versão de lançamento). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só a decisão.</restricoes>
+  <passos>
+    Conferir testes e agendamentos.
+    Decidir item a item.
+    Registrar.
+  </passos>
+  <criterio_de_conclusao>A decisão estiver registrada.</criterio_de_conclusao>
+  <formato_de_saida>Nota de decisão. Prazo: 04/01/2027. Tempo previsto: 0,5h.</formato_de_saida>
+  <evidencia_esperada>Nota de decisão.</evidencia_esperada>
+</tarefa>",Conferir testes e agendamentos|Decidir item a item|Registrar,A decisão estiver registrada.,Nota de decisão.,decisao|lancamento,,TSK-0056,Titular,Alta,04/01/2027,"0,5 horas",Não iniciada,DEC-03
+TSK-0060,CLU-09,Campanha 02 e lançamento do app,Executar o lançamento do app e do ecossistema em 05/01,executar,Abrir o painel do site e conferir a versão que vai ao ar.,"App, épicos escolhidos e campanha 02 no ar em 05/01.",Cobre o dia do lançamento.,Itens aprovados no ar e conferidos.,"Estimativa de 3,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Marco final do período de produção.,Em 05/01/2027.,"<tarefa id=""TSK-0060"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Campanha 02 e lançamento do app. A campanha 02 lança o ecossistema com foco no app e nos produtos para a demanda de janeiro.</contexto>
+  <objetivo>App, épicos escolhidos e campanha 02 no ar em 05/01.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0059 (Decidir a liberação do lançamento de 05/01). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o dia do lançamento.</restricoes>
+  <passos>
+    Publicar.
+    Conferir as publicações.
+    Registrar problemas.
+  </passos>
+  <criterio_de_conclusao>Todos os itens aprovados estiverem no ar.</criterio_de_conclusao>
+  <formato_de_saida>Prints. Prazo: 05/01/2027. Tempo previsto: 3,0h.</formato_de_saida>
+  <evidencia_esperada>Prints.</evidencia_esperada>
+</tarefa>",Publicar|Conferir as publicações|Registrar problemas,Todos os itens aprovados estiverem no ar.,Prints.,lancamento|app,,TSK-0059,Titular,Alta,05/01/2027,"3,0 horas",Não iniciada,DEC-03
+TSK-0061,CLU-10,Carreira na Europa,Estudar gestão de projetos conforme o plano de estudos,estudar,Abrir o plano de estudos na semana atual.,"Conteúdo do edital de gestão de projetos estudado, com simulados feitos.",Cobre o estudo de gestão de projetos.,Horas semanais cumpridas e simulados registrados.,"Estimativa de 40,0h dentro da janela 15/11/2026 a 30/11/2026, cuja capacidade de execução é 68,9h.",Prepara a primeira certificação.,De 30/11/2026 até 15/01/2027.,"<tarefa id=""TSK-0061"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Conteúdo do edital de gestão de projetos estudado, com simulados feitos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0052 (Montar o plano de estudos com autoestudo, cursos e simulados). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o estudo de gestão de projetos.</restricoes>
+  <passos>
+    Estudar o bloco da semana.
+    Fazer os exercícios.
+    Registrar as horas.
+  </passos>
+  <criterio_de_conclusao>Todo o edital estiver estudado e 1 simulado completo feito.</criterio_de_conclusao>
+  <formato_de_saida>Registro de horas e notas de simulado. Prazo: 15/01/2027. Tempo previsto: 40,0h.</formato_de_saida>
+  <evidencia_esperada>Registro de horas e notas de simulado.</evidencia_esperada>
+</tarefa>",Estudar o bloco da semana|Fazer os exercícios|Registrar as horas,Todo o edital estiver estudado e 1 simulado completo feito.,Registro de horas e notas de simulado.,estudos|projetos,,TSK-0052,Titular,Alta,15/01/2027,"40,0 horas",Não iniciada,DEC-07
+TSK-0062,CLU-10,Carreira na Europa,Otimizar o perfil do LinkedIn e iniciar a linha editorial,otimizar,Abrir o perfil do LinkedIn e copiar o título atual.,Perfil em inglês alinhado aos cargos-alvo e primeiro post da linha editorial publicado.,Cobre o perfil e o primeiro post.,Perfil atualizado + 1 post.,"Estimativa de 4,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Os recrutadores na Europa consultam o LinkedIn.,De 01/12/2026 até 11/12/2026.,"<tarefa id=""TSK-0062"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Perfil em inglês alinhado aos cargos-alvo e primeiro post da linha editorial publicado.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0050 (Planejar a estratégia de realocação profissional na Europa). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o perfil e o primeiro post.</restricoes>
+  <passos>
+    Reescrever título e resumo.
+    Atualizar experiências.
+    Publicar o primeiro post.
+  </passos>
+  <criterio_de_conclusao>O perfil estiver atualizado e o primeiro post publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do perfil e do post. Prazo: 11/12/2026. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Link do perfil e do post.</evidencia_esperada>
+</tarefa>",Reescrever título e resumo|Atualizar experiências|Publicar o primeiro post,O perfil estiver atualizado e o primeiro post publicado.,Link do perfil e do post.,linkedin|editorial|carreira,,TSK-0050,Titular,Média,11/12/2026,"4,0 horas",Não iniciada,DEC-10
+TSK-0063,CLU-10,Carreira na Europa,Fazer o contato estratégico com o profissional na Holanda,contatar,Escrever em três linhas o que propor ao profissional.,Contato feito e próximo passo combinado para soluções personalizadas.,Cobre o primeiro contato.,Mensagem enviada e resposta registrada.,"Estimativa de 2,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Abre uma frente de soluções personalizadas na Holanda.,De 07/12/2026 até 15/12/2026.,"<tarefa id=""TSK-0063"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Contato feito e próximo passo combinado para soluções personalizadas.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o primeiro contato.</restricoes>
+  <passos>
+    Preparar a proposta curta.
+    Enviar a mensagem.
+    Registrar a resposta.
+  </passos>
+  <criterio_de_conclusao>A mensagem estiver enviada e a resposta registrada.</criterio_de_conclusao>
+  <formato_de_saida>Registro do contato. Prazo: 15/12/2026. Tempo previsto: 2,0h.</formato_de_saida>
+  <evidencia_esperada>Registro do contato.</evidencia_esperada>
+  <lacunas_conhecidas>Identidade do profissional. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Preparar a proposta curta|Enviar a mensagem|Registrar a resposta,A mensagem estiver enviada e a resposta registrada.,Registro do contato.,networking|holanda,,,Titular,Média,15/12/2026,"2,0 horas",Não iniciada,DEC-10
+TSK-0064,CLU-10,Carreira na Europa,Estudar gestão de processos conforme o plano de estudos,estudar,Abrir o plano de estudos na semana atual.,"Conteúdo do edital de processos estudado, com simulados feitos.",Cobre o estudo de processos.,Horas cumpridas e simulados registrados.,"Estimativa de 30,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Prepara a segunda certificação.,De 15/12/2026 até 15/02/2027.,"<tarefa id=""TSK-0064"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Conteúdo do edital de processos estudado, com simulados feitos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0052 (Montar o plano de estudos com autoestudo, cursos e simulados). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o estudo de processos.</restricoes>
+  <passos>
+    Estudar o bloco da semana.
+    Fazer os exercícios.
+    Registrar as horas.
+  </passos>
+  <criterio_de_conclusao>Todo o edital estiver estudado e 1 simulado completo feito.</criterio_de_conclusao>
+  <formato_de_saida>Registro de horas e notas. Prazo: 15/02/2027. Tempo previsto: 30,0h.</formato_de_saida>
+  <evidencia_esperada>Registro de horas e notas.</evidencia_esperada>
+</tarefa>",Estudar o bloco da semana|Fazer os exercícios|Registrar as horas,Todo o edital estiver estudado e 1 simulado completo feito.,Registro de horas e notas.,estudos|processos,,TSK-0052,Titular,Alta,15/02/2027,"30,0 horas",Não iniciada,DEC-07
+TSK-0065,CLU-10,Carreira na Europa,Publicar um post semanal da linha editorial sobre riscos cognitivos no LinkedIn,publicar,Abrir a lista de temas da linha editorial.,Um post por semana publicado de 15/12 a 30/03.,Cobre a cadência semanal.,1 post por semana.,"Estimativa de 15,0h dentro da janela 01/12/2026 a 05/01/2027, cuja capacidade de execução é 165,9h.",Constrói autoridade para as candidaturas.,De 15/12/2026 até 30/03/2027.,"<tarefa id=""TSK-0065"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Um post por semana publicado de 15/12 a 30/03.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0062 (Otimizar o perfil do LinkedIn e iniciar a linha editorial). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a cadência semanal.</restricoes>
+  <passos>
+    Escolher o tema da semana.
+    Escrever o post.
+    Publicar.
+  </passos>
+  <criterio_de_conclusao>Houver um post por semana no período.</criterio_de_conclusao>
+  <formato_de_saida>Links dos posts. Prazo: 30/03/2027. Tempo previsto: 15,0h.</formato_de_saida>
+  <evidencia_esperada>Links dos posts.</evidencia_esperada>
+</tarefa>",Escolher o tema da semana|Escrever o post|Publicar,Houver um post por semana no período.,Links dos posts.,linkedin|editorial,,TSK-0062,Titular,Média,30/03/2027,"15,0 horas",Não iniciada,DEC-10
+TSK-0066,CLU-10,Carreira na Europa,Fazer o simulado final e a prova de gestão de projetos,fazer,Abrir o portal oficial da certificação e conferir as datas de prova.,Prova de gestão de projetos realizada.,"Cobre simulado final, inscrição e prova.",Prova realizada e resultado registrado.,"Estimativa de 10,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Primeira certificação do épico.,TBD — janela recomendada 16/01/2027 a 31/01/2027; data exata depende do calendário oficial.,"<tarefa id=""TSK-0066"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Prova de gestão de projetos realizada.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0061 (Estudar gestão de projetos conforme o plano de estudos). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre simulado final, inscrição e prova.</restricoes>
+  <passos>
+    Fazer o simulado final.
+    Inscrever-se na prova.
+    Fazer a prova.
+  </passos>
+  <criterio_de_conclusao>A prova estiver realizada e o resultado registrado.</criterio_de_conclusao>
+  <formato_de_saida>Comprovante de inscrição e resultado. Prazo: TBD. Tempo previsto: 10,0h.</formato_de_saida>
+  <evidencia_esperada>Comprovante de inscrição e resultado.</evidencia_esperada>
+  <lacunas_conhecidas>Data da prova; Prazo exato TBD. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Fazer o simulado final|Inscrever-se na prova|Fazer a prova,A prova estiver realizada e o resultado registrado.,Comprovante de inscrição e resultado.,certificacao|projetos|prova,,TSK-0061,Titular,Alta,TBD,"10,0 horas",Não iniciada,DEC-07
+TSK-0067,CLU-10,Carreira na Europa,"Montar o portfólio profissional com as soluções, os produtos e os apps da Clean Sea",montar,Listar os produtos do EXECUTAR e os apps feitos para a Clean Sea.,"Portfólio publicado com casos, produtos e apps (Clean Sea e outra empresa a definir).",Cobre o portfólio.,Portfólio com pelo menos 1 caso por produto ou app listado.,"Estimativa de 12,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",É a prova prática para as candidaturas.,De 06/01/2027 até 31/01/2027.,"<tarefa id=""TSK-0067"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Portfólio publicado com casos, produtos e apps (Clean Sea e outra empresa a definir).</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o portfólio.</restricoes>
+  <passos>
+    Selecionar os casos.
+    Escrever cada caso.
+    Publicar o portfólio.
+  </passos>
+  <criterio_de_conclusao>O portfólio estiver publicado.</criterio_de_conclusao>
+  <formato_de_saida>Link do portfólio. Prazo: 31/01/2027. Tempo previsto: 12,0h.</formato_de_saida>
+  <evidencia_esperada>Link do portfólio.</evidencia_esperada>
+  <lacunas_conhecidas>Autorização da Clean Sea e segunda empresa. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Selecionar os casos|Escrever cada caso|Publicar o portfólio,O portfólio estiver publicado.,Link do portfólio.,portfolio|carreira|clean-sea,,,Titular,Alta,31/01/2027,"12,0 horas",Não iniciada,DEC-08
+TSK-0068,CLU-10,Carreira na Europa,Criar a landing page profissional e atualizar as redes sociais,criar,Abrir o portfólio e escolher a frase de apresentação.,Landing page profissional publicada e redes atualizadas com o mesmo posicionamento.,Cobre landing e redes.,Landing publicada + redes atualizadas.,"Estimativa de 6,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Dá um endereço único para recrutadores.,De 12/01/2027 até 31/01/2027.,"<tarefa id=""TSK-0068"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Landing page profissional publicada e redes atualizadas com o mesmo posicionamento.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0067 (Montar o portfólio profissional com as soluções, os produtos e os apps da Clean Sea). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre landing e redes.</restricoes>
+  <passos>
+    Escrever a landing.
+    Publicar.
+    Atualizar as redes.
+  </passos>
+  <criterio_de_conclusao>A landing estiver publicada e as redes atualizadas.</criterio_de_conclusao>
+  <formato_de_saida>Links. Prazo: 31/01/2027. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Links.</evidencia_esperada>
+</tarefa>",Escrever a landing|Publicar|Atualizar as redes,A landing estiver publicada e as redes atualizadas.,Links.,landing-page|carreira|redes,,TSK-0067,Titular,Alta,31/01/2027,"6,0 horas",Não iniciada,DEC-07
+TSK-0069,CLU-10,Carreira na Europa,Escrever o currículo no padrão europeu e a carta-modelo,escrever,Abrir o modelo de currículo europeu e copiar as experiências atuais.,Currículo em inglês no padrão europeu e carta-modelo prontos.,Cobre currículo e carta-modelo.,2 documentos revisados.,"Estimativa de 4,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Necessários para as candidaturas a partir de 01/02.,De 12/01/2027 até 25/01/2027.,"<tarefa id=""TSK-0069"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Currículo em inglês no padrão europeu e carta-modelo prontos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre currículo e carta-modelo.</restricoes>
+  <passos>
+    Montar o currículo.
+    Escrever a carta-modelo.
+    Revisar.
+  </passos>
+  <criterio_de_conclusao>Os 2 documentos estiverem revisados.</criterio_de_conclusao>
+  <formato_de_saida>Arquivos PDF. Prazo: 25/01/2027. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Arquivos PDF.</evidencia_esperada>
+</tarefa>",Montar o currículo|Escrever a carta-modelo|Revisar,Os 2 documentos estiverem revisados.,Arquivos PDF.,curriculo|carreira,,,Titular,Alta,25/01/2027,"4,0 horas",Não iniciada,DEC-07
+TSK-0070,CLU-10,Carreira na Europa,Propor uma pauta sobre riscos cognitivos ao editor da Frankwatching,propor,Abrir as diretrizes para autores convidados da Frankwatching.,Proposta de pauta enviada ao editor.,Cobre a proposta.,Proposta enviada e registrada.,"Estimativa de 4,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",A linha editorial estratégica dá visibilidade no mercado holandês.,De 15/01/2027 até 31/01/2027.,"<tarefa id=""TSK-0070"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Proposta de pauta enviada ao editor.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0062 (Otimizar o perfil do LinkedIn e iniciar a linha editorial). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a proposta.</restricoes>
+  <passos>
+    Ler as diretrizes.
+    Escrever a proposta.
+    Enviar.
+  </passos>
+  <criterio_de_conclusao>A proposta estiver enviada.</criterio_de_conclusao>
+  <formato_de_saida>Registro do envio. Prazo: 31/01/2027. Tempo previsto: 4,0h.</formato_de_saida>
+  <evidencia_esperada>Registro do envio.</evidencia_esperada>
+  <lacunas_conhecidas>Requisitos editoriais e idioma da Frankwatching. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Ler as diretrizes|Escrever a proposta|Enviar,A proposta estiver enviada.,Registro do envio.,frankwatching|editorial|holanda,,TSK-0062,Titular,Média,31/01/2027,"4,0 horas",Não iniciada,DEC-10
+TSK-0071,CLU-10,Carreira na Europa,Estudar governança de IA conforme o plano de estudos,estudar,Abrir o plano de estudos na semana atual.,"Conteúdo do edital de governança de IA estudado, com simulados feitos.",Cobre o estudo de governança de IA.,Horas cumpridas e simulados registrados.,"Estimativa de 35,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Prepara a terceira certificação.,De 15/01/2027 até 10/03/2027.,"<tarefa id=""TSK-0071"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Conteúdo do edital de governança de IA estudado, com simulados feitos.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0052 (Montar o plano de estudos com autoestudo, cursos e simulados). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o estudo de governança de IA.</restricoes>
+  <passos>
+    Estudar o bloco da semana.
+    Fazer os exercícios.
+    Registrar as horas.
+  </passos>
+  <criterio_de_conclusao>Todo o edital estiver estudado e 1 simulado completo feito.</criterio_de_conclusao>
+  <formato_de_saida>Registro de horas e notas. Prazo: 10/03/2027. Tempo previsto: 35,0h.</formato_de_saida>
+  <evidencia_esperada>Registro de horas e notas.</evidencia_esperada>
+</tarefa>",Estudar o bloco da semana|Fazer os exercícios|Registrar as horas,Todo o edital estiver estudado e 1 simulado completo feito.,Registro de horas e notas.,estudos|governanca-ia,,TSK-0052,Titular,Alta,10/03/2027,"35,0 horas",Não iniciada,DEC-07
+TSK-0072,CLU-10,Carreira na Europa,"Decidir se portfólio, currículo e LinkedIn estão prontos para as candidaturas",decidir,"Abrir portfólio, currículo e LinkedIn lado a lado.",Decisão registrada de iniciar as candidaturas em 01/02.,Cobre só a decisão.,Decisão escrita.,"Estimativa de 0,5h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Ponto de decisão antes das candidaturas.,Em 31/01/2027.,"<tarefa id=""TSK-0072"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Decisão registrada de iniciar as candidaturas em 01/02.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0068 (Criar a landing page profissional e atualizar as redes sociais). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre só a decisão.</restricoes>
+  <passos>
+    Conferir os três itens.
+    Decidir.
+    Registrar.
+  </passos>
+  <criterio_de_conclusao>A decisão estiver registrada.</criterio_de_conclusao>
+  <formato_de_saida>Nota de decisão. Prazo: 31/01/2027. Tempo previsto: 0,5h.</formato_de_saida>
+  <evidencia_esperada>Nota de decisão.</evidencia_esperada>
+</tarefa>",Conferir os três itens|Decidir|Registrar,A decisão estiver registrada.,Nota de decisão.,decisao|carreira,,TSK-0068,Titular,Alta,31/01/2027,"0,5 horas",Não iniciada,DEC-03
+TSK-0073,CLU-10,Carreira na Europa,Enviar candidaturas a vagas na Europa de 01/02 a 30/03,enviar,Abrir a lista de vagas salvas da semana.,Candidaturas enviadas e registradas toda semana.,Cobre as candidaturas do período.,Número de candidaturas por semana registrado (meta a definir).,"Estimativa de 34,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Objetivo final do épico de emprego.,De 01/02/2027 até 30/03/2027.,"<tarefa id=""TSK-0073"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Candidaturas enviadas e registradas toda semana.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0072 (Decidir se portfólio, currículo e LinkedIn estão prontos para as candidaturas). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre as candidaturas do período.</restricoes>
+  <passos>
+    Selecionar as vagas da semana.
+    Adaptar currículo e carta.
+    Enviar e registrar.
+  </passos>
+  <criterio_de_conclusao>Houver registro semanal de candidaturas de 01/02 a 30/03.</criterio_de_conclusao>
+  <formato_de_saida>Planilha de candidaturas. Prazo: 30/03/2027. Tempo previsto: 34,0h.</formato_de_saida>
+  <evidencia_esperada>Planilha de candidaturas.</evidencia_esperada>
+  <lacunas_conhecidas>Meta de candidaturas por semana. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Selecionar as vagas da semana|Adaptar currículo e carta|Enviar e registrar,Houver registro semanal de candidaturas de 01/02 a 30/03.,Planilha de candidaturas.,candidaturas|carreira|europa,,TSK-0072,Titular,Alta,30/03/2027,"34,0 horas",Não iniciada,DEC-03
+TSK-0074,CLU-10,Carreira na Europa,Submeter o primeiro artigo à Frankwatching,submeter,Abrir a resposta do editor à proposta de pauta.,Artigo submetido conforme as diretrizes do editor.,Cobre o primeiro artigo.,Artigo submetido.,"Estimativa de 6,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Consolida a linha editorial estratégica.,De 01/02/2027 até 28/02/2027.,"<tarefa id=""TSK-0074"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Artigo submetido conforme as diretrizes do editor.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0070 (Propor uma pauta sobre riscos cognitivos ao editor da Frankwatching). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o primeiro artigo.</restricoes>
+  <passos>
+    Redigir o artigo.
+    Revisar conforme as diretrizes.
+    Submeter.
+  </passos>
+  <criterio_de_conclusao>O artigo estiver submetido.</criterio_de_conclusao>
+  <formato_de_saida>Registro da submissão. Prazo: 28/02/2027. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Registro da submissão.</evidencia_esperada>
+  <lacunas_conhecidas>Aceite da pauta pelo editor. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Redigir o artigo|Revisar conforme as diretrizes|Submeter,O artigo estiver submetido.,Registro da submissão.,frankwatching|artigo,,TSK-0070,Titular,Média,28/02/2027,"6,0 horas",Não iniciada,DEC-10
+TSK-0075,CLU-10,Carreira na Europa,Fazer o simulado final e a prova de gestão de processos,fazer,Abrir o portal oficial da certificação e conferir as datas.,Prova de processos realizada.,"Cobre simulado final, inscrição e prova.",Prova realizada e resultado registrado.,"Estimativa de 10,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Segunda certificação do épico.,TBD — janela recomendada 16/02/2027 a 28/02/2027; data exata depende do calendário oficial.,"<tarefa id=""TSK-0075"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Prova de processos realizada.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0064 (Estudar gestão de processos conforme o plano de estudos). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre simulado final, inscrição e prova.</restricoes>
+  <passos>
+    Fazer o simulado final.
+    Inscrever-se.
+    Fazer a prova.
+  </passos>
+  <criterio_de_conclusao>A prova estiver realizada.</criterio_de_conclusao>
+  <formato_de_saida>Comprovante e resultado. Prazo: TBD. Tempo previsto: 10,0h.</formato_de_saida>
+  <evidencia_esperada>Comprovante e resultado.</evidencia_esperada>
+  <lacunas_conhecidas>Data da prova; Prazo exato TBD. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Fazer o simulado final|Inscrever-se|Fazer a prova,A prova estiver realizada.,Comprovante e resultado.,certificacao|processos|prova,,TSK-0064,Titular,Alta,TBD,"10,0 horas",Não iniciada,DEC-07
+TSK-0076,CLU-10,Carreira na Europa,Fazer o simulado final e a prova de governança de IA,fazer,Abrir o portal oficial da certificação e conferir as datas.,Prova de governança de IA realizada.,"Cobre simulado final, inscrição e prova.",Prova realizada e resultado registrado.,"Estimativa de 10,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Terceira certificação do épico.,TBD — janela recomendada 11/03/2027 a 25/03/2027; data exata depende do calendário oficial.,"<tarefa id=""TSK-0076"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Prova de governança de IA realizada.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0071 (Estudar governança de IA conforme o plano de estudos). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre simulado final, inscrição e prova.</restricoes>
+  <passos>
+    Fazer o simulado final.
+    Inscrever-se.
+    Fazer a prova.
+  </passos>
+  <criterio_de_conclusao>A prova estiver realizada.</criterio_de_conclusao>
+  <formato_de_saida>Comprovante e resultado. Prazo: TBD. Tempo previsto: 10,0h.</formato_de_saida>
+  <evidencia_esperada>Comprovante e resultado.</evidencia_esperada>
+  <lacunas_conhecidas>Data da prova; Prazo exato TBD. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Fazer o simulado final|Inscrever-se|Fazer a prova,A prova estiver realizada.,Comprovante e resultado.,certificacao|governanca-ia|prova,,TSK-0071,Titular,Alta,TBD,"10,0 horas",Não iniciada,DEC-07
+TSK-0077,CLU-10,Carreira na Europa,Encerrar o épico de emprego e decidir os próximos passos da viagem,encerrar,Abrir a planilha de candidaturas e os resultados das provas.,Balanço do épico e decisão registrada sobre a viagem de 30/04.,Cobre o encerramento.,Balanço + decisão escrita.,"Estimativa de 1,0h dentro da janela 06/01/2027 a 30/03/2027, cuja capacidade de execução é 407,0h.",Fecha o épico em 30/03.,Em 30/03/2027.,"<tarefa id=""TSK-0077"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Balanço do épico e decisão registrada sobre a viagem de 30/04.</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0073 (Enviar candidaturas a vagas na Europa de 01/02 a 30/03). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre o encerramento.</restricoes>
+  <passos>
+    Consolidar resultados.
+    Decidir os próximos passos.
+    Registrar.
+  </passos>
+  <criterio_de_conclusao>O balanço e a decisão estiverem registrados.</criterio_de_conclusao>
+  <formato_de_saida>Documento de encerramento. Prazo: 30/03/2027. Tempo previsto: 1,0h.</formato_de_saida>
+  <evidencia_esperada>Documento de encerramento.</evidencia_esperada>
+</tarefa>",Consolidar resultados|Decidir os próximos passos|Registrar,O balanço e a decisão estiverem registrados.,Documento de encerramento.,encerramento|carreira|decisao,,TSK-0073,Titular,Alta,30/03/2027,"1,0 horas",Não iniciada,DEC-03
+TSK-0078,CLU-10,Carreira na Europa,Preparar a documentação e a logística da viagem de 30/04,preparar,Listar os documentos exigidos pelo país de destino.,"Checklist de viagem concluído (documentos, passagens, hospedagem).",Cobre a preparação da viagem.,Checklist 100% marcado.,"Estimativa de 6,0h dentro da janela 31/03/2027 a 30/04/2027, cuja capacidade de execução é 150,3h.",A viagem é o marco final do período.,De 31/03/2027 até 25/04/2027.,"<tarefa id=""TSK-0078"">
+  <contexto>Programa EXECUTAR — lançamento do ecossistema riscocognitivo.org (gestão de riscos cognitivos para pessoas neurodivergentes) e realocação profissional do titular na Europa. Frente: Carreira na Europa. Prepara a realocação profissional na Europa: certificações, portfólio, presença e candidaturas.</contexto>
+  <objetivo>Checklist de viagem concluído (documentos, passagens, hospedagem).</objetivo>
+  <entrada>Nenhuma entrada externa requerida além deste prompt.</entrada>
+  <restricoes>Bloqueio: só começar depois de concluída a tarefa TSK-0077 (Encerrar o épico de emprego e decidir os próximos passos da viagem). Não inventar dados: o que não existir fica TBD. Conteúdo educativo: sem diagnóstico, sem promessa de cura, sem tom de coach. Português do Brasil. Escopo: Cobre a preparação da viagem.</restricoes>
+  <passos>
+    Listar os documentos exigidos.
+    Providenciar os documentos.
+    Reservar passagem e hospedagem.
+  </passos>
+  <criterio_de_conclusao>O checklist estiver 100% marcado.</criterio_de_conclusao>
+  <formato_de_saida>Checklist e comprovantes. Prazo: 25/04/2027. Tempo previsto: 6,0h.</formato_de_saida>
+  <evidencia_esperada>Checklist e comprovantes.</evidencia_esperada>
+  <lacunas_conhecidas>Destino e exigências de visto. Não preencher com valor inventado.</lacunas_conhecidas>
+</tarefa>",Listar os documentos exigidos|Providenciar os documentos|Reservar passagem e hospedagem,O checklist estiver 100% marcado.,Checklist e comprovantes.,viagem|documentacao,,TSK-0077,Titular,Alta,25/04/2027,"6,0 horas",Não iniciada,DEC-03

@@ -1,0 +1,18 @@
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+	// Painel de gestão dos épicos (EPIC 01 e Emprego) — app separado do CMS.
+	"name": "gestao",
+	"main": "worker/index.js",
+	"compatibility_date": "2025-10-08",
+	"workers_dev": true,
+	// dist/ é gerado por build.mjs. O Worker roda antes dos assets para exigir login.
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"run_worker_first": true,
+		"not_found_handling": "404-page"
+	},
+	// Secrets (wrangler secret put): CMS_USER, CMS_PASS, SESSION_SECRET e, opcional, GITHUB_TOKEN (só leitura).
+	"vars": { "GITHUB_REPO": "Programaex/workbook" },
+	"observability": { "enabled": true }
+}
