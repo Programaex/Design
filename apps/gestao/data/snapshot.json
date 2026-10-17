@@ -1,0 +1,2559 @@
+{
+  "generatedAt": "2026-10-17T22:19:18.822Z",
+  "source": {
+    "workbook": "Programaex/workbook",
+    "commit": "532752a",
+    "plan": "docs/planos/executar-epic01-2026-10-a-2027-04/registro-tarefas-executar-epic01-2026-10-a-2027-04.csv"
+  },
+  "epics": {
+    "3": {
+      "epic": {
+        "number": 3,
+        "id": "EP-OP.OPS-0003",
+        "type": "epic",
+        "parent": null,
+        "title": "EPIC 01 — Lançamento riscocognitivo.org (17/10–05/12/2026)",
+        "alias": null,
+        "start": "2026-10-17",
+        "due": "2026-12-05",
+        "dueWindow": null,
+        "state": "open",
+        "frente": null,
+        "prioridade": null,
+        "horas": null,
+        "blockedBy": null,
+        "checks": {
+          "done": 0,
+          "total": 4
+        },
+        "lacunas": [],
+        "owner": "OP.OPS",
+        "co": [
+          "MR.MKT",
+          "MR.MID",
+          "PD.PRO",
+          "TD.ENG"
+        ],
+        "url": "https://github.com/Programaex/workbook/issues/3",
+        "origin": "snapshot"
+      },
+      "items": [
+        {
+          "number": 7,
+          "id": "GT-OP.OPS-0007",
+          "type": "gate",
+          "parent": 3,
+          "title": "Confirmar horas reais e escolher o escopo de 05/11 (opção A ou B)",
+          "alias": "GATE-00",
+          "start": "2026-10-17",
+          "due": "2026-10-17",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/7",
+          "origin": "snapshot"
+        },
+        {
+          "number": 8,
+          "id": "GT-OP.OPS-0008",
+          "type": "gate",
+          "parent": 3,
+          "title": "Confirmar domínio, hospedagem, checkout e plataformas",
+          "alias": "GATE-01",
+          "start": "2026-10-19",
+          "due": "2026-10-23",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/8",
+          "origin": "snapshot"
+        },
+        {
+          "number": 9,
+          "id": "GT-OP.OPS-0009",
+          "type": "gate",
+          "parent": 3,
+          "title": "Congelar o pacote da onda 1 e confirmar os agendamentos do ciclo 1",
+          "alias": "GATE-02",
+          "start": "2026-10-29",
+          "due": "2026-11-01",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/9",
+          "origin": "snapshot"
+        },
+        {
+          "number": 10,
+          "id": "GT-OP.OPS-0010",
+          "type": "gate",
+          "parent": 3,
+          "title": "Liberar o lançamento do riscocognitivo.org em 05/11",
+          "alias": "GATE-03",
+          "start": "2026-11-03",
+          "due": "2026-11-04",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/10",
+          "origin": "snapshot"
+        },
+        {
+          "number": 11,
+          "id": "GT-OP.OPS-0011",
+          "type": "gate",
+          "parent": 3,
+          "title": "Fechar o ciclo de 30 dias da Campanha 01",
+          "alias": "GATE-07",
+          "start": "2026-12-03",
+          "due": "2026-12-05",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/11",
+          "origin": "snapshot"
+        },
+        {
+          "number": 20,
+          "id": "IS-OP.OPS-0020",
+          "type": "issue",
+          "parent": 3,
+          "title": "Confirmar a capacidade semanal real e o escopo do lançamento de 05/11",
+          "alias": "TSK-0001",
+          "start": "2026-10-17",
+          "due": "2026-10-17",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Planejamento e controle",
+          "prioridade": "Alta",
+          "horas": 1,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Capacidade semanal real (GAP-02)"
+          ],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/20",
+          "origin": "snapshot"
+        },
+        {
+          "number": 21,
+          "id": "IS-OP.OPS-0021",
+          "type": "issue",
+          "parent": 3,
+          "title": "Registrar o EPIC 01, a Campanha 02 e o EPIC Emprego no GitHub e no workbook",
+          "alias": "TSK-0002",
+          "start": "2026-10-18",
+          "due": "2026-10-19",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Planejamento e controle",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": 20,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Owner (área) de cada épico no workbook (GAP-16)"
+          ],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/21",
+          "origin": "snapshot"
+        },
+        {
+          "number": 22,
+          "id": "IS-OP.OPS-0022",
+          "type": "issue",
+          "parent": 3,
+          "title": "Inventariar os ativos já existentes do ecossistema com o status real de cada um",
+          "alias": "TSK-0003",
+          "start": "2026-10-17",
+          "due": "2026-10-19",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Planejamento e controle",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Status real dos apps Prisma, Meu processo de trabalho, Plano Operacional Rastreável e workflow (GAP-17)"
+          ],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/22",
+          "origin": "snapshot"
+        },
+        {
+          "number": 23,
+          "id": "IS-OP.OPS-0023",
+          "type": "issue",
+          "parent": 3,
+          "title": "Confirmar o domínio riscocognitivo.org, o DNS e a hospedagem na Cloudflare",
+          "alias": "TSK-0004",
+          "start": "2026-10-19",
+          "due": "2026-10-20",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 1.5,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Situação do registro do domínio (GAP-03)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/23",
+          "origin": "snapshot"
+        },
+        {
+          "number": 24,
+          "id": "IS-OP.OPS-0024",
+          "type": "issue",
+          "parent": 3,
+          "title": "Definir as rotas que entram no lançamento a partir do mapa de rotas do EXECUTAR",
+          "alias": "TSK-0005",
+          "start": "2026-10-20",
+          "due": "2026-10-20",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 1,
+          "blockedBy": 22,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/24",
+          "origin": "snapshot"
+        },
+        {
+          "number": 25,
+          "id": "IS-OP.OPS-0025",
+          "type": "issue",
+          "parent": 3,
+          "title": "Pesquisar evidências citáveis para o artigo fundador e os quatro artigos pilares",
+          "alias": "TSK-0006",
+          "start": "2026-10-19",
+          "due": "2026-10-21",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/25",
+          "origin": "snapshot"
+        },
+        {
+          "number": 26,
+          "id": "IS-OP.OPS-0026",
+          "type": "issue",
+          "parent": 3,
+          "title": "Revisar o Manifesto e escrever as metaexplicações da home",
+          "alias": "TSK-0007",
+          "start": "2026-10-21",
+          "due": "2026-10-22",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/26",
+          "origin": "snapshot"
+        },
+        {
+          "number": 27,
+          "id": "IS-OP.OPS-0027",
+          "type": "issue",
+          "parent": 3,
+          "title": "Construir a home premium de conversão com o Manifesto e as principais funcionalidades",
+          "alias": "TSK-0008",
+          "start": "2026-10-22",
+          "due": "2026-10-26",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 6,
+          "blockedBy": 26,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/27",
+          "origin": "snapshot"
+        },
+        {
+          "number": 28,
+          "id": "IS-OP.OPS-0028",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o artigo fundador (Peça 01): neurodivergência, demandas cognitivas e soluções",
+          "alias": "TSK-0009",
+          "start": "2026-10-21",
+          "due": "2026-10-24",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Alta",
+          "horas": 6,
+          "blockedBy": 25,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/28",
+          "origin": "snapshot"
+        },
+        {
+          "number": 29,
+          "id": "IS-OP.OPS-0029",
+          "type": "issue",
+          "parent": 3,
+          "title": "Adaptar o catálogo do blog e a página de artigo com CTA para as ferramentas",
+          "alias": "TSK-0010",
+          "start": "2026-10-23",
+          "due": "2026-10-24",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 24,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/29",
+          "origin": "snapshot"
+        },
+        {
+          "number": 30,
+          "id": "IS-OP.OPS-0030",
+          "type": "issue",
+          "parent": 3,
+          "title": "Construir o mapa cognitivo simplificado com home e landing próprias",
+          "alias": "TSK-0011",
+          "start": "2026-10-26",
+          "due": "2026-10-29",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 6,
+          "blockedBy": 24,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/30",
+          "origin": "snapshot"
+        },
+        {
+          "number": 31,
+          "id": "IS-OP.OPS-0031",
+          "type": "issue",
+          "parent": 3,
+          "title": "Empacotar o Prisma standalone para acesso público",
+          "alias": "TSK-0012",
+          "start": "2026-10-23",
+          "due": "2026-10-27",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 22,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Status real do Prisma (GAP-17)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/31",
+          "origin": "snapshot"
+        },
+        {
+          "number": 32,
+          "id": "IS-OP.OPS-0032",
+          "type": "issue",
+          "parent": 3,
+          "title": "Publicar o catálogo de apps com o Prisma e a página de cada app disponível",
+          "alias": "TSK-0013",
+          "start": "2026-10-27",
+          "due": "2026-10-28",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 31,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/32",
+          "origin": "snapshot"
+        },
+        {
+          "number": 33,
+          "id": "IS-OP.OPS-0033",
+          "type": "issue",
+          "parent": 3,
+          "title": "Criar o primeiro template da família por déficit executivo para TDAH, dislexia e autismo",
+          "alias": "TSK-0014",
+          "start": "2026-10-26",
+          "due": "2026-10-29",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Alta",
+          "horas": 5,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/33",
+          "origin": "snapshot"
+        },
+        {
+          "number": 34,
+          "id": "IS-OP.OPS-0034",
+          "type": "issue",
+          "parent": 3,
+          "title": "Publicar o catálogo de ferramentas com filtros e download dos templates",
+          "alias": "TSK-0015",
+          "start": "2026-10-28",
+          "due": "2026-10-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Alta",
+          "horas": 4,
+          "blockedBy": 33,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/34",
+          "origin": "snapshot"
+        },
+        {
+          "number": 35,
+          "id": "IS-OP.OPS-0035",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o e-book 1: Operações e Neurodivergência",
+          "alias": "TSK-0016",
+          "start": "2026-10-26",
+          "due": "2026-10-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "E-books",
+          "prioridade": "Alta",
+          "horas": 6,
+          "blockedBy": 28,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/35",
+          "origin": "snapshot"
+        },
+        {
+          "number": 36,
+          "id": "IS-OP.OPS-0036",
+          "type": "issue",
+          "parent": 3,
+          "title": "Definir o checkout e os links de afiliado reais da loja",
+          "alias": "TSK-0017",
+          "start": "2026-10-20",
+          "due": "2026-10-23",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Loja e afiliados",
+          "prioridade": "Alta",
+          "horas": 1,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Plataforma de checkout, preços e links de afiliado (GAP-04)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/36",
+          "origin": "snapshot"
+        },
+        {
+          "number": 37,
+          "id": "IS-OP.OPS-0037",
+          "type": "issue",
+          "parent": 3,
+          "title": "Configurar o CMS para conteúdos, recursos, produtos e agendamento",
+          "alias": "TSK-0018",
+          "start": "2026-10-21",
+          "due": "2026-10-23",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/37",
+          "origin": "snapshot"
+        },
+        {
+          "number": 38,
+          "id": "IS-OP.OPS-0038",
+          "type": "issue",
+          "parent": 3,
+          "title": "Montar a vitrine da loja com os produtos e os links de afiliado reais",
+          "alias": "TSK-0019",
+          "start": "2026-10-29",
+          "due": "2026-10-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Loja e afiliados",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": 36,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Destinos de compra (GAP-04)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/38",
+          "origin": "snapshot"
+        },
+        {
+          "number": 39,
+          "id": "IS-OP.OPS-0039",
+          "type": "issue",
+          "parent": 3,
+          "title": "Publicar as páginas institucionais, a newsletter e o contato",
+          "alias": "TSK-0020",
+          "start": "2026-10-29",
+          "due": "2026-10-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/39",
+          "origin": "snapshot"
+        },
+        {
+          "number": 40,
+          "id": "IS-OP.OPS-0040",
+          "type": "issue",
+          "parent": 3,
+          "title": "Roteirizar e gravar o vídeo comercial de 5 minutos da landing com o Prisma",
+          "alias": "TSK-0021",
+          "start": "2026-10-27",
+          "due": "2026-10-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Vídeos",
+          "prioridade": "Alta",
+          "horas": 4,
+          "blockedBy": 31,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/40",
+          "origin": "snapshot"
+        },
+        {
+          "number": 41,
+          "id": "IS-OP.OPS-0041",
+          "type": "issue",
+          "parent": 3,
+          "title": "Desmembrar o pacote do lançamento em derivados por plataforma para o ciclo 1",
+          "alias": "TSK-0022",
+          "start": "2026-10-29",
+          "due": "2026-11-01",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Alta",
+          "horas": 5,
+          "blockedBy": 28,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Lista final de plataformas e contas ativas (GAP-07)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/41",
+          "origin": "snapshot"
+        },
+        {
+          "number": 42,
+          "id": "IS-OP.OPS-0042",
+          "type": "issue",
+          "parent": 3,
+          "title": "Agendar as publicações do ciclo 1 em todas as plataformas",
+          "alias": "TSK-0023",
+          "start": "2026-10-31",
+          "due": "2026-11-01",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 41,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Ferramenta de agendamento (GAP-07)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/42",
+          "origin": "snapshot"
+        },
+        {
+          "number": 43,
+          "id": "IS-OP.OPS-0043",
+          "type": "issue",
+          "parent": 3,
+          "title": "Revisar estilo, otimização para buscadores e CTAs do artigo fundador e do e-book 1",
+          "alias": "TSK-0024",
+          "start": "2026-10-30",
+          "due": "2026-10-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": 28,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/43",
+          "origin": "snapshot"
+        },
+        {
+          "number": 44,
+          "id": "IS-OP.OPS-0044",
+          "type": "issue",
+          "parent": 3,
+          "title": "Configurar a medição do site, dos links e da newsletter",
+          "alias": "TSK-0025",
+          "start": "2026-11-03",
+          "due": "2026-11-03",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/44",
+          "origin": "snapshot"
+        },
+        {
+          "number": 45,
+          "id": "IS-OP.OPS-0045",
+          "type": "issue",
+          "parent": 3,
+          "title": "Testar o site completo antes do lançamento",
+          "alias": "TSK-0026",
+          "start": "2026-11-03",
+          "due": "2026-11-04",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 27,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/45",
+          "origin": "snapshot"
+        },
+        {
+          "number": 46,
+          "id": "IS-OP.OPS-0046",
+          "type": "issue",
+          "parent": 3,
+          "title": "Decidir a liberação do lançamento de 05/11",
+          "alias": "TSK-0027",
+          "start": "2026-11-04",
+          "due": "2026-11-04",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Planejamento e controle",
+          "prioridade": "Alta",
+          "horas": 0.5,
+          "blockedBy": 45,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/46",
+          "origin": "snapshot"
+        },
+        {
+          "number": 47,
+          "id": "IS-OP.OPS-0047",
+          "type": "issue",
+          "parent": 3,
+          "title": "Publicar o riscocognitivo.org e acompanhar o dia do lançamento",
+          "alias": "TSK-0028",
+          "start": "2026-11-05",
+          "due": "2026-11-05",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Site riscocognitivo.org",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 46,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "TD.ENG"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/47",
+          "origin": "snapshot"
+        },
+        {
+          "number": 48,
+          "id": "IS-OP.OPS-0048",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o artigo pilar sobre gestão de riscos, projetos e processos neuroadaptados",
+          "alias": "TSK-0029",
+          "start": "2026-11-05",
+          "due": "2026-11-07",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 25,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/48",
+          "origin": "snapshot"
+        },
+        {
+          "number": 49,
+          "id": "IS-OP.OPS-0049",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o artigo pilar sobre funções executivas",
+          "alias": "TSK-0030",
+          "start": "2026-11-09",
+          "due": "2026-11-11",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 25,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/49",
+          "origin": "snapshot"
+        },
+        {
+          "number": 50,
+          "id": "IS-OP.OPS-0050",
+          "type": "issue",
+          "parent": 3,
+          "title": "Criar a ferramenta de metacognição",
+          "alias": "TSK-0031",
+          "start": "2026-11-06",
+          "due": "2026-11-10",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Média",
+          "horas": 3,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/50",
+          "origin": "snapshot"
+        },
+        {
+          "number": 51,
+          "id": "IS-OP.OPS-0051",
+          "type": "issue",
+          "parent": 3,
+          "title": "Completar a família de templates por déficit executivo",
+          "alias": "TSK-0032",
+          "start": "2026-11-09",
+          "due": "2026-11-13",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 33,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/51",
+          "origin": "snapshot"
+        },
+        {
+          "number": 52,
+          "id": "IS-OP.OPS-0052",
+          "type": "issue",
+          "parent": 3,
+          "title": "Gravar o vídeo da Peça 01 para o YouTube",
+          "alias": "TSK-0033",
+          "start": "2026-11-06",
+          "due": "2026-11-10",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Vídeos",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 28,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/52",
+          "origin": "snapshot"
+        },
+        {
+          "number": 53,
+          "id": "IS-OP.OPS-0053",
+          "type": "issue",
+          "parent": 3,
+          "title": "Gravar o vídeo sobre gestão de riscos cognitivos",
+          "alias": "TSK-0034",
+          "start": "2026-11-10",
+          "due": "2026-11-13",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Vídeos",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 48,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/53",
+          "origin": "snapshot"
+        },
+        {
+          "number": 54,
+          "id": "IS-OP.OPS-0054",
+          "type": "issue",
+          "parent": 3,
+          "title": "Empacotar o Meu processo de trabalho e o Plano Operacional Rastreável como apps públicos",
+          "alias": "TSK-0035",
+          "start": "2026-11-09",
+          "due": "2026-11-13",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Média",
+          "horas": 5,
+          "blockedBy": 32,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Status real dos apps (GAP-17)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/54",
+          "origin": "snapshot"
+        },
+        {
+          "number": 55,
+          "id": "IS-OP.OPS-0055",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o e-book 2: Funções executivas",
+          "alias": "TSK-0036",
+          "start": "2026-11-09",
+          "due": "2026-11-14",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "E-books",
+          "prioridade": "Média",
+          "horas": 6,
+          "blockedBy": 49,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/55",
+          "origin": "snapshot"
+        },
+        {
+          "number": 56,
+          "id": "IS-OP.OPS-0056",
+          "type": "issue",
+          "parent": 3,
+          "title": "Desmembrar e agendar as publicações do ciclo 2",
+          "alias": "TSK-0037",
+          "start": "2026-11-11",
+          "due": "2026-11-14",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Média",
+          "horas": 5,
+          "blockedBy": 42,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/56",
+          "origin": "snapshot"
+        },
+        {
+          "number": 57,
+          "id": "IS-OP.OPS-0057",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever as 3 newsletters do ciclo 2",
+          "alias": "TSK-0038",
+          "start": "2026-11-12",
+          "due": "2026-11-14",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Média",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/57",
+          "origin": "snapshot"
+        },
+        {
+          "number": 59,
+          "id": "IS-OP.OPS-0059",
+          "type": "issue",
+          "parent": 3,
+          "title": "Acompanhar as métricas e os comentários semanalmente durante o ciclo de 30 dias",
+          "alias": "TSK-0040",
+          "start": "2026-11-06",
+          "due": "2026-12-05",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/59",
+          "origin": "snapshot"
+        },
+        {
+          "number": 62,
+          "id": "IS-OP.OPS-0062",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o artigo pilar sobre dark partners",
+          "alias": "TSK-0043",
+          "start": "2026-11-16",
+          "due": "2026-11-18",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Definição de dark partners (GAP-08)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/62",
+          "origin": "snapshot"
+        },
+        {
+          "number": 63,
+          "id": "IS-OP.OPS-0063",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o artigo pilar sobre riscos cognitivos no estudo, no trabalho, na rotina e nos ambientes físicos e digitais",
+          "alias": "TSK-0044",
+          "start": "2026-11-19",
+          "due": "2026-11-21",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Conteúdo do blog",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 25,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/63",
+          "origin": "snapshot"
+        },
+        {
+          "number": 64,
+          "id": "IS-OP.OPS-0064",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o e-book 3: Ambientes físicos e digitais",
+          "alias": "TSK-0045",
+          "start": "2026-11-16",
+          "due": "2026-11-21",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "E-books",
+          "prioridade": "Média",
+          "horas": 5,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/64",
+          "origin": "snapshot"
+        },
+        {
+          "number": 65,
+          "id": "IS-OP.OPS-0065",
+          "type": "issue",
+          "parent": 3,
+          "title": "Escrever o e-book 4: Gerenciando o TDAH adulto com base em Barkley",
+          "alias": "TSK-0046",
+          "start": "2026-11-23",
+          "due": "2026-11-27",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "E-books",
+          "prioridade": "Média",
+          "horas": 5,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Uso do nome Barkley no título (GAP-18)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/65",
+          "origin": "snapshot"
+        },
+        {
+          "number": 66,
+          "id": "IS-OP.OPS-0066",
+          "type": "issue",
+          "parent": 3,
+          "title": "Empacotar o workflow visual, o construtor de mapas e o operador de tarefas",
+          "alias": "TSK-0047",
+          "start": "2026-11-23",
+          "due": "2026-11-26",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Status real do app (GAP-17)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/66",
+          "origin": "snapshot"
+        },
+        {
+          "number": 67,
+          "id": "IS-OP.OPS-0067",
+          "type": "issue",
+          "parent": 3,
+          "title": "Empacotar os plugins e agentes para download",
+          "alias": "TSK-0048",
+          "start": "2026-11-24",
+          "due": "2026-11-27",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/67",
+          "origin": "snapshot"
+        },
+        {
+          "number": 68,
+          "id": "IS-OP.OPS-0068",
+          "type": "issue",
+          "parent": 3,
+          "title": "Produzir o photo prompt de rotina, o guia de Obsidian para dislexia e os infográficos de IDs",
+          "alias": "TSK-0049",
+          "start": "2026-11-23",
+          "due": "2026-11-28",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Apps e ferramentas",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/68",
+          "origin": "snapshot"
+        },
+        {
+          "number": 72,
+          "id": "IS-OP.OPS-0072",
+          "type": "issue",
+          "parent": 3,
+          "title": "Fechar o relatório do ciclo de 30 dias da campanha 01",
+          "alias": "TSK-0053",
+          "start": "2026-12-03",
+          "due": "2026-12-05",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Distribuição multiplataforma",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 59,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/72",
+          "origin": "snapshot"
+        }
+      ]
+    },
+    "4": {
+      "epic": {
+        "number": 4,
+        "id": "EP-OP.OPS-0004",
+        "type": "epic",
+        "parent": null,
+        "title": "Campanha 02 — Lançamento do ecossistema e do Executar App (15/11/2026–05/01/2027)",
+        "alias": null,
+        "start": "2026-11-13",
+        "due": "2027-01-05",
+        "dueWindow": null,
+        "state": "open",
+        "frente": null,
+        "prioridade": null,
+        "horas": null,
+        "blockedBy": null,
+        "checks": {
+          "done": 0,
+          "total": 5
+        },
+        "lacunas": [],
+        "owner": "OP.OPS",
+        "co": [
+          "MR.MKT",
+          "MR.VEN",
+          "PD.PRO",
+          "MR.MID"
+        ],
+        "url": "https://github.com/Programaex/workbook/issues/4",
+        "origin": "snapshot"
+      },
+      "items": [
+        {
+          "number": 12,
+          "id": "GT-OP.OPS-0012",
+          "type": "gate",
+          "parent": 4,
+          "title": "Validar os dados da Campanha 01 e fixar metas numéricas",
+          "alias": "GATE-04",
+          "start": "2026-11-13",
+          "due": "2026-11-14",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/12",
+          "origin": "snapshot"
+        },
+        {
+          "number": 13,
+          "id": "GT-OP.OPS-0013",
+          "type": "gate",
+          "parent": 4,
+          "title": "Aprovar o pacote da Campanha 02",
+          "alias": "GATE-06",
+          "start": "2026-11-28",
+          "due": "2026-11-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/13",
+          "origin": "snapshot"
+        },
+        {
+          "number": 14,
+          "id": "GT-OP.OPS-0014",
+          "type": "gate",
+          "parent": 4,
+          "title": "Confirmar o escopo do app e os épicos posteriores para 05/01",
+          "alias": "GATE-08",
+          "start": "2026-12-18",
+          "due": "2026-12-20",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/14",
+          "origin": "snapshot"
+        },
+        {
+          "number": 15,
+          "id": "GT-OP.OPS-0015",
+          "type": "gate",
+          "parent": 4,
+          "title": "Liberar o lançamento do app e do ecossistema em 05/01",
+          "alias": "GATE-09",
+          "start": "2027-01-02",
+          "due": "2027-01-04",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/15",
+          "origin": "snapshot"
+        },
+        {
+          "number": 58,
+          "id": "IS-OP.OPS-0058",
+          "type": "issue",
+          "parent": 4,
+          "title": "Consolidar os dados da campanha 01 em um relatório de aprendizado",
+          "alias": "TSK-0039",
+          "start": "2026-11-13",
+          "due": "2026-11-14",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 44,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Linha de base das métricas (GAP-05)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/58",
+          "origin": "snapshot"
+        },
+        {
+          "number": 60,
+          "id": "IS-OP.OPS-0060",
+          "type": "issue",
+          "parent": 4,
+          "title": "Planejar a campanha 02 a partir dos dados da campanha 01",
+          "alias": "TSK-0041",
+          "start": "2026-11-16",
+          "due": "2026-11-17",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 58,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/60",
+          "origin": "snapshot"
+        },
+        {
+          "number": 61,
+          "id": "IS-OP.OPS-0061",
+          "type": "issue",
+          "parent": 4,
+          "title": "Produzir o pacote de conteúdo da campanha 02",
+          "alias": "TSK-0042",
+          "start": "2026-11-18",
+          "due": "2026-11-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 20,
+          "blockedBy": 60,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/61",
+          "origin": "snapshot"
+        },
+        {
+          "number": 73,
+          "id": "IS-OP.OPS-0073",
+          "type": "issue",
+          "parent": 4,
+          "title": "Definir o escopo do Executar App e do Expo para o lançamento de 05/01",
+          "alias": "TSK-0054",
+          "start": "2026-12-01",
+          "due": "2026-12-02",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Escopo funcional do app (GAP-09)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/73",
+          "origin": "snapshot"
+        },
+        {
+          "number": 74,
+          "id": "IS-OP.OPS-0074",
+          "type": "issue",
+          "parent": 4,
+          "title": "Desenvolver o Executar App e o Expo dentro do escopo aprovado",
+          "alias": "TSK-0055",
+          "start": "2026-12-03",
+          "due": "2026-12-22",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 40,
+          "blockedBy": 73,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Escopo funcional do app (GAP-09)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/74",
+          "origin": "snapshot"
+        },
+        {
+          "number": 75,
+          "id": "IS-OP.OPS-0075",
+          "type": "issue",
+          "parent": 4,
+          "title": "Testar o Executar App e publicar a versão de lançamento",
+          "alias": "TSK-0056",
+          "start": "2026-12-28",
+          "due": "2027-01-02",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 8,
+          "blockedBy": 74,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/75",
+          "origin": "snapshot"
+        },
+        {
+          "number": 76,
+          "id": "IS-OP.OPS-0076",
+          "type": "issue",
+          "parent": 4,
+          "title": "Preparar os épicos posteriores escolhidos para o lançamento de 05/01",
+          "alias": "TSK-0057",
+          "start": "2026-12-07",
+          "due": "2026-12-22",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Média",
+          "horas": 16,
+          "blockedBy": 73,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "PD.PRO"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/76",
+          "origin": "snapshot"
+        },
+        {
+          "number": 77,
+          "id": "IS-OP.OPS-0077",
+          "type": "issue",
+          "parent": 4,
+          "title": "Agendar as publicações da campanha 02",
+          "alias": "TSK-0058",
+          "start": "2026-12-14",
+          "due": "2026-12-18",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 4,
+          "blockedBy": 61,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MID"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/77",
+          "origin": "snapshot"
+        },
+        {
+          "number": 78,
+          "id": "IS-OP.OPS-0078",
+          "type": "issue",
+          "parent": 4,
+          "title": "Decidir a liberação do lançamento de 05/01",
+          "alias": "TSK-0059",
+          "start": "2027-01-04",
+          "due": "2027-01-04",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Planejamento e controle",
+          "prioridade": "Alta",
+          "horas": 0.5,
+          "blockedBy": 75,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/78",
+          "origin": "snapshot"
+        },
+        {
+          "number": 79,
+          "id": "IS-OP.OPS-0079",
+          "type": "issue",
+          "parent": 4,
+          "title": "Executar o lançamento do app e do ecossistema em 05/01",
+          "alias": "TSK-0060",
+          "start": "2027-01-05",
+          "due": "2027-01-05",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Campanha 02 e lançamento do app",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": 78,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "MR.MKT"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/79",
+          "origin": "snapshot"
+        }
+      ]
+    },
+    "5": {
+      "epic": {
+        "number": 5,
+        "id": "EP-OP.OPS-0005",
+        "type": "epic",
+        "parent": null,
+        "title": "Emprego e realocação profissional na Europa (19/11/2026–30/03/2027)",
+        "alias": null,
+        "start": "2026-11-19",
+        "due": "2027-03-30",
+        "dueWindow": null,
+        "state": "open",
+        "frente": null,
+        "prioridade": null,
+        "horas": null,
+        "blockedBy": null,
+        "checks": {
+          "done": 0,
+          "total": 7
+        },
+        "lacunas": [],
+        "owner": "OP.OPS",
+        "co": [
+          "GV.PES",
+          "GV.GES",
+          "OP.PRD"
+        ],
+        "url": "https://github.com/Programaex/workbook/issues/5",
+        "origin": "snapshot"
+      },
+      "items": [
+        {
+          "number": 16,
+          "id": "GT-OP.OPS-0016",
+          "type": "gate",
+          "parent": 5,
+          "title": "Escolher as certificações e confirmar a distribuição de horas do épico de emprego",
+          "alias": "GATE-05",
+          "start": "2026-11-23",
+          "due": "2026-11-25",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/16",
+          "origin": "snapshot"
+        },
+        {
+          "number": 17,
+          "id": "GT-OP.OPS-0017",
+          "type": "gate",
+          "parent": 5,
+          "title": "Liberar o início das candidaturas na Europa",
+          "alias": "GATE-10",
+          "start": "2027-01-29",
+          "due": "2027-01-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/17",
+          "origin": "snapshot"
+        },
+        {
+          "number": 18,
+          "id": "GT-OP.OPS-0018",
+          "type": "gate",
+          "parent": 5,
+          "title": "Encerrar o épico de emprego e decidir a viagem de 30/04",
+          "alias": "GATE-11",
+          "start": "2027-03-29",
+          "due": "2027-03-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Pontos de decisão",
+          "prioridade": null,
+          "horas": null,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 1
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/18",
+          "origin": "snapshot"
+        },
+        {
+          "number": 69,
+          "id": "IS-OP.OPS-0069",
+          "type": "issue",
+          "parent": 5,
+          "title": "Planejar a estratégia de realocação profissional na Europa",
+          "alias": "TSK-0050",
+          "start": "2026-11-19",
+          "due": "2026-11-21",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 3,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Destino da viagem e documentação (GAP-14)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.GES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/69",
+          "origin": "snapshot"
+        },
+        {
+          "number": 70,
+          "id": "IS-OP.OPS-0070",
+          "type": "issue",
+          "parent": 5,
+          "title": "Escolher as certificações e verificar preços e datas de prova",
+          "alias": "TSK-0051",
+          "start": "2026-11-23",
+          "due": "2026-11-25",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": 69,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Certificações, preços e datas (GAP-10)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/70",
+          "origin": "snapshot"
+        },
+        {
+          "number": 71,
+          "id": "IS-OP.OPS-0071",
+          "type": "issue",
+          "parent": 5,
+          "title": "Montar o plano de estudos com autoestudo, cursos e simulados",
+          "alias": "TSK-0052",
+          "start": "2026-11-25",
+          "due": "2026-11-27",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 2,
+          "blockedBy": 70,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/71",
+          "origin": "snapshot"
+        },
+        {
+          "number": 80,
+          "id": "IS-OP.OPS-0080",
+          "type": "issue",
+          "parent": 5,
+          "title": "Estudar gestão de projetos conforme o plano de estudos",
+          "alias": "TSK-0061",
+          "start": "2026-11-30",
+          "due": "2027-01-15",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 40,
+          "blockedBy": 71,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/80",
+          "origin": "snapshot"
+        },
+        {
+          "number": 81,
+          "id": "IS-OP.OPS-0081",
+          "type": "issue",
+          "parent": 5,
+          "title": "Otimizar o perfil do LinkedIn e iniciar a linha editorial",
+          "alias": "TSK-0062",
+          "start": "2026-12-01",
+          "due": "2026-12-11",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 69,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/81",
+          "origin": "snapshot"
+        },
+        {
+          "number": 82,
+          "id": "IS-OP.OPS-0082",
+          "type": "issue",
+          "parent": 5,
+          "title": "Fazer o contato estratégico com o profissional na Holanda",
+          "alias": "TSK-0063",
+          "start": "2026-12-07",
+          "due": "2026-12-15",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Média",
+          "horas": 2,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Identidade do profissional (GAP-12)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.GES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/82",
+          "origin": "snapshot"
+        },
+        {
+          "number": 83,
+          "id": "IS-OP.OPS-0083",
+          "type": "issue",
+          "parent": 5,
+          "title": "Estudar gestão de processos conforme o plano de estudos",
+          "alias": "TSK-0064",
+          "start": "2026-12-15",
+          "due": "2027-02-15",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 30,
+          "blockedBy": 71,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/83",
+          "origin": "snapshot"
+        },
+        {
+          "number": 84,
+          "id": "IS-OP.OPS-0084",
+          "type": "issue",
+          "parent": 5,
+          "title": "Publicar um post semanal da linha editorial sobre riscos cognitivos no LinkedIn",
+          "alias": "TSK-0065",
+          "start": "2026-12-15",
+          "due": "2027-03-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Média",
+          "horas": 15,
+          "blockedBy": 81,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/84",
+          "origin": "snapshot"
+        },
+        {
+          "number": 85,
+          "id": "IS-OP.OPS-0085",
+          "type": "issue",
+          "parent": 5,
+          "title": "Fazer o simulado final e a prova de gestão de projetos",
+          "alias": "TSK-0066",
+          "start": "2027-01-16",
+          "due": null,
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 10,
+          "blockedBy": 80,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Data da prova (GAP-10)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/85",
+          "origin": "snapshot"
+        },
+        {
+          "number": 86,
+          "id": "IS-OP.OPS-0086",
+          "type": "issue",
+          "parent": 5,
+          "title": "Montar o portfólio profissional com as soluções, os produtos e os apps da Clean Sea",
+          "alias": "TSK-0067",
+          "start": "2027-01-06",
+          "due": "2027-01-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 12,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Autorização da Clean Sea e segunda empresa (GAP-11)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/86",
+          "origin": "snapshot"
+        },
+        {
+          "number": 87,
+          "id": "IS-OP.OPS-0087",
+          "type": "issue",
+          "parent": 5,
+          "title": "Criar a landing page profissional e atualizar as redes sociais",
+          "alias": "TSK-0068",
+          "start": "2027-01-12",
+          "due": "2027-01-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 6,
+          "blockedBy": 86,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/87",
+          "origin": "snapshot"
+        },
+        {
+          "number": 88,
+          "id": "IS-OP.OPS-0088",
+          "type": "issue",
+          "parent": 5,
+          "title": "Escrever o currículo no padrão europeu e a carta-modelo",
+          "alias": "TSK-0069",
+          "start": "2027-01-12",
+          "due": "2027-01-25",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 4,
+          "blockedBy": null,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/88",
+          "origin": "snapshot"
+        },
+        {
+          "number": 89,
+          "id": "IS-OP.OPS-0089",
+          "type": "issue",
+          "parent": 5,
+          "title": "Propor uma pauta sobre riscos cognitivos ao editor da Frankwatching",
+          "alias": "TSK-0070",
+          "start": "2027-01-15",
+          "due": "2027-01-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Média",
+          "horas": 4,
+          "blockedBy": 81,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Requisitos editoriais e idioma da Frankwatching (GAP-13)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/89",
+          "origin": "snapshot"
+        },
+        {
+          "number": 90,
+          "id": "IS-OP.OPS-0090",
+          "type": "issue",
+          "parent": 5,
+          "title": "Estudar governança de IA conforme o plano de estudos",
+          "alias": "TSK-0071",
+          "start": "2027-01-15",
+          "due": "2027-03-10",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 35,
+          "blockedBy": 71,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/90",
+          "origin": "snapshot"
+        },
+        {
+          "number": 91,
+          "id": "IS-OP.OPS-0091",
+          "type": "issue",
+          "parent": 5,
+          "title": "Decidir se portfólio, currículo e LinkedIn estão prontos para as candidaturas",
+          "alias": "TSK-0072",
+          "start": "2027-01-31",
+          "due": "2027-01-31",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 0.5,
+          "blockedBy": 87,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [],
+          "url": "https://github.com/Programaex/workbook/issues/91",
+          "origin": "snapshot"
+        },
+        {
+          "number": 92,
+          "id": "IS-OP.OPS-0092",
+          "type": "issue",
+          "parent": 5,
+          "title": "Enviar candidaturas a vagas na Europa de 01/02 a 30/03",
+          "alias": "TSK-0073",
+          "start": "2027-02-01",
+          "due": "2027-03-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 34,
+          "blockedBy": 91,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Meta de candidaturas por semana (GAP-15)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/92",
+          "origin": "snapshot"
+        },
+        {
+          "number": 93,
+          "id": "IS-OP.OPS-0093",
+          "type": "issue",
+          "parent": 5,
+          "title": "Submeter o primeiro artigo à Frankwatching",
+          "alias": "TSK-0074",
+          "start": "2027-02-01",
+          "due": "2027-02-28",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Média",
+          "horas": 6,
+          "blockedBy": 89,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Aceite da pauta pelo editor (GAP-13)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/93",
+          "origin": "snapshot"
+        },
+        {
+          "number": 94,
+          "id": "IS-OP.OPS-0094",
+          "type": "issue",
+          "parent": 5,
+          "title": "Fazer o simulado final e a prova de gestão de processos",
+          "alias": "TSK-0075",
+          "start": "2027-02-16",
+          "due": null,
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 10,
+          "blockedBy": 83,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Data da prova (GAP-10)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/94",
+          "origin": "snapshot"
+        },
+        {
+          "number": 95,
+          "id": "IS-OP.OPS-0095",
+          "type": "issue",
+          "parent": 5,
+          "title": "Fazer o simulado final e a prova de governança de IA",
+          "alias": "TSK-0076",
+          "start": "2027-03-11",
+          "due": null,
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 10,
+          "blockedBy": 90,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Data da prova (GAP-10)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.PES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/95",
+          "origin": "snapshot"
+        },
+        {
+          "number": 96,
+          "id": "IS-OP.OPS-0096",
+          "type": "issue",
+          "parent": 5,
+          "title": "Encerrar o épico de emprego e decidir os próximos passos da viagem",
+          "alias": "TSK-0077",
+          "start": "2027-03-30",
+          "due": "2027-03-30",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 1,
+          "blockedBy": 92,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.GES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/96",
+          "origin": "snapshot"
+        },
+        {
+          "number": 97,
+          "id": "IS-OP.OPS-0097",
+          "type": "issue",
+          "parent": 5,
+          "title": "Preparar a documentação e a logística da viagem de 30/04",
+          "alias": "TSK-0078",
+          "start": "2027-03-31",
+          "due": "2027-04-25",
+          "dueWindow": null,
+          "state": "open",
+          "frente": "Carreira na Europa",
+          "prioridade": "Alta",
+          "horas": 6,
+          "blockedBy": 96,
+          "checks": {
+            "done": 0,
+            "total": 3
+          },
+          "lacunas": [
+            "Destino e exigências de visto (GAP-14)"
+          ],
+          "owner": "OP.OPS",
+          "co": [
+            "GV.GES"
+          ],
+          "url": "https://github.com/Programaex/workbook/issues/97",
+          "origin": "snapshot"
+        }
+      ]
+    }
+  }
+}

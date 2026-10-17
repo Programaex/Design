@@ -1,0 +1,67 @@
+{
+  "source": "Solo Campaign System: 10 days to produce, 20 days to publish (PDF, 17/10/2026, @L)",
+  "model": "1 Source Pack → 4 masters (texto, galeria, imagens novas, vídeo) → 3 grupos de fragmentos → 27 peças no agendador (D10).",
+  "criticalPath": ["T1", "T3", "T4", "T6", "T7", "T8"],
+  "tasks": [
+    { "id": "T1", "name": "Decidir + Source Pack", "replaces": "N1, N2, G01, N7A, N7B, N7C, N8, N9", "rule": "Uma folha: tese (5W2H), 6 tópicos com claim, evidência, hook, ideia de still e CTA." },
+    { "id": "T2", "name": "Pesquisa", "replaces": "N3, N4, N5", "rule": "Um bloco com tempo fixo; evidência entra direto nas linhas do Source Pack." },
+    { "id": "T3", "name": "Artigo master", "replaces": "N6", "rule": "Escrito a partir dos 6 tópicos, marcado com [Q] citação, [H] hook, [S] estatística." },
+    { "id": "T4", "name": "Roteiro do vídeo + lista de stills", "replaces": "N13", "rule": "Os mesmos 6 tópicos; uma lista de stills serve vídeo, carrosséis e cards." },
+    { "id": "T5", "name": "Banco visual", "replaces": "N11, G04, N12, G05", "rule": "Galeria primeiro, gerar só as lacunas; um lote, uma revisão." },
+    { "id": "T6", "name": "Gravar vídeo", "replaces": "N14 (parte)", "rule": "Uma sessão, os 6 tópicos." },
+    { "id": "T7", "name": "Editar vídeo master", "replaces": "N14 (parte), D9", "rule": "Stills como b-roll; revisar o master antes de cortar." },
+    { "id": "T8", "name": "Cortar shorts", "replaces": "N15", "rule": "Um short por tópico, cortado por timestamp." },
+    { "id": "T9", "name": "Montar visuais", "replaces": "N15 (parte visual)", "rule": "Carrosséis, cards, infográfico e stories a partir de templates + banco visual." },
+    { "id": "T10", "name": "Escrever fragmentos de texto", "replaces": "AIKB T10 a T18", "rule": "Newsletter, posts, thread e CTAs a partir das marcas [Q] [H] [S]." },
+    { "id": "T11", "name": "QA + agendamento", "replaces": "N10, G03, G06, N16, N17", "rule": "Planilha curta (~8 colunas), script de validação, carregar o agendador uma vez." },
+    { "id": "T12", "name": "Medir + aprender", "replaces": "N18, N19, N20", "rule": "20 minutos por semana nos dias livres; uma nota de aprendizado por janela." }
+  ],
+  "sprint": [
+    { "day": "D1", "blocks": 3, "tasks": "T1 Source Pack (1), T2 Pesquisa (2)", "needs": "nada: é a raiz", "done": "Source Pack com 6 linhas completas (claim, evidência, hook, still, CTA)" },
+    { "day": "D2", "blocks": 3, "tasks": "T3 Rascunho do artigo", "needs": "Source Pack", "done": "Rascunho completo marcado [Q] [H] [S]" },
+    { "day": "D3", "blocks": 3, "tasks": "T3 Edição (1), T4 Roteiro + stills (2)", "needs": "rascunho do artigo", "done": "Roteiro em 6 tópicos; lista com 12 stills e galeria marcada" },
+    { "day": "D4", "blocks": 2, "tasks": "T5 Banco visual", "needs": "lista de stills", "done": "12 stills nomeados, 3 cortes conferidos em cada" },
+    { "day": "D5", "blocks": 3, "tasks": "T6 Gravar (2), T7 Início da edição (1)", "needs": "roteiro, stills", "done": "6 tópicos gravados numa sessão" },
+    { "day": "D6", "blocks": 3, "tasks": "T7 Edição do master (2), Checkpoint A (1)", "needs": "gravação", "done": "Corte master; artigo, vídeo e banco passam no checklist", "checkpoint": "A" },
+    { "day": "D7", "blocks": 2, "tasks": "T8 Cortar 6 shorts", "needs": "Checkpoint A", "done": "6 shorts exportados com legendas" },
+    { "day": "D8", "blocks": 3, "tasks": "T9 Carrosséis, cards, infográfico, stories", "needs": "banco visual, marcas [Q]", "done": "3 carrosséis, 6 cards, 1 infográfico, 4 stories exportados" },
+    { "day": "D9", "blocks": 2, "tasks": "T10 Newsletter, posts, thread, CTAs", "needs": "marcas [Q] [H] [S]", "done": "Todos os fragmentos de texto escritos" },
+    { "day": "D10", "blocks": 2, "tasks": "T11 Checkpoint B, carga do agendador", "needs": "tudo acima", "done": "27 peças no agendador, planilha preenchida", "checkpoint": "B" }
+  ],
+  "checkpoints": [
+    { "id": "A", "day": "D6", "rule": "Source Pack, artigo, vídeo master e banco visual concordam nos mesmos 6 tópicos; todo claim tem evidência; os 12 stills passam nos três cortes." },
+    { "id": "B", "day": "D10", "rule": "Toda peça tem ID, canal e data; links e CTAs funcionam; nada agendado duas vezes." }
+  ],
+  "matrix": [
+    { "fragment": "Artigo (blog)", "qty": 1, "from": "Source Pack, 6 tópicos", "asset": "still de capa", "priority": "Must" },
+    { "fragment": "Vídeo longo (até 7 min)", "qty": 1, "from": "os mesmos 6 tópicos", "asset": "12 stills como b-roll", "priority": "Must" },
+    { "fragment": "Shorts 30 s", "qty": 6, "from": "um por tópico do vídeo", "asset": "cortes 9:16 dos stills", "priority": "Must" },
+    { "fragment": "Carrosséis", "qty": 3, "from": "dois tópicos cada", "asset": "cortes 4:5", "priority": "Must" },
+    { "fragment": "CTAs", "qty": 6, "from": "coluna CTA do Source Pack", "asset": "dentro de outras peças", "priority": "Must" },
+    { "fragment": "Quote cards", "qty": 6, "from": "marcas [Q], uma por tópico", "asset": "stills do tópico", "priority": "Should" },
+    { "fragment": "Newsletter", "qty": 1, "from": "artigo + CTA", "asset": "still de capa", "priority": "Should" },
+    { "fragment": "Posts de texto no LinkedIn", "qty": 3, "from": "hooks [H]", "asset": "quote card", "priority": "Should" },
+    { "fragment": "Thread (Threads, X)", "qty": 1, "from": "um claim por tópico", "asset": "quote cards", "priority": "Could" },
+    { "fragment": "Infográfico", "qty": 1, "from": "tabela do Source Pack", "asset": "um still", "priority": "Could" },
+    { "fragment": "Stories", "qty": 4, "from": "cards e teasers curtos", "asset": "cortes 9:16", "priority": "Could" }
+  ],
+  "matrixNote": "A tabela soma 33 unidades porque CTAs (6) são linhas dentro de outras peças, não arquivos; o PDF conta 27 peças.",
+  "cadence": [
+    { "label": "Campanha 01 (em andamento)", "kind": "publish", "start": "2026-10-10", "end": "2026-10-24" },
+    { "label": "Sprint 02: produzir", "kind": "produce", "start": "2026-10-22", "end": "2026-10-31" },
+    { "label": "Campanha 02: publicar", "kind": "publish", "start": "2026-11-01", "end": "2026-11-20" },
+    { "label": "Sprint 03: produzir", "kind": "produce", "start": "2026-11-11", "end": "2026-11-20" },
+    { "label": "Campanha 03: publicar", "kind": "publish", "start": "2026-11-21", "end": "2026-12-10" },
+    { "label": "Sprint 04: produzir", "kind": "produce", "start": "2026-12-01", "end": "2026-12-10" },
+    { "label": "Campanha 04: publicar", "kind": "publish", "start": "2026-12-11", "end": "2026-12-30" }
+  ],
+  "setup": "Antes do Sprint 02 (18 a 21/10, ~3 blocos): marcar a galeria, criar 5 templates (carrossel, quote card, story, overlay de short, thumbnail) e a planilha de acompanhamento.",
+  "cutOrder": "Atrasou: cortar de baixo para cima — Could (stories, infográfico, thread), depois Should (newsletter, posts, cards). Nunca cortar os Must.",
+  "decisions": [
+    { "name": "Duração do vídeo", "default": "7 minutos, 6 tópicos (o AIKB pede 8 a 12)" },
+    { "name": "Shorts por campanha", "default": "6 (ou 12 a 14 pela regra 7 min = 14 reels)" },
+    { "name": "Perfil", "default": "kit de 27 peças (entre LEGADO ~13 e AIKB 43)" },
+    { "name": "Duração da janela", "default": "20 dias = 15 de campanha + 5 de recirculação e métricas" }
+  ],
+  "conflict": "O PDF prevê Sprint 02 de 22 a 31/10 e publicação da Campanha 02 de 01 a 20/11; o plano operacional prevê lançamento público do riscocognitivo.org em 05/11 e ciclo de 30 dias até 05/12. Decisão pendente do titular."
+}
