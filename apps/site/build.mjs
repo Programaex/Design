@@ -127,6 +127,6 @@ const shell = (title, script) => `<!doctype html><html lang="pt-BR"><head><meta 
 `;
 await writeFile(join(out, 'index.html'), shell('CMS · EXECUTAR', 'app'));
 await writeFile(join(out, 'login.html'), shell('Entrar · CMS EXECUTAR', 'login'));
-await writeFile(join(out, '404.html'), '<!doctype html><meta charset="utf-8"><title>404</title><link rel="stylesheet" href="/styles.css"><p style="padding:24px">Página não encontrada. <a href="/">Voltar ao CMS</a></p>\n');
+await writeFile(join(out, '404.html'), '<!doctype html><meta charset="utf-8"><title>404</title><link rel="stylesheet" href="/styles.css"><p style="padding:24px">Página não encontrada. <a href="/ui_kits/ecossistema/">Ir para o site</a> · <a href="/m/">Mini apps</a> · <a href="/">CMS</a></p>\n');
 console.log(`ops: ${ops.nodes.length} nós · ${ops.edges.length} relações · ${ops.tasks.length} tarefas`);
 console.log(`built dist · ${routes.length} rotas · ${docs.length} docs · ${articles.length} artigos · ${miniapps.length} mini apps · ${componentNames.length} componentes`);

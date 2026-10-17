@@ -140,4 +140,12 @@ describe('Documento ops', () => {
 		const get = await SELF.fetch('https://cms.test/api/ops', { headers: { cookie } });
 		expect((await get.json()).revision).toBe(2);
 	});
+
+	it('redireciona atalhos públicos sem exigir login', async () => {
+		for (const [path, to] of [['/m', '/m/'], ['/ui_kits/', '/ui_kits/ecossistema/'], ['/apps', '/ui_kits/ecossistema/#/apps'], ['/ferramentas', '/ui_kits/ecossistema/#/ferramentas'], ['/apps/executar', '/ui_kits/ecossistema/#/apps/executar']]) {
+			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
+			expect(r.status, path).toBe(302);
+			expect(r.headers.get('location'), path).toBe('https://cms.test' + to);
+		}
+	});
 });
