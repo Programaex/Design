@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Prisma · EXECUTAR",
+    "slug": "executar-prisma",
+    "scheme": "executar",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.executar.prisma"
+    },
+    "android": {
+      "package": "app.executar.prisma",
+      "adaptiveIcon": {
+        "backgroundColor": "#0071E3",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      ["expo-notifications", { "color": "#0071E3" }]
+    ],
+    "experiments": { "typedRoutes": false },
+    "extra": {
+      "apiUrl": "http://localhost:3000"
+    }
+  }
+}

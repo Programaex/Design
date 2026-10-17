@@ -1,0 +1,130 @@
+// Prisma ORM schema for the EXECUTAR backend (Next.js API routes). Mirrors the plan shape in @executar/core.
+// Deliverable and task ids are generated on the device (offline-first), so they are unique per plan.
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String       @id @default(cuid())
+  email     String       @unique
+  name      String?
+  lang      Lang         @default(p)
+  settings  Json         @default("{}") // reminders, remTime, lateAlerts, ai
+  plans     PlanMember[]
+  devices   PushDevice[]
+  createdAt DateTime     @default(now())
+}
+
+/// Magic-link login. Only the SHA-256 hash of the token is stored.
+model LoginToken {
+  tokenHash String   @id
+  email     String
+  expires   DateTime
+  createdAt DateTime @default(now())
+
+  @@index([email])
+}
+
+model Plan {
+  id         String        @id
+  nome       String
+  inicio     DateTime      @db.Date
+  periodo    Int // 3 | 7 | 14 | 30 (CSV import may use other values)
+  lang       Lang          @default(p)
+  setup      Json          @default("{}") // questionnaire answers, for "Refazer questionário"
+  version    Int           @default(1) // bumped on every /api/sync merge
+  rotDate    DateTime      @db.Date
+  notes      Json          @default("{}") // execution notes by item id
+  itemStatus Json          @default("{}") // deferred items by item id
+  entregas   Deliverable[]
+  rotinas    Routine[]
+  members    PlanMember[]
+  updatedAt  DateTime      @updatedAt
+  updatedBy  String?
+}
+
+model PlanMember {
+  planId String
+  userId String
+  role   Role   @default(editor)
+  plan   Plan   @relation(fields: [planId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([planId, userId])
+  @@index([userId])
+}
+
+model Deliverable {
+  planId  String
+  id      String
+  titulo  String
+  grupo   Group
+  hz      Int // 0 Agora · 1 Próximo · 2 Depois
+  provaP  String
+  provaE  String
+  order   Int    @default(0)
+  plan    Plan   @relation(fields: [planId], references: [id], onDelete: Cascade)
+  tarefas Task[]
+
+  @@id([planId, id])
+}
+
+model Task {
+  planId        String
+  id            String
+  deliverableId String
+  ref           String? // tarefa_id from the CSV #3 import
+  p             String
+  e             String
+  custom        String?
+  done          Boolean     @default(false)
+  order         Int         @default(0)
+  updatedAt     DateTime // device timestamp of the last change
+  deliverable   Deliverable @relation(fields: [planId, deliverableId], references: [planId, id], onDelete: Cascade)
+
+  @@id([planId, id])
+}
+
+model Routine {
+  planId String
+  id     String
+  k      String // abrir | foco | pausa | fechar | semanal
+  done   Boolean @default(false)
+  order  Int     @default(0)
+  plan   Plan    @relation(fields: [planId], references: [id], onDelete: Cascade)
+
+  @@id([planId, id])
+}
+
+model PushDevice {
+  id       String @id @default(cuid())
+  userId   String
+  platform String // ios | android | web
+  token    String @unique
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Lang {
+  p
+  e
+}
+
+enum Role {
+  owner
+  editor
+  viewer
+}
+
+enum Group {
+  conteudo
+  tecnico
+  comercial
+  operacao
+  estudo
+  pessoal
+}

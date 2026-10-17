@@ -27,6 +27,18 @@ describe('login', () => {
 		expect(r.status).toBe(302);
 		expect(r.headers.get('location')).toBe('https://cms.test/login?next=%2Fcms%2F%3Fx%3D1');
 	});
+	it('serve o site público e os mini apps sem sessão', async () => {
+		for (const path of ['/ui_kits/ecossistema/', '/ui_kits/ecossistema/miniapps.js', '/m/', '/m/prisma/', '/m/sw.js', '/m/prisma/manifest.webmanifest', '/_ds_bundle.js']) {
+			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
+			expect(r.status, path).not.toBe(302);
+		}
+	});
+	it('mantém CMS e documentos do repo atrás do login', async () => {
+		for (const path of ['/', '/cms/app.js', '/cms/data.json', '/files/README.md']) {
+			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
+			expect(r.status, path).toBe(302);
+		}
+	});
 	it('nega API sem sessão', async () => {
 		expect((await SELF.fetch('https://cms.test/api/kv/progress')).status).toBe(401);
 	});
@@ -127,5 +139,13 @@ describe('Documento ops', () => {
 		expect((await put({ schemaVersion: '2.0.0', revision: 3 }, 2)).status).toBe(422);
 		const get = await SELF.fetch('https://cms.test/api/ops', { headers: { cookie } });
 		expect((await get.json()).revision).toBe(2);
+	});
+
+	it('redireciona atalhos públicos sem exigir login', async () => {
+		for (const [path, to] of [['/m', '/m/'], ['/executar', '/m/landing/'], ['/ui_kits/', '/ui_kits/ecossistema/'], ['/apps', '/ui_kits/ecossistema/#/apps'], ['/ferramentas', '/ui_kits/ecossistema/#/ferramentas'], ['/apps/executar', '/ui_kits/ecossistema/#/apps/executar']]) {
+			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
+			expect(r.status, path).toBe(302);
+			expect(r.headers.get('location'), path).toBe('https://cms.test' + to);
+		}
 	});
 });

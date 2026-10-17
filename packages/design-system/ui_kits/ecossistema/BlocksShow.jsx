@@ -31,7 +31,7 @@ function FeaturedCarousel({ id, label, items }) {
                 <p>{it.description}</p>
                 <A to={it.href} tabIndex={k === i ? 0 : -1}>Ver detalhes ›</A>
               </div>
-              <Media kind="landscape" name={`${id}-${k + 1}`} className="r12" />
+              <Media kind="landscape" name={`${id}-${k + 1}`} className={'r12' + (it.media && it.media.icon ? ' eco-media-icon' : '')} src={it.media && it.media.src} alt={it.media && it.media.alt} />
             </div>
           ))}
         </div>
@@ -98,7 +98,7 @@ function ResourceCard({ it, size, base, k, id }) {
   return (
     <A to={it.href} className={'eco-rc s-' + size}>
       {wide && <div className="eco-rc-head"><span className="eco-rc-cat">{it.category}</span><h3 className="eco-rc-big">{it.title}</h3></div>}
-      <Media kind={wide ? 'landscape' : 'square'} name={`${id}-${it.slug}`} className="eco-rc-media" fit={wide ? 'cover' : 'contain'} />
+      <Media kind={wide ? 'landscape' : 'square'} name={`${id}-${it.slug}`} className={'eco-rc-media' + (it.media && it.media.icon ? ' eco-media-icon' : '')} fit={wide ? 'cover' : 'contain'} src={it.media && it.media.src} alt={it.media && it.media.alt} />
       {!wide && <div className="eco-rc-body"><span className="eco-kicker">{it.kicker}</span><h3>{it.title}</h3><span className="eco-rc-meta">{it.meta}</span></div>}
       {wide && <span className="eco-rc-go" aria-hidden="true"><i className="ph-bold ph-caret-right"></i></span>}
     </A>
@@ -119,14 +119,14 @@ function ResourceGrid({ id, items, variant = 'mosaic', pagination, total }) {
   if (!items.length) return <div className="eco-wrap eco-pad-sm"><div className="eco-empty"><i className="ph ph-funnel-x"></i><p>Nenhum resultado para estes filtros.</p><Button variant="secondary" onClick={() => go(res.path)}>Limpar filtros</Button></div></div>;
   return (
     <div className="eco-wrap eco-pad-sm">
-      <p className="eco-count">{total} {total === 1 ? 'item' : 'itens'} · exemplos demonstrativos</p>
+      <p className="eco-count">{total} {total === 1 ? 'item' : 'itens'}{items.some(it => it.real) ? ' · funcionam offline, sem conta' : ' · exemplos demonstrativos'}</p>
       {variant === 'mosaic' ? (
         <div className="eco-mosaic">{items.map((it, k) => <ResourceCard key={it.slug} it={it} size={Object.keys(res.query).length ? 's' : MOSAIC[k % MOSAIC.length]} k={k} id={id} />)}</div>
       ) : (
         <div className="eco-cards3">
           {items.map((it, k) => (
             <A key={it.slug} to={it.href} className="eco-rcard">
-              <Media kind={variant === 'people' ? 'portrait' : 'cover'} name={`${id}-${it.slug}`} className="r18" src={it.media && it.media.src} alt={it.media && it.media.alt} />
+              <Media kind={variant === 'people' ? 'portrait' : 'cover'} name={`${id}-${it.slug}`} className={'r18' + (it.media && it.media.icon ? ' eco-media-icon' : '')} src={it.media && it.media.src} alt={it.media && it.media.alt} />
               <span className="eco-kicker">{it.kicker}</span><h3>{it.title}</h3><p className="muted">{it.meta}</p>
             </A>
           ))}

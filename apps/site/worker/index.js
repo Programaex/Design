@@ -7,8 +7,9 @@ export { FocusLock } from './focus.js';
 const COOKIE = 'cms_session';
 const SESSION_TTL = 60 * 60 * 12; // 12 h
 const LOGIN_PAGES = ['/login', '/login/'];
-// Só o necessário para desenhar a tela de login fica fora da sessão.
-const PUBLIC_ASSETS = ['/styles.css', '/tokens/', '/components/components.css', '/cms/login.js', '/cms/cms.css', '/assets/brand/', '/favicon.ico'];
+// Fora da sessão: a tela de login e o site público — o ecossistema (/ui_kits/), os mini apps PWA (/m/) e o que eles
+// carregam (tokens, componentes, assets). O CMS (/, /cms/), os documentos do repo (/files/) e a API continuam com login.
+const PUBLIC_ASSETS = ['/styles.css', '/tokens/', '/components/components.css', '/cms/login.js', '/cms/cms.css', '/favicon.ico', '/assets/', '/_ds_bundle.js', '/ui_kits/', '/m/'];
 
 const enc = new TextEncoder();
 const b64url = buf => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -19,6 +20,7 @@ async function hmac(secret, data) {
 }
 
 // Credenciais padrão enquanto os secrets não estão no Worker. Defina CMS_USER/CMS_PASS para trocá-las.
+// Não exportar constantes: o workerd só aceita funções/handlers como exports nomeados do módulo principal.
 const DEFAULT_USER = '000';
 const DEFAULT_PASS = '003';
 const creds = env => ({ user: env.CMS_USER || DEFAULT_USER, pass: env.CMS_PASS || DEFAULT_PASS });
@@ -108,6 +110,11 @@ export default {
 		if (path === '/api/login' && request.method === 'POST') return login(request, env);
 		if (path === '/api/logout') return json({ ok: true }, 200, { 'set-cookie': cookie('', 0) });
 		if (LOGIN_PAGES.includes(path)) return env.ASSETS.fetch(new Request(new URL('/login', url), request));
+		// Atalhos públicos: caminhos sem barra final e rotas do site real (que usa hash) caem na página certa.
+		const kit = '/ui_kits/ecossistema/';
+		if (path === '/m' || path === '/ui_kits' || path === '/ui_kits/') return Response.redirect(new URL(path === '/m' ? '/m/' : kit, url).toString(), 302);
+		if (path === '/executar' || path === '/executar/' || path === '/landing') return Response.redirect(new URL('/m/landing/', url).toString(), 302);
+		if (/^\/(apps|ferramentas|blog)(\/[a-z0-9-]+)?\/?$/.test(path)) return Response.redirect(new URL(kit + '#' + path.replace(/\/$/, ''), url).toString(), 302);
 		if (PUBLIC_ASSETS.some(p => (p.endsWith('/') ? path.startsWith(p) : path === p))) return env.ASSETS.fetch(request);
 
 		const session = await readSession(env, request);

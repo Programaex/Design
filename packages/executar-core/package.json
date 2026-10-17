@@ -1,0 +1,21 @@
+{
+  "name": "@executar/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Domínio do Prisma (EXECUTAR): plano, execução sequencial, modelos A4 e sync offline-first. Funções puras compartilhadas por web, API e app nativo.",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
+  }
+}

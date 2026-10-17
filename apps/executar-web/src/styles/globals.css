@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+@import '@executar/ui/theme.css';
+/* Tailwind only scans this app by default; the shared screens live in packages/executar-ui. */
+@source '../../../../packages/executar-ui/src';

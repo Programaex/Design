@@ -207,3 +207,7 @@ test-results/
 playwright-report/
 
 .turbo/
+
+### Python ###
+__pycache__/
+*.pyc
