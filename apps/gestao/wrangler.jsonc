@@ -5,6 +5,7 @@
 	"main": "worker/index.js",
 	"compatibility_date": "2025-10-08",
 	"workers_dev": true,
+	"preview_urls": false,
 	// dist/ é gerado por build.mjs. O Worker roda antes dos assets para exigir login.
 	"assets": {
 		"directory": "./dist",

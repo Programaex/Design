@@ -32,4 +32,13 @@ npm run snapshot -w apps/gestao   # atualiza data/snapshot.json (precisa do repo
 npm test -w apps/gestao           # node --test (funções puras) + vitest (Worker)
 npm run dev -w apps/gestao        # build + wrangler dev (crie apps/gestao/.dev.vars com CMS_USER/CMS_PASS/SESSION_SECRET)
 npm run deploy -w apps/gestao     # build + wrangler deploy (CI: .github/workflows/deploy-gestao.yml)
+npm run deploy:inline -w apps/gestao  # idem, com a interface embutida no Worker (sem upload de assets)
 ```
+
+## Publicação
+
+Publicado em **https://gestao.bus-programa.workers.dev** (Worker `gestao`, URLs de preview desligadas).
+
+- `deploy` usa o upload de assets do Workers. Atrás de um proxy que injeta a credencial (como nesta sessão), esse upload volta 401, porque o JWT da sessão de upload é sobrescrito. Nesse caso use `deploy:inline`, que embute só os 21 arquivos usados (≈ 550 KB) no próprio Worker; é o mesmo padrão do `apps/workflow`.
+- Secrets (`wrangler secret put <NOME> -c wrangler.inline.jsonc`): `SESSION_SECRET` já definido; `CMS_USER`/`CMS_PASS` ainda não — vale o login padrão do CMS (000/003); `GITHUB_TOKEN` (opcional, só leitura) evita o limite anônimo de 60 chamadas/hora do GitHub, que o Worker divide com outros Workers do mesmo IP. Sem ele, um 403 do GitHub faz o painel mostrar o snapshot com aviso.
+- O CI (`deploy-gestao.yml`) só publica se o repositório tiver os secrets `CLOUDFLARE_API_TOKEN` e `CLOUDFLARE_ACCOUNT_ID`; sem eles o job termina em segundos sem fazer nada.

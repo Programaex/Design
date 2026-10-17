@@ -1,0 +1,11 @@
+{
+	"$schema": "../../node_modules/wrangler/config-schema.json",
+	// Mesmo Worker "gestao", com a interface embutida no código (sem upload de assets). Ver scripts/build-inline-assets.mjs.
+	"name": "gestao",
+	"main": "scripts/inline-entry.js",
+	"compatibility_date": "2025-10-08",
+	"workers_dev": true,
+	"preview_urls": false,
+	"vars": { "GITHUB_REPO": "Programaex/workbook" },
+	"observability": { "enabled": true }
+}
