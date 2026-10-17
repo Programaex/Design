@@ -113,6 +113,7 @@ export default {
 		// Atalhos públicos: caminhos sem barra final e rotas do site real (que usa hash) caem na página certa.
 		const kit = '/ui_kits/ecossistema/';
 		if (path === '/m' || path === '/ui_kits' || path === '/ui_kits/') return Response.redirect(new URL(path === '/m' ? '/m/' : kit, url).toString(), 302);
+		if (path === '/executar' || path === '/executar/' || path === '/landing') return Response.redirect(new URL('/m/landing/', url).toString(), 302);
 		if (/^\/(apps|ferramentas|blog)(\/[a-z0-9-]+)?\/?$/.test(path)) return Response.redirect(new URL(kit + '#' + path.replace(/\/$/, ''), url).toString(), 302);
 		if (PUBLIC_ASSETS.some(p => (p.endsWith('/') ? path.startsWith(p) : path === p))) return env.ASSETS.fetch(request);
 

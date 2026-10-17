@@ -142,7 +142,7 @@ describe('Documento ops', () => {
 	});
 
 	it('redireciona atalhos públicos sem exigir login', async () => {
-		for (const [path, to] of [['/m', '/m/'], ['/ui_kits/', '/ui_kits/ecossistema/'], ['/apps', '/ui_kits/ecossistema/#/apps'], ['/ferramentas', '/ui_kits/ecossistema/#/ferramentas'], ['/apps/executar', '/ui_kits/ecossistema/#/apps/executar']]) {
+		for (const [path, to] of [['/m', '/m/'], ['/executar', '/m/landing/'], ['/ui_kits/', '/ui_kits/ecossistema/'], ['/apps', '/ui_kits/ecossistema/#/apps'], ['/ferramentas', '/ui_kits/ecossistema/#/ferramentas'], ['/apps/executar', '/ui_kits/ecossistema/#/apps/executar']]) {
 			const r = await SELF.fetch('https://cms.test' + path, { redirect: 'manual' });
 			expect(r.status, path).toBe(302);
 			expect(r.headers.get('location'), path).toBe('https://cms.test' + to);

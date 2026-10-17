@@ -12,7 +12,7 @@ export default defineConfig({
 		outDir: 'dist',
 		emptyOutDir: true,
 		rollupOptions: {
-			input: Object.fromEntries([['hub', resolve(__dirname, 'index.html')], ...APPS.map(a => [a.slug, resolve(__dirname, a.slug, 'index.html')])])
+			input: Object.fromEntries([['hub', resolve(__dirname, 'index.html')], ['landing', resolve(__dirname, 'landing', 'index.html')], ...APPS.map(a => [a.slug, resolve(__dirname, a.slug, 'index.html')])])
 		}
 	}
 });
