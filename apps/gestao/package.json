@@ -8,7 +8,8 @@
     "deploy": "node build.mjs && wrangler deploy",
     "snapshot": "node scripts/snapshot.mjs --workbook ../../../workbook",
     "pdf": "node build.mjs && node scripts/pdf.mjs",
-    "test": "vitest run && node --test test/*.node.test.mjs"
+    "test": "vitest run && node --test test/*.node.test.mjs",
+    "deploy:inline": "node build.mjs && node scripts/build-inline-assets.mjs && wrangler deploy -c wrangler.inline.jsonc"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "0.21.3",
