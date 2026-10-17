@@ -1,0 +1,15 @@
+Juiz validador — docs/planos/executar-epic01-2026-10-a-2027-04/plano-interno-executar-epic01-2026-10-a-2027-04.md
+============================================================
+  [OK]    17 seções numeradas (§1–§17) presentes.
+  [OK]    Apêndice A presente.
+  [OK]    Apêndice B presente.
+  [OK]    Disclaimer legal ('não é auditoria, certificação...') presente.
+  [OK]    Registro Final de Honestidade presente.
+  [OK]    Fechamento 'Fim do documento' presente.
+  [OK]    Nenhum placeholder de template esquecido.
+  [OK]    Conflitos mencionados têm registro formal (10 ID(s) CONF-XX encontrados).
+  [OK]    Todos os CONF-XX citados estão definidos na tabela de conflitos.
+  [OK]    Capacidade alocada (1065.6h) < nominal (1232.0h).
+  [OK]    Reserva de contingência usa o padrão fixo da metodologia (15%).
+
+RESULTADO: PASS — 0 erros, 0 aviso(s). Pode gerar os entregáveis do cliente.
